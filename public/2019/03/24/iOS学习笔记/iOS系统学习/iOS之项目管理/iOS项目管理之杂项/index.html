@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Hexo
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>HEXO</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <p>fir.im</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#上传至fir</span><br><span class="line">fir publish $&#123;HOME&#125;&#x2F;Desktop&#x2F;Package&#x2F;$&#123;IPA_NAME&#125; -Q -T 9cfdfbd241d63197a3b83a608708e16f --password sumian</span><br></pre></td></tr></table></figure>
+
+<p>蒲公英</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#上传至蒲公英</span><br><span class="line">#curl -F &quot;file&#x3D;@$&#123;IPA_PATH&#125;&quot; </span><br><span class="line">      -F &quot;uKey&#x3D;******************2f5e99f3a7495&quot; </span><br><span class="line">      -F &quot;_api_key  - 0 : 85 &#x3D;******************eb2d5cb44d93183&quot; http:&#x2F;&#x2F;www.pgyer.com&#x2F;apiv1&#x2F;app&#x2F;upload</span><br></pre></td></tr></table></figure>
+
+<p>自建服务器交付环境</p>
+<ul>
+<li>打包<pre><code> 版本、scheme、target、workspace、profile、签名、archive、IPA
+</code></pre>
+</li>
+<li>上传</li>
+<li>下载</li>
+<li>多ID分发[批量IPA包管理]</li>
+</ul>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="J"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>John Doe</div>
+      <div>2019-03-24</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Hexo
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>HEXO</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <p>1、日志内容</p>
+<pre><code>时间|日志级别|类名_函数名_行数|分类|Log内容
+</code></pre>
+<p>获取类名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">extension NSObject &#123;</span><br><span class="line">    var className: String &#123;</span><br><span class="line">        return String(describing: type(of: self)).components(separatedBy: &quot;.&quot;).last!</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    class var className: String &#123;</span><br><span class="line">        return String(describing: self).components(separatedBy: &quot;.&quot;).last!</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>生成log函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public func createLog(level: DebugLevel, targetClass: AnyClass, type: OperateType, content: String,  _ line: Int &#x3D; #line, _ function: String &#x3D; #function)</span><br><span class="line">-&gt; String &#123;</span><br><span class="line">    let lineStr &#x3D; String.init(format: &quot;line:%d&quot;, line)</span><br><span class="line">    let levelStr &#x3D; levelToString(level: level)</span><br><span class="line">    let separator &#x3D; &quot;|&quot;</span><br><span class="line">    let classSeparator &#x3D; &quot;_&quot;</span><br><span class="line">    let log: String &#x3D; Date().toString() + separator + levelStr + separator + targetClass.className + classSeparator + function + classSeparator + lineStr + separator + content + &quot;\n&quot;</span><br><span class="line">    print(log)</span><br><span class="line">    return log</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>日志文件操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">public protocol LogStorageProtocol &#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;&#x2F; 获取日志缓存地址</span><br><span class="line">    &#x2F;&#x2F;&#x2F;</span><br><span class="line">    &#x2F;&#x2F;&#x2F; - Returns: String</span><br><span class="line">    func getCachePath() -&gt; String</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;&#x2F; 删除文件</span><br><span class="line">    &#x2F;&#x2F;&#x2F;</span><br><span class="line">    &#x2F;&#x2F;&#x2F; - Parameter fileName: String</span><br><span class="line">    &#x2F;&#x2F;&#x2F; - Returns: Bool</span><br><span class="line">    func deleteFile(fileName: String) -&gt; Bool</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;&#x2F; 清除全部日志缓存</span><br><span class="line">    &#x2F;&#x2F;&#x2F;</span><br><span class="line">    &#x2F;&#x2F;&#x2F; - Returns: Bool</span><br><span class="line">    func cleanCache() -&gt; Bool</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;&#x2F; 读取日志文件</span><br><span class="line">    &#x2F;&#x2F;&#x2F;</span><br><span class="line">    &#x2F;&#x2F;&#x2F; - Parameter fileName: String</span><br><span class="line">    &#x2F;&#x2F;&#x2F; - Returns: Data</span><br><span class="line">    func readFile(fileName: String) -&gt; Data?</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;&#x2F; 更新写入Log数据</span><br><span class="line">    &#x2F;&#x2F;&#x2F;</span><br><span class="line">    &#x2F;&#x2F;&#x2F; - Parameters:</span><br><span class="line">    &#x2F;&#x2F;&#x2F;   - fileName: String</span><br><span class="line">    &#x2F;&#x2F;&#x2F;   - data: Data</span><br><span class="line">    &#x2F;&#x2F;&#x2F; - Returns: Data</span><br><span class="line">    func updateFile(fileName: String, data: Data) -&gt; Bool</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;&#x2F; 自动根据天数创建文件名</span><br><span class="line">    &#x2F;&#x2F;&#x2F;</span><br><span class="line">    &#x2F;&#x2F;&#x2F; - Returns: String</span><br><span class="line">    func createFileName() -&gt; String</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>策略：</p>
+<pre><code>而这个十条一写，没有达到标准的就暂时保存在内存里，我的想法是创建一个循环队列，
+根据FIFO原则，当满足十条Log时，做一次写入操作，而循环队列在空间上是非常节省
+资源的，如果没有满足十条日志，那就都暂存在队列里，整个开销就是循环队列的一个数
+组，容量是11个元素，还有一个充当哨兵
+</code></pre>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/74f121bfd9e9"><strong>自主设计日志系统</strong></a></li>
+</ul>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="J"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>John Doe</div>
+      <div>2019-03-24</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>

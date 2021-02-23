@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Hexo
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>HEXO</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <p>Debugger commands:<br>  apropos           – List debugger commands related to a word or subject.<br>  breakpoint        – Commands for operating on breakpoints (see ‘help b’ for shorthand.)<br>  bugreport         – Commands for creating domain-specific bug reports.<br>  command           – Commands for managing custom LLDB commands.<br>  disassemble       – Disassemble specified instructions in the current target.  Defaults to the current function for the current thread and stack frame.<br>  expression        – Evaluate an expression on the current thread.  Displays any returned value with LLDB’s default formatting.<br>  frame             – Commands for selecting and examing the current thread’s stack frames.<br>  gdb-remote        – Connect to a process via remote GDB server.  If no host is specifed, localhost is assumed.<br>  gui               – Switch into the curses based GUI mode.<br>  help              – Show a list of all debugger commands, or give details about a specific command.<br>  kdp-remote        – Connect to a process via remote KDP server.  If no UDP port is specified, port 41139 is assumed.<br>  language          – Commands specific to a source language.<br>  log               – Commands controlling LLDB internal logging.<br>  memory            – Commands for operating on memory in the current target process.<br>  platform          – Commands to manage and create platforms.<br>  plugin            – Commands for managing LLDB plugins.<br>  process           – Commands for interacting with processes on the current platform.<br>  quit              – Quit the LLDB debugger.<br>  register          – Commands to access registers for the current thread and stack frame.<br>  script            – Invoke the script interpreter with provided code and display any results.  Start the interactive interpreter if no code is supplied.<br>  settings          – Commands for managing LLDB settings.<br>  source            – Commands for examining source code described by debug information for the current target process.<br>  statistics        – Print statistics about a debugging session<br>  target            – Commands for operating on debugger targets.<br>  thread            – Commands for operating on one or more threads in the current process.<br>  type              – Commands for operating on the type system.<br>  version           – Show the LLDB debugger version.<br>  watchpoint        – Commands for operating on watchpoints.<br>Current command abbreviations (type ‘help command alias’ for more info):<br>  add-dsym  – Add a debug symbol file to one of the target’s current modules by specifying a path to a debug symbols file, or using the options to specify a module to download symbols for.<br>  attach    – Attach to process by ID or name.<br>  b         – Set a breakpoint using one of several shorthand formats.<br>  bt        – Show the current thread’s call stack.  Any numeric argument displays at most that many frames.  The argument ‘all’ displays all threads.<br>  c         – Continue execution of all threads in the current process.<br>  call      – Evaluate an expression on the current thread.  Displays any returned value with LLDB’s default formatting.<br>  continue  – Continue execution of all threads in the current process.<br>  detach    – Detach from the current target process.<br>  di        – Disassemble specified instructions in the current target.  Defaults to the current function for the current thread and stack frame.<br>  dis       – Disassemble specified instructions in the current target.  Defaults to the current function for the current thread and stack frame.<br>  display   – Evaluate an expression at every stop (see ‘help target stop-hook’.)<br>  down      – Select a newer stack frame.  Defaults to moving one frame, a numeric argument can specify an arbitrary number.<br>  env       – Shorthand for viewing and setting environment variables.<br>  exit      – Quit the LLDB debugger.<br>  f         – Select the current stack frame by index from within the current thread (see ‘thread backtrace’.)<br>  file      – Create a target using the argument as the main executable.<br>  finish    – Finish executing the current stack frame and stop after returning.  Defaults to current thread unless specified.<br>  image     – Commands for accessing information for one or more target modules.<br>  j         – Set the program counter to a new address.<br>  jump      – Set the program counter to a new address.<br>  kill      – Terminate the current target process.<br>  l         – List relevant source code using one of several shorthand formats.<br>  list      – List relevant source code using one of several shorthand formats.<br>  n         – Source level single step, stepping over calls.  Defaults to current thread unless specified.<br>  next      – Source level single step, stepping over calls.  Defaults to current thread unless specified.<br>  nexti     – Instruction level single step, stepping over calls.  Defaults to current thread unless specified.<br>  ni        – Instruction level single step, stepping over calls.  Defaults to current thread unless specified.<br>  p         – Evaluate an expression on the current thread.  Displays any returned value with LLDB’s default formatting.<br>  parray    – Evaluate an expression on the current thread.  Displays any returned value with LLDB’s default formatting.<br>  po        – Evaluate an expression on the current thread.  Displays any returned value with formatting controlled by the type’s author.<br>  poarray   – Evaluate an expression on the current thread.  Displays any returned value with LLDB’s default formatting.<br>  print     – Evaluate an expression on the current thread.  Displays any returned value with LLDB’s default formatting.<br>  q         – Quit the LLDB debugger.<br>  r         – Launch the executable in the debugger.<br>  rbreak    – Sets a breakpoint or set of breakpoints in the executable.<br>  repl      – Evaluate an expression on the current thread.  Displays any returned value with LLDB’s default formatting.<br>  run       – Launch the executable in the debugger.<br>  s         – Source level single step, stepping into calls.  Defaults to current thread unless specified.<br>  si        – Instruction level single step, stepping into calls.  Defaults to current thread unless specified.<br>  sif       – Step through the current block, stopping if you step directly into a function whose name matches the TargetFunctionName.<br>  step      – Source level single step, stepping into calls.  Defaults to current thread unless specified.<br>  stepi     – Instruction level single step, stepping into calls.  Defaults to current thread unless specified.<br>  t         – Change the currently selected thread.<br>  tbreak    – Set a one-shot breakpoint using one of several shorthand formats.<br>  undisplay – Stop displaying expression at every stop (specified by stop-hook index.)<br>  up        – Select an older stack frame.  Defaults to moving one frame, a numeric argument can specify an arbitrary number.<br>  v         – Show variables for the current stack frame. Defaults to all arguments and local variables in scope. Names of argument, local, file static and file global variables can be specified. Children of aggregate variables can be specified such as<br>               ‘var-&gt;child.x’.  The -&gt; and [] operators in ‘frame variable’ do not invoke operator overloads if they exist, but directly access the specified element.  If you want to trigger operator overloads use the expression command to print the variable<br>               instead.<br>               It is worth noting that except for overloaded operators, when printing local variables ‘expr local_var’ and ‘frame var local_var’ produce the same results.  However, ‘frame variable’ is more efficient, since it uses debug information and memory<br>               reads directly, rather than parsing and evaluating an expression, which may even involve JITing and running code in the target program.<br>  var       – Show variables for the current stack frame. Defaults to all arguments and local variables in scope. Names of argument, local, file static and file global variables can be specified. Children of aggregate variables can be specified such as<br>               ‘var-&gt;child.x’.  The -&gt; and [] operators in ‘frame variable’ do not invoke operator overloads if they exist, but directly access the specified element.  If you want to trigger operator overloads use the expression command to print the variable<br>               instead.<br>               It is worth noting that except for overloaded operators, when printing local variables ‘expr local_var’ and ‘frame var local_var’ produce the same results.  However, ‘frame variable’ is more efficient, since it uses debug information and memory<br>               reads directly, rather than parsing and evaluating an expression, which may even involve JITing and running code in the target program.<br>  vo        – Show variables for the current stack frame. Defaults to all arguments and local variables in scope. Names of argument, local, file static and file global variables can be specified. Children of aggregate variables can be specified such as<br>               ‘var-&gt;child.x’.  The -&gt; and [] operators in ‘frame variable’ do not invoke operator overloads if they exist, but directly access the specified element.  If you want to trigger operator overloads use the expression command to print the variable<br>               instead.<br>               It is worth noting that except for overloaded operators, when printing local variables ‘expr local_var’ and ‘frame var local_var’ produce the same results.  However, ‘frame variable’ is more efficient, since it uses debug information and memory<br>               reads directly, rather than parsing and evaluating an expression, which may even involve JITing and running code in the target program.<br>  x         – Read from the memory of the current target process.<br>For more information on any command, type ‘help <command-name>‘.</p>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="J"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>John Doe</div>
+      <div>2019-06-14</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>

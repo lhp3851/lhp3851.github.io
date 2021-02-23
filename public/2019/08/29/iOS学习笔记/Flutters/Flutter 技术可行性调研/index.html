@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Hexo
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>HEXO</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="Flutter-技术可行性调研"><a href="#Flutter-技术可行性调研" class="headerlink" title="Flutter 技术可行性调研"></a>Flutter 技术可行性调研</h1><p>界面：<br>1、适配；<br>2、项目视图组件；<br>3、音视频播放；<br>4、导航栏；<br>5、动画；</p>
+<p>数据：<br>1、数据库；<br>2、数据序列化[json]；<br>3、异步；<br>4、埋点；</p>
+<p>APP：<br>1、webview：[用户协议，]事件，https证书认证；<br>2、网络 http[s] 方法delete等；<br>3、第三方app交互；<br>4、后台任务；</p>
+<p>工程：<br>1、图片等资源；<br>2、国际化；<br>3、性能监控：日志上报与及时处理；</p>
+<p>原生交互：<br>1、编解码器；<br>2、原生通道；<br>3、原生第三方服务：客服、推送等；<br>4、渠道分发包；</p>
+<p>*跨端<br>1、iOS；<br>2、Android；<br>3、Web；</p>
+<p>*跨语言<br>1、Dart；<br>2、Swift；<br>3、Kotlin；<br>4、C++；</p>
+<p>*框架<br>1、Flutter；<br>2、Swift UI，cocoa Touch等诸多框架；<br>3、Android 诸多框架；</p>
+<p>*设计模式层面<br>1、设计模式；<br>2、工程分层设计：</p>
+<pre><code>网络层
+数据层
+UI层
+原生[通道层]
+</code></pre>
+<p>*组件化层面<br>1、功能组件化；<br>2、业务模块化；</p>
+<p>小问题：<br>1、分块列表；<br>2、退出登录点击无反应；<br>3、弹窗；</p>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="J"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>John Doe</div>
+      <div>2019-08-29</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>

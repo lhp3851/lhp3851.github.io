@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Hexo
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>HEXO</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h3 id="Xcode-使用-dyld-环境变量进行调试"><a href="#Xcode-使用-dyld-环境变量进行调试" class="headerlink" title="Xcode - 使用 dyld 环境变量进行调试"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/lovechris00/article/details/82290773">Xcode - 使用 dyld 环境变量进行调试</a></h3><p>一、使用 <code>DYLD_PRINT_STATISTICS</code> 获取启动时间</p>
+<p>edit scheme -&gt; run -&gt; arguments里面加入环境变量 DYLD_PRINT_STATISTICS = 1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Total pre-main time: 1.3 seconds (100.0%)</span><br><span class="line">             dylib loading time: 531.35 milliseconds (39.9%)</span><br><span class="line">            rebase&#x2F;binding time:  46.17 milliseconds (3.4%)</span><br><span class="line">                ObjC setup time: 178.40 milliseconds (13.4%)</span><br><span class="line">               initializer time: 572.91 milliseconds (43.1%)</span><br><span class="line">               slowest intializers :</span><br><span class="line">                 libSystem.B.dylib :   8.27 milliseconds (0.6%)</span><br><span class="line">        libMainThreadChecker.dylib :  42.80 milliseconds (3.2%)</span><br><span class="line">              libglInterpose.dylib : 227.26 milliseconds (17.1%)</span><br><span class="line">             libMTLInterpose.dylib :  40.13 milliseconds (3.0%)</span><br><span class="line">                     sd_doctor_ios : 402.81 milliseconds (30.3%)</span><br></pre></td></tr></table></figure>
+
+<p>二、DYLD_PRINT 变量列表</p>
+<ul>
+<li>在终端通过命令：man dyld 可以列出所有的</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">DYLD_FRAMEWORK_PATH</span><br><span class="line">DYLD_FALLBACK_FRAMEWORK_PATH</span><br><span class="line">DYLD_VERSIONED_FRAMEWORK_PATH</span><br><span class="line">DYLD_LIBRARY_PATH</span><br><span class="line">DYLD_FALLBACK_LIBRARY_PATH</span><br><span class="line">DYLD_VERSIONED_LIBRARY_PATH</span><br><span class="line">DYLD_PRINT_TO_FILE</span><br><span class="line">DYLD_SHARED_REGION</span><br><span class="line">DYLD_INSERT_LIBRARIES</span><br><span class="line">DYLD_FORCE_FLAT_NAMESPACE</span><br><span class="line">DYLD_IMAGE_SUFFIX</span><br><span class="line">DYLD_PRINT_OPTS</span><br><span class="line">DYLD_PRINT_ENV</span><br><span class="line">DYLD_PRINT_LIBRARIES</span><br><span class="line">DYLD_BIND_AT_LAUNCH</span><br><span class="line">DYLD_DISABLE_DOFS</span><br><span class="line">DYLD_PRINT_APIS</span><br><span class="line">DYLD_PRINT_BINDINGS</span><br><span class="line">DYLD_PRINT_INITIALIZERS</span><br><span class="line">DYLD_PRINT_REBASINGS</span><br><span class="line">DYLD_PRINT_SEGMENTS</span><br><span class="line">DYLD_PRINT_STATISTICS</span><br><span class="line">DYLD_PRINT_DOFS</span><br><span class="line">DYLD_PRINT_RPATHS</span><br><span class="line">DYLD_SHARED_CACHE_DIR</span><br><span class="line">DYLD_SHARED_CACHE_DONT_VALIDATE</span><br></pre></td></tr></table></figure>
+
+<p>详情见：<a href="./dyld.txt">dyld 命令简介</a></p>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="J"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>John Doe</div>
+      <div>2019-07-09</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>

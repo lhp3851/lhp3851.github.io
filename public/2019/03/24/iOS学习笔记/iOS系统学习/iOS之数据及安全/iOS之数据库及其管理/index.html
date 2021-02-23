@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Hexo
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>HEXO</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="SQLite"><a href="#SQLite" class="headerlink" title="SQLite"></a>SQLite</h1><h2 id="1、终端命令"><a href="#1、终端命令" class="headerlink" title="1、终端命令"></a>1、终端命令</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">.auth <span class="keyword">ON</span><span class="operator">|</span>OFF           <span class="keyword">Show</span> authorizer callbacks</span><br><span class="line">.backup ?DB? FILE      Backup DB (<span class="keyword">default</span> &quot;main&quot;) <span class="keyword">to</span> FILE</span><br><span class="line">                         <span class="keyword">Add</span> &quot;--append&quot; <span class="keyword">to</span> <span class="keyword">open</span> <span class="keyword">using</span> appendvfs.</span><br><span class="line">.bail <span class="keyword">on</span><span class="operator">|</span>off           Stop after hitting an error.  <span class="keyword">Default</span> OFF</span><br><span class="line">.<span class="type">binary</span> <span class="keyword">on</span><span class="operator">|</span>off         Turn <span class="type">binary</span> output <span class="keyword">on</span> <span class="keyword">or</span> off.  <span class="keyword">Default</span> OFF</span><br><span class="line">.cd DIRECTORY          Change the working directory <span class="keyword">to</span> DIRECTORY</span><br><span class="line">.changes <span class="keyword">on</span><span class="operator">|</span>off        <span class="keyword">Show</span> number <span class="keyword">of</span> <span class="keyword">rows</span> changed <span class="keyword">by</span> <span class="keyword">SQL</span></span><br><span class="line">.<span class="keyword">check</span> GLOB            Fail if output since .testcase does <span class="keyword">not</span> <span class="keyword">match</span></span><br><span class="line">.clone NEWDB           Clone data <span class="keyword">into</span> NEWDB <span class="keyword">from</span> the existing database</span><br><span class="line">.databases             List names <span class="keyword">and</span> files <span class="keyword">of</span> attached databases</span><br><span class="line">.dbconfig ?op? ?val?   List <span class="keyword">or</span> change sqlite3_db_config() options</span><br><span class="line">.dbinfo ?DB?           <span class="keyword">Show</span> status information about the database</span><br><span class="line">.dump ?<span class="keyword">TABLE</span>? ...      Dump the database <span class="keyword">in</span> an <span class="keyword">SQL</span> text format</span><br><span class="line">                         If <span class="keyword">TABLE</span> specified, <span class="keyword">only</span> dump tables matching</span><br><span class="line">                         <span class="keyword">LIKE</span> <span class="keyword">pattern</span> TABLE.</span><br><span class="line">.echo <span class="keyword">on</span><span class="operator">|</span>off           Turn command echo <span class="keyword">on</span> <span class="keyword">or</span> off</span><br><span class="line">.eqp <span class="keyword">on</span><span class="operator">|</span>off<span class="operator">|</span><span class="keyword">full</span>       Enable <span class="keyword">or</span> disable automatic EXPLAIN QUERY PLAN</span><br><span class="line">.excel                 Display the output <span class="keyword">of</span> next command <span class="keyword">in</span> a spreadsheet</span><br><span class="line">.exit                  Exit this program</span><br><span class="line">.expert                EXPERIMENTAL. Suggest indexes <span class="keyword">for</span> specified queries</span><br><span class="line">.fullschema ?<span class="comment">--indent? Show schema and the content of sqlite_stat tables</span></span><br><span class="line">.headers <span class="keyword">on</span><span class="operator">|</span>off        Turn display <span class="keyword">of</span> headers <span class="keyword">on</span> <span class="keyword">or</span> off</span><br><span class="line">.help                  <span class="keyword">Show</span> this message</span><br><span class="line">.import FILE <span class="keyword">TABLE</span>     Import data <span class="keyword">from</span> FILE <span class="keyword">into</span> <span class="keyword">TABLE</span></span><br><span class="line">.imposter INDEX <span class="keyword">TABLE</span>  <span class="keyword">Create</span> imposter <span class="keyword">table</span> <span class="keyword">TABLE</span> <span class="keyword">on</span> index INDEX</span><br><span class="line">.indexes ?<span class="keyword">TABLE</span>?       <span class="keyword">Show</span> names <span class="keyword">of</span> <span class="keyword">all</span> indexes</span><br><span class="line">                         If <span class="keyword">TABLE</span> specified, <span class="keyword">only</span> <span class="keyword">show</span> indexes <span class="keyword">for</span> tables</span><br><span class="line">                         matching <span class="keyword">LIKE</span> <span class="keyword">pattern</span> TABLE.</span><br><span class="line">.limit ?LIMIT? ?VAL?   Display <span class="keyword">or</span> change the <span class="keyword">value</span> <span class="keyword">of</span> an SQLITE_LIMIT</span><br><span class="line">.lint OPTIONS          Report potential schema issues. Options:</span><br><span class="line">                         fkey<span class="operator">-</span>indexes     Find missing <span class="keyword">foreign</span> key indexes</span><br><span class="line">.log FILE<span class="operator">|</span>off          Turn logging <span class="keyword">on</span> <span class="keyword">or</span> off.  FILE can be stderr<span class="operator">/</span>stdout</span><br><span class="line">.mode MODE ?<span class="keyword">TABLE</span>?     <span class="keyword">Set</span> output mode <span class="keyword">where</span> MODE <span class="keyword">is</span> <span class="keyword">one</span> <span class="keyword">of</span>:</span><br><span class="line">                         ascii    Columns<span class="operator">/</span><span class="keyword">rows</span> delimited <span class="keyword">by</span> <span class="number">0x1F</span> <span class="keyword">and</span> <span class="number">0x1E</span></span><br><span class="line">                         csv      Comma<span class="operator">-</span>separated <span class="keyword">values</span></span><br><span class="line">                         <span class="keyword">column</span>   <span class="keyword">Left</span><span class="operator">-</span>aligned columns.  (See .width)</span><br><span class="line">                         html     HTML <span class="operator">&lt;</span><span class="keyword">table</span><span class="operator">&gt;</span> code</span><br><span class="line">                         <span class="keyword">insert</span>   <span class="keyword">SQL</span> <span class="keyword">insert</span> statements <span class="keyword">for</span> <span class="keyword">TABLE</span></span><br><span class="line">                         line     <span class="keyword">One</span> <span class="keyword">value</span> <span class="keyword">per</span> line</span><br><span class="line">                         list     <span class="keyword">Values</span> delimited <span class="keyword">by</span> &quot;|&quot;</span><br><span class="line">                         quote    <span class="keyword">Escape</span> answers <span class="keyword">as</span> <span class="keyword">for</span> <span class="keyword">SQL</span></span><br><span class="line">                         tabs     Tab<span class="operator">-</span>separated <span class="keyword">values</span></span><br><span class="line">                         tcl      TCL list elements</span><br><span class="line">.nullvalue STRING      Use STRING <span class="keyword">in</span> place <span class="keyword">of</span> <span class="keyword">NULL</span> <span class="keyword">values</span></span><br><span class="line">.once (<span class="operator">-</span>e<span class="operator">|</span><span class="operator">-</span>x<span class="operator">|</span>FILE)     Output <span class="keyword">for</span> the next <span class="keyword">SQL</span> command <span class="keyword">only</span> <span class="keyword">to</span> FILE</span><br><span class="line">                         <span class="keyword">or</span> invoke <span class="keyword">system</span> text editor (<span class="operator">-</span>e) <span class="keyword">or</span> spreadsheet (<span class="operator">-</span>x)</span><br><span class="line">                         <span class="keyword">on</span> the output.</span><br><span class="line">.<span class="keyword">open</span> ?OPTIONS? ?FILE? <span class="keyword">Close</span> existing database <span class="keyword">and</span> reopen FILE</span><br><span class="line">                         The <span class="comment">--new option starts with an empty file</span></span><br><span class="line">                         Other options: <span class="comment">--readonly --append --zip</span></span><br><span class="line">.output ?FILE?         Send output <span class="keyword">to</span> FILE <span class="keyword">or</span> stdout</span><br><span class="line">.print STRING...       Print literal STRING</span><br><span class="line">.prompt MAIN CONTINUE  Replace the standard prompts</span><br><span class="line">.quit                  Exit this program</span><br><span class="line">.read FILENAME         <span class="keyword">Execute</span> <span class="keyword">SQL</span> <span class="keyword">in</span> FILENAME</span><br><span class="line">.restore ?DB? FILE     Restore content <span class="keyword">of</span> DB (<span class="keyword">default</span> &quot;main&quot;) <span class="keyword">from</span> FILE</span><br><span class="line">.save FILE             Write <span class="keyword">in</span><span class="operator">-</span>memory database <span class="keyword">into</span> FILE</span><br><span class="line">.scanstats <span class="keyword">on</span><span class="operator">|</span>off      Turn sqlite3_stmt_scanstatus() metrics <span class="keyword">on</span> <span class="keyword">or</span> off</span><br><span class="line">.schema ?<span class="keyword">PATTERN</span>?      <span class="keyword">Show</span> the <span class="keyword">CREATE</span> statements matching <span class="keyword">PATTERN</span></span><br><span class="line">                          <span class="keyword">Add</span> <span class="comment">--indent for pretty-printing</span></span><br><span class="line">.selftest ?<span class="comment">--init?     Run tests defined in the SELFTEST table</span></span><br><span class="line">.separator COL ?<span class="type">ROW</span>?   Change the <span class="keyword">column</span> separator <span class="keyword">and</span> optionally the <span class="type">row</span></span><br><span class="line">                         separator <span class="keyword">for</span> <span class="keyword">both</span> the output mode <span class="keyword">and</span> .import</span><br><span class="line">.session CMD ...       <span class="keyword">Create</span> <span class="keyword">or</span> control sessions</span><br><span class="line">.sha3sum ?OPTIONS...?  Compute a SHA3 hash <span class="keyword">of</span> database content</span><br><span class="line">.shell CMD ARGS...     Run CMD ARGS... <span class="keyword">in</span> a <span class="keyword">system</span> shell</span><br><span class="line">.<span class="keyword">show</span>                  <span class="keyword">Show</span> the <span class="keyword">current</span> <span class="keyword">values</span> <span class="keyword">for</span> various settings</span><br><span class="line">.stats ?<span class="keyword">on</span><span class="operator">|</span>off?        <span class="keyword">Show</span> stats <span class="keyword">or</span> turn stats <span class="keyword">on</span> <span class="keyword">or</span> off</span><br><span class="line">.<span class="keyword">system</span> CMD ARGS...    Run CMD ARGS... <span class="keyword">in</span> a <span class="keyword">system</span> shell</span><br><span class="line">.tables ?<span class="keyword">TABLE</span>?        List names <span class="keyword">of</span> tables</span><br><span class="line">                         If <span class="keyword">TABLE</span> specified, <span class="keyword">only</span> list tables matching</span><br><span class="line">                         <span class="keyword">LIKE</span> <span class="keyword">pattern</span> TABLE.</span><br><span class="line">.testcase NAME         <span class="keyword">Begin</span> redirecting output <span class="keyword">to</span> <span class="string">&#x27;testcase-out.txt&#x27;</span></span><br><span class="line">.timeout MS            Try opening locked tables <span class="keyword">for</span> MS milliseconds</span><br><span class="line">.timer <span class="keyword">on</span><span class="operator">|</span>off          Turn <span class="keyword">SQL</span> timer <span class="keyword">on</span> <span class="keyword">or</span> off</span><br><span class="line">.trace FILE<span class="operator">|</span>off        Output <span class="keyword">each</span> <span class="keyword">SQL</span> statement <span class="keyword">as</span> it <span class="keyword">is</span> run</span><br><span class="line">.vfsinfo ?AUX?         Information about the top<span class="operator">-</span>level VFS</span><br><span class="line">.vfslist               List <span class="keyword">all</span> available VFSes</span><br><span class="line">.vfsname ?AUX?         Print the name <span class="keyword">of</span> the VFS stack</span><br><span class="line">.width NUM1 NUM2 ...   <span class="keyword">Set</span> <span class="keyword">column</span> widths <span class="keyword">for</span> &quot;column&quot; mode</span><br><span class="line">                         Negative <span class="keyword">values</span> <span class="keyword">right</span><span class="operator">-</span>justify</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="2、程序"><a href="#2、程序" class="headerlink" title="2、程序"></a>2、程序</h2><p>SQLite 语句</p>
+<p>所有的 SQLite 语句可以以任何关键字开始，如 SELECT、INSERT、UPDATE、DELETE、ALTER、DROP 等，所有的语句以分号（;）结束。</p>
+<p>2.1 SQLite ANALYZE 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ANALYZE;</span><br><span class="line"><span class="keyword">or</span></span><br><span class="line">ANALYZE database_name;</span><br><span class="line"><span class="keyword">or</span></span><br><span class="line">ANALYZE database_name.table_name;</span><br></pre></td></tr></table></figure>
+
+<p>2.2 SQLite AND/OR 子句：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2....columnN</span><br><span class="line"><span class="keyword">FROM</span>   table_name</span><br><span class="line">WHERE  CONDITION-1 &#123;AND|OR&#125; CONDITION-2;</span><br></pre></td></tr></table></figure>
+
+<p>2.3 SQLite ALTER TABLE 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> column_def...;</span><br></pre></td></tr></table></figure>
+
+<p>2.4 SQLite ALTER TABLE 语句（Rename）：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name RENAME <span class="keyword">TO</span> new_table_name;</span><br></pre></td></tr></table></figure>
+
+<p>2.5 SQLite ATTACH DATABASE 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ATTACH DATABASE <span class="string">&#x27;DatabaseName&#x27;</span> <span class="keyword">As</span> <span class="string">&#x27;Alias-Name&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>2.6 SQLite BEGIN TRANSACTION 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">BEGIN</span>;</span><br><span class="line"><span class="keyword">or</span></span><br><span class="line"><span class="keyword">BEGIN</span> EXCLUSIVE TRANSACTION;</span><br></pre></td></tr></table></figure>
+
+<p>2.7 SQLite BETWEEN 子句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2....columnN</span><br><span class="line"><span class="keyword">FROM</span>   table_name</span><br><span class="line"><span class="keyword">WHERE</span>  column_name <span class="keyword">BETWEEN</span> val<span class="number">-1</span> <span class="keyword">AND</span> val<span class="number">-2</span>;</span><br></pre></td></tr></table></figure>
+
+<p>2.8 SQLite COMMIT 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure>
+
+<p>2.9 SQLite CREATE INDEX 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> INDEX index_name</span><br><span class="line"><span class="keyword">ON</span> table_name ( column_name <span class="keyword">COLLATE</span> NOCASE );</span><br></pre></td></tr></table></figure>
+
+<p>2.10 SQLite CREATE UNIQUE INDEX 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">UNIQUE</span> INDEX index_name</span><br><span class="line"><span class="keyword">ON</span> table_name ( column1, column2,...columnN);</span><br></pre></td></tr></table></figure>
+
+<p>2.11 SQLite CREATE TABLE 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name(</span><br><span class="line">   column1 datatype,</span><br><span class="line">   column2 datatype,</span><br><span class="line">   column3 datatype,</span><br><span class="line">   .....</span><br><span class="line">   columnN datatype,</span><br><span class="line">   <span class="keyword">PRIMARY</span> KEY( <span class="keyword">one</span> <span class="keyword">or</span> more columns )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>2.12 SQLite CREATE TRIGGER 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> database_name.trigger_name</span><br><span class="line">BEFORE <span class="keyword">INSERT</span> <span class="keyword">ON</span> table_name <span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="type">ROW</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">   stmt1;</span><br><span class="line">   stmt2;</span><br><span class="line">   ....</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+
+<p>2.13 SQLite CREATE VIEW 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> database_name.view_name  <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> statement....;</span><br></pre></td></tr></table></figure>
+
+<p>2.14 SQLite CREATE VIRTUAL TABLE 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> VIRTUAL <span class="keyword">TABLE</span> database_name.table_name <span class="keyword">USING</span> weblog( access.log );</span><br><span class="line"><span class="keyword">or</span></span><br><span class="line"><span class="keyword">CREATE</span> VIRTUAL <span class="keyword">TABLE</span> database_name.table_name <span class="keyword">USING</span> fts3( );</span><br></pre></td></tr></table></figure>
+
+<p>2.15 SQLite COMMIT TRANSACTION 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure>
+
+<p>2.16 SQLite COUNT 子句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(column_name)</span><br><span class="line"><span class="keyword">FROM</span>   table_name</span><br><span class="line"><span class="keyword">WHERE</span>  <span class="keyword">CONDITION</span>;</span><br></pre></td></tr></table></figure>
+
+<p>2.17 SQLite DELETE 语句：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> table_name</span><br><span class="line">WHERE  &#123;CONDITION&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>2.18 SQLite DETACH DATABASE 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DETACH DATABASE <span class="string">&#x27;Alias-Name&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>2.19 SQLite DISTINCT 子句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> column1, column2....columnN</span><br><span class="line"><span class="keyword">FROM</span>   table_name;</span><br></pre></td></tr></table></figure>
+
+<p>2.20 SQLite DROP INDEX 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> INDEX database_name.index_name;</span><br></pre></td></tr></table></figure>
+
+<p>2.21 SQLite DROP TABLE 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> database_name.table_name;</span><br></pre></td></tr></table></figure>
+
+<p>2.22 SQLite DROP VIEW 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> view_name;</span><br></pre></td></tr></table></figure>
+
+<p>2.23 SQLite DROP TRIGGER 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TRIGGER</span> trigger_name</span><br></pre></td></tr></table></figure>
+
+<p>2.24 SQLite EXISTS 子句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2....columnN</span><br><span class="line"><span class="keyword">FROM</span>   table_name</span><br><span class="line"><span class="keyword">WHERE</span>  column_name <span class="keyword">EXISTS</span> (<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span>   table_name );</span><br></pre></td></tr></table></figure>
+
+<p>2.25 SQLite EXPLAIN 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">EXPLAIN <span class="keyword">INSERT</span> statement...;</span><br><span class="line"><span class="keyword">or</span></span><br><span class="line">EXPLAIN QUERY PLAN <span class="keyword">SELECT</span> statement...;</span><br></pre></td></tr></table></figure>
+
+<p>2.26 SQLite GLOB 子句：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2....columnN</span><br><span class="line"><span class="keyword">FROM</span>   table_name</span><br><span class="line">WHERE  column_name GLOB &#123; PATTERN &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>2.27 SQLite GROUP BY 子句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(column_name)</span><br><span class="line"><span class="keyword">FROM</span>   table_name</span><br><span class="line"><span class="keyword">WHERE</span>  <span class="keyword">CONDITION</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column_name;</span><br></pre></td></tr></table></figure>
+
+<p>2.28 SQLite HAVING 子句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(column_name)</span><br><span class="line"><span class="keyword">FROM</span>   table_name</span><br><span class="line"><span class="keyword">WHERE</span>  <span class="keyword">CONDITION</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column_name</span><br><span class="line"><span class="keyword">HAVING</span> (arithematic <span class="keyword">function</span> <span class="keyword">condition</span>);</span><br></pre></td></tr></table></figure>
+
+<p>2.29 SQLite INSERT INTO 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name( column1, column2....columnN)</span><br><span class="line"><span class="keyword">VALUES</span> ( value1, value2....valueN);</span><br></pre></td></tr></table></figure>
+
+<p>2.30 SQLite IN 子句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2....columnN</span><br><span class="line"><span class="keyword">FROM</span>   table_name</span><br><span class="line"><span class="keyword">WHERE</span>  column_name <span class="keyword">IN</span> (val<span class="number">-1</span>, val<span class="number">-2</span>,...val<span class="operator">-</span>N);</span><br></pre></td></tr></table></figure>
+
+<p>2.31 SQLite Like 子句：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2....columnN</span><br><span class="line"><span class="keyword">FROM</span>   table_name</span><br><span class="line">WHERE  column_name LIKE &#123; PATTERN &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>2.32 SQLite NOT IN 子句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2....columnN</span><br><span class="line"><span class="keyword">FROM</span>   table_name</span><br><span class="line"><span class="keyword">WHERE</span>  column_name <span class="keyword">NOT</span> <span class="keyword">IN</span> (val<span class="number">-1</span>, val<span class="number">-2</span>,...val<span class="operator">-</span>N);</span><br></pre></td></tr></table></figure>
+
+<p>2.33 SQLite ORDER BY 子句：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2....columnN</span><br><span class="line"><span class="keyword">FROM</span>   table_name</span><br><span class="line"><span class="keyword">WHERE</span>  <span class="keyword">CONDITION</span></span><br><span class="line">ORDER BY column_name &#123;ASC|DESC&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>2.34 SQLite PRAGMA 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PRAGMA pragma_name;</span><br><span class="line"></span><br><span class="line"><span class="keyword">For</span> example:</span><br><span class="line">PRAGMA page_size;</span><br><span class="line">PRAGMA cache_size <span class="operator">=</span> <span class="number">1024</span>;</span><br><span class="line">PRAGMA table_info(table_name);</span><br></pre></td></tr></table></figure>
+
+<p>2.35 SQLite RELEASE SAVEPOINT 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">RELEASE</span> savepoint_name;</span><br></pre></td></tr></table></figure>
+
+<p>2.36 SQLite REINDEX 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">REINDEX collation_name;</span><br><span class="line">REINDEX database_name.index_name;</span><br><span class="line">REINDEX database_name.table_name;</span><br></pre></td></tr></table></figure>
+
+<p>2.37 SQLite ROLLBACK 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ROLLBACK</span>;</span><br><span class="line"><span class="keyword">or</span></span><br><span class="line"><span class="keyword">ROLLBACK</span> <span class="keyword">TO</span> <span class="keyword">SAVEPOINT</span> savepoint_name;</span><br></pre></td></tr></table></figure>
+
+<p>2.38 SQLite SAVEPOINT 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SAVEPOINT</span> savepoint_name;</span><br></pre></td></tr></table></figure>
+
+<p>2.39 SQLite SELECT 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2....columnN</span><br><span class="line"><span class="keyword">FROM</span>   table_name;</span><br></pre></td></tr></table></figure>
+
+<p>2.40 SQLite UPDATE 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE table_name</span><br><span class="line"><span class="keyword">SET</span> column1 <span class="operator">=</span> value1, column2 <span class="operator">=</span> value2....columnN<span class="operator">=</span>valueN</span><br><span class="line">[ <span class="keyword">WHERE</span>  <span class="keyword">CONDITION</span> ];</span><br></pre></td></tr></table></figure>
+
+<p>2.41 SQLite VACUUM 语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VACUUM;</span><br></pre></td></tr></table></figure>
+
+<p>2.42 SQLite WHERE 子句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2....columnN</span><br><span class="line"><span class="keyword">FROM</span>   table_name</span><br><span class="line"><span class="keyword">WHERE</span>  <span class="keyword">CONDITION</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、常见专有名词"><a href="#3、常见专有名词" class="headerlink" title="3、常见专有名词"></a>3、常见专有名词</h2><p>事务<br>游标<br>触发器<br>存储过程<br>回滚<br>约束<br>索引<br>视图</p>
+<h2 id="4、常用操作"><a href="#4、常用操作" class="headerlink" title="4、常用操作"></a>4、常用操作</h2><p>数据同步<br>导入、导出<br>CRUD (Create/Retrieve/Update/Delete)</p>
+<h2 id="5、建表原则"><a href="#5、建表原则" class="headerlink" title="5、建表原则"></a>5、建表原则</h2><p>数据范式</p>
+<h2 id="6、事务特性"><a href="#6、事务特性" class="headerlink" title="6、事务特性"></a>6、事务特性</h2><p>ACID</p>
+<h2 id="7、数据库"><a href="#7、数据库" class="headerlink" title="7、数据库"></a>7、数据库</h2><p>常见数据库：SQLite、MySQL、SQLServer、Oracle、MOngoDB</p>
+<p>7.1 分类：<br>    关系型：Oracle和MySQL<br>    非关系型：NoSQL(NoSQL = Not Only SQL )<br>（1）键值存储数据库（key-value）</p>
+<p>键值数据库就类似传统语言中使用的哈希表。可以通过key来添加、查询或者删除数据库，因为使用key主键访问，所以会获得很高的性能及扩展性。</p>
+<p>键值数据库主要使用一个哈希表，这个表中有一个特定的键和一个指针指向特定的数据。Key/value模型对于IT系统来说的优势在于简单、易部署、高并发。</p>
+<p>典型产品：Memcached、Redis、MemcacheDB</p>
+<p>（2）列存储（Column-oriented）数据库</p>
+<p>列存储数据库将数据存储在列族中，一个列族存储经常被一起查询的相关数据，比如人类，我们经常会查询某个人的姓名和年龄，而不是薪资。这种情况下姓名和年龄会被放到一个列族中，薪资会被放到另一个列族中。</p>
+<p>这种数据库通常用来应对分布式存储海量数据。</p>
+<p>典型产品：Cassandra、HBase</p>
+<p>（3）面向文档（Document-Oriented）数据库</p>
+<p>文档型数据库的灵感是来自于Lotus Notes办公软件，而且它同第一种键值数据库类似。该类型的数据模型是版本化的文档，半结构化的文档以特定的格式存储，比如JSON。文档型数据库可以看作是键值数据库的升级版，允许之间嵌套键值。而且文档型数据库比键值数据库的查询效率更高。</p>
+<p>面向文档数据库会将数据以文档形式存储。每个文档都是自包含的数据单元，是一系列数据项的集合。每个数据项都有一个名词与对应值，值既可以是简单的数据类型，如字符串、数字和日期等；也可以是复杂的类型，如有序列表和关联对象。数据存储的最小单位是文档，同一个表中存储的文档属性可以是不同的，数据可以使用XML、JSON或JSONB等多种形式存储。</p>
+<p>典型产品：MongoDB、CouchDB</p>
+<p>（4）图形数据库</p>
+<p>图形数据库允许我们将数据以图的方式存储。实体会被作为顶点，而实体之间的关系则会被作为边。比如我们有三个实体，Steve Jobs、Apple和Next，则会有两个“Founded by”的边将Apple和Next连接到Steve Jobs。</p>
+<p>典型产品：Neo4J、InforGrid</p>
+<p>7.2 数据库引擎：数据库引擎是用于存储、处理和保护数据的核心服务。<br>MYSQL支持三个引擎：ISAM、MYISAM和HEAP。另外两种类型INNODB和BERKLEY（BDB），也常常可以使用。</p>
+<p>你能用的数据库引擎取决于mysql在安装的时候是如何被编译的。要添加一个新的引擎，就必须重新编译MYSQL。在缺省情况下，MYSQL支持三个引擎：ISAM、MYISAM和HEAP。另外两种类型INNODB和BERKLEY（BDB），也常常可以使用。</p>
+<ul>
+<li><p>ISAM</p>
+<blockquote>
+<p>ISAM是一个定义明确且历经时间考验的数据表格管理方法，它在设计之时就考虑到数据库被查询的次数要远大于更新的次数。因此，ISAM执行读取操作的速度很快，而且不占用大量的内存和存储资源。ISAM的两个主要不足之处在于，它不支持事务处理，也不能够容错：如果你的硬盘崩溃了，那么数据文件就无法恢复了。如果你正在把ISAM用在关键任务应用程序里，那就必须经常备份你所有的实时数据，通过其复制特性，MYSQL能够支持这样的备份应用程序。</p>
+</blockquote>
+</li>
+<li><p>MYISAM</p>
+<blockquote>
+<p>MYISAM是MYSQL的ISAM扩展格式和缺省的数据库引擎。除了提供ISAM里所没有的索引和字段管理的大量功能，MYISAM还使用一种表格锁定的机制，来优化多个并发的读写操作。其代价是你需要经常运行OPTIMIZE TABLE命令，来恢复被更新机制所浪费的空间。MYISAM还有一些有用的扩展，例如用来修复数据库文件的MYISAMCHK工具和用来恢复浪费空间的MYISAMPACK工具。<br>MYISAM强调了快速读取操作，这可能就是为什么MYSQL受到了WEB开发如此青睐的主要原因：在WEB开发中你所进行的大量数据操作都是读取操作。所以，大多数虚拟主机提供商和INTERNET平台提供商只允许使用MYISAM格式。</p>
+</blockquote>
+</li>
+<li><p>HEAP</p>
+</li>
+</ul>
+<blockquote>
+<p>HEAP允许只驻留在内存里的临时表格。驻留在内存里让HEAP要比ISAM和MYISAM都快，但是它所管理的数据是不稳定的，而且如果在关机之前没有进行保存，那么所有的数据都会丢失。在数据行被删除的时候，HEAP也不会浪费大量的空间。HEAP表格在你需要使用SELECT表达式来选择和操控数据的时候非常有用。要记住，在用完表格之后就删除表格。</p>
+</blockquote>
+<ul>
+<li>INNODB和BERKLEYDB</li>
+</ul>
+<blockquote>
+<p>INNODB和BERKLEYDB（BDB）数据库引擎都是造就MYSQL灵活性的技术的直接产品，这项技术就是MYSQL++ API。在使用MYSQL的时候，你所面对的每一个挑战几乎都源于ISAM和MYISAM数据库引擎不支持事务处理也不支持外来键。尽管要比ISAM和MYISAM引擎慢很多，但是INNODB和BDB包括了对事务处理和外来键的支持，这两点都是前两个引擎所没有的。如前所述，如果你的设计需要这些特性中的一者或者两者，那你就要被迫使用后两个引擎中的一个了。</p>
+</blockquote>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="J"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>John Doe</div>
+      <div>2019-03-24</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>

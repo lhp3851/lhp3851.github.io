@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Hexo
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>HEXO</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <p>[TOC]<br>###1、iOS与JS交互的四种方法</p>
+<pre><code>1、拦截url（适用于UIWebView和WKWebView） 
+2、JavaScriptCore（只适用于UIWebView，iOS7+） 
+3、WKScriptMessageHandler（只适用于WKWebView，iOS8+） 
+4、WebViewJavascriptBridge（适用于UIWebView和WKWebView，属于第三方框架）
+</code></pre>
+<p>1、方法一：</p>
+<p>（1）web调用原生：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType&#123;</span><br><span class="line">   if ([request.URL.absoluteString hasPrefix:@&quot;jxaction:&#x2F;&#x2F;scan&quot;]) &#123;</span><br><span class="line">       &#x2F;&#x2F;调用原生扫描二维码</span><br><span class="line">      return NO;</span><br><span class="line">   &#125;</span><br><span class="line">       return YES;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>H5 代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;jxaction:&#x2F;&#x2F;scan&quot;&gt;扫一扫(拦截url)&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure>
+
+<p>（2）原生调用js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[self.webView stringByEvaluatingJavaScriptFromString:@&quot;scanResult(&#39;我是扫描结果~&#39;)&quot;];</span><br></pre></td></tr></table></figure>
+
+<p>方法二、 JavaScriptCore</p>
+<p>（1）js调用原生<br>1、新建类继承自NSObject（如AppJSObject）。<br>2、.h文件中声明一个代理并遵循JSExport，代理内的方法和js定义的方法名一致。<br>3、.m文件中实现2中的代理中对应的方法，可以在方法内处理事件或通知代理。</p>
+<p>AppJSObject.h</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Foundation&#x2F;Foundation.h&gt;</span><br><span class="line">#import &lt;JavaScriptCore&#x2F;JavaScriptCore.h&gt;</span><br><span class="line"></span><br><span class="line">@protocol AppJSObjectDelegate &lt;JSExport&gt;</span><br><span class="line"></span><br><span class="line">-(void)scan:(NSString *)message;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@interface AppJSObject : NSObject&lt;AppJSObjectDelegate&gt;</span><br><span class="line"></span><br><span class="line">@property(nonatomic,weak) id&lt;AppJSObjectDelegate&gt; delegate;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>AppJSObject.m</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;AppJSObject.h&quot;</span><br><span class="line"></span><br><span class="line">@implementation AppJSObject</span><br><span class="line"></span><br><span class="line">-(void)scan:(NSString *)message&#123;</span><br><span class="line">    [self.delegate scan:message];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<p>H5代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type&#x3D;&quot;button&quot; name&#x3D;&quot;&quot; value&#x3D;&quot;扫一扫&quot; onclick&#x3D;&quot;scan()&quot;&gt;</span><br><span class="line">&lt;br&#x2F;&gt;</span><br><span class="line">&lt;p id&#x3D;&quot;result&quot;&gt;扫描结果：&lt;&#x2F;p&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">    &#x2F;&#x2F;调用APP的扫描方法   h5-&gt;app</span><br><span class="line">    function scan()&#123;</span><br><span class="line">        app.scan(&#39;scanResult&#39;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;扫描结果回调方法    app-&gt;h5</span><br><span class="line">    function scanResult(result)&#123;</span><br><span class="line">        document.getElementById(&quot;result&quot;).innerHTML &#x3D; &#39;扫描结果：&#39; + result;  </span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在UIWebView加载完成的代理中把AppJSObject实例对象类注入到JS中，那么在js中调用方法就会调用到原生AppJSObject实例对象中对应的方法了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-(void)webViewDidFinishLoad:(UIWebView *)webView</span><br><span class="line">&#123;</span><br><span class="line">    JSContext *context&#x3D;[webView valueForKeyPath:@&quot;documentView.webView.mainFrame.javaScriptContext&quot;];</span><br><span class="line"></span><br><span class="line">    AppJSObject *jsObject &#x3D; [AppJSObject new];</span><br><span class="line">    jsObject.delegate &#x3D; self;</span><br><span class="line">    context[@&quot;app&quot;] &#x3D; jsObject;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>也可以通过block实现而不创建新类AppJSObject:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">context[@&quot;openAlbum&quot;] &#x3D; ^()&#123;</span><br><span class="line">    NSLog(@&quot;js调用oc打开相册&quot;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>（2）原生调用js，可以通过一中的方法，也可以通过JSContext：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JSContext *context&#x3D;[_mainWebView valueForKeyPath:@&quot;documentView.webView.mainFrame.javaScriptContext&quot;];</span><br><span class="line">NSString *alertJS&#x3D; [NSString stringWithFormat:@&quot;%@(&#39;%@&#39;)&quot;,_photoMethod,fileUrl];</span><br><span class="line">[context evaluateScript:alertJS];</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>方法三、 WKScriptMessageHandler<br>现在很多app都是支持iOS8+，很多人使用WKWebView代替了UIWebView，但是WKWebView并不支持方法二。此时我们可以使用WKWebView的WKScriptMessageHandler </p>
+<p>1、初始化WKWebView时，调用addScriptMessageHandler:name:方法，name为js中的方法名，如scan：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (void)setupWKWebView&#123;</span><br><span class="line">    WKWebViewConfiguration *configuration &#x3D; [[WKWebViewConfiguration alloc] init];</span><br><span class="line">    configuration.userContentController &#x3D; [[WKUserContentController alloc] init];</span><br><span class="line">    [configuration.userContentController addScriptMessageHandler:self name:@&quot;scan&quot;];</span><br><span class="line"></span><br><span class="line">    WKWebView *webView &#x3D; [[WKWebView alloc] initWithFrame:self.view.frame configuration:configuration];</span><br><span class="line">    webView.UIDelegate &#x3D; self;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>H5:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.webkit.messageHandlers.scan.postMessage() </span><br></pre></td></tr></table></figure>
+<p>2、实现WKScriptMessageHandler代理方法，当js调用scan方法时，会回调此代理方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message&#123;</span><br><span class="line">    if ([message.name isEqualToString:@&quot;scan&quot;]) &#123;</span><br><span class="line">        &#x2F;&#x2F;调用原生扫码</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、原生调用js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[self.wkWebView evaluateJavaScript:jsString  completionHandler:^(id _Nullable result, NSError * _Nullable error) &#123;</span><br><span class="line"></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+<p>注意一点，内存泄漏的情况，解决办法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class WeakScriptMessageDelegate: NSObject, WKScriptMessageHandler &#123;</span><br><span class="line">    weak var scriptDelegate: WKScriptMessageHandler?</span><br><span class="line">    </span><br><span class="line">    init(_ scriptDelegate: WKScriptMessageHandler) &#123;</span><br><span class="line">        self.scriptDelegate &#x3D; scriptDelegate</span><br><span class="line">        super.init()</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) &#123;</span><br><span class="line">        scriptDelegate?.userContentController(userContentController, didReceive: message)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    deinit &#123;</span><br><span class="line">        print(&quot;WeakScriptMessageDelegate is deinit&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义一个代理类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wkWebView.configuration.userContentController.add(WeakScriptMessageDelegate.init(self), name: &lt;方法名&gt;)</span><br></pre></td></tr></table></figure>
+<p>方法四、 WebViewJavascriptBridge</p>
+<p>是一个第三方框架，官方文档和demo都很完整，不再累赘</p>
+<p><em>GitHub地址：</em><a target="_blank" rel="noopener" href="https://github.com/marcuswestin/WebViewJavascriptBridge">marcuswestin/WebViewJavascriptBridge</a></p>
+<p><em>原理及源码：</em> <a target="_blank" rel="noopener" href="https://github.com/ShannonChenCHN/iOSDevLevelingUp/tree/master/ReadingSourceCode/WebViewJavascriptBridgeNotes">WebViewJavascriptBridge</a></p>
+<p><em>微信JS：</em><a target="_blank" rel="noopener" href="https://qydev.weixin.qq.com/wiki/index.php?title=%E5%BE%AE%E4%BF%A1JS-SDK%E6%8E%A5%E5%8F%A3&oldid=1667">JS-SDK</a></p>
+<p>###2、大前端</p>
+<p>1、React-Native：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://facebook.github.io/react-native/">React-Native 官网</a></li>
+<li><a target="_blank" rel="noopener" href="https://reactnative.cn/">React-Native 中文网</a></li>
+</ul>
+<p>2、Flutter:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://flutter.dev/">Flutter 官网</a></li>
+<li><a target="_blank" rel="noopener" href="https://flutterchina.club/">Flutter 中文网</a></li>
+</ul>
+<p>3、WeeX:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://weex.incubator.apache.org/">WeeX 官网</a></li>
+<li><a target="_blank" rel="noopener" href="https://weex.apache.org/zh/guide/introduction.html">WeeX 中文网</a></li>
+</ul>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="J"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>John Doe</div>
+      <div>2019-03-24</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>

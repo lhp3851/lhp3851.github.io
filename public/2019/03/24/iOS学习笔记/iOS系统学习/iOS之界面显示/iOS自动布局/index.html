@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Hexo
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>HEXO</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          <div class="book-post">
+  <p>[TOC]</p>
+<p>##iOS自动布局</p>
+<p>###1、基础<br>|型号 | 屏幕尺寸（inch）|逻辑分辨率（point）|缩放因子（scale factor）|物理分辨率（pixel）|像素密度（PPI）<br>| — | — | — |— | — | — |<br>|iPhone3GS | 3.5 | 320 * 480 | @1x | 320 * 480 | 163 |<br>|iPhone4/4s | 3.5 | 320 * 480 | @2x | 640 * 960 | 326 |<br>|iPhone5/5s |4| 320 * 568| @2x |640 * 1136| 326|<br>|iPhone6/6s| 4.7| 375 * 667| @2x| 750 * 1334 |326|<br>|iPhone6Plus/6s Plus| 5.5| 414 * 736| @3x| 1242 * 2208| 401|</p>
+<p>物理分辨率、逻辑分辨率、像素密度：</p>
+<pre><code>PPI = 根号(X*X + Y*Y) / Inch = 163 pixcel/inch
+
+scale= 单位长度内的数量比(pixel/point)
+</code></pre>
+<p>###2、Frame</p>
+<ul>
+<li><pre><code>bounds
+</code></pre>
+</li>
+<li><pre><code>frame
+</code></pre>
+</li>
+<li><pre><code>anchor
+</code></pre>
+</li>
+<li><pre><code>position
+</code></pre>
+</li>
+</ul>
+<p>frame：与view中的frame概念相同，（x,y）subLayer左上角相对于supLayer坐标系的位置关系；width, height表示subLayer的宽度和高度。</p>
+<p>bounds：与view中的bounds概念相同，（x,y）subLayer左上角相对于自身坐标系的关系；width, height表示subLayer的宽度和高度。</p>
+<p>position：锚点在supLayer坐标系中的位置；</p>
+<p>anchorPoint：锚点在自身坐标系中的相对位置，默认值为（0.5，0.5），左上角为（0，0），右下角为（1，1），其他位置以此类推；锚点都是对于自身来讲的. 确定自身的锚点,通常用于做相对的tranform变换.当然也可以用来确定位置；</p>
+<p>规律如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">position.x &#x3D; frame.origin.x + anchorPoint.x * frame.size.width；      </span><br><span class="line"></span><br><span class="line">position.y &#x3D; frame.origin.y + anchorPoint.y * frame.size.height；</span><br><span class="line"></span><br><span class="line">frame.size.width &#x3D; bounds.size.width</span><br><span class="line"></span><br><span class="line">frame.size.height &#x3D; bounds.size.height</span><br><span class="line"></span><br><span class="line">frame.origin.x &#x3D; anchorPoint.x * frame.size.width - position.x；</span><br><span class="line"></span><br><span class="line">frame.origin.y &#x3D; anchorPoint.y * frame.size.height - position.y；</span><br></pre></td></tr></table></figure>
+
+<p>###3、约束布局</p>
+<p><strong>3.1 Autolayout</strong></p>
+<p>引入了几个变量，一个是Top/Bottom Layout Guide（顶部/底部导航），一个是Superview.leading/Trailing Margin（左/右边缘间距）。Top Layout Guide其实是指的根视图的顶部，模拟器在竖屏下有状态栏，状态栏默认高度为20(注:导航栏与状态栏高度不同，导航栏的竖屏默认高度为44，横屏默认高度为32)，则Green View的Y坐标就是20 + 20 = 40。模拟器在横屏下没有状态栏，则Top Layout Guide.Bottom为0，则Green View的Y坐标就是20。Superview.leading Margin在竖屏时为16，横屏是为20。<strong>这些在最新版的iOS有变化！</strong></p>
+<p><strong>ICS：</strong> 自身内容尺寸(Intrinsic Content Size，以下简称ICS)。</p>
+<p>label， button， text fields等都是有ICS的，而UIView和NSView是没有ICS的。</p>
+<table>
+<thead>
+<tr>
+<th>View</th>
+<th>Intrinsic content size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>UIView and NSView</td>
+<td>No intrinsic content size.</td>
+</tr>
+<tr>
+<td>Sliders</td>
+<td>Defines only the width (iOS).</td>
+</tr>
+<tr>
+<td>Labels, buttons, switches, and text fields</td>
+<td>Defines both the height and the width.</td>
+</tr>
+<tr>
+<td>Text views and image views</td>
+<td>Intrinsic content size can vary.</td>
+</tr>
+</tbody></table>
+<p><strong>CRCH：</strong> 抗压缩抗拉伸(Compression-Resistance and Content-Hugging，以下简称CRCH)</p>
+<p><img src="resources/autolayout_hugging.png" alt="autolayout_hugging"></p>
+<p><strong>原文：</strong><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c6541ff0bdaf">Auto Layout基本原理</a></p>
+<p><strong>3.2 实现方式：</strong></p>
+<ul>
+<li>NSLayoutConstraint<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NSLayoutConstraint.init(item: btn,</span><br><span class="line">                        attribute: NSLayoutAttribute.top,</span><br><span class="line">                        relatedBy: NSLayoutRelation.equal,</span><br><span class="line">                        toItem: view,</span><br><span class="line">                        attribute: NSLayoutAttribute.top,</span><br><span class="line">                        multiplier: 1,</span><br><span class="line">                        constant: 180)</span><br><span class="line">添加： NSLayoutConstraint.activate(hConstraints)</span><br></pre></td></tr></table></figure></li>
+<li>NSLayoutConstraintAnchor</li>
+<li>VFL</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>表达式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>水平方向</td>
+<td>H:</td>
+</tr>
+<tr>
+<td>垂直方向</td>
+<td>V:</td>
+</tr>
+<tr>
+<td>Views</td>
+<td>[view]</td>
+</tr>
+<tr>
+<td>关系</td>
+<td>&gt;=,==,&lt;=</td>
+</tr>
+<tr>
+<td>SuperView</td>
+<td>|</td>
+</tr>
+<tr>
+<td>空间，间隙 -</td>
+<td>-</td>
+</tr>
+<tr>
+<td>优先级</td>
+<td>@value</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let hMetrics &#x3D; [&quot;middleSpace&quot;: 10, &quot;rightSpace&quot;: 20]</span><br><span class="line">let hViews &#x3D; [&quot;label&quot;: label, &quot;btn&quot;: btn]</span><br><span class="line">let hVFL &#x3D; &quot;H:[label]-middleSpace-[btn]-rightSpace-|&quot;</span><br><span class="line">let hConstraints:[NSLayoutConstraint] &#x3D; NSLayoutConstraint.constraints(withVisualFormat: hVFL,</span><br><span class="line">                                        options: NSLayoutFormatOptions.directionLeadingToTrailing,</span><br><span class="line">                                        metrics: hMetrics,</span><br><span class="line">                                        views: hViews)</span><br><span class="line">添加：NSLayoutConstraint.activate(hConstraints)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Masonry、SnapKit</li>
+<li>Stack Views</li>
+<li>AutoLayout Xib</li>
+<li><a target="_blank" rel="noopener" href="https://www.appcoda.com/self-sizing-cells/">Self-Size-Cell</a> </li>
+</ul>
+<p><strong>3.3 布局过程：</strong></p>
+<pre><code>updateConstraints -&gt; layoutSubViews -&gt; drawRect
+</code></pre>
+<p>   |<br>   |<br>   V</p>
+<pre><code>约束变化 -&gt; Deferred Layout Pass -&gt; Run Loop
+</code></pre>
+<p>|<br>|<br>V</p>
+<pre><code>Activating或Deactivating
+设置constant或priority
+添加和删除视图
+</code></pre>
+<p>###4、注意点<br>1、优先级：默认优先级<br>2、scrollView 等滚动视图添加优先级特例<br>3、视图先添加到俯视图上去<br>4、translatesAutoresizingMaskIntoConstraints 属性</p>
+<p>参考：<br>1、<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d060bef3d620">深入剖析Auto Layout</a></p>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="J"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>John Doe</div>
+      <div>2019-03-24</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>
