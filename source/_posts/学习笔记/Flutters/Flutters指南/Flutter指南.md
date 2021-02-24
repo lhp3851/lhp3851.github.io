@@ -18,7 +18,7 @@
 
 2.1.1 [DartPad](https://dartpad.dartlang.org/)
 
-    DartPad is a great, no-download-required way to learn Dart syntax and to experiment with Dart language features. It supports Dart’s core libraries, except for VM libraries such as dart:io.
+>DartPad is a great, no-download-required way to learn Dart syntax and to experiment with Dart language features. It supports Dart’s core libraries, except for VM libraries such as dart:io.
 
 2.1.2 IDEs 与 编辑器
 
@@ -28,61 +28,69 @@
 
 2.1.3 命令行工具
 
-    dartanalyzer
-        A static analyzer that evaluates and reports any errors or warnings in your code. The Dart plugin for your IDE should make use of Dart’s analysis engine, but you can also run the analyzer from the command line.
+```shell
+dartanalyzer
+    A static analyzer that evaluates and reports any errors or warnings in your code. The Dart plugin for your IDE should make use of Dart’s analysis engine, but you can also run the analyzer from the command line.
 
-    dartdoc
-        Generates API reference documentation.
+dartdoc
+    Generates API reference documentation.
 
-    dartfmt
-        Formats your code, following the recommendations of the Dart style guide. IDEs that support Dart generally allow you to format the code within the IDE. Or you can run the formatter from the command line.
+dartfmt
+    Formats your code, following the recommendations of the Dart style guide. IDEs that support Dart generally allow you to format the code within the IDE. Or you can run the formatter from the command line.
 
-    pub
-        Manages Dart packages, making it easy for you to install, use, and share Dart libraries, command-line tools, and other assets. Some Dart technologies, such as Flutter, may not support all of the pub commands. IDEs that support Dart generally have special support for pub, but you can also use it from the command line.
+pub
+    Manages Dart packages, making it easy for you to install, use, and share Dart libraries, command-line tools, and other assets. Some Dart technologies, such as Flutter, may not support all of the pub commands. IDEs that support Dart generally have special support for pub, but you can also use it from the command line.
 
-        Some additional tools are available in packages. To install these tools, use the pub command, as described in each tool’s installation instructions. Here are the general-purpose tools you might want to install:
+    Some additional tools are available in packages. To install these tools, use the pub command, as described in each tool’s installation instructions. Here are the general-purpose tools you might want to install:
 
-    build_runner
-        A code generator.
+build_runner
+    A code generator.
 
-    dartfix
-        A tool for migrating Dart source code and fixing common issues.
+dartfix
+    A tool for migrating Dart source code and fixing common issues.
+```
 
 2.2 Web工具集
 
-    webdev
-        A command line interface (CLI) for Dart web app development, including building and serving web apps.
+```shell
+webdev
+    A command line interface (CLI) for Dart web app development, including building and serving web apps.
 
-    dart2js
-        The original Dart-to-JavaScript compiler, with tree shaking. IDEs and the webdev CLI use dart2js when building web apps for deployment.
+dart2js
+    The original Dart-to-JavaScript compiler, with tree shaking. IDEs and the webdev CLI use dart2js when building web apps for deployment.
 
-    dartdevc
-        The Dart dev compiler, a modular Dart-to-JavaScript compiler. IDEs and the webdev CLI use dartdevc when running a development server.
+dartdevc
+    The Dart dev compiler, a modular Dart-to-JavaScript compiler. IDEs and the webdev CLI use dartdevc when running a development server.
 
-    build_runner
-        A build package that’s used by the webdev CLI. You can use it directly for testing or if you need more configurability than webdev provides.
+build_runner
+    A build package that’s used by the webdev CLI. You can use it directly for testing or if you need more configurability than webdev provides.
+```
 
 2.3 命令行工具集与服务器工具集
 
-    Standalone Dart VM: dart
-        Executes Dart code. IDEs that support Dart, and some of the pub commands, use this command behind-the-scenes to execute Dart scripts. Note that you must configure your IDE with the location of the dart binary.
+```shell
+Standalone Dart VM: dart
+    Executes Dart code. IDEs that support Dart, and some of the pub commands, use this command behind-the-scenes to execute Dart scripts. Note that you must configure your IDE with the location of the dart binary.
 
-    AOT compiler and runtime: dart2aot, dartaotruntime
-        Support ahead-of-time compilation of Dart code to native x64 machine code.
+AOT compiler and runtime: dart2aot, dartaotruntime
+    Support ahead-of-time compilation of Dart code to native x64 machine code.
 
-    Pub package manager: pub
-        Simplifies downloading and running scripts, with commands such as pub get, pub global activate, pub global run, and pub run.
+Pub package manager: pub
+    Simplifies downloading and running scripts, with commands such as pub get, pub global activate, pub global run, and pub run.
+```
 
 ## 2、Flutter
 
 ### 2.1 Flutter是什么
 
-    Flutter是一款移动应用程序SDK，一份代码可以同时生成iOS和Android两个高性能、高保真的应用程序。
+```markdown
+Flutter是一款移动应用程序SDK，一份代码可以同时生成iOS和Android两个高性能、高保真的应用程序。
 
-    Flutter 有自己的一套UI界面方式，通过Dart UI 构建界面，跟原生界面组件没有关系。
-    Dart API，底层通过OpenGL这种跨平台的绘制库（内部会调用操作系统API）实现了一套代码跨多端。由于Dart API也是调用操作系统API，所以它的性能接近原生。
+Flutter 有自己的一套UI界面方式，通过Dart UI 构建界面，跟原生界面组件没有关系。
+Dart API，底层通过OpenGL这种跨平台的绘制库（内部会调用操作系统API）实现了一套代码跨多端。由于Dart API也是调用操作系统API，所以它的性能接近原生。
 
-    Flutter目标是使开发人员能够交付在不同平台上都感觉自然流畅的高性能应用程序。我们兼容滚动行为、排版、图标等方面的差异。
+Flutter目标是使开发人员能够交付在不同平台上都感觉自然流畅的高性能应用程序。我们兼容滚动行为、排版、图标等方面的差异。
+```
 
 ### 2.2 核心原则
 
@@ -94,14 +102,15 @@ Flutter包括一个现代的响应式框架、一个2D渲染引擎、现成的wi
 
 ### 2.3 Widget如何工作
 
-* Widget实际上就是Element的配置数据，Widget树实际上是一个配置树，而真正的UI渲染树是由Element构成；不过，由于Element是通过Widget生成，所以它们之间有对应关系，所以在大多数场景，我们可以宽泛地认为Widget树就是指UI控件树或UI渲染树。
-<br/>
-* 一个Widget对象可以对应多个Element对象。这很好理解，根据同一份配置（Widget），可以创建多个实例（Element）。    <br/>
+1. Widget实际上就是Element的配置数据，Widget树实际上是一个配置树，而真正的UI渲染树是由Element构成；不过，由于Element是通过Widget生成，所以它们之间有对应关系，所以在大多数场景，我们可以宽泛地认为Widget树就是指UI控件树或UI渲染树。
+
+2. 一个Widget对象可以对应多个Element对象。这很好理解，根据同一份配置（Widget），可以创建多个实例（Element）。
   
-* 最终的UI树其实是由一个个独立的Element节点构成。组件最终的Layout、渲染都是通过RenderObject来完成的，从创建到渲染的大体流程是：根据Widget生成Element，然后创建相应的RenderObject并关联到Element.renderObject属性上，最后再通过RenderObject来完成布局排列和绘制。 <br/>
-Element就是Widget在UI树具体位置的一个实例化对象，大多数Element只有唯一的renderObject，但还有一些Element会有多个子节点，如继承自RenderObjectElement的一些类，比如MultiChildRenderObjectElement。最终所有Element的RenderObject构成一棵树，我们称之为渲染树，即render tree。
-<br/>
-* Element的生命周期如下：
+3. 最终的UI树其实是由一个个独立的Element节点构成。组件最终的Layout、渲染都是通过RenderObject来完成的，从创建到渲染的大体流程是：根据Widget生成Element，然后创建相应的RenderObject并关联到Element.renderObject属性上，最后再通过RenderObject来完成布局排列和绘制。
+
+4. Element就是Widget在UI树具体位置的一个实例化对象，大多数Element只有唯一的renderObject，但还有一些Element会有多个子节点，如继承自RenderObjectElement的一些类，比如MultiChildRenderObjectElement。最终所有Element的RenderObject构成一棵树，我们称之为渲染树，即render tree。
+
+5. Element的生命周期如下：
 
     1. Framework 调用Widget.createElement 创建一个Element实例，记为element。
     2. Framework 调用 element.mount(parentElement,newSlot) ，mount方法中首先调用elment所对应Widget的createRenderObject方法创建与element相关联的RenderObject对象，然后调用element.attachRenderObject方法将element.renderObject添加到渲染树中插槽指定的位置（这一步不是必须的，一般发生在Element树结构发生变化时才需要重新attach）。插入到渲染树后的element就处于“active”状态，处于“active”状态后就可以显示在屏幕上了（可以隐藏）。
@@ -222,7 +231,7 @@ Flutter 的 event loop 和 iOS 中的 main loop 相似——Looper 是附加在�
 
 一个对象是否可以响应事件，取决于其对命中测试的返回，当发生用户事件时，会从根节点（RenderView）开始进行命中测试，下面是RenderView的hitTest()源码：
 
-``` dart
+```dart
 bool hitTest(HitTestResult result, { Offset position }) {
   if (child != null)
     child.hitTest(result, position: position); //递归子RenderBox进行命中测试
@@ -233,7 +242,7 @@ bool hitTest(HitTestResult result, { Offset position }) {
 
 RenderBox默认的hitTest()实现：
 
-``` dart
+```dart
 bool hitTest(HitTestResult result, { @required Offset position }) {
   ...  
   if (_size.contains(position)) {
@@ -248,7 +257,7 @@ bool hitTest(HitTestResult result, { @required Offset position }) {
 
 我们看到默认的实现里调用了hitTestSelf()和hitTestChildren()两个方法，这两个方法默认实现如下：
 
-``` dart
+```dart
 @protected
 bool hitTestSelf(Offset position) => false;
 

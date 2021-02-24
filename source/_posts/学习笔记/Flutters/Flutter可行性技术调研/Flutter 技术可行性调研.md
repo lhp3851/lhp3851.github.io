@@ -4,29 +4,29 @@
 
 ### 1.1 [环境配置](https://flutter-io.cn/docs/get-started/install)
 
-1. 编辑器
+#### 1. 编辑器
 
-        Android Studio[Intelij]
-        Visual Studio Code
+  1. Android Studio[Intelij]
+  2. Visual Studio Code
 
-2. SDK
+#### 2. SDK
 
-        Dart
-        Flutter
+1. Dart
+2. Flutter
 
 ### 1.2 创建并运行项目
 
-1. 终端
+#### 1. 终端
 
-  ```shell
-    flutter create my_app
-    cd my_app
-    flutter run
-  ```
+```shell
+  flutter create my_app
+  cd my_app
+  flutter run
+```
 
-2. Android Studio
+#### 2. Android Studio
 
-3. Visual Studio Code
+#### 3. Visual Studio Code
 
 ## 2、项目工程结构
 
@@ -38,7 +38,7 @@
 
 1 项目库管理、第三方库
 
-```yaml
+```yml
 dependencies:
   flutter:
     sdk: flutter
@@ -70,13 +70,13 @@ dev_dependencies:
 2 核心库、源码文件
 
 ```dart
-  import 'dart:io';
+import 'dart:io';
 
-  import 'package:flutter/material.dart';
-  import 'package:flutter/services.dart';
-  import 'package:image_picker/image_picker.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
 
-  import '../Profile/Models/ProfileInfo.dart';
+import '../Profile/Models/ProfileInfo.dart';
 ```
 
 3 功能模块、组件功能划分，独立管理，以及自定义组件化工作管理
@@ -96,17 +96,21 @@ flutter:
 
 #### 2 加载
 
-1. Bundel
+##### 2.1. Bundel
 
-        AssetBundle;
-        rootBundle;
-        DefaultAssetBundle;
-        资源变体：根据分辨率加载图片等资源；
-        AssetImage;
+```dart
+AssetBundle;
+rootBundle;
+DefaultAssetBundle;
+资源变体：根据分辨率加载图片等资源；
+AssetImage;
+```
 
-2. 依赖包中的资源；
+##### 2. 依赖包中的资源
 
-         AssetImage('icons/heart.png', package: 'my_icons')
+```dart
+AssetImage('icons/heart.png', package: 'my_icons')
+```
 
 #### 3 打包资源进asset
 
@@ -118,24 +122,24 @@ flutter:
 
 #### 4 资源平台共享
 
-   Android
+* Android
 
-   ```Java
-   AssetManager assetManager = registrar.context().getAssets();
-   String key = registrar.lookupKeyForAsset("icons/heart.png");
-   AssetFileDescriptor fd = assetManager.openFd(key);
-   ```
+```Java
+AssetManager assetManager = registrar.context().getAssets();
+String key = registrar.lookupKeyForAsset("icons/heart.png");
+AssetFileDescriptor fd = assetManager.openFd(key);
+```
 
-   iOS
+* iOS
 
-   ```Objective-C
-   NSString* key = [registrar lookupKeyForAsset:@"icons/heart.png"];
-   NSString* path = [[NSBundle mainBundle] pathForResource:key ofType:nil];
+```Objective-C
+NSString* key = [registrar lookupKeyForAsset:@"icons/heart.png"];
+NSString* path = [[NSBundle mainBundle] pathForResource:key ofType:nil];
    ```
 
 #### 5 平台资源
 
-        Android 与 iOS 的icon 、启动图配置；
+>Android 与 iOS 的icon 、启动图配置；
 
 ### 2.4、项目源码简单解析
 
