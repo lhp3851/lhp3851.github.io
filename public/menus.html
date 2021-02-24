@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="/favicon.png" />
+    
+
+    <title>
+        
+          Hexo
+        
+    </title>
+
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.9/spectre-icons.min.css">
+
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
+
+    
+<script src="/js/book.js"></script>
+
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>HEXO</span>
+  </a>
+</div>
+    <div id="menu" class="book-menu hide">
+  <h1 id="学习笔记"><a href="#学习笔记" class="headerlink" title="学习笔记"></a>学习笔记</h1><ul>
+<li><a href="./_posts/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/iOS%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA.md">iOS</a></li>
+<li><a href="./_posts/%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/index.md">心路历程</a></li>
+</ul>
+
+</div>
+
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
+</header>
+
+        </div>
+        <div class="book-content">
+          
+<article id="page">
+  <h1></h1>
+  <ul>
+<li><a href="/hexo-theme-book-demo">Home</a></li>
+<li><a href="/hexo-theme-book-demo/changelog">Changelog</a></li>
+</ul>
+<h1 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h1><h2 id="hexo-unit-test"><a href="#hexo-unit-test" class="headerlink" title="hexo-unit-test"></a>hexo-unit-test</h2><ul>
+<li><a href="/hexo-theme-book-demo/test/hexo-unit-test/categories">Categories</a></li>
+<li><a href="/hexo-theme-book-demo/test/hexo-unit-test/elements">Elements</a></li>
+<li><a href="/hexo-theme-book-demo/test/hexo-unit-test/excerpts">Excerpts</a></li>
+<li><a href="/hexo-theme-book-demo/test/hexo-unit-test/gallery-post">Gallery Post</a></li>
+<li><a href="/hexo-theme-book-demo/test/hexo-unit-test/hello-world">Hello World</a></li>
+<li><a href="/hexo-theme-book-demo/test/hexo-unit-test/images">Images</a></li>
+<li><a href="/hexo-theme-book-demo/test/hexo-unit-test/link-post-without-title">Untitled</a></li>
+<li><a href="/hexo-theme-book-demo/test/hexo-unit-test/link-post">Link Post</a></li>
+<li><a href="/hexo-theme-book-demo/test/hexo-unit-test/long-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a></li>
+<li><a href="/hexo-theme-book-demo/test/hexo-unit-test/no-title">Untitled</a></li>
+<li><a href="/hexo-theme-book-demo/test/hexo-unit-test/tag-plugins">Tag Plugins</a></li>
+<li><a href="/hexo-theme-book-demo/test/hexo-unit-test/tags">Tags</a></li>
+<li><a href="/hexo-theme-book-demo/test/hexo-unit-test/videos">Videos</a></li>
+<li><a href="/hexo-theme-book-demo/test/hexo-unit-test/%E4%B8%AD%E6%96%87%E6%B8%AC%E8%A9%A6">中文測試</a></li>
+<li><a href="/hexo-theme-book-demo/test/hexo-unit-test/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%86%E3%82%B9%E3%83%88">日本語テスト</a></li>
+</ul>
+<h2 id="bugfix"><a href="#bugfix" class="headerlink" title="bugfix"></a>bugfix</h2><ul>
+<li><a href="/hexo-theme-book-demo/test/bugfix/list-test">list test</a></li>
+<li><a href="/hexo-theme-book-demo/test/bugfix/blockquote-position">blockquote position</a></li>
+<li><a href="/hexo-theme-book-demo/test/bugfix/checkbox-list">checkbox list</a></li>
+</ul>
+<h2 id="lots-of-post-in-submenu"><a href="#lots-of-post-in-submenu" class="headerlink" title="lots of post in submenu"></a>lots of post in submenu</h2><ul>
+<li>.</li>
+<li>Fix bug:</li>
+<li>.</li>
+<li>The default setting of spectre.css’s accordion </li>
+<li>is <code>max-height: 50rem</code></li>
+<li>.</li>
+<li>Override the value to <code>max-height: unset</code> in this theme</li>
+<li>.</li>
+<li>Fix in <a target="_blank" rel="noopener" href="https://github.com/kaiiiz/hexo-theme-book/commit/ce5be1d7500722b8bcdc367fc79186c0cfe8ac56">ce5be1d</a></li>
+<li>.</li>
+<li>Test 11</li>
+<li>Test 12</li>
+<li>Test 13</li>
+<li>Test 14</li>
+<li>Test 15</li>
+<li>Test 16</li>
+<li>Test 17</li>
+<li>Test 18</li>
+<li>Test 19</li>
+<li>Test 20</li>
+<li>Test 21</li>
+<li>Test 22</li>
+<li>Test 23</li>
+<li>Test 24</li>
+<li>Test 25</li>
+<li>Test 26</li>
+<li>Test 27</li>
+<li>Test 28</li>
+<li>Test 29</li>
+<li>Test 30</li>
+<li>Test 31</li>
+<li>Test 32</li>
+<li>Test 33</li>
+<li>Test 34</li>
+<li>Test 35</li>
+</ul>
+<h1 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h1><ul>
+<li><a href="/hexo-theme-book-demo/demo/menu-realtime">Menu Realtime Demo</a></li>
+</ul>
+<h2 id="Render"><a href="#Render" class="headerlink" title="Render"></a>Render</h2><ul>
+<li><a href="/hexo-theme-book-demo/demo/render/markdown-it-demo">markdown-it demo</a></li>
+<li><a href="/hexo-theme-book-demo/demo/render/katex-demo">katex demo</a></li>
+<li><a href="/hexo-theme-book-demo/demo/render/footnotes-demo">footnotes demo</a></li>
+<li><a href="/hexo-theme-book-demo/demo/render/md-container">markdown-container</a></li>
+</ul>
+<h2 id="Lorem-Ipsum"><a href="#Lorem-Ipsum" class="headerlink" title="Lorem Ipsum"></a>Lorem Ipsum</h2><ul>
+<li><a href="/hexo-theme-book-demo/demo/lorem-ipsum/en-demo">English</a></li>
+<li><a href="/hexo-theme-book-demo/demo/lorem-ipsum/jp-demo">Japanese</a></li>
+<li><a href="/hexo-theme-book-demo/demo/lorem-ipsum/kr-demo">Korean</a></li>
+<li><a href="/hexo-theme-book-demo/demo/lorem-ipsum/tc-demo">Traditional Chinese</a></li>
+<li><a href="/hexo-theme-book-demo/demo/lorem-ipsum/sc-demo">Simplified Chinese</a></li>
+</ul>
+
+</article>
+
+<div id="paginator">
+  
+</div>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="J"
+          style="background-color: #3b4351;">
+        </figure>
+      
+    </div>
+
+    <!-- Author title -->
+    <div class="author-title">
+      <div>John Doe</div>
+      <div>2021-02-23</div>
+    </div>
+  </div>
+
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
+
+
+<script src="/js/book-toc.js"></script>
+
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
+
+</body>
+</html>
+
+
+<script src="/js/book.js"></script>
