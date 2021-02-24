@@ -15,3 +15,7 @@
 2、[Swift函数派发机制](https://juejin.cn/post/6847009771845845006)
 
 3、[Swift 函数派发机制（译）](https://rimson.top/2019/05/07/swift-method-dispatch/)
+
+4、Swift 消息派发总结
+
+![Swift 消息派发](../../../Resources/swift_function_dispatch.png)
