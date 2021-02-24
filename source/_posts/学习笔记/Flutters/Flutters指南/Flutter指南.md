@@ -6,7 +6,7 @@
 
 1.1.1 Dart：[学习路线](https://dart.dev/tools/sdk)
 
-![Dart](./Flutter/Dart.png)
+![Dart](./Dart.png)
 
 1.1.2 Dart [概述](http://dart.goodev.org/guides/language)
 
@@ -90,7 +90,7 @@ Flutter包括一个现代的响应式框架、一个2D渲染引擎、现成的wi
 
 一切皆为widget，Widget是Flutter应用程序用户界面的基本构建块。每个Widget都是用户界面一部分的不可变声明。 与其他将视图、控制器、布局和其他属性分离的框架不同，Flutter具有一致的统一对象模型：widget。
 
-![widget_Render_Object](./Flutter/Flutter_Render_Object.png)
+![widget_Render_Object](./Flutter_Render_Object.png)
 
 ### 2.3 Widget如何工作
 
@@ -113,7 +113,7 @@ Element就是Widget在UI树具体位置的一个实例化对象，大多数Eleme
 
 ### 2.4 框架
 
-![Flutter框架](./Flutter/Flutter_Frameworks.png)
+![Flutter框架](./Flutter_Frameworks.png)
 
 **Flutter Framework:** 这是一个纯 Dart实现的 SDK。它实现了一套基础库， 用于处理动画、绘图和手势。并且基于绘图封装了一套 UI组件库，然后根据 Material 和Cupertino两种视觉风格区分开来。这个纯 Dart实现的 SDK被封装为了一个叫作 dart:ui的 Dart库。我们在使用 Flutter写 App的时候，直接导入这个库即可使用组件等功能。
 
@@ -125,13 +125,13 @@ Element就是Widget在UI树具体位置的一个实例化对象，大多数Eleme
 
 在介绍Flutter渲染流程之前，看下原生（iOS）的渲染流程：
 
-![iOS_Render_flow](./Flutter/iOS_Render_flow.webp)
+![iOS_Render_flow](./iOS_Render_flow.webp)
 
 CPU、GPU和显示器以一种特定的方式协作：
 
 > CPU将计算好的显示内容提交给 GPU，GPU渲染后放入帧缓冲区，然后视频控制器按照 VSync信号从帧缓冲区取帧数据传递给显示器显示。
 
-![Rendering_pipeline](./Flutter/Rendering_pipeline.png)
+![Rendering_pipeline](./Rendering_pipeline.png)
 
 > GPU的 VSync信号同步到 UI线程，UI线程使用 Dart来构建抽象的视图结构，这份数据结构在 GPU线程进行图层合成，视图数据提供给 Skia引擎渲染为 GPU数据，这些数据通过 OpenGL或者 Vulkan提供给 GPU。
 
@@ -141,13 +141,13 @@ CPU、GPU和显示器以一种特定的方式协作：
 
 渲染树生成：
 
-![Rendering_pipeline](./Flutter/Rendering_pipe.png)
+![Rendering_pipeline](./Rendering_pipe.png)
 
 2.5.2、Flutter 如何更新界面（Diff）
 
 当widget的状态发生变化时，widget会重新构建UI，Flutter会对比前后变化的不同， 以确定底层渲染树从一个状态转换到下一个状态所需的最小更改。
 
-![Rendering_pipeline](./Flutter/Widget_update.png)
+![Rendering_pipeline](./Widget_update.png)
 
 > 当element父Widget的配置数据改变时，为了进行Element复用，Framework在决定重新创建Element前会先尝试复用相同位置旧的element：调用Element对应Widget的canUpdate()方法，如果返回true，则复用旧Element，旧的Element会使用新的Widget配置数据更新，反之则会创建一个新的Element，不会复用。
 >
@@ -155,7 +155,7 @@ CPU、GPU和显示器以一种特定的方式协作：
 
 ### 2.6 跨平台、与原生平台通讯
 
-![Flutter_iOS_Android](./Flutter/Flutter_iOS_Android.png)
+![Flutter_iOS_Android](./Flutter_iOS_Android.png)
 
 Flutter平台特定的API支持不依赖于代码生成，而是依赖于灵活的消息传递的方式：
 
@@ -174,12 +174,12 @@ Flutter平台特定的API支持不依赖于代码生成，而是依赖于灵活�
 > 但这并不意味着 Flutter 不能和原生 API，或任何你编写的原生代码交互。Flutter 提供了 platform channels ，来和管理你的 Flutter view 的 ViewController 通信和交互数据。平台管道本质上是一个异步通信机制，桥接了 Dart 代码和宿主 ViewController，以及它运行于的 iOS 框架。你可以用平台管道来执行一个原生的函数，或者是从设备的传感器中获取数据。
 
 Flutter 在iOS 上的启动流程：
-![Launch_flow_ios](./Flutter/Launch_flow_ios.webp)
+![Launch_flow_ios](./Launch_flow_ios.webp)
 
 > 在应用的 View Controller 初始化后，会实例化一个 Flutter project的抽象（以下简称 project）。project会初始化一个 platform view的抽象实例，这个抽象实例会负责创建 Flutter 的运行时（以下简称 engine）。
 >
 > 当 View Controller将要显示时，调用 project查找和组合 Flutter的应用资源 bundle，并且把资源提供给 engine。
-engine在真正需要执行资源 bundle时才会创建 Dart执行的环境（懒加载，以下简称 Dart Controller），然后设置视图窗口的一些属性等东西（这是绘图引擎必需的）。 
+engine在真正需要执行资源 bundle时才会创建 Dart执行的环境（懒加载，以下简称 Dart Controller），然后设置视图窗口的一些属性等东西（这是绘图引擎必需的）。
 然后 engine中的 Dart Controller会加载 Dart代码并执行，执行的过程中会调用 dart:ui的 native binding实现向 GPU提供数据。
 
 2.6.2 Android
@@ -270,10 +270,10 @@ Dart VM将内存管理分为新生代(New Generation)和老年代(Old Generation
 
 * 新生代(New Generation): 通常初次分配的对象都位于新生代中，该区域主要是存放内存较小并且生命周期较短的对象，比如局部变量。新生代会频繁执行内存回收(GC)，回收采用“复制-清除”算法，将内存分为两块(图中的from 和 to)，运行时每次只使用其中的一块(图中的from)，另一块备用(图中的to)。当发生GC时，将当前使用的内存块中存活的对象拷贝到备用内存块中，然后清除当前使用内存块，最后，交换两块内存的角色。
 
-![Memory_Manager](./Flutter/Memory_Manager_01.webp)
+![Memory_Manager](./Memory_Manager_01.webp)
 
 * 老年代(Old Generation): 在新生代的GC中“幸存”下来的对象，它们会被转移到老年代中。老年代存放生命力周期较长，内存较大的对象。老年代通常比新生代要大很多。老年代的GC回收采用“标记-清除”算法，分成标记和清除两个阶段。在标记阶段，所有线程参与并发的完成对回收对象的标记，降低标记阶段耗时。在清理阶段，由GC线程负责清理回收对象，和应用线程同时执行，不影响应用运行。
-![Memory_Manager](./Flutter/Memory_Manager_02.webp)
+![Memory_Manager](./Memory_Manager_02.webp)
 
 ### 3.9 技术生态圈
 
