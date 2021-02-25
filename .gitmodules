@@ -2,5 +2,9 @@
    path = themesBook
    url = https://github.com/kaiiiz/hexo-theme-book.git
 [submodule "themesTree"] 
+<<<<<<< HEAD
    path = themesTree
+=======
+   path = ./themes/tree
+>>>>>>> 4d71f00e84cf7e140970dab842028d84710b949b
    url = https://github.com/wujun234/hexo-theme-tree.git
