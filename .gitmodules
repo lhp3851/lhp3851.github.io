@@ -1,13 +1,6 @@
-<<<<<<< HEAD
 [submodule "themesBook"] 
-   path = ./themes/book
+   path = themesBook
    url = https://github.com/kaiiiz/hexo-theme-book.git
 [submodule "themesTree"] 
-=======
-[submodule /themes-book] 
-   path = ./themes/book
-   url = https://github.com/kaiiiz/hexo-theme-book.git
-[submodule themes-tree] 
->>>>>>> b122a63e4cd88107e7447bc3976ada2a78e3dbb6
-   path = ./themes/tree
+   path = themesTree
    url = https://github.com/wujun234/hexo-theme-tree.git
