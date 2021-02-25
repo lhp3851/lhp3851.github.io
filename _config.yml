@@ -91,7 +91,7 @@ pagination_dir: page
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
 include:
-  - 
+  - ''
 exclude:
   - '_posts/学习笔记/iOS/resources/crash-log/**/*'
   - '**/*.jpg'
