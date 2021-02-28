@@ -40,16 +40,14 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: true
+post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
-  line_number: true
+  enable: false
+  line_number: false
   auto_detect: false
   tab_replace: ''
-  wrap: true
-  hljs: false
 prismjs:
   enable: false
   preprocess: true
@@ -91,19 +89,20 @@ pagination_dir: page
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
 include:
-  - 
+  # - 
 exclude:
-  - '_posts/学习笔记/iOS/resources/crash-log/**/*'
-  - '**/*.jpg'
-  - '**/*.jpeg'
-  - '**/*.png'
-  - '**/*.gif'
+  # - '_posts/学习笔记/iOS/resources/crash-log/**/*'
+  # - '**/*.jpg'
+  # - '**/*.jpeg'
+  # - '**/*.png'
+  # - '**/*.gif'
+  # - '_drafts/**/*'
 ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: book
+theme: tree
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
