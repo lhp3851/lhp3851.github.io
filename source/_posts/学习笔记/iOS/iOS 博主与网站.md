@@ -7,6 +7,8 @@
 ## 博主
 
 1、[戴铭的博客 - 星光社](https://ming1016.github.io/)
+2、[楚权的世界](http://chuquan.me/)
+3、[聊宅](https://lision.me/archives/)
 
 ## 期刊
 
