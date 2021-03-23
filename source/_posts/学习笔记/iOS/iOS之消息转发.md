@@ -8,6 +8,8 @@
 
 3、[Objective-C 运行时和 Swift 动态性](https://juejin.cn/post/6844904114673958925)
 
+4、[iOS开发·runtime原理与实践: 消息转发篇(Message Forwarding) (消息机制，方法未实现+API不兼容奔溃，模拟多继承)](https://juejin.cn/post/6844903600968171533)
+
 ## Swift
 
 1、[Swift 消息派发机制](https://blog.bombox.org/2020-05-23/swift-method-dispatch/)
