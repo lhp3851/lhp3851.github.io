@@ -16,12 +16,14 @@
 
 ## 2. Swift
 
+### 2.1 Swift 消息转发规则
+
+![Swift 消息转发规则](resources/MessageForward/swift_function_dispatch.png)
+
+### 2.2 参考资料
+
 1、[Swift 消息派发机制](https://blog.bombox.org/2020-05-23/swift-method-dispatch/)
 
 2、[Swift函数派发机制](https://juejin.cn/post/6847009771845845006)
 
 3、[Swift 函数派发机制（译）](https://rimson.top/2019/05/07/swift-method-dispatch/)
-
-4、Swift 消息派发总结
-
-![Swift 消息派发](../../../Resources/swift_function_dispatch.png)
