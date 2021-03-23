@@ -1,0 +1,37 @@
+# Native Module
+
+## 1 [原生模块配置](https://www.react-native.cn/docs/native-modules-setup)
+
+    npx @react-native-community/bob create react-native-awesome-module
+
+    yarn bootstrap
+
+    # Android app
+    yarn example android
+    # iOS app
+    yarn example ios
+
+## 2. [create-react-native-module](https://github.com/brodybits/create-react-native-module)
+
+这个工具，配置内容少一些。
+
+## 3. [原生模块](https://www.react-native.cn/docs/native-modules-ios/)
+
+* 实现了```RCTBridgeModule```协议；
+
+* 类需要包含RCT_EXPORT_MODULE()宏，导出模块；
+
+* 通过RCT_EXPORT_METHOD()宏导出方法；
+
+    RCT_REMAP_METHOD()宏, 处理方法重载的情况
+
+* Javascript 里使用；
+
+    import { NativeModules } from 'react-native';
+    const CalendarManager = NativeModules.CalendarManager;
+    CalendarManager.addEvent(
+      'Birthday Party',
+      '4 Privet Drive, Surrey'
+    );
+
+* 桥接到 JavaScript 的方法返回值类型必须是void。React Native 的桥接操作是异步的，所以要返回结果给 JavaScript，你必须通过回调或者触发事件来进行
