@@ -10,6 +10,7 @@
 2、[楚权的世界](http://chuquan.me/)
 3、[聊宅](https://lision.me/archives/)
 4、[hotwill](https://blog.hotwill.cn/OpenCL简介.html)
+5、[杨萧玉](http://yulingtianxia.com/)
 
 ## 期刊
 
