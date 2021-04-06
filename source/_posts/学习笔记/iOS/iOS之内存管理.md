@@ -1,5 +1,6 @@
+# 内存管理
 
-内存管理原则
+## 内存管理原则
 
 1、自己生成的对象，自己持有
 
@@ -53,12 +54,12 @@ ARC
     retain
     unsafe_unretained
     weak 
-    
+
 数组
 
     动态数组 id __strong *array = [NSMutableArray array]
     释放
-    
+
 实现方式：
 
     __strong：自动注册到autoreleasePool中
