@@ -1,45 +1,94 @@
-pod 公开库
-1、添加、删除索引库
-  pod repo add WTSpecs https://coding.net/wtlucky/WTSpecs.git
-  pod repo remove WTSpecs
+# cocoaPod
 
-2、创建pod库
-  pod lib create podTestLibrary
-  2.1 添加到远程
-    git add .
-    git commit -s -m "Initial Commit of Library"
-    git remote add origin git@coding.net:wtlucky/podTestLibrary.git
-    git push origin master
-  2.2 打tag
-    git tag -a 0.1.0 -m "first release"
-    git push --tags / git push origin tag 0.1.0
+## 一、pod 公开库
 
-3、修改podspec文件
+### 1. 索引库
 
-4、检验pod库、podspec
-  pod lib lint
+#### 1.1 添加索引库
 
-5、提交pod库
-  pod repo push WTSpecs PodTestLibrary.podspec  #前面是本地Repo名字 后面是podspec名字
+```shell
+pod repo add WTSpecs https://coding.net/wtlucky/WTSpecs.git
+```
 
-6、检索pod库
-  pod search PodTestLibrary
+#### 1.2 删除索引库
 
-7、使用pod库
-  pod 'PodTestLibrary', '~> 0.1.0'
+```shell
+pod repo remove WTSpecs
+```
+
+#### 2. pod库
+
+##### 2.1 创建pod库
+
+```shell
+pod lib create podTestLibrary
+```
+
+##### 2.2 添加到远程
+
+```shell
+git add .
+git commit -s -m "Initial Commit of Library"
+git remote add origin git@coding.net:wtlucky/podTestLibrary.git
+git push origin master
+```
+
+##### 2.3 打tag
+
+```shell
+git tag -a 0.1.0 -m "first release"
+git push --tags / git push origin tag 0.1.0
+```
+
+##### 2.4 修改podspec文件
+
+##### 2.5 检验pod库、podspec
+
+```shell
+pod lib lint
+```
+
+##### 2.6 提交pod库
+
+```shell
+pod repo push WTSpecs PodTestLibrary.podspec  #前面是本地Repo名字 后面是podspec名字
+```
+
+##### 2.7 检索pod库
+
+```shell
+pod search PodTestLibrary
+```
+
+##### 2.8 使用pod库
+
+```shel
+pod 'PodTestLibrary', '~> 0.1.0'
+```
   
-私有库
-1、检验
-  pod lib lint --allow-warnings --sources=https://github.com/aliyun/aliyun-specs.git,https://github.com/CocoaPods/Specs.git
+## 二、私有库
 
-2、远程检验
-  pod spec lint --allow-warnings --sources=https://github.com/aliyun/aliyun-specs.git,https://github.com/CocoaPods/Specs.git
+### 1. 检验
+  
+```shell
+pod lib lint --allow-warnings --sources=<https://github.com/aliyun/aliyun-specs.git,https://github.com/CocoaPods/Specs.git>
+```
 
-3、提交
-  pod repo push sumian sm_ios_base.podspec --allow-warnings --sources='http://192.168.1.229/rysn/sm_ios_index_repo.git,https://github.com/aliyun/aliyun-specs.git,https://github.com/CocoaPods/Specs'
+### 2. 远程检验
+  
+```shell
+pod spec lint --allow-warnings --sources=<https://github.com/aliyun/aliyun-specs.git,https://github.com/CocoaPods/Specs.git>
+```
 
+### 3. 提交
 
-# pod 命令
+```shell
+pod repo push sumian sm_ios_base.podspec --allow-warnings --sources='http://192.168.1.229/rysn/sm_ios_index_repo.git,https://github.com/aliyun/aliyun-specs.git,https://github.com/CocoaPods/Specs'
+```
+
+## 3. pod 命令
+
+```shell
 Usage:
 
     $ pod COMMAND
@@ -75,8 +124,11 @@ Options:
     --verbose       Show more debugging information
     --no-ansi       Show output without ANSI codes
     --help          Show help banner of specified command
+```
 
-# pod lib lint 命令
+## 4. pod lib lint 命令
+
+```shell
 Usage:
 
     $ pod lib lint
@@ -127,31 +179,32 @@ Options:
     --no-ansi                                         Show output without ANSI codes
     --help                                            Show help banner of specified
                                                       command
+```
 
+## 5. pod 修改工程配置
 
-  pod 修改工程配置
-  ```
-  post_install do |installer_representation|
+```shell
+post_install do |installer_representation|
 
-      installer_representation.pods_project.targets.each do |target|
-          target.build_configurations.each do |config|
-              #去警告
-              config.build_settings['GCC_WARN_INHIBIT_ALL_WARNINGS'] = 'YES'
-              #判断scheme
-              if config.name.include?("SchemeAppTest_Release")
-                  #添加scheme对应的预编译宏
-                  config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
-                  config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] << 'SCHEMEAPPTESTRELEASE=3'
-              end
-              if config.name.include?("SchemeAppTest_Debug")
-                  config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
-                  config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] << 'SCHEMEAPPTESTDEBUG=2'
-                  #指定scheme的调试模式可见变量
-                  config.build_settings['GCC_OPTIMIZATION_LEVEL'] = '0'
-                  #某些情况由于编译器不支持无法debug（可选）
-                  config.build_settings['ONLY_ACTIVE_ARCH'] = 'YES'
-              end
-           end
-      end    
-  end
+    installer_representation.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            #去警告
+            config.build_settings['GCC_WARN_INHIBIT_ALL_WARNINGS'] = 'YES'
+            #判断scheme
+            if config.name.include?("SchemeAppTest_Release")
+                #添加scheme对应的预编译宏
+                config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
+                config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] << 'SCHEMEAPPTESTRELEASE=3'
+            end
+            if config.name.include?("SchemeAppTest_Debug")
+                config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
+                config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] << 'SCHEMEAPPTESTDEBUG=2'
+                #指定scheme的调试模式可见变量
+                config.build_settings['GCC_OPTIMIZATION_LEVEL'] = '0'
+                #某些情况由于编译器不支持无法debug（可选）
+                config.build_settings['ONLY_ACTIVE_ARCH'] = 'YES'
+            end
+          end
+    end    
+end
   ```
