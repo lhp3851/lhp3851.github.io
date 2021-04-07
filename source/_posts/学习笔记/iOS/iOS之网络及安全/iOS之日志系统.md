@@ -1,9 +1,14 @@
-1、日志内容
+# 日志系统
 
-    时间|日志级别|类名_函数名_行数|分类|Log内容
-    
-获取类名：
+## 1. 日志内容
+
+```txt
+时间|日志级别|类名_函数名_行数|分类|Log内容
 ```
+
+### 1.1 获取类名
+
+```objective-c
 extension NSObject {
     var className: String {
         return String(describing: type(of: self)).components(separatedBy: ".").last!
@@ -15,8 +20,9 @@ extension NSObject {
 }
 ```
 
-生成log函数：
-```
+### 1.2 生成log函数
+
+```objective-c
 public func createLog(level: DebugLevel, targetClass: AnyClass, type: OperateType, content: String,  _ line: Int = #line, _ function: String = #function)
 -> String {
     let lineStr = String.init(format: "line:%d", line)
@@ -29,8 +35,9 @@ public func createLog(level: DebugLevel, targetClass: AnyClass, type: OperateTyp
 }
 ```
 
-日志文件操作：
-```
+### 1.3 日志文件操作
+
+```objective-c
 public protocol LogStorageProtocol {
 
     /// 获取日志缓存地址
@@ -70,12 +77,11 @@ public protocol LogStorageProtocol {
 }
 ```
 
-策略：
+### 1.4 策略
 
-    而这个十条一写，没有达到标准的就暂时保存在内存里，我的想法是创建一个循环队列，
-    根据FIFO原则，当满足十条Log时，做一次写入操作，而循环队列在空间上是非常节省
-    资源的，如果没有满足十条日志，那就都暂存在队列里，整个开销就是循环队列的一个数
-    组，容量是11个元素，还有一个充当哨兵
-    
-    
-* [**自主设计日志系统**](https://www.jianshu.com/p/74f121bfd9e9)
+而这个十条一写，没有达到标准的就暂时保存在内存里，我的想法是创建一个循环队列，
+根据FIFO原则，当满足十条Log时，做一次写入操作，而循环队列在空间上是非常节省
+资源的，如果没有满足十条日志，那就都暂存在队列里，整个开销就是循环队列的一个数
+组，容量是11个元素，还有一个充当哨兵
+
+### 1.5 [自主设计日志系统](https://www.jianshu.com/p/74f121bfd9e9)
