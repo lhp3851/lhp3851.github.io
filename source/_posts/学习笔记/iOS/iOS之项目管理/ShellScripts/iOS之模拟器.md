@@ -35,3 +35,9 @@ open -a Simulator
 ### 2.3 卸载 App
 
 ```xcrun simctl uninstall booted 'com.tencent.live4iphone'```
+
+## 3. 附注
+
+另外一套工具 idevice[^idevice].
+
+[^idevice]: [idevice](https://github.com/libimobiledevice/libimobiledevice)
