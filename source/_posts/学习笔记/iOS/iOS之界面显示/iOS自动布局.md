@@ -78,7 +78,7 @@ label， button， text fields等都是有ICS的，而UIView和NSView是没有IC
 
 * NSLayoutConstraint
 
-```
+```objective-c
 NSLayoutConstraint.init(item: btn,
                         attribute: NSLayoutAttribute.top,
                         relatedBy: NSLayoutRelation.equal,
@@ -102,7 +102,7 @@ NSLayoutConstraint.init(item: btn,
 |空间，间隙 -| -|
 |优先级 | @value|
 
-```
+```objective-c
 let hMetrics = ["middleSpace": 10, "rightSpace": 20]
 let hViews = ["label": label, "btn": btn]
 let hVFL = "H:[label]-middleSpace-[btn]-rightSpace-|"
@@ -120,21 +120,23 @@ let hConstraints:[NSLayoutConstraint] = NSLayoutConstraint.constraints(withVisua
 
 **3.3 布局过程：**
 
-    updateConstraints -> layoutSubViews -> drawRect
+```
+updateConstraints -> layoutSubViews -> drawRect
 
-   |
-   |
-   V
+    |
+    |
+    V
 
-    约束变化 -> Deferred Layout Pass -> Run Loop
+约束变化 -> Deferred Layout Pass -> Run Loop
 
-|
-|
-V
+    |
+    |
+    V
 
-    Activating或Deactivating
-    设置constant或priority
-    添加和删除视图
+Activating或Deactivating
+设置constant或priority
+添加和删除视图
+```
 
 ## 4. 注意点
 
