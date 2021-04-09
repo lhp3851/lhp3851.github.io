@@ -1,8 +1,10 @@
 # 消息转发
 
+[TOC]
+
 ## 1. Objective-C
 
-### 1.1 Objective-C 消息转发流程图
+### 1.1 Objective-C 消息转发流程图`
 
 ![OC消息转发流程图](/source/_posts/学习笔记/iOS/resources/MessageForward/oc_message_froware.png)
 
