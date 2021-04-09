@@ -1,10 +1,3 @@
----
-{}
-date: 2021-02-28 10:27:29
-title:
-tags:
----
-
 # Objective-C 运行时基本类型
 
 ## 1. Class
@@ -331,7 +324,7 @@ OBJC_EXPORT
 @end
 ```
 
-**附注： Foundation 运行时支持**
+### 10.2.1 Foundation 运行时支持
 
 ```Objective-C
 typedef NSString * NSExceptionName NS_EXTENSIBLE_STRING_ENUM;

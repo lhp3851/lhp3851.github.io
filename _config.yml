@@ -102,7 +102,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: tree
+theme: beautiful-hexo
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -110,3 +110,9 @@ deploy:
   type: git
   repo:  https://github.com/lhp3851/lhp3851.github.io
   branch: 'main'
+
+archive_generator:
+    per_page: 0
+    yearly: false
+    monthly: false
+    daily: false

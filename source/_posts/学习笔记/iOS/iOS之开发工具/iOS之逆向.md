@@ -1,27 +1,34 @@
 # iOS逆向工程
 
-* [获取IPA包](~/Library/Group Containers/K36BKF7T3D.group.com..configurator/Library/Caches/Assets/TemporaryItems/MobileApps/)
+## 1. IPA 包
 
-* [Mac-o](http://www.cocoachina.com/mac/20150122/10988.html)
-* [MachOView](https://sourceforge.net/projects/machoview/files/?source)
-[iOS注入动态库](https://www.jianshu.com/p/6c45da26040d)
+### 1.1 [获取IPA包](~Library/Group\ Containers/K36BKF7T3D.group.com.apple.configurator/Library/Caches/Assets/TemporaryItems/MobileApps/)
 
-* [Mac install IPA](https://www.jianshu.com/p/8568a8897489)
-**Package requirements (libusbmuxd >= 1.1.0) were not met:**
-解决方案：
+### 1.2 [Mac-o](http://www.cocoachina.com/mac/20150122/10988.html)
 
-  ```shell
-  brew uninstall --ignore-dependencies 
-  libimobiledevice
-  brew uninstall --ignore-dependencies usbmuxd
-  brew install --HEAD usbmuxd
-  brew unlink usbmux
-  dbrew link usbmuxd
-  brew install --HEAD libimobiledevice
-  ```
+### 1.3 [MachOView](https://sourceforge.net/projects/machoview/files/?source)
 
-* [libimobiledevice 源码](https://github.com/libimobiledevice)
+### 1.4  [iOS注入动态库](https://www.jianshu.com/p/6c45da26040d)
 
+### 1.5 [Mac install IPA](https://www.jianshu.com/p/8568a8897489)
+
+#### 1.5.1 解决方案
+
+```shell
+brew uninstall --ignore-dependencies 
+libimobiledevice
+brew uninstall --ignore-dependencies usbmuxd
+brew install --HEAD usbmuxd
+brew unlink usbmux
+dbrew link usbmuxd
+brew install --HEAD libimobiledevice
+```
+
+#### 1.5.2 [libimobiledevice 源码](https://github.com/libimobiledevice)
+
+### 1.6 工具集
+
+```markdown
 idevice
 atos
 otool
@@ -31,33 +38,45 @@ TheOS
 rvictl
 wireshark
 charles
-----------------iOS逆向-------------------
-要求：
-  “硬件构成、iOS系统的运行原理，还要具备丰富的iOS开发经验。”
+```
 
-逆向作用：
-  恶意软件
-  去除限制
-  评定安全等级
-  检查后门
-  逆向iOS SDK？
-  借鉴
-    WireLurker
+### 1.7 逆向工程师
 
-病毒：
-  Ikee -> iOS：alpine
+#### 1.7.1 要求
+
+```txt
+“硬件构成、iOS系统的运行原理，还要具备丰富的iOS开发经验。”
+```
+
+#### 1.7.2 逆向作用
+
+```txt
+恶意软件
+去除限制
+评定安全等级
+检查后门
+逆向iOS SDK？
+借鉴
   WireLurker
-  
-Cydia:
-  xsellize
-  iFile（MAcOS: AFC2、iFunBox）
-  SMSNinja
+```
 
-团队：
+#### 1.7.3 病毒
+
+```txt
+Ikee -> iOS：alpine
+WireLurker
+```
+
+#### 1.7.4 团队
+
+```txt
 “evad3rs、盘古、太极”
+```
 
-ios 逆向工具：
-  1、监测工具
+#### 1.7.5 iOS 逆向工具
+
+```txt
+ 1、监测工具
     Reveal
     snoop-it
     introspy
@@ -65,6 +84,10 @@ ios 逆向工具：
   2、反汇编工具（disassembler）
     IDA
     Hopper
+    Cydia:
+      xsellize
+      iFile（MAcOS: AFC2、iFunBox）
+      SMSNinja
 
   3、调试工具（debugger）
     LLDB
@@ -73,10 +96,20 @@ ios 逆向工具：
   4、以及开发工具
     iOSOpenDev（Xcode）
     TheOS（command line）
+```
 
-  sudo plutil -p smartpark.app/Info.plist | grep CFBundleIdentifier
-  "CFBundleIdentifier" => "com.jieshun.hatc"
+#### 1.7.6 获取 APP bundleID
 
+```shell
+sudo plutil -p smartpark.app/Info.plist | grep CFBundleIdentifier
+"CFBundleIdentifier" => "com.jieshun.hatc"
+```
+
+#### 1.7.7 逆向工程师招聘信息示例
+
+示例一：
+
+```txt
 iOS高级安全工程师/专家
 岗位要求
 1.熟悉IDA Pro、GDB、JEB、lldb等常用逆向分析工具，具备较强的逆向分析能力，熟悉ARM、x86/64等指令集；
@@ -99,7 +132,11 @@ iOS高级安全工程师/专家
 
 联系方式
 电话:13818882062
+```
 
+示例二：
+
+```txt
 职位名称
 iOS逆向工程师
 
@@ -127,3 +164,4 @@ PS:0和d是硬性要求，不过要是0-1年时间技能到达了2-3年的也ok�
 
 工作地点: 上海徐汇
 简历请投: 参考e项
+```
