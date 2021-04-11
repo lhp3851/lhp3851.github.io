@@ -12,7 +12,7 @@
 
 [游戏](./iOS之游戏/iOS之游戏.md)
 
-[界面显示](iOS之界面显示/iOS之界面显示.md)
+[UI界面](iOS之界面显示/iOS之UI界面.md)
 
 [编程语言](./iOS之编程语言/Objective-C/iOS编程语言之Objective-C.md)
 

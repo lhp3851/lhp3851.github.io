@@ -120,7 +120,7 @@ let hConstraints:[NSLayoutConstraint] = NSLayoutConstraint.constraints(withVisua
 
 **3.3 布局过程：**
 
-```
+```txt
 updateConstraints -> layoutSubViews -> drawRect
 
     |
