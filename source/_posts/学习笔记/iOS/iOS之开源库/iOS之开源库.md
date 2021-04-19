@@ -1,13 +1,3 @@
 # 开源库
 
-## 1. 自定义库并发布
-
-## 2. 自制pod库
-
-## 3. cocoaPod 管理
-
-动态库
-静态库
-
-加载方式
-原理
+## 1. WebViewJavaScriptBridge
