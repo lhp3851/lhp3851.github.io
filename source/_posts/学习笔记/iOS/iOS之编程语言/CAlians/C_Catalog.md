@@ -1,4 +1,12 @@
-kill -l 查看信号列表
+---
+title: 系统中断信号
+date: 2021-04-20
+tags:
+---
+
+```shell
+# 查看信号列表
+kill -l
 
 Constant    Explanation
 SIGTERM    termination request, sent to the program
@@ -7,3 +15,4 @@ SIGINT    external interrupt, usually initiated by the user
 SIGILL    invalid program image, such as invalid instruction
 SIGABRT    abnormal termination condition, as is e.g. initiated by abort()
 SIGFPE       erroneous arithmetic operation such as divide by zero
+```

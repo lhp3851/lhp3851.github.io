@@ -1,16 +1,21 @@
-# iOS自动布局
+---
+title: iOS 之 自动布局
+date: 2021-04-20 21:36:02
+tags:  
+---
+
 
 [TOC]
 
 ## 1. 基础
 
-|型号 | 屏幕尺寸（inch）|逻辑分辨率（point）|缩放因子（scale factor）|物理分辨率（pixel）|像素密度（PPI）
-| --- | --- | --- |--- | --- | --- |
-|iPhone3GS | 3.5 | 320 * 480 | @1x | 320 * 480 | 163 |
-|iPhone4/4s | 3.5 | 320 * 480 | @2x | 640 * 960 | 326 |
-|iPhone5/5s |4| 320 * 568| @2x |640 * 1136| 326|
-|iPhone6/6s| 4.7| 375 * 667| @2x| 750 * 1334 |326|
-|iPhone6Plus/6s Plus| 5.5| 414 * 736| @3x| 1242 * 2208| 401|
+| 型号                | 屏幕尺寸（inch） | 逻辑分辨率（point） | 缩放因子（scale factor） | 物理分辨率（pixel） | 像素密度（PPI） |
+| ------------------- | ---------------- | ------------------- | ------------------------ | ------------------- | --------------- |
+| iPhone3GS           | 3.5              | 320 * 480           | @1x                      | 320 * 480           | 163             |
+| iPhone4/4s          | 3.5              | 320 * 480           | @2x                      | 640 * 960           | 326             |
+| iPhone5/5s          | 4                | 320 * 568           | @2x                      | 640 * 1136          | 326             |
+| iPhone6/6s          | 4.7              | 375 * 667           | @2x                      | 750 * 1334          | 326             |
+| iPhone6Plus/6s Plus | 5.5              | 414 * 736           | @3x                      | 1242 * 2208         | 401             |
 
 物理分辨率、逻辑分辨率、像素密度：
 
@@ -61,12 +66,12 @@ frame.origin.y = anchorPoint.y * frame.size.height - position.y；
 
 label， button， text fields等都是有ICS的，而UIView和NSView是没有ICS的。
 
- View | Intrinsic content size
- ------------|----------
- UIView and NSView | No intrinsic content size.
- Sliders | Defines only the width (iOS).
- Labels, buttons, switches, and text fields | Defines both the height and the width.
- Text views and image views | Intrinsic content size can vary.
+ | View                                       | Intrinsic content size                 |
+ | ------------------------------------------ | -------------------------------------- |
+ | UIView and NSView                          | No intrinsic content size.             |
+ | Sliders                                    | Defines only the width (iOS).          |
+ | Labels, buttons, switches, and text fields | Defines both the height and the width. |
+ | Text views and image views                 | Intrinsic content size can vary.       |
 
 **CRCH：** 抗压缩抗拉伸(Compression-Resistance and Content-Hugging，以下简称CRCH)
 
@@ -92,15 +97,15 @@ NSLayoutConstraint.init(item: btn,
 * NSLayoutConstraintAnchor
 * VFL
 
-| 功能 | 表达式 |
-| --- | --- |
-|水平方向 | H: |
-|垂直方向 | V: |
-|Views| [view]|
-|关系 | >=,==,<= |
-|SuperView|  \| |
-|空间，间隙 -| -|
-|优先级 | @value|
+| 功能         | 表达式   |
+| ------------ | -------- |
+| 水平方向     | H:       |
+| 垂直方向     | V:       |
+| Views        | [view]   |
+| 关系         | >=,==,<= |
+| SuperView    | \|       |
+| 空间，间隙 - | -        |
+| 优先级       | @value   |
 
 ```objective-c
 let hMetrics = ["middleSpace": 10, "rightSpace": 20]

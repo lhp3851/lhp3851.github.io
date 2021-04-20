@@ -1,3 +1,10 @@
+---
+title: DYLD
+date: 2021-04-20 21:36:02
+tags:  
+---
+
+```shell
 DYLD(1)                                                                
 NAME
 
@@ -297,3 +304,4 @@ SEE ALSO
        dyldinfo(1), ld(1), otool(1)
 
 Apple Inc.                       June 1, 2017                          DYLD(1)
+```

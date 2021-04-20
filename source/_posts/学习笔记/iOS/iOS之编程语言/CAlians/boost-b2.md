@@ -1,4 +1,10 @@
-# boost 编译器 b2
+---
+title: boost 编译器 b2
+date: 2021-04-20
+tags:
+---
+
+## 帮助文档
 
 ```sh
 ./b2 --help

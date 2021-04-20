@@ -1,6 +1,12 @@
+---
+title: 汇编语言
+date: 2021-04-20
+tags:
+---
+
 [汇编语言入门教程](http://www.ruanyifeng.com/blog/2018/01/assembly-language-primer.html)
 
-```
+```assemble
 _add_a_and_b:
    push   %ebx
    mov    %eax, [%esp+8] 
@@ -17,9 +23,8 @@ _main:
    ret
 ```
 
-https://blog.nelhage.com/2010/10/amd64-and-va_arg/
+<https://blog.nelhage.com/2010/10/amd64-and-va_arg/>
 
-http://infocenter.arm.com/help/topic/com.arm.doc.ihi0055b/IHI0055B_aapcs64.pdf
+<http://infocenter.arm.com/help/topic/com.arm.doc.ihi0055b/IHI0055B_aapcs64.pdf>
 
-https://developer.apple.com/library/ios/documentation/Xcode/Conceptual/iPhoneOSABIReference/Articles/ARM64FunctionCallingConventions.html
-
+<https://developer.apple.com/library/ios/documentation/Xcode/Conceptual/iPhoneOSABIReference/Articles/ARM64FunctionCallingConventions.html>

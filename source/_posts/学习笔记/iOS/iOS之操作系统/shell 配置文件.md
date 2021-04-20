@@ -1,3 +1,9 @@
+---
+title: Shell 配置文件
+date: 2021-04-20 21:36:02
+tags:  
+---
+
 Linux中profile、bashrc、bash_profile之间的区别和联系
 
 1、/etc/profile:此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行.并从/etc/profile.d目录的配置文件中搜集shell的设置.

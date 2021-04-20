@@ -1,4 +1,8 @@
-# JSPatch原理
+---
+title: iOS之JSPatch原理
+date: 2021-04-20 21:36:02
+tags:  
+---
 
 ## 1. [JSPatch](https://github.com/bang590/JSPatch)
 

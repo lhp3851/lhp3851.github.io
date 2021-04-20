@@ -1,4 +1,8 @@
-# Xcode Build 自动化
+---
+title: iOS之 Xcode Build 自动化
+date: 2021-04-20 21:36:02
+tags:  
+---
 
 ## 1. 自动化命令配置项
 

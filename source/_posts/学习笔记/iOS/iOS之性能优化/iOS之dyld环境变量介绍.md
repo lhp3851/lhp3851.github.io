@@ -1,10 +1,15 @@
+---
+title: iOS之dyld环境变量介绍
+date: 2021-04-20 21:36:02
+tags:  
+---
 ### [Xcode - 使用 dyld 环境变量进行调试](https://blog.csdn.net/lovechris00/article/details/82290773)
 
 一、使用 `DYLD_PRINT_STATISTICS` 获取启动时间
 
 edit scheme -> run -> arguments里面加入环境变量 DYLD_PRINT_STATISTICS = 1
 
-```
+```shell
 Total pre-main time: 1.3 seconds (100.0%)
              dylib loading time: 531.35 milliseconds (39.9%)
             rebase/binding time:  46.17 milliseconds (3.4%)
@@ -22,7 +27,7 @@ Total pre-main time: 1.3 seconds (100.0%)
 
 * 在终端通过命令：man dyld 可以列出所有的
 
-```
+```shell
 DYLD_FRAMEWORK_PATH
 DYLD_FALLBACK_FRAMEWORK_PATH
 DYLD_VERSIONED_FRAMEWORK_PATH

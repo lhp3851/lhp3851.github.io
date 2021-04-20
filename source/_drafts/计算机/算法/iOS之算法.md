@@ -1,5 +1,8 @@
-# 算法
-
+---
+title: iOS之算法
+date: 2021-04-20 21:36:02
+tags:
+---
 ## 1、算法--Swift
 
 ### 1.1 [raywenderlich/swift-algorithm-club](https://github.com/raywenderlich/swift-algorithm-club.git)
@@ -10,11 +13,11 @@ Algorithms and data structures in Swift, with explanations!
 
 ### 2.1 随机数
 
-|函数名|返回值|取值范围|
-|-----|-----|-----|
-|rand()|int|0～2147483647|
-|random()|long|0～2147483647|
-|arc4random()|uint32_t|0～4294967295|
+| 函数名       | 返回值   | 取值范围      |
+| ------------ | -------- | ------------- |
+| rand()       | int      | 0～2147483647 |
+| random()     | long     | 0～2147483647 |
+| arc4random() | uint32_t | 0～4294967295 |
 
 #### 2.1.1 随机数和伪随机数
 

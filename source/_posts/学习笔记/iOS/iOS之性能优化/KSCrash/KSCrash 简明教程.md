@@ -1,6 +1,11 @@
+---
+title: iOS之KSCrash 简明教程
+date: 2021-04-20 21:36:02
+tags:  
+---
+
 1、KSCrash 简明教程
 A Brief Tour of the KSCrash Code and Architecture
-
 
 KSCrash used to be simple enough that a quick perusal of the source code would be enough to understand how it worked, but it's gotten big enough now that there should be some guideposts to help readers along. This document introduces you to the main code areas of KSCrash.
 
@@ -47,4 +52,3 @@ Installations
 The installation system was an attempt to make the user API a little easier by hiding most of the filter/sink stuff behind a simpler interface. Its success is debatable...
 
 No code depends on the installation code, and KSCrash can actually work just fine without it.
-

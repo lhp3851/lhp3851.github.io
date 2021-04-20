@@ -1,4 +1,8 @@
-# 多线程编程
+---
+title: iOS之多线程编程
+date: 2021-04-20 21:36:02
+tags:  
+---
 
 ## 1. [Threading Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Multithreading/Introduction/Introduction.html#//apple_ref/doc/uid/10000057i-CH1-SW1)
 

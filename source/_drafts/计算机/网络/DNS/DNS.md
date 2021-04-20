@@ -1,5 +1,8 @@
-# DNS
-
+---
+title: DNS
+date: 2021-04-20 21:36:02
+tags:
+---
 ## DNS 搭建
 
 ### 1. [dnscrypt-proxy+dnsmasq搭建无污染DNS服务器](https://blog.hotwill.cn/dnscrypt-proxy+dnsmasq搭建无污染DNS服务器.html#comment-4687528442)
