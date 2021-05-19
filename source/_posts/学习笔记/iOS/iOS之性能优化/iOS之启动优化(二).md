@@ -13,3 +13,5 @@ tags:
 2、[iOS __attribute__那点小事](https://www.jianshu.com/p/abeee47e82d8)
 
 3、[优化 App 的启动时间](http://yulingtianxia.com/blog/2016/10/30/Optimizing-App-Startup-Time/)
+
+4、[Dyld之二: 动态链接过程](https://blog.cnbluebox.com/blog/2017/10/12/dyld2/)

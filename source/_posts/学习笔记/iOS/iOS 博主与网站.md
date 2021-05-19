@@ -16,6 +16,7 @@ tags:
 4、[hotwill](https://blog.hotwill.cn/OpenCL简介.html)
 5、[杨萧玉](http://yulingtianxia.com/)
 6、[Valar Morghulis](https://zhangbuhuai.com/)
+7、[刘坤的技术博客](https://blog.cnbluebox.com/)
 
 ## 期刊
 
