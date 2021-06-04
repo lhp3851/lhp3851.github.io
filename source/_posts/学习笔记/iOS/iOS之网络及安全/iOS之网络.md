@@ -9,6 +9,8 @@ tags:
 
 1. TCP/IP、UDP（KCP）、HTTPS、HTTP2.0、Socket、RTMP、FRP、UPnP、VPN、DNS、（N）ARP、令牌网络、ICMP
 
+* [即时通讯安全篇（七）：如果这样来理解HTTPS，一篇就够了](http://www.52im.net/forum.php?mod=viewthread&tid=1890&highlight=https)
+
 2. 协议簇、协议栈
 
 ## 3. HTTP 2.0

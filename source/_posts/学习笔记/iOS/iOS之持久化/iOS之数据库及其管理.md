@@ -501,3 +501,5 @@ MYISAM强调了快速读取操作，这可能就是为什么MYSQL受到了WEB开
 * INNODB和BERKLEYDB
 
 >INNODB和BERKLEYDB（BDB）数据库引擎都是造就MYSQL灵活性的技术的直接产品，这项技术就是MYSQL++ API。在使用MYSQL的时候，你所面对的每一个挑战几乎都源于ISAM和MYISAM数据库引擎不支持事务处理也不支持外来键。尽管要比ISAM和MYISAM引擎慢很多，但是INNODB和BDB包括了对事务处理和外来键的支持，这两点都是前两个引擎所没有的。如前所述，如果你的设计需要这些特性中的一者或者两者，那你就要被迫使用后两个引擎中的一个了。
+
+## [数据库三范式经典实例解析](http://www.blogjava.net/hijackwust/archive/2007/10/21/154793.html)
