@@ -298,4 +298,4 @@ kill -l
 信号的数值越小，则优先级越高。当进程收到多个待处理信号时，总是先处理优先级别高的信号。
 
 * [iOS 崩溃 crash 大解析·参考 1](https://toutiao.io/posts/443hus/preview)
-* [iOS中的Crash探究·参考 2](https://www.bitnpc.com/2018/11/28/iOS%E7%9A%84Crash%E6%8E%A2%E7%A9%B6/#:~:text=%E9%80%9A%E5%B8%B8%E6%98%AF%E7%94%B1%E7%A1%AC%E4%BB%B6%E4%BA%A7%E7%94%9F,%E4%BC%9A%E7%9B%B4%E6%8E%A5%E5%AF%BC%E8%87%B4%E8%BF%9B%E7%A8%8B%E9%80%80%E5%87%BA%E3%80%82)
+* [iOS中的Crash探究·参考 2](https://www.bitnpc.com/2018/11/28/iOS%E7%9A%84Crash%E6%8E%A2%E7%A9%B6/)

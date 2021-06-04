@@ -24,3 +24,5 @@ tags:
 ## 4. NSURLProtocol 网络拦截
 
 ### 4.1 [NSURLProtocol](https://blog.csdn.net/zgpeace/article/details/105853714)
+
+## 5. [Alamofire HTTPS认证](https://juejin.cn/post/6844903928925011981)
