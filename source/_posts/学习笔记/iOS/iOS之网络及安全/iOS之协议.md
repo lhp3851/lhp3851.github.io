@@ -137,6 +137,52 @@ struct tcphdr {
 };
 ```
 
+* 拥塞控制、流量控制、慢启动、快恢复、快重传，确认机制、校验和
+
+[校验和](https://blog.csdn.net/qq_15437629/article/details/79183076)：
+
+```text
+首先，把伪首部、TCP报头、TCP数据分为16位的字，如果总长度为奇数个字节，则在最后增添一个位都为0的字节。把TCP报头中的校验和字段置为0（否则就陷入鸡生蛋还是蛋生鸡的问题）。
+其次，用反码相加法累加所有的16位字（进位也要累加）。
+最后，对计算结果取反，作为TCP的校验和。
+```
+
+```C
+unsigned short 
+checksum(unsigned short * addr, int count)
+{
+    long sum = 0;
+    /*
+    计算所有数据的16bit对之和
+    */
+    while( count > 1  )  {
+        /*  This is the inner loop */
+        sum += *(unsigned short*)addr++;
+
+        count -= 2
+    }   
+
+    /* 如果数据长度为奇数，在该字节之后补一个字节(0),
+      然后将其转换为16bit整数，加到上面计算的校验和
+    　　中。
+    */
+    if( count > 0 ) { 
+        char left_over[2] = {0};
+        left_over[0] = *addr;
+        sum += * (unsigned short*) left_over;
+    }   
+
+    /*  将32bit数据压缩成16bit数据，即将进位加大校验和
+    　　的低字节上，直到没有进位为止。
+    */
+    while (sum>>16)
+        sum = (sum & 0xffff) + (sum >> 16);
+　　
+    　/*返回校验和的反码*/
+    return ~sum;
+}
+```
+
 ## 6. UDP 协议
 
 UDP协议是提供与IP一样的不可靠，无连接的交付服务，UDP报文可能出现丢失，重复或者乱序到达等现象。

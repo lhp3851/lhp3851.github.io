@@ -31,14 +31,14 @@ void quickSort(int arr[], int low, int high) {
 
 int dividSearch(int arr[], int length, int key) {
   int min = 0, max = length - 1, mid;
-  while (min < max)
+  while (min <= max)
   {
     mid = (min + max) / 2;
-    if (arr[min] > arr[mid]) 
+    if (key > arr[mid]) 
     {
       min = mid + 1;
     }
-    else if (arr[max] < arr[mid])
+    else if (key < arr[mid])
     {
       max = mid - 1;
     }
@@ -47,5 +47,5 @@ int dividSearch(int arr[], int length, int key) {
       return mid;
     }
   }
-    return -1;
+  return -1;
 }
