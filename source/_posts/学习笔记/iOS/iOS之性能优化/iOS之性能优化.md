@@ -6,6 +6,7 @@
 
 * [facebookarchive/AsyncDisplayKit](https://github.com/facebookarchive/AsyncDisplayKit)
 * [TextureGroup/Texture](https://github.com/TextureGroup/Texture)
+* [iOS tableView 优化](https://juejin.cn/post/6850418118850789390#heading-7)
 
 3、webView加载优化：
 

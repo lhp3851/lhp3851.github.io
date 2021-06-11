@@ -88,3 +88,5 @@ public protocol LogStorageProtocol {
 组，容量是11个元素，还有一个充当哨兵
 
 ### 1.5 [自主设计日志系统](https://www.jianshu.com/p/74f121bfd9e9)
+
+* [浅谈iOS日志收集系统](https://blog.csdn.net/GGGHub/article/details/71430037)

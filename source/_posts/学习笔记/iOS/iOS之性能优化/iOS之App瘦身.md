@@ -97,3 +97,6 @@ __TEXT,__text 的类型是 typeCode，因此，__TEXT,__text 中超出范围跳�
 Mach-O 文件占据了 Install Size 中很大一部分比例，但并不是文件中的每个段/节在程序启动的第一时间都要被用到。可以在构建过程中将 Mach-O 文件中的这部分段/节压缩，然后只要在这些段被使用到之前将其解压到内存中，就能达到了减少包大小的效果，同时也能保证程序正常运行。由于苹果的一些限制，我们目前只压缩了```__TEXT,__gcc_except_tab``` 与 ```__TEXT,__objc_methtype```两个节，然后在 ```_dyld_register_func_for_add_image``` 的回调中对它进行解压。该方案累计优化了 3.5 MB Install Size。
 
 ## 编译项
+
+* [今日头条 iOS 安装包大小优化—— 新阶段、新实践](https://www.infoq.cn/article/iowjwhbirqeobzf5m2o8)
+* [今日头条优化实践： iOS 包大小二进制优化，一行代码减少 60 MB 下载大小](https://www.infoq.cn/article/XUJL32hTDKYqAKz0hkMM)
