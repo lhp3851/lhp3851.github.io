@@ -111,8 +111,8 @@ theme: archer
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/lhp3851/lhp3851.github.io
-  branch: "main"
+  # repo: https://lhp3851.github.io/
+  # branch: "main"
 
 jsonContent:
   meta: true
