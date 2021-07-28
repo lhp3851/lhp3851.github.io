@@ -1,3 +1,8 @@
+.DS_Store
+Thumbs.db
+db.json
+.deploy*/
+
 # Logs
 logs
 *.log
