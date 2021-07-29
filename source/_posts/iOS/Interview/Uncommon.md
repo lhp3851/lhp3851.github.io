@@ -1,7 +1,10 @@
 ---
-abbrlink: '0'
+title: iOS 生僻题
+abbrlink: 16080
+date: 2021-07-29 10:07:00
+tags:
 ---
-# 生僻题
+## 生僻题
 
 1. weak弱引用表是可变的么还是不可变的
 2. UIView 和 CALayer的区别，以及动画的区别

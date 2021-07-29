@@ -1,7 +1,10 @@
 ---
-abbrlink: '0'
+title: iOS 之自动化
+abbrlink: 18561
+date: 2021-07-29 00:00:00
+tags:
 ---
-# iOS 自动化
+## iOS 自动化
 
 ## 1. 模拟器
 

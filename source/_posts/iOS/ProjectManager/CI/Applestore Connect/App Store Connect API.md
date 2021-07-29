@@ -1,7 +1,10 @@
 ---
-abbrlink: '0'
+title: iOS 之App Store Connect API
+abbrlink: 1773
+date: 2021-07-29 10:08:02
+tags:
 ---
-# App Store Connect API
+## App Store Connect API
 
 1、[App Store Connect API 使用指南](https://www.dazhuanlan.com/2019/10/08/5d9c54747a775/)
 

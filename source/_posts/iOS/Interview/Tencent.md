@@ -1,5 +1,8 @@
 ---
-abbrlink: '0'
+title: iOS 试题
+abbrlink: 35713
+date: 2021-07-29 10:01:00
+tags:
 ---
 <!--
  * @Author: hepeng.l
@@ -9,9 +12,9 @@ abbrlink: '0'
  * @Description: 
 -->
 
-# iOS 试题
+## iOS 试题
 
-## 第一部分
+### 第一部分
 
 1、IM模块设计
 2、Block实现原理
@@ -23,7 +26,7 @@ abbrlink: '0'
 8、线上故障、
 9、多线程
 
-## 第二部分
+### 第二部分
 
 1、苹果沙盒原理
 
@@ -56,7 +59,7 @@ keychain： Keychain Services 是 macOS 和 iOS 都提供一种安全地存储�
 
 9、分类调用时机
 
-## 第三部分
+### 第三部分
 
 1、iOS 内存管理机制 ，alloc/init 方法背后做了哪些工作？
 2、什么是离屏渲染，为什么会有离屏渲染，哪些操作会造成离屏渲染，光栅化为什么形成离屏渲染？

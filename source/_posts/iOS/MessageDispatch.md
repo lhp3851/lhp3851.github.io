@@ -1,5 +1,5 @@
 ---
-title: iOS之消息转发
+title: iOS 之消息转发
 abbrlink: 46ce68ab
 date: 2021-04-20 00:00:00
 tags:
@@ -11,7 +11,7 @@ tags:
 
 ### 1.1 Objective-C 消息转发流程图
 
-![OC消息转发流程图](/source/_posts/学习笔记/iOS/resources/MessageForward/oc_message_froware.png)
+![OC消息转发流程图](/source/_posts/iOS/resources/MessageForward/oc_message_froware.png)
 
 ### 1.2 参考资料
 

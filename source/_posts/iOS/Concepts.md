@@ -1,5 +1,8 @@
 ---
-abbrlink: '0'
+title: iOS 之概念
+abbrlink: 34078
+date: 2021-07-29 09:59:00
+tags:
 ---
 <!--
  * @Author: hepeng.l
@@ -9,8 +12,8 @@ abbrlink: '0'
  * @Description: 
 -->
 
-# iOS 之概念
+## iOS 之概念
 
-## 1. [General Conceptual](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Category.html)
+### 1. [General Conceptual](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Category.html)
 
-## 2. [iOS main之前发生了什么](https://blog.csdn.net/ivolcano/article/details/89739531)
+### 2. [iOS main之前发生了什么](https://blog.csdn.net/ivolcano/article/details/89739531)

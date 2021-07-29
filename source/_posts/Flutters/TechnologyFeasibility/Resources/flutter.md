@@ -1,7 +1,10 @@
 ---
-abbrlink: '0'
+title: Flutter 技术可行性调研
+abbrlink: 63814
+date: 2021-07-29 10:06:00
+tags:
 ---
-# Flutter 技术可行性调研
+## Flutter 技术可行性调研
 
 界面：
 1、适配；
