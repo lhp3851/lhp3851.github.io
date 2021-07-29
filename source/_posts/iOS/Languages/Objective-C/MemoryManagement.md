@@ -142,6 +142,8 @@ ARC 里面还有个机制来管理内存 -- Autorelease Pool，那些非自己�
 
 `Object_autoreleaseReturenValue && Object_retainAutoreleasedReturnValue`
 
+[自动释放池（AutoreleasePool）](https://blog.csdn.net/Z1591090/article/details/119108399)
+
 #### 4.2.2 内存所有权修饰符
 
 ##### 1. __strong

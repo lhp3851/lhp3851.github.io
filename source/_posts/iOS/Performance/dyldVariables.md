@@ -4,7 +4,7 @@ abbrlink: 10329bb4
 date: 2021-04-20 21:36:02
 tags:
 ---
-### [Xcode - 使用 dyld 环境变量进行调试](https://blog.csdn.net/lovechris00/article/details/82290773)
+## [Xcode - 使用 dyld 环境变量进行调试](https://blog.csdn.net/lovechris00/article/details/82290773)
 
 一、使用 `DYLD_PRINT_STATISTICS` 获取启动时间
 
