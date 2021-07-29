@@ -1,3 +1,8 @@
+.DS_Store
+Thumbs.db
+db.json
+.deploy*/
+
 # Logs
 logs
 *.log
@@ -82,6 +87,7 @@ typings/
 # Nuxt.js build / generate output
 .nuxt
 dist
+.deploy_git
 
 # Gatsby files
 .cache/

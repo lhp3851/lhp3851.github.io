@@ -1,0 +1,21 @@
+---
+title: iOS之 UI 渲染
+abbrlink: f5a9f80a
+date: 2021-04-20 21:36:02
+tags:
+---
+
+
+[TOC]
+
+## 1. [iOS绘制与渲染--渲染流程](https://www.jianshu.com/p/a7bf80f44dc6)
+
+## 2. [深入理解 iOS Rendering Process](https://lision.me/ios-rendering-process/)
+
+## 3. [iOS 图像渲染原理](http://chuquan.me/2018/09/25/ios-graphics-render-principle/)
+
+## 4. [计算机那些事(8)——图形图像渲染原理](http://chuquan.me/2018/08/26/graphics-rending-principle-gpu/)
+
+## 5. [iOS 保持界面流畅的技巧](https://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/)
+
+## 6. [图形学 光栅化详解（Rasterization）](https://www.jianshu.com/p/54fe91a946e2)
