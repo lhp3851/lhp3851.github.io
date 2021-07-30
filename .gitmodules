@@ -1,4 +1,0 @@
-[submodule "hexo-theme-archer"]
-	path = themes/archer
-	url = https://github.com/fi3ework/hexo-theme-archer.git
-	branch = master
