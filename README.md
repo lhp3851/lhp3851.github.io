@@ -1,37 +1,19 @@
-## Welcome to GitHub Pages
+# We Seen Life
 
-You can use the [editor on GitHub](https://github.com/lhp3851/lhp3851.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+## 1. 项目介绍
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+这是本人的开发者的笔记，因为本人主职是从事 iOS 开发的，所以本笔记侧重于 iOS 方向。因为目前还在上班搬砖，所以项目会不定期更新。
 
-### Markdown
+## 2. 服务
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+使用 Hexo 构建的部署在 GitHub Pages 的静态网站。
 
-```markdown
-Syntax highlighted code block
+### 2.1 构建
 
-# Header 1
-## Header 2
-### Header 3
+```yarn build```
 
-- Bulleted
-- List
+### 2.2 部署
 
-1. Numbered
-2. List
+借助 Hexo 插件 [hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git) 部署到 GitHub Pages。
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lhp3851/lhp3851.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+部署命令：```yarn deploy```
