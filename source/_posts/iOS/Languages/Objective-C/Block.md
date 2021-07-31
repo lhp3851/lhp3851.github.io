@@ -170,3 +170,6 @@ static void __main_block_func_0(struct __main_block_impl_0 *__cself) {
 1. weak
 2. __block
 3. __unsafe_unretained
+
+参考[^深入理解iOS的block]
+[^深入理解iOS的block]: [深入理解iOS的block](<https://juejin.cn/post/6844903893176958983#heading-37>)
