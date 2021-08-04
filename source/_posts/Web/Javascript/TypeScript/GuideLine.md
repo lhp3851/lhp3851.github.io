@@ -472,3 +472,55 @@ function createInstance<A extends Animal>(c: new () => A): A {
 createInstance(Lion).keeper.nametag;  // typechecks!
 createInstance(Bee).keeper.hasMask;   // typechecks!
 ```
+
+## 8. 枚举
+
+异构枚举
+
+```typescript
+enum BooleanLikeHeterogeneousEnum {
+    No = 0,
+    Yes = "YES",
+}
+```
+
+联合枚举与枚举成员的类型
+
+运行时的枚举
+
+```typescript
+enum E {
+    X, Y, Z
+}
+```
+
+```typescript
+function f(obj: { X: number }) {
+    return obj.X;
+}
+
+// Works, since 'E' has a property named 'X' which is a number.
+f(E);
+```
+
+反向映射
+
+```typescript
+enum Enum {
+    A
+}
+let a = Enum.A;
+let nameOfA = Enum[a]; // "A"
+```
+
+外部枚举
+
+```typescript
+declare enum Enum {
+    A = 1,
+    B,
+    C = 2
+}
+```
+
+外部枚举和非外部枚举之间有一个重要的区别，在正常的枚举里，没有初始化方法的成员被当成常数成员。 对于非常数的外部枚举而言，没有初始化方法时被当做需要经过计算的。
