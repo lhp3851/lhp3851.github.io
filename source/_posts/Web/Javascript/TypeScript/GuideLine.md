@@ -524,3 +524,387 @@ declare enum Enum {
 ```
 
 外部枚举和非外部枚举之间有一个重要的区别，在正常的枚举里，没有初始化方法的成员被当成常数成员。 对于非常数的外部枚举而言，没有初始化方法时被当做需要经过计算的。
+
+## 9. 高级类型
+
+### 9.1 交叉类型
+
+`Person & Serializable & Loggable`
+
+```typescript
+function extend<T, U>(first: T, second: U): T & U {
+    let result = <T & U>{};
+    for (let id in first) {
+        (<any>result)[id] = (<any>first)[id];
+    }
+    for (let id in second) {
+        if (!result.hasOwnProperty(id)) {
+            (<any>result)[id] = (<any>second)[id];
+        }
+    }
+    return result;
+}
+
+class Person {
+    constructor(public name: string) { }
+}
+interface Loggable {
+    log(): void;
+}
+class ConsoleLogger implements Loggable {
+    log() {
+        // ...
+    }
+}
+var jim = extend(new Person("Jim"), new ConsoleLogger());
+var n = jim.name;
+jim.log();
+```
+
+### 9.2 联合类型（Union Types）
+
+形式： `number | string | boolean`
+
+```typescript
+interface Bird {
+    fly();
+    layEggs();
+}
+
+interface Fish {
+    swim();
+    layEggs();
+}
+
+function getSmallPet(): Fish | Bird {
+    // ...
+}
+
+let pet = getSmallPet();
+pet.layEggs(); // okay
+pet.swim();    // errors
+```
+
+### 9.3 类型保护与区分类型（Type Guards and Differentiating Types）
+
+用户自定义类型保护：
+
+```typescript
+function isFish(pet: Fish | Bird): pet is Fish {
+    return (<Fish>pet).swim !== undefined;
+}
+```
+
+typeof类型保护：
+
+```typescript
+function isNumber(x: any): x is number {
+    return typeof x === "number";
+}
+
+function isString(x: any): x is string {
+    return typeof x === "string";
+}
+
+function padLeft(value: string, padding: string | number) {
+    if (isNumber(padding)) {
+        return Array(padding + 1).join(" ") + value;
+    }
+    if (isString(padding)) {
+        return padding + value;
+    }
+    throw new Error(`Expected string or number, got '${padding}'.`);
+}
+```
+
+instanceof类型保护：
+
+```typescript
+interface Padder {
+    getPaddingString(): string
+}
+
+class SpaceRepeatingPadder implements Padder {
+    constructor(private numSpaces: number) { }
+    getPaddingString() {
+        return Array(this.numSpaces + 1).join(" ");
+    }
+}
+
+class StringPadder implements Padder {
+    constructor(private value: string) { }
+    getPaddingString() {
+        return this.value;
+    }
+}
+
+function getRandomPadder() {
+    return Math.random() < 0.5 ?
+        new SpaceRepeatingPadder(4) :
+        new StringPadder("  ");
+}
+
+// 类型为SpaceRepeatingPadder | StringPadder
+let padder: Padder = getRandomPadder();
+
+if (padder instanceof SpaceRepeatingPadder) {
+    padder; // 类型细化为'SpaceRepeatingPadder'
+}
+if (padder instanceof StringPadder) {
+    padder; // 类型细化为'StringPadder'
+}
+```
+
+### 9.4 可辨识联合（Discriminated Unions）
+
+1. 具有普通的单例类型属性— 可辨识的特征。
+2. 一个类型别名包含了那些类型的联合— 联合。
+3. 此属性上的类型保护。
+
+```typescript
+interface Square {
+    kind: "square"; // 可辨识的特征或 标签
+    size: number;
+}
+interface Rectangle {
+    kind: "rectangle"; // 可辨识的特征或 标签
+    width: number;
+    height: number;
+}
+interface Circle {
+    kind: "circle"; // 可辨识的特征或 标签
+    radius: number;
+}
+
+type Shape = Square | Rectangle | Circle; // 联合
+
+function area(s: Shape) {
+    switch (s.kind) {
+        case "square": return s.size * s.size;
+        case "rectangle": return s.height * s.width;
+        case "circle": return Math.PI * s.radius ** 2;
+    }
+}
+```
+
+### 9.5 多态的 this类型
+
+```typescript
+class BasicCalculator {
+    public constructor(protected value: number = 0) { }
+    public currentValue(): number {
+        return this.value;
+    }
+    public add(operand: number): this {
+        this.value += operand;
+        return this;
+    }
+    public multiply(operand: number): this {
+        this.value *= operand;
+        return this;
+    }
+    // ... other operations go here ...
+}
+
+let v = new BasicCalculator(2)
+            .multiply(5)
+            .add(1)
+            .currentValue();
+
+
+```
+
+由于这个类使用了 this类型，你可以继承它，新的类可以直接使用之前的方法，不需要做任何的改变。
+
+```typescript
+class ScientificCalculator extends BasicCalculator {
+    public constructor(value = 0) {
+        super(value);
+    }
+    public sin() {
+        this.value = Math.sin(this.value);
+        return this;
+    }
+    // ... other operations go here ...
+}
+
+let v = new ScientificCalculator(2)
+        .multiply(5)
+        .sin()
+        .add(1)
+        .currentValue();
+```
+
+如果没有 this类型， ScientificCalculator就不能够在继承 BasicCalculator的同时还保持接口的连贯性。 multiply将会返回 BasicCalculator，它并没有 sin方法。 然而，使用 this类型， multiply会返回 this，在这里就是 ScientificCalculator。
+
+### 9.6 索引类型（Index types）
+
+```typescript
+function pluck(o, names) {
+    return names.map(n => o[n]);
+}
+```
+
+下面是如何在TypeScript里使用此函数，通过 `索引类型查询`和 `索引访问`操作符：
+
+```typescript
+function pluck<T, K extends keyof T>(o: T, names: K[]): T[K][] {
+  return names.map(n => o[n]);
+}
+
+interface Person {
+    name: string;
+    age: number;
+}
+let person: Person = {
+    name: 'Jarid',
+    age: 35
+};
+let strings: string[] = pluck(person, ['name']); // ok, string[]
+```
+
+编译器会检查 name是否真的是 Person的一个属性。 本例还引入了几个新的类型操作符。 首先是 keyof T， 索引类型查询操作符。 对于任何类型 T， keyof T的结果为 T上已知的公共属性名的联合。
+
+```typescript
+let personProps: keyof Person; // 'name' | 'age'
+```
+
+第二个操作符是 `T[K]`， 索引访问操作符。 在这里，类型语法反映了表达式语法。 这意味着 `person['name']`具有类型 `Person['name']` — 在我们的例子里则为 `string`类型。 然而，就像索引类型查询一样，你可以在普通的上下文里使用 `T[K]`，这正是它的强大所在。 你只要确保类型变量 K extends keyof T就可以了。
+
+```typescript
+function getProperty<T, K extends keyof T>(o: T, name: K): T[K] {
+    return o[name]; // o[name] is of type T[K]
+}
+```
+
+#### 9.6.1 索引类型和字符串索引签名
+
+`keyof` 和 `T[K]`与字符串索引签名进行交互。 如果你有一个带有字符串索引签名的类型，那么 `keyof T`会是 `string`。 并且 `T[string]`为索引签名的类型：
+
+```typescript
+interface Map<T> {
+    [key: string]: T;
+}
+let keys: keyof Map<number>; // string
+let value: Map<number>['foo']; // number
+```
+
+### 9.7 映射类型
+
+```typescript
+type Readonly<T> = {
+    readonly [P in keyof T]: T[P];
+}
+type Partial<T> = {
+    [P in keyof T]?: T[P];
+}
+```
+
+像下面这样使用：
+
+```typescript
+type PersonPartial = Partial<Person>;
+type ReadonlyPerson = Readonly<Person>;
+```
+
+基于一些已存在的类型，且按照一定的方式转换字段。 这就是 keyof和索引访问类型要做的事情：
+
+```typescript
+type Nullable<T> = { [P in keyof T]: T[P] | null }
+type Partial<T> = { [P in keyof T]?: T[P] }
+```
+
+在这些例子里，属性列表是 keyof T且结果类型是 T[P]的变体。 这是使用通用映射类型的一个好模版。 因为这类转换是 `同态的`，映射只作用于 `T`的属性而没有其它的。 编译器知道在添加任何新属性之前可以拷贝所有存在的属性修饰符。 例如，假设 `Person.name`是只读的，那么 `Partial<Person>.name`也将是只读的且为可选的。
+
+下面是另一个例子， `T[P]`被包装在 `Proxy<T>`类里：
+
+```typescript
+type Proxy<T> = {
+    get(): T;
+    set(value: T): void;
+}
+type Proxify<T> = {
+    [P in keyof T]: Proxy<T[P]>;
+}
+function proxify<T>(o: T): Proxify<T> {
+   // ... wrap proxies ...
+}
+let proxyProps = proxify(props);
+```
+
+注意 `Readonly<T>`和 `Partial<T>`用处不小，因此它们与 `Pick`和 `Record`一同被包含进了TypeScript的标准库里：
+
+```typescript
+type Pick<T, K extends keyof T> = {
+    [P in K]: T[P];
+}
+type Record<K extends string, T> = {
+    [P in K]: T;
+}
+```
+
+#### 9.7.1 由映射类型进行推断
+
+现在你了解了如何包装一个类型的属性，那么接下来就是如何拆包。 其实这也非常容易：
+
+```typescript
+function unproxify<T>(t: Proxify<T>): T {
+    let result = {} as T;
+    for (const k in t) {
+        result[k] = t[k].get();
+    }
+    return result;
+}
+
+let originalProps = unproxify(proxyProps);
+```
+
+**注意:** 这个拆包推断只适用于同态的映射类型。 如果映射类型不是同态的，那么需要给拆包函数一个明确的类型参数。
+
+#### 9.7.2 预定义的有条件类型
+
+`TypeScript 2.8`在`lib.d.ts`里增加了一些预定义的有条件类型：
+
+* `Exclude<T, U>` -- 从T中剔除可以赋值给U的类型。
+* `Extract<T, U>` -- 提取T中可以赋值给U的类型。
+* `NonNullable<T>` -- 从T中剔除null和undefined。
+* `ReturnType<T>` -- 获取函数返回值类型。
+* `InstanceType<T>` -- 获取构造函数类型的实例类型。
+
+```typescript
+type T00 = Exclude<"a" | "b" | "c" | "d", "a" | "c" | "f">;  // "b" | "d"
+type T01 = Extract<"a" | "b" | "c" | "d", "a" | "c" | "f">;  // "a" | "c"
+
+type T02 = Exclude<string | number | (() => void), Function>;  // string | number
+type T03 = Extract<string | number | (() => void), Function>;  // () => void
+
+type T04 = NonNullable<string | number | undefined>;  // string | number
+type T05 = NonNullable<(() => string) | string[] | null | undefined>;  // (() => string) | string[]
+
+function f1(s: string) {
+    return { a: 1, b: s };
+}
+
+class C {
+    x = 0;
+    y = 0;
+}
+
+type T10 = ReturnType<() => string>;  // string
+type T11 = ReturnType<(s: string) => void>;  // void
+type T12 = ReturnType<(<T>() => T)>;  // {}
+type T13 = ReturnType<(<T extends U, U extends number[]>() => T)>;  // number[]
+type T14 = ReturnType<typeof f1>;  // { a: number, b: string }
+type T15 = ReturnType<any>;  // any
+type T16 = ReturnType<never>;  // any
+type T17 = ReturnType<string>;  // Error
+type T18 = ReturnType<Function>;  // Error
+
+type T20 = InstanceType<typeof C>;  // C
+type T21 = InstanceType<any>;  // any
+type T22 = InstanceType<never>;  // any
+type T23 = InstanceType<string>;  // Error
+type T24 = InstanceType<Function>;  // Error
+```
+
+**注意：** `Exclude`类型是建议的Diff类型的一种实现。我们使用`Exclude`这个名字是为了避免破坏已经定义了`Diff`的代码，并且我们感觉这个名字能更好地表达类型的语义。我们没有增加`Omit<T, K>`类型，因为它可以很容易的用`Pick<T, Exclude<keyof T, K>>`来表示。
