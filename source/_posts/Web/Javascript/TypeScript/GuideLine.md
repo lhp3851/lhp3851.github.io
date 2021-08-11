@@ -525,7 +525,7 @@ declare enum Enum {
 
 外部枚举和非外部枚举之间有一个重要的区别，在正常的枚举里，没有初始化方法的成员被当成常数成员。 对于非常数的外部枚举而言，没有初始化方法时被当做需要经过计算的。
 
-## 9. 高级类型
+## 9. 高级类型[^高级类型]
 
 ### 9.1 交叉类型
 
@@ -908,3 +908,5 @@ type T24 = InstanceType<Function>;  // Error
 ```
 
 **注意：** `Exclude`类型是建议的Diff类型的一种实现。我们使用`Exclude`这个名字是为了避免破坏已经定义了`Diff`的代码，并且我们感觉这个名字能更好地表达类型的语义。我们没有增加`Omit<T, K>`类型，因为它可以很容易的用`Pick<T, Exclude<keyof T, K>>`来表示。
+
+[^高级类型]: [TypeScript 高级类型清单](https://chinese.freecodecamp.org/news/advanced-typescript-types-cheatsheet/)
