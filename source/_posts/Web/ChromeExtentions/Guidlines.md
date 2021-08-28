@@ -9,3 +9,5 @@ tags:
 ## 2. [Chrome 扩展开发文档](https://wizardforcel.gitbooks.io/chrome-doc/content/3.html)
 
 ## 3. [Chrome Devleopers](https://developer.chrome.com/docs/extensions/)
+
+## 4. [Tampermonkey](https://www.tampermonkey.net/)
