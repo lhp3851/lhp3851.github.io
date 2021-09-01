@@ -404,7 +404,9 @@ sh Tutorial-1.0.1-Linux.sh
 
 ### 7.4 [CMake 入门实战](https://www.hahack.com/codes/cmake/)
 
-### 7.5 [CMake 支持的变量](https://gitlab.kitware.com/cmake/community/-/wikis/doc/cmake/Useful-Variables)
+### 7.5 [Cmake中文实战教程](https://brightxiaohan.github.io/CMakeTutorial/)
+
+### 7.6 [CMake 支持的变量](https://gitlab.kitware.com/cmake/community/-/wikis/doc/cmake/Useful-Variables)
 
 ## 8. 本文使用到的资源
 
