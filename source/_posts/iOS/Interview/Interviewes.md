@@ -109,39 +109,9 @@ Apple Slicing
 * [iOS微信安装包瘦身](https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=207986417&idx=1&sn=77ea7d8e4f8ab7b59111e78c86ccfe66&scene=24&srcid=0921TTAXHGHWKqckEHTvGzoA#rd)
 * [今日头条 iOS 安装包大小优化—— 新阶段、新实践](https://www.infoq.cn/article/iowjwhbirqeobzf5m2o8)
 
-### 2.3 电量
-
-电量优化涉及 CPU/GPU 任务，网络任务，硬件功能（定位），后台/前台唤醒切换消耗（任务尽量集中化）
-
-### 2.4 网络
-
-弱网优化
-
-网络安全优化
-
-网络认证
-
-### 2.5 UI
-
-卡顿优化，tableview优化，图片资源/渲染优化（渲染原理）
-
 ### 2.6 Instrument
 
 内存泄漏，僵死代码等
-
-## 3. 网络
-
-TCP、UDP
-
-IP
-
-HTTP[S]
-
-WebSocket
-
-Socket
-
-* 请求拦截、认证、链接建立
 
 ## 4. 内存管理
 
@@ -245,38 +215,6 @@ Behive
 * 功能
 * 业务
 
-## 12. 数据结构
-
-链表
-
-树
-
-堆
-
-栈
-
-图
-
-拓扑
-
-队列
-
-## 13. 算法
-
-查找
-
-排序
-
-复杂度
-
-匹配（字符串）
-
-安全（对称、非对称）
-
-摘要
-
-签名
-
 ## 14. OS
 
 文件（Mac-O、可执行、多媒体、plist 等）
@@ -300,19 +238,7 @@ UIView与Layer
 
 透明度：alpha，translucent，opaque 等
 
-## 16. 设计模式
-
-## 17. 架构
-
 ## 18. 附加项
-
-### 18.1 大前端
-
-原理
-
-WebKit、React-Native、Flutter、Dcloud、Capacitor
-
-### 18.2 蓝牙
 
 ### 18.3 IM
 
