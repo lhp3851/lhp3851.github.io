@@ -6,3 +6,5 @@ tags:
 ---
 
 ## 1. [xcconfig（环境变量） 的使用](https://blog.csdn.net/weixin_45390999/article/details/104481185)
+
+## 2. [The Unofficial Guide to xcconfig files](https://pewpewthespells.com/blog/xcconfig_guide.html)
