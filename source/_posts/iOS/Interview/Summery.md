@@ -159,6 +159,8 @@ AFNetworking、Alamofire、Moya
 
 ### 3.3 动画
 
+[深入浅出贝塞尔曲线](https://juejin.cn/post/6995482699037147166?utm_source=gold_browser_extension)
+
 Lottie
 
 ### 3.4 字体
