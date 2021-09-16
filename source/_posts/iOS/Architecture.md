@@ -53,6 +53,18 @@ tags:
 
 ### 2.1 MVC
 
+[苹果的 MVC](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html)
+
+![斯坦福白胡子老头的 MVC](./Resources/MVC_Stanford.webp)
+
+这个图的理解，做一个说明，图中有几条线把这三部分划分开，有黄线，虚线，和白色的实线。我们把它们想象成路标。
+
+* 在 M 和 V 之间有两条黄线，这表示什么呢？它意味着你不能穿越这黄线，任何一个方向都不行。
+* 白色的虚线，它意味着你可以自由的穿越它，只要是安全的。
+* 白色的实线，它代表你可以穿越，但你必须要买票，或者交点过路费，target-action，Delegate，DataSource。
+* 图中绿色的箭头表示直接引用，直接引用直观来说，就是说需要包含引用类的申明头文件和类的实例变量。可以看到，只有 Controller 中，有对 Model 和 View 的直接引用。其中对 View 的直接引用体现为 IBOutlet。
+* Model 在图上有一个信号塔类似的图形，旁边写着 Notification & KVO。这表明 Model 主要是通过 Notification 和 KVO 来和 Controller 通讯的。
+
 ### 2.2 MV-VM
 
 ## 3. RxSwift 常用架构
