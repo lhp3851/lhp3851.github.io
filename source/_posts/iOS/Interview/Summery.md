@@ -17,6 +17,8 @@ tags:
 
 循环引用&内存泄漏&weak 实现
 
+[weak 实现原理](https://www.jianshu.com/p/13c4fb1cedea)
+
 野指针
 
 对象初始化过程、对象 isa 如何获取
