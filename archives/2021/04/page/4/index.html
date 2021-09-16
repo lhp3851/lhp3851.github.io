@@ -391,91 +391,6 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/20/iOS/Performance/LaunchOptimize/" >
-            
-                <span>iOS之启动优化</span>
-        </a>
-        <div class="abstract-content">
-            启动优化1、启动优化
-冷启动是指， App 点击启动前，它的进程不在系统里，需要系统新创建一个进程分配给它启动的情况。这是一次完整的启动过程。
-热启动是指 ，App 在冷启动后用户将 App 退后台，在 App 的进程还在系统里的情况下，用户重新启动进入 App 的过程，这个过程做的事情非常少。
-
-main() 函数执行前；
-
-main() 函数执行后；
-
-首屏渲染完成后。
-
-
-1、main() 函数执行前要做启动优化，就首先要知道，APP在启动前做了些什么？iOS APP 启动的时候，会做下面几件事情：
-
-加载可执行文件（Mac-o、App 的.o文件）；
-加载动态链接库，进行reba...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/20/iOS/Performance/LaunchOptimize2/" >
-            
-                <span>iOS之启动优化（二）</span>
-        </a>
-        <div class="abstract-content">
-            1. iOS App冷启动治理：来自美团外卖的实践2. Attribute Syntax2.1、OC 中的 attribute2.2 iOS __attribute__那点小事3. 优化 App 的启动时间4. Dyld之二: 动态链接过程5. iOS摸鱼周报 第十六期5.1 如何实现 iOS App 的冷启动优化
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/20/iOS/Performance/MacOFiles/" >
-            
-                <span>iOS之Mac-O 文件揭秘</span>
-        </a>
-        <div class="abstract-content">
-            1、Apple 操作系统可执行文件 Mach-O
-2、Mach-O 可执行文件
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2021/04/20/iOS/Performance/PowerOptimize/" >
             
                 <span>iOS 之功耗优化</span>
@@ -637,6 +552,81 @@ The Profi...
 
 2. 蒲公英上传至蒲公英
 123#curl -F &quot;file=@$&#123;IPA_PATH&#125;&quot;       -F &quot;uKey=******************2f5e99f3a7495&quot;       -F &quot;_api_key  - 0 : ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/04/20/iOS/ProjectManager/ProjectManager/" >
+            
+                <span>项目管理</span>
+        </a>
+        <div class="abstract-content">
+            2. 应用管理2.1 应用路径管理2.2 Dynamic linker environment variables2.3 调试
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/04/20/iOS/ProjectManager/ZenTao/" >
+            
+                <span>项目管理之禅道</span>
+        </a>
+        <div class="abstract-content">
+            
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/04/20/iOS/Tools/CocoapodGuidance/" >
+            
+                <span>Cocoapod 指南</span>
+        </a>
+        <div class="abstract-content">
+            一、pod 公开库1. 索引库1.1 添加索引库1pod repo add WTSpecs https://coding.net/wtlucky/WTSpecs.git
+
+1.2 删除索引库1pod repo remove WTSpecs
+
+2. pod库2.1 创建pod库1pod lib create podTestLibrary
+
+2.2 添加到远程1234git add .git commit -s -m &quot;Initial Commit of Library&quot;git remote add origin git@coding.net:wtlucky/podTes...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -3267,6 +3257,16 @@ The Profi...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 171
@@ -3285,12 +3285,7 @@ The Profi...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/16</span><a class="archive-post-title" href= "/2021/09/16/iOS/Webs/DCloud/DCloudGuideline/" >[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/16</span><a class="archive-post-title" href= "/2021/09/16/Invest/%E9%AB%98%E7%93%B4%E8%B5%84%E6%9C%AC/" >[Untitled Post]</a>
+            <span class="archive-post-date">09/16</span><a class="archive-post-title" href= "/2021/09/16/Invest/hillhouse/" >投资入门</a>
         </li>
     
     
@@ -3345,6 +3340,11 @@ The Profi...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">08/20</span><a class="archive-post-title" href= "/2021/08/20/iOS/Webs/DCloud/DCloudGuideline/" >DCloud iOS 原生插件开发指南</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">08/10</span><a class="archive-post-title" href= "/2021/08/10/iOS/Tools/a-shell/" >a-shell</a>
         </li>
     
@@ -3370,11 +3370,6 @@ The Profi...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/Games/Games/" >游戏</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/Interview/Summery2/" >iOS 经验总结</a>
         </li>
     
@@ -3385,17 +3380,22 @@ The Profi...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/Games/Games/" >游戏</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/Performance/Performance/" >iOS 之性能优化</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/Interview/InterviewCollections/Tencent/" >iOS 试题</a>
+            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/Flutters/TechnologyFeasibility/Resources/flutter/" >Flutter 技术可行性调研</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/Flutters/TechnologyFeasibility/Resources/flutter/" >Flutter 技术可行性调研</a>
+            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/Interview/InterviewCollections/Tencent/" >iOS 试题</a>
         </li>
     
     
@@ -3490,17 +3490,17 @@ The Profi...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href= "/2021/05/25/iOS/Interview/InterviewQuestions/" >iOS之面试</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">05/25</span><a class="archive-post-title" href= "/2021/05/25/iOS/Interview/Interviewes/" >iOS之面试</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">05/25</span><a class="archive-post-title" href= "/2021/05/25/iOS/Interview/Summery/" >走向资深 iOS 之路</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href= "/2021/05/25/iOS/Interview/InterviewQuestions/" >iOS之面试</a>
         </li>
     
     
@@ -3535,27 +3535,17 @@ The Profi...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Web/CSS/CSSGuidance/" >CSS 上手</a>
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Flutters/Guidance/Guidance/" >Flutter</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Web/JavaScript/JavaScript/" >JavaScript</a>
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Flutters/TechnologyFeasibility/TechnologyFeasibility/" >Flutter 技术可行性调研</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Web/JavaScript/Technologies/" >JavaScript 知识点</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/DataPersistence/DataPersistence/" >iOS之持久化</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/DataPersistence/DataBase/" >iOS之SQLite</a>
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Flutters/TechnologyFeasibility/Technologies/" >Flutter 可行性调研技术点</a>
         </li>
     
     
@@ -3571,6 +3561,21 @@ The Profi...
     
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Concurrency/MultiThread/" >iOS之多线程编程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/DataPersistence/DataPersistence/" >iOS之持久化</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/DataPersistence/DataBase/" >iOS之SQLite</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Documents/Jazzy/" >iOS之文档 jazzy</a>
         </li>
     
     
@@ -3595,32 +3600,17 @@ The Profi...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Medias/Audio/" >iOS之音频</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Medias/Images/" >iOS之图片</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Medias/Vedio/" >iOS之视频</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Network/AppSign/" >iOS之网络</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Medias/Medias/" >iOS之多媒体</a>
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Network/HTTP/" >iOS网络之 HTTP</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Network/HTTP/" >iOS网络之 HTTP</a>
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Network/NetSecure/" >iOS之安全</a>
         </li>
     
     
@@ -3635,11 +3625,6 @@ The Profi...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Network/NetSecure/" >iOS之安全</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Network/Protocols/" >网络协议</a>
         </li>
     
@@ -3650,12 +3635,12 @@ The Profi...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Network/Logs/" >iOS之日志系统</a>
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/OS/Linux/" >Linux</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/OS/Linux/" >Linux</a>
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Network/Logs/" >iOS之日志系统</a>
         </li>
     
     
@@ -3768,61 +3753,6 @@ The Profi...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/Animation/" >iOS之动画</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/CoreText/" >iOS之排版——Coretext</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/TextKit/" >iOS排版与渲染引擎——TextKit</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/UI/" >iOS之UI界面</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/UserExperences/" >iOS之交互体验</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI%20/Animation/" >iOS之动画</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/WWDC/WWDC2019/" >iOS之WWDC2019</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Webs/JSPatchPrinciple/" >iOS之JSPatch原理</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Webs/Vue/" >iOS之 Vue</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Webs/Hybrids/" >iOS之移动端跨端技术及原理</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/Charles/" >Charles</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/CocoapodGuidance/" >Cocoapod 指南</a>
         </li>
     
@@ -3834,6 +3764,11 @@ The Profi...
     
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/Fastlane/" >Fastlane 指南</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/Charles/" >Charles</a>
         </li>
     
     
@@ -3868,22 +3803,92 @@ The Profi...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Flutters/Guidance/Guidance/" >Flutter</a>
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/Animation/" >iOS之动画</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Flutters/TechnologyFeasibility/TechnologyFeasibility/" >Flutter 技术可行性调研</a>
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/CoreText/" >iOS之排版——Coretext</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Flutters/TechnologyFeasibility/Technologies/" >Flutter 可行性调研技术点</a>
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/UserExperences/" >iOS之交互体验</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Documents/Jazzy/" >iOS之文档 jazzy</a>
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI%20/Animation/" >iOS之动画</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/TextKit/" >iOS排版与渲染引擎——TextKit</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/WWDC/WWDC2019/" >iOS之WWDC2019</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Webs/Hybrids/" >iOS之移动端跨端技术及原理</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Webs/JSPatchPrinciple/" >iOS之JSPatch原理</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Webs/Vue/" >iOS之 Vue</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Web/CSS/CSSGuidance/" >CSS 上手</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/UI/" >iOS之UI界面</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Medias/Audio/" >iOS之音频</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Medias/Medias/" >iOS之多媒体</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Medias/Vedio/" >iOS之视频</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Medias/Images/" >iOS之图片</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Web/JavaScript/Technologies/" >JavaScript 知识点</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Web/JavaScript/JavaScript/" >JavaScript</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/iOS/iOS%E4%B9%8B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/RunLoop/" >iOS之RunLoop</a>
         </li>
     
     
@@ -3933,12 +3938,12 @@ The Profi...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Swift/Swift/" >iOS编程语言之Swift</a>
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Swift/Constructor/" >iOS编程语言之swift 构造器</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Swift/Constructor/" >iOS编程语言之swift 构造器</a>
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Swift/Swift/" >iOS编程语言之Swift</a>
         </li>
     
     
@@ -3953,17 +3958,27 @@ The Profi...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Performance/Exceptions/CrashLogManuelResolve/" >iOS之手动解析 crash 日志</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Performance/KSCrash/Princeples/" >iOS之KSCrahs 原理</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Performance/Exceptions/CrashLogManuelResolve/" >iOS之手动解析 crash 日志</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Performance/Exceptions/Excetions/" >iOS之异常处理</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/Appium/AppiumGuidance/" >Appium 快速上手</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/Vim/VimOperation/" >Vim 常用操作</a>
         </li>
     
     
@@ -4009,21 +4024,6 @@ The Profi...
     
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Webs/React-Native/React-Native/" >iOS之React-Native</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/Vim/VimOperation/" >Vim 常用操作</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/Appium/AppiumGuidance/" >Appium 快速上手</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/iOS/iOS%E4%B9%8B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/RunLoop/" >iOS之RunLoop</a>
         </li>
     
     
@@ -4083,12 +4083,12 @@ The Profi...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Guidelines/" >iOS之规范</a>
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/FrameWorks/" >iOS之框架</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/MemoryManagement/" >iOS之内存管理</a>
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Guidelines/" >iOS之规范</a>
         </li>
     
     
@@ -4098,7 +4098,7 @@ The Profi...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/FrameWorks/" >iOS之框架</a>
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/MemoryManagement/" >iOS之内存管理</a>
         </li>
     
     
@@ -4162,6 +4162,8 @@ The Profi...
     <div class="sidebar-tags-name">
     
         <span class="sidebar-tag-name" data-tags="Framwork"><span class="iconfont-archer">&#xe606;</span>Framwork</span>
+    
+        <span class="sidebar-tag-name" data-tags="DCloud"><span class="iconfont-archer">&#xe606;</span>DCloud</span>
     
         <span class="sidebar-tag-name" data-tags="React-Native Navigation"><span class="iconfont-archer">&#xe606;</span>React-Native Navigation</span>
     
