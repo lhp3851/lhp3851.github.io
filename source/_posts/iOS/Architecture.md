@@ -55,6 +55,10 @@ tags:
 
 [苹果的 MVC](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html)
 
+![ios 的 MVC](./resources/../Resources/model_view_controller_2x.png)
+
+斯坦福白胡子老头的 MVC
+
 ![斯坦福白胡子老头的 MVC](./Resources/MVC_Stanford.webp)
 
 这个图的理解，做一个说明，图中有几条线把这三部分划分开，有黄线，虚线，和白色的实线。我们把它们想象成路标。
