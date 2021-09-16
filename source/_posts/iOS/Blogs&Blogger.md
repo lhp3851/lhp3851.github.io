@@ -20,6 +20,8 @@ tags:
 7、[刘坤的技术博客](https://blog.cnbluebox.com/)
 8、[bang's blog](http://blog.cnbang.net/)
 9、[Seebug](https://paper.seebug.org/)
+10、[HaHack](https://www.hahack.com/)
+11、[唐巧的博客](https://blog.devtang.com/)
 
 ## 机构
 
