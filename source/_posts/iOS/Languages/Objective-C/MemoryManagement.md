@@ -114,13 +114,45 @@ static Class getClass(const char *name)
 
 ### 4.1 内存管理原则
 
+* 自己生成的对象，自己持有
+* 非自己生成的对象，自己也能持有
+* 不再需要自己持有的对象，要释放
+* 非自己持有的对象，无法释放
+
+| 对象操作         | OC 方法                           |
+| :--------------- | :-------------------------------- |
+| 生成并持有的对象 | alloc/new/copy/mutableCopy 等方法 |
+| 持有对象         | retain                            |
+| 释放对象         | release                           |
+| 废弃对象         | dealloc                           |
+
 ### 4.2 内存管理方式
 
-权限修饰符： copy，assign，strong 等
+#### 4.2.1 autorelease pool
+
+#### 4.2.2 所有权修饰符
+
+__strong
+
+__weak
+
+__unsafe_unretain
+
+__autorelease
+
+#### 4.2.3 属性权限修饰符
+
+copy
+
+assign
+
+strong
 
 循环引用&内存泄漏&Weak 原理
 
 [weak 实现原理](https://www.jianshu.com/p/13c4fb1cedea)
+
+Block 内存管理
 
 野指针、悬垂指针（腾讯方案）
 
