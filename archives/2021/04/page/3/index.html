@@ -3,7 +3,7 @@
     <!-- title -->
 
 
-
+    
 
 <!-- keywords -->
 
@@ -12,12 +12,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="author" content="Jerry Liu">
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="Jerry Liu">
     
-    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+        <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="我们·看见·生活">
     <meta name="description" content="我们·看见·生活">
@@ -35,9 +35,119 @@
 <meta property="article:tag" content="Web">
 <meta name="twitter:card" content="summary">
     <meta http-equiv="Cache-control" content="no-cache">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/assets/favicon.ico">
     
     <title>Jerry&#39;s Studio</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -87,178 +197,86 @@
             transform: translate3d(0, 0, 0);
         }
     }
-
 </style>
 
-    <link rel="preload" href= "/css/style.css?v=20210204" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <link rel="stylesheet" href= "/css/mobile.css?v=20210204" media="(max-width: 980px)">
+    <link rel="preload" href="/css/style.css?v=202107" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/css/dark.css?v=202107" as="style">
+    <link rel="stylesheet" href="/css/mobile.css?v=202107" media="(max-width: 980px)">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js?v=202107" as="script">
+    <link rel="preload" href="/scripts/dark.js?v=202107" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/all.min.js" data-auto-replace-svg="nest"></script>
+    <!-- algolia -->
     
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    
-    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-/* This file is meant as a standalone workflow for
-- testing support for link[rel=preload]
-- enabling async CSS loading in browsers that do not support rel=preload
-- applying rel preload css once loaded, whether supported or not.
-*/ -->
-<script>
-(function( w ){
-	"use strict";
-	// rel=preload support test
-	if( !w.loadCSS ){
-		w.loadCSS = function(){};
-	}
-	// define on the loadCSS obj
-	var rp = loadCSS.relpreload = {};
-	// rel=preload feature support test
-	// runs once and returns a function for compat purposes
-	rp.support = (function(){
-		var ret;
-		try {
-			ret = w.document.createElement( "link" ).relList.supports( "preload" );
-		} catch (e) {
-			ret = false;
-		}
-		return function(){
-			return ret;
-		};
-	})();
-
-	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-	// then change that media back to its intended value on load
-	rp.bindMediaToggle = function( link ){
-		// remember existing media attr for ultimate state, or default to 'all'
-		var finalMedia = link.media || "all";
-
-		function enableStylesheet(){
-			link.media = finalMedia;
-		}
-
-		// bind load handlers to enable media
-		if( link.addEventListener ){
-			link.addEventListener( "load", enableStylesheet );
-		} else if( link.attachEvent ){
-			link.attachEvent( "onload", enableStylesheet );
-		}
-
-		// Set rel and non-applicable media type to start an async request
-		// note: timeout allows this to happen async to let rendering continue in IE
-		setTimeout(function(){
-			link.rel = "stylesheet";
-			link.media = "only x";
-		});
-		// also enable media after 3 seconds,
-		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-		setTimeout( enableStylesheet, 3000 );
-	};
-
-	// loop through link elements in DOM
-	rp.poly = function(){
-		// double check this to prevent external calls from running
-		if( rp.support() ){
-			return;
-		}
-		var links = w.document.getElementsByTagName( "link" );
-		for( var i = 0; i < links.length; i++ ){
-			var link = links[ i ];
-			// qualify links to those with rel=preload and as=style attrs
-			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
-				// prevent rerunning on link
-				link.setAttribute( "data-loadcss", true );
-				// bind listeners to toggle media back
-				rp.bindMediaToggle( link );
-			}
-		}
-	};
-
-	// if unsupported, run the polyfill
-	if( !rp.support() ){
-		// run once at least
-		rp.poly();
-
-		// rerun poly on an interval until onload
-		var run = w.setInterval( rp.poly, 500 );
-		if( w.addEventListener ){
-			w.addEventListener( "load", function(){
-				rp.poly();
-				w.clearInterval( run );
-			} );
-		} else if( w.attachEvent ){
-			w.attachEvent( "onload", function(){
-				rp.poly();
-				w.clearInterval( run );
-			} );
-		}
-	}
-
-
-	// commonjs
-	if( typeof exports !== "undefined" ){
-		exports.loadCSS = loadCSS;
-	}
-	else {
-		w.loadCSS = loadCSS;
-	}
-}( typeof global !== "undefined" ? global : this ) );
-</script>
-
-    <link rel="icon" href= "/assets/favicon.ico" />
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
-    <link rel="preload" href="/scripts/main.js?v=20210204" as="script" />
-    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
-    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
-    <script src="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/js/all.min.js"  data-auto-replace-svg="nest" ></script>
-    
-    <!-- fancybox -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
     <!-- 谷歌统计  -->
     
 <meta name="generator" content="Hexo 5.4.0"></head>
 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
     
-    
-<header class="header">
-
+        <!-- header -->
+        <header class="header header-mobile">
     <!-- top read progress line -->
     <div class="header-element">
-        
         <div class="read-progress"></div>
-        
     </div>
     <!-- sidebar menu button -->
     <div class="header-element">
         
-        <div class="header-sidebar-menu">
+            <div class="header-sidebar-menu">
         
             
-            <div style="padding-left: 1px;">&#xe775;</div>
+                <div style="padding-left: 1px;">&#xe775;</div>
             
         </div>
     </div>
-    <!-- back to home page text -->
-    <a class="home-link header-element" href=/>Jerry's Studio.</a>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href=/>Jerry's Studio.</a>
+        </span>
+    </div>
     <!-- toggle banner for post layout -->
     
 </header>
-    
-<footer class="footer-fixed">
 
+        <!-- dark mode -->
+        <script src="/scripts/dark.js"></script>
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
     <!-- back to top button -->
     <div class="footer-fixed-element">
         
-        <div class="back-top">
+            <div class="back-top back-top-hidden">
         
-            
+        
             <div>&#xe639;</div>
-            
+        
         </div>
     </div>
 </footer>
-    <div class="wrapper">
-        <div class="site-intro" style="
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="
+
 
 
 
@@ -282,240 +300,354 @@
             <!-- 主页副标题  -->
             
         </p>
-        <!-- 文章页meta -->
+        <!-- 文章页 meta -->
         
     </div>
 </div>
-        <script>
- 
+
+            <script>
   // get user agent
-  var browser = {
-    versions: function () {
-      var u = window.navigator.userAgent;
-      return {
-        userAgent: u,
-        trident: u.indexOf('Trident') > -1, //IE内核
-        presto: u.indexOf('Presto') > -1, //opera内核
-        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
-        iPad: u.indexOf('iPad') > -1, //是否为iPad
-        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
-        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
-        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
-      };
-    }()
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
   }
-  console.log("userAgent:" + browser.versions.userAgent);
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
 
   // callback
   function fontLoaded() {
-    console.log('font loaded');
+    console.log('font loaded')
     if (document.getElementsByClassName('site-intro-meta')) {
-      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
-      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
       var postIntros = document.getElementsByClassName('post-intros')[0]
       if (postIntros) {
-        postIntros.classList.add('post-fade-in');
+        postIntros.classList.add('post-fade-in')
       }
     }
   }
 
   // UC不支持跨域，所以直接显示
-  function asyncCb(){
+  function asyncCb() {
     if (browser.versions.uc) {
-      console.log("UCBrowser");
-      fontLoaded();
+      console.log('UCBrowser')
+      fontLoaded()
     } else {
       WebFont.load({
         custom: {
-          families: ['Oswald-Regular']
+          families: ['Oswald-Regular'],
         },
-        loading: function () {  //所有字体开始加载
-          // console.log('loading');
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
         },
-        active: function () {  //所有字体已渲染
-          fontLoaded();
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
         },
-        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
-          console.log('inactive: timeout');
-          fontLoaded();
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
         },
-        timeout: 5000 // Set the timeout to two seconds
-      });
+        timeout: 5000, // Set the timeout to two seconds
+      })
     }
   }
 
-  function asyncErr(){
+  function asyncErr() {
     console.warn('script load from CDN failed, will load local script')
   }
 
   // load webfont-loader async, and add callback function
   function async(u, cb, err) {
-    var d = document, t = 'script',
+    var d = document,
+      t = 'script',
       o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
-    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
-    s.parentNode.insertBefore(o, s);
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
   }
 
-  var asyncLoadWithFallBack = function(arr, success, reject) {
-      var currReject = function(){
-        reject()
-        arr.shift()
-        if(arr.length)
-          async(arr[0], success, currReject)
-        }
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
 
-      async(arr[0], success, currReject)
+    async(arr[0], success, currReject)
   }
 
-  asyncLoadWithFallBack([
-    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
-    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
-    "/lib/webfontloader.min.js"
-  ], asyncCb, asyncErr)
-</script>        
-        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
-        <div class="container container-unloaded">
-            <main class="main index-page">
+  asyncLoadWithFallBack(
+    [
+      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+        
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+            <div class="container container-unloaded">
+                <main class="main index-page">
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/20/iOS/OS/Linux/" >
+        
+        
+        
             
-                <span>Linux</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/Network/NetSecure/">
+                
+                <span class="abstract-title-text">iOS之安全</span>
+            </a>
+            <div class="abstract-content">
+                
             </div>
-            <!-- tags  -->
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
             
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/20/iOS/Network/Logs/" >
-            
-                <span>iOS之日志系统</span>
-        </a>
-        <div class="abstract-content">
-            1. 日志内容1时间|日志级别|类名_函数名_行数|分类|Log内容
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/Network/Network/">
+                
+                <span class="abstract-title-text">iOS之网络</span>
+            </a>
+            <div class="abstract-content">
+                1. 网络库1.1 AlamofireMoya，ObjectMapper，SwiftJson
+1.2 AFNetWorkingMJExtension
+2. 原理及协议2.1. TCP/IP、UDP（KCP）、HTTPS、HTTP2.0、Socket、RTMP、FRP、UPnP、VPN、DNS、（N）ARP、令牌网络、ICMP
+即时通讯安全篇（七）：如果这样来理解HTTPS，一篇就够了
 
-1.1 获取类名123456789extension NSObject &#123;    var className: String &#123;        return String(describing: type(of: self)).components(separatedBy: &quot;.&quot;).last!    &#125;    class var className: String &#123;        return String(describing: self).compo...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+2.2 协议簇、协议栈3. HTTP 2.03.1 深入理解http2.0协议，看这篇就够了3.2 从HTTP/0.9到HTTP/2：一文读懂HTTP协议的历史演变和设计思路3.3 HTTTP 2.0原理...
             </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/20/iOS/OS/OS/" >
-            
-                <span>操作系统</span>
-        </a>
-        <div class="abstract-content">
-            1. 页面置换算法2. 虚拟内存与物理内存的联系与区别3. 死锁，死锁的四个必要条件以及处理策略
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
             </div>
-            <!-- tags  -->
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
             
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/20/iOS/OS/Unix/" >
-            
-                <span>Unix</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/Network/NetworkOptimize/">
+                
+                <span class="abstract-title-text">iOS之移动端网络优化</span>
+            </a>
+            <div class="abstract-content">
+                1 即时通讯网1.1 从HTTP/0.9到HTTP/2：一文读懂HTTP协议的历史演变和设计思路2. 网络优化2.1 DNS2.1.1 百度APP移动端网络深度优化实践分享(一)：DNS优化篇2.2 链接2.2.1 百度APP移动端网络深度优化实践分享(二)：网络连接优化篇2.3  弱网优化2.3.1 弱网优化2.3.2 网络编程懒人入门(十)：一泡尿的时间，快速读懂QUIC协议2.4 美团点评的移动端网络优化实践：大幅提升连接成功率、速度等3. 移动端DNS域名劫持等杂症：原理、根源、HttpDNS解决方案等
             </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/20/iOS/OS/ShellConfigs/" >
-            
-                <span>Shell 配置文件</span>
-        </a>
-        <div class="abstract-content">
-            Linux中profile、bashrc、bash_profile之间的区别和联系
-1、/etc/profile:此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行.并从/etc/profile.d目录的配置文件中搜集shell的设置.  所以如果你有对/etc/profile有修改的话必须得重启你的修改才会生效，此修改对每个用户都生效。
-2、/etc/bashrc:为每一个运行bash shell的用户执行此文件.当bash shell被打开时,该文件被读取.  如果你想对所有的使用bash的用户修改某个配置并在以后打开的bash都生效的话可以修改这个文件，修改这个文...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
             </div>
-            <!-- tags  -->
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
             
-        </div>
-    </article>
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/Network/Protocols/">
+                
+                <span class="abstract-title-text">网络协议</span>
+            </a>
+            <div class="abstract-content">
+                1.协议簇、协议栈
+2. 网络协议工作流程图
+3. 链路层 协议
+4. IP协议
+
+版本: 占4位,指IP协议的版本.通信双方使用的IP协议版本必须一致.日前广泛使用的 IP协议版本号为 4 (即 IPv4).IPv6 目前还处于起步阶段.
+
+首部长度:占 4 位,可表示的最大十进制数值是15.请注意,这个字段所表示数的单位是32位字 (1个32位字长是4 字节),因此,当 IP 的首部长度为 1111 时 (即十进制的 15),首部长度就达到 60字节.当 IP 分组的首部长度不是4字节的整数倍时,必须利用最后的填充字段加以填充.因此数据部分永远在 4字节的整数倍开始,这样在实现 IP...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/20/iOS/Performance/AppThin/" >
+        
+        
+        
             
-                <span>iOS之App瘦身</span>
-        </a>
-        <div class="abstract-content">
-            1. 资源1.1 合适的资源配置
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/OS/Linux/">
+                
+                <span class="abstract-title-text">Linux</span>
+            </a>
+            <div class="abstract-content">
+                
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/Network/%E6%9C%8D%E5%8A%A1%E8%AE%A4%E8%AF%81/">
+                
+                <span class="abstract-title-text">服务认证</span>
+            </a>
+            <div class="abstract-content">
+                1. cookie2. session3. token4. JWT tokenoAuth2.0SSL Ping
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/OS/OS/">
+                
+                <span class="abstract-title-text">操作系统</span>
+            </a>
+            <div class="abstract-content">
+                1. 页面置换算法2. 虚拟内存与物理内存的联系与区别3. 死锁，死锁的四个必要条件以及处理策略
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/OS/Unix/">
+                
+                <span class="abstract-title-text">Unix</span>
+            </a>
+            <div class="abstract-content">
+                
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/Performance/AppThin/">
+                
+                <span class="abstract-title-text">iOS之App瘦身</span>
+            </a>
+            <div class="abstract-content">
+                1. 资源1.1 合适的资源配置
 pod iOS 8.0 –&gt; iOS 9.0， 影响因素：actool 编码压缩算法；
 
 使用 RGB with palette 压缩图片：–number-of-colors 16 –quality 40-80
@@ -524,140 +656,60 @@ Assets.car（BOM 文件） 合并， 多个库中 Asset Catalog 中的图片合�
 
 文本文件压缩：1、压缩阶段：在 Build Phase 中添加脚本，构建期间对白名单内的文本文件做 zip 压缩；
 2、解压阶段：在 App 启动...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
             </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/20/iOS/Performance/GCCAttribute/" >
-            
-                <span>iOS 之GCC attribute</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
             </div>
-            <!-- tags  -->
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
             
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/20/iOS/Performance/LaunchOptimize/" >
-            
-                <span>iOS之启动优化</span>
-        </a>
-        <div class="abstract-content">
-            启动优化1、启动优化
-冷启动是指， App 点击启动前，它的进程不在系统里，需要系统新创建一个进程分配给它启动的情况。这是一次完整的启动过程。
-热启动是指 ，App 在冷启动后用户将 App 退后台，在 App 的进程还在系统里的情况下，用户重新启动进入 App 的过程，这个过程做的事情非常少。
-
-main() 函数执行前；
-
-main() 函数执行后；
-
-首屏渲染完成后。
-
-
-1、main() 函数执行前要做启动优化，就首先要知道，APP在启动前做了些什么？iOS APP 启动的时候，会做下面几件事情：
-
-加载可执行文件（Mac-o、App 的.o文件）；
-加载动态链接库，进行reba...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/OS/ShellConfigs/">
+                
+                <span class="abstract-title-text">Shell 配置文件</span>
+            </a>
+            <div class="abstract-content">
+                Linux中profile、bashrc、bash_profile之间的区别和联系
+1、/etc/profile:此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行.并从/etc/profile.d目录的配置文件中搜集shell的设置.  所以如果你有对/etc/profile有修改的话必须得重启你的修改才会生效，此修改对每个用户都生效。
+2、/etc/bashrc:为每一个运行bash shell的用户执行此文件.当bash shell被打开时,该文件被读取.  如果你想对所有的使用bash的用户修改某个配置并在以后打开的bash都生效的话可以修改这个文件，修改这个文...
             </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/20/iOS/Performance/LaunchOptimize2/" >
-            
-                <span>iOS之启动优化（二）</span>
-        </a>
-        <div class="abstract-content">
-            1. iOS App冷启动治理：来自美团外卖的实践2. Attribute Syntax2.1、OC 中的 attribute2.2 iOS __attribute__那点小事3. 优化 App 的启动时间4. Dyld之二: 动态链接过程5. iOS摸鱼周报 第十六期5.1 如何实现 iOS App 的冷启动优化
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
             </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/20/iOS/Performance/MacOFiles/" >
-            
-                <span>iOS之Mac-O 文件揭秘</span>
-        </a>
-        <div class="abstract-content">
-            1、Apple 操作系统可执行文件 Mach-O
-2、Mach-O 可执行文件
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
+        </article>
+        <div class="index-post-divider"></div>
     
     <!-- paginator  -->
     
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2021/04/page/2/">&lt; PREV</a><a class="page-number" href="/archives/2021/04/">1</a><a class="page-number" href="/archives/2021/04/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2021/04/page/4/">4</a><a class="page-number" href="/archives/2021/04/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/04/page/12/">12</a><a class="extend next" rel="next" href="/archives/2021/04/page/4/">NEXT &gt;</a>
-    </nav>
+        <nav class="page-nav">
+            <a class="extend prev" rel="prev" href="/archives/2021/04/page/2/">&lt; PREV</a><a class="page-number" href="/archives/2021/04/">1</a><a class="page-number" href="/archives/2021/04/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2021/04/page/4/">4</a><a class="page-number" href="/archives/2021/04/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/04/page/12/">12</a><a class="extend next" rel="next" href="/archives/2021/04/page/4/">NEXT &gt;</a>
+        </nav>
     
 </main>
-            <!-- profile -->
-            
-        </div>
-        <footer class="footer footer-unloaded">
+
+                <!-- profile -->
+                
+            </div>
+            <footer class="footer footer-unloaded">
     <!-- social  -->
     
-    <div class="social">
-        
+        <div class="social">
+            
     
         
             
@@ -715,7 +767,8 @@ main() 函数执行后；
         
     
 
-    </div>
+
+        </div>
     
     <!-- powered by Hexo  -->
     <div class="copyright">
@@ -725,2549 +778,2611 @@ main() 函数执行后；
     
     <!-- 不蒜子  -->
     
-    <div class="busuanzi-container">
-    
-     
-    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
-    
-    </div>
-    
+        <div class="busuanzi-container">
+            
+             
+                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+            
+        </div>
+    	
 </footer>
-    </div>
-    <!-- toc -->
-    
-    <div class="sidebar sidebar-hide">
+
+        </div>
+        <!-- toc -->
+        
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
     <ul class="sidebar-tabs sidebar-tabs-active-0">
         <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
         <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
         <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
     </ul>
     <div class="sidebar-content sidebar-content-show-archive">
-          <div class="sidebar-panel-archives">
-    <!-- 在ejs中将archive按照时间排序 -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
     
     
@@ -3282,926 +3397,1085 @@ main() 函数执行后；
     
     <div class="post-archive">
     
-    
-    
-    
-    <div class="archive-year"> 2021 </div>
-    <ul class="year-list">
-    
-    
+        
+            
+            
+            <div class="archive-year"> 2021 </div>
+            <ul class="year-list">
+            
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">09/16</span><a class="archive-post-title" href= "/2021/09/16/Invest/hillhouse/" >投资入门</a>
+            <span class="archive-post-date">09/19</span>
+            <a class="archive-post-title" href="/2021/09/19/iOS/Network/BLuetooth/">iOS 之 蓝牙协议</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">09/13</span><a class="archive-post-title" href= "/2021/09/13/iOS/ProjectManager/Cocoapod/UmbrellaFramework/" >iOS 项目管理之 Umbrella Framework</a>
+            <span class="archive-post-date">09/16</span>
+            <a class="archive-post-title" href="/2021/09/16/iOS/Languages/Objective-C/MemoryManagement/">iOS之内存管理</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span><a class="archive-post-title" href= "/2021/09/09/iOS/ProjectManager/Cocoapod/Cocoapod/" >iOS 项目管理之 Cocoapods</a>
+            <span class="archive-post-date">09/16</span>
+            <a class="archive-post-title" href="/2021/09/16/iOS/Webs/DCloud/DCloudGuideline/">[Untitled Post]</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2021/09/02/Invest/index/" >投资入门</a>
+            <span class="archive-post-date">09/16</span>
+            <a class="archive-post-title" href="/2021/09/16/Invest/%E9%AB%98%E7%93%B4%E8%B5%84%E6%9C%AC/">[Untitled Post]</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2021/09/01/iOS/Languages/CAlians/CMake/" >编译工具 CMake 入门</a>
+            <span class="archive-post-date">09/13</span>
+            <a class="archive-post-title" href="/2021/09/13/iOS/ProjectManager/Cocoapod/UmbrellaFramework/">iOS 项目管理之 Umbrella Framework</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">08/28</span><a class="archive-post-title" href= "/2021/08/28/iOS/Languages/CAlians/C++/Guidelines/FuncPtr/" >FuncPtr</a>
+            <span class="archive-post-date">09/09</span>
+            <a class="archive-post-title" href="/2021/09/09/iOS/ProjectManager/Cocoapod/Cocoapod/">iOS 项目管理之 Cocoapods</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">08/28</span><a class="archive-post-title" href= "/2021/08/28/iOS/Languages/CAlians/C++/Guidelines/using/" >C++ using</a>
+            <span class="archive-post-date">09/02</span>
+            <a class="archive-post-title" href="/2021/09/02/Invest/index/">投资入门</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">08/28</span><a class="archive-post-title" href= "/2021/08/28/Web/ChromeExtentions/Guidlines/" >Chrome Extentions 开发指南</a>
+            <span class="archive-post-date">09/01</span>
+            <a class="archive-post-title" href="/2021/09/01/iOS/Languages/CAlians/CMake/">编译工具 CMake 入门</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">08/25</span><a class="archive-post-title" href= "/2021/08/25/iOS/Languages/CAlians/ToolChain/" >编译工具链</a>
+            <span class="archive-post-date">08/28</span>
+            <a class="archive-post-title" href="/2021/08/28/iOS/Languages/CAlians/C++/Guidelines/FuncPtr/">FuncPtr</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "/2021/08/24/iOS/Webs/React-Native/DualComunication/" >React-Native与原生端通信</a>
+            <span class="archive-post-date">08/28</span>
+            <a class="archive-post-title" href="/2021/08/28/iOS/Languages/CAlians/C++/Guidelines/using/">C++ using</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "/2021/08/24/iOS/Languages/CAlians/C++/Guidelines/Guidelines/" >C++</a>
+            <span class="archive-post-date">08/28</span>
+            <a class="archive-post-title" href="/2021/08/28/Web/ChromeExtentions/Guidlines/">Chrome Extentions 开发指南</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">08/20</span><a class="archive-post-title" href= "/2021/08/20/iOS/Webs/DCloud/DCloudGuideline/" >DCloud iOS 原生插件开发指南</a>
+            <span class="archive-post-date">08/25</span>
+            <a class="archive-post-title" href="/2021/08/25/iOS/Languages/CAlians/ToolChain/">编译工具链</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">08/10</span><a class="archive-post-title" href= "/2021/08/10/iOS/Tools/a-shell/" >a-shell</a>
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2021/08/24/iOS/Webs/React-Native/DualComunication/">React-Native与原生端通信</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">08/09</span><a class="archive-post-title" href= "/2021/08/09/iOS/Webs/React-Native/Navigation/" >React-Native 导航</a>
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2021/08/24/iOS/Languages/CAlians/C++/Guidelines/Guidelines/">C++</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">08/04</span><a class="archive-post-title" href= "/2021/08/04/Web/JavaScript/TypeScript/GuideLine/" >GuideLine</a>
+            <span class="archive-post-date">08/10</span>
+            <a class="archive-post-title" href="/2021/08/10/iOS/Tools/a-shell/">a-shell</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/31</span><a class="archive-post-title" href= "/2021/07/31/iOS/Interview/InterviewCollections/InterviewCollections/" >面试题集</a>
+            <span class="archive-post-date">08/09</span>
+            <a class="archive-post-title" href="/2021/08/09/iOS/Webs/React-Native/Navigation/">React-Native 导航</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/31</span><a class="archive-post-title" href= "/2021/07/31/iOS/UI/WebKit/WKWebView/" >WKWebView</a>
+            <span class="archive-post-date">08/04</span>
+            <a class="archive-post-title" href="/2021/08/04/Web/JavaScript/TypeScript/GuideLine/">GuideLine</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/Interview/Summery2/" >iOS 经验总结</a>
+            <span class="archive-post-date">07/31</span>
+            <a class="archive-post-title" href="/2021/07/31/iOS/Interview/InterviewCollections/InterviewCollections/">面试题集</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/Interview/Uncommon/" >iOS 生僻题</a>
+            <span class="archive-post-date">07/31</span>
+            <a class="archive-post-title" href="/2021/07/31/iOS/UI/WebKit/WKWebView/">WKWebView</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/Games/Games/" >游戏</a>
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/Games/Games/">游戏</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/Performance/Performance/" >iOS 之性能优化</a>
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/Interview/Summery2/">iOS 经验总结</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/Flutters/TechnologyFeasibility/Resources/flutter/" >Flutter 技术可行性调研</a>
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/Interview/Uncommon/">iOS 生僻题</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/Interview/InterviewCollections/Tencent/" >iOS 试题</a>
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/Performance/Performance/">iOS 之性能优化</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/Languages/CAlians/C++/C++/" >C++</a>
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/Interview/InterviewCollections/Tencent/">iOS 试题</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/ProjectManager/CI/Applestore%20Connect/App%20Store%20Connect%20API/" >iOS 之App Store Connect API</a>
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/Flutters/TechnologyFeasibility/Resources/flutter/">Flutter 技术可行性调研</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/ProjectManager/CI/Jira/Jira/" >jira</a>
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/Languages/CAlians/C++/C++/">C++</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/Concepts/" >iOS 之概念</a>
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/CI/Jira/Jira/">jira</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/Interview/InterviewPre/" >iOS 面试杂谈</a>
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/CI/Applestore%20Connect/App%20Store%20Connect%20API/">iOS 之App Store Connect API</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/Interview/ModuleInterview/" >iOS 模块化面试</a>
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/Concepts/">iOS 之概念</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/iOS/ProjectManager/ShellScripts/Simulator/" >iOS 之自动化</a>
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/Interview/InterviewPre/">iOS 面试杂谈</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/27</span><a class="archive-post-title" href= "/2021/07/27/iOS/Interview/InterviewCollections/Baidu/" >面试题</a>
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/ShellScripts/Simulator/">iOS 之自动化</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/26</span><a class="archive-post-title" href= "/2021/07/26/iOS/Frameworks/FramworkProgramme/" >iOS 之Framwork 编程</a>
+            <span class="archive-post-date">07/27</span>
+            <a class="archive-post-title" href="/2021/07/27/iOS/Interview/InterviewCollections/Baidu/">面试题</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/23</span><a class="archive-post-title" href= "/2021/07/23/iOS/Languages/Swift/Generic/" >iOS编程语言之 swift 泛型</a>
+            <span class="archive-post-date">07/26</span>
+            <a class="archive-post-title" href="/2021/07/26/iOS/Frameworks/FramworkProgramme/">iOS 之Framwork 编程</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/23</span><a class="archive-post-title" href= "/2021/07/23/iOS/Languages/Swift/Class/" >iOS编程语言之 swift Class</a>
+            <span class="archive-post-date">07/23</span>
+            <a class="archive-post-title" href="/2021/07/23/iOS/Languages/Swift/Generic/">iOS编程语言之 swift 泛型</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">07/23</span><a class="archive-post-title" href= "/2021/07/23/iOS/Languages/Swift/Codable/" >iOS编程语言之 swift Codable</a>
+            <span class="archive-post-date">07/23</span>
+            <a class="archive-post-title" href="/2021/07/23/iOS/Languages/Swift/Class/">iOS编程语言之 swift Class</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">06/11</span><a class="archive-post-title" href= "/2021/06/11/iOS/Webs/JavaScriptCore/" >iOS之JavaScriptCore</a>
+            <span class="archive-post-date">07/23</span>
+            <a class="archive-post-title" href="/2021/07/23/iOS/Languages/Swift/Codable/">iOS编程语言之 swift Codable</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">06/11</span><a class="archive-post-title" href= "/2021/06/11/iOS/UI/Render/OffScreenRender/" >iOS之 离屏渲染</a>
+            <span class="archive-post-date">06/11</span>
+            <a class="archive-post-title" href="/2021/06/11/iOS/Webs/JavaScriptCore/">iOS之JavaScriptCore</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">06/07</span><a class="archive-post-title" href= "/2021/06/07/iOS/Performance/Exceptions/WiredPointer/" >iOS之野指针</a>
+            <span class="archive-post-date">06/11</span>
+            <a class="archive-post-title" href="/2021/06/11/iOS/UI/Render/OffScreenRender/">iOS之 离屏渲染</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">06/05</span><a class="archive-post-title" href= "/2021/06/05/iOS/Performance/Exceptions/%20ZombieObject/" >iOS之僵尸对象</a>
+            <span class="archive-post-date">06/07</span>
+            <a class="archive-post-title" href="/2021/06/07/iOS/Performance/Exceptions/WiredPointer/">iOS之野指针</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">06/04</span><a class="archive-post-title" href= "/2021/06/04/iOS/DesignPattern/" >iOS之设计模式</a>
+            <span class="archive-post-date">06/05</span>
+            <a class="archive-post-title" href="/2021/06/05/iOS/Performance/Exceptions/%20ZombieObject/">iOS之僵尸对象</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">05/28</span><a class="archive-post-title" href= "/2021/05/28/iOS/UI/CoreImageFilter/" >iOS之Core Image Filter</a>
+            <span class="archive-post-date">06/04</span>
+            <a class="archive-post-title" href="/2021/06/04/iOS/DesignPattern/">iOS之设计模式</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href= "/2021/05/25/iOS/Interview/InterviewQuestions/" >iOS之面试</a>
+            <span class="archive-post-date">05/28</span>
+            <a class="archive-post-title" href="/2021/05/28/iOS/UI/CoreImageFilter/">iOS之Core Image Filter</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href= "/2021/05/25/iOS/Interview/Interviewes/" >iOS之面试</a>
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2021/05/25/iOS/Interview/InterviewQuestions/">iOS之面试</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span><a class="archive-post-title" href= "/2021/05/25/iOS/Interview/Summery/" >走向资深 iOS 之路</a>
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2021/05/25/iOS/Interview/Interviewes/">iOS之面试</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2021/05/22/iOS/Languages/Objective-C/Category/" >iOS之Category</a>
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2021/05/25/iOS/Interview/Summery/">走向资深 iOS 之路</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2021/05/22/iOS/Languages/Objective-C/KVC/" >iOS之KVC</a>
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2021/05/22/iOS/Languages/Objective-C/Category/">iOS之Category</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2021/05/22/iOS/Languages/Objective-C/KVO/" >iOS之KVO</a>
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2021/05/22/iOS/Languages/Objective-C/KVC/">iOS之KVC</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2021/05/22/iOS/Languages/Objective-C/NSTimer/" >iOS之NSTimer</a>
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2021/05/22/iOS/Languages/Objective-C/KVO/">iOS之KVO</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">05/05</span><a class="archive-post-title" href= "/2021/05/05/iOS/Tools/Xcode/" >iOS 之Xcode Debugging</a>
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2021/05/22/iOS/Languages/Objective-C/NSTimer/">iOS之NSTimer</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">05/04</span><a class="archive-post-title" href= "/2021/05/04/iOS/Performance/iOS%20%E4%B9%8B%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93/" >iOS 之离屏渲染</a>
+            <span class="archive-post-date">05/05</span>
+            <a class="archive-post-title" href="/2021/05/05/iOS/Tools/Xcode/">iOS 之Xcode Debugging</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Flutters/Guidance/Guidance/" >Flutter</a>
+            <span class="archive-post-date">05/04</span>
+            <a class="archive-post-title" href="/2021/05/04/iOS/Performance/iOS%20%E4%B9%8B%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93/">iOS 之离屏渲染</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Flutters/TechnologyFeasibility/TechnologyFeasibility/" >Flutter 技术可行性调研</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/Web/JavaScript/JavaScript/">JavaScript</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Flutters/TechnologyFeasibility/Technologies/" >Flutter 可行性调研技术点</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/Web/JavaScript/Technologies/">JavaScript 知识点</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Concurrency/Concurrency/" >iOS之并发编程</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/Web/CSS/CSSGuidance/">CSS 上手</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Concurrency/RunLoop/" >iOS之RunLoop</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Concurrency/MultiThread/">iOS之多线程编程</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Concurrency/MultiThread/" >iOS之多线程编程</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Concurrency/Concurrency/">iOS之并发编程</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/DataPersistence/DataPersistence/" >iOS之持久化</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Concurrency/RunLoop/">iOS之RunLoop</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/DataPersistence/DataBase/" >iOS之SQLite</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/DataPersistence/DataBase/">iOS之SQLite</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Documents/Jazzy/" >iOS之文档 jazzy</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/DataPersistence/DataPersistence/">iOS之持久化</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Games/Engine/" >iOS游戏之引擎</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Documents/Jazzy/">iOS之文档 jazzy</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Games/Lua/" >iOS游戏之Lua</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Games/Engine/">iOS游戏之引擎</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Libraries/WebViewJavascriptBridge/" >WebViewJavascriptBridge</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Games/Lua/">iOS游戏之Lua</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Libraries/OpenLibs/" >iOS 之开源库</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Libraries/OpenLibs/">iOS 之开源库</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Network/AppSign/" >iOS之网络</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Libraries/WebViewJavascriptBridge/">WebViewJavascriptBridge</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Network/HTTP/" >iOS网络之 HTTP</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Audio/">iOS之音频</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Network/NetSecure/" >iOS之安全</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Images/">iOS之图片</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Network/Network/" >iOS之网络</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Medias/">iOS之多媒体</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Network/NetworkOptimize/" >iOS之移动端网络优化</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Vedio/">iOS之视频</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Network/Protocols/" >网络协议</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/AppSign/">iOS之网络</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Network/%E6%9C%8D%E5%8A%A1%E8%AE%A4%E8%AF%81/" >服务认证</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/HTTP/">iOS网络之 HTTP</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/OS/Linux/" >Linux</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/Logs/">iOS之日志系统</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Network/Logs/" >iOS之日志系统</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/NetSecure/">iOS之安全</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/OS/OS/" >操作系统</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/Network/">iOS之网络</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/OS/Unix/" >Unix</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/NetworkOptimize/">iOS之移动端网络优化</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/OS/ShellConfigs/" >Shell 配置文件</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/Protocols/">网络协议</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Performance/AppThin/" >iOS之App瘦身</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/OS/Linux/">Linux</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Performance/GCCAttribute/" >iOS 之GCC attribute</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/%E6%9C%8D%E5%8A%A1%E8%AE%A4%E8%AF%81/">服务认证</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Performance/LaunchOptimize/" >iOS之启动优化</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/OS/OS/">操作系统</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Performance/LaunchOptimize2/" >iOS之启动优化（二）</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/OS/Unix/">Unix</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Performance/MacOFiles/" >iOS之Mac-O 文件揭秘</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/AppThin/">iOS之App瘦身</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Performance/PowerOptimize/" >iOS 之功耗优化</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/OS/ShellConfigs/">Shell 配置文件</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Performance/dyld/" >DYLD</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/GCCAttribute/">iOS 之GCC attribute</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Performance/dyldVariables/" >iOS之dyld环境变量介绍</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/LaunchOptimize2/">iOS之启动优化（二）</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/ProjectManager/AutoRelease/" >iOS之 Xcode Build 自动化</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/MacOFiles/">iOS之Mac-O 文件揭秘</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/ProjectManager/CI/" >iOS之CI集成</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/LaunchOptimize/">iOS之启动优化</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/ProjectManager/EnvironmentsVaraible/" >iOS 项目管理之 xcconfig</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/dyld/">DYLD</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/ProjectManager/Fir&PGYing/" >iOS项目管理之杂项</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/dyldVariables/">iOS之dyld环境变量介绍</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/ProjectManager/ProjectManager/" >项目管理</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/PowerOptimize/">iOS 之功耗优化</a>
         </li>
-    
     
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/07/29/iOS/ProjectManager/Tapd/" >Tapd</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/AutoRelease/">iOS之 Xcode Build 自动化</a>
         </li>
-    
-    
-    
-    
-    
-        </ul>
     
-    <div class="archive-year"> 2021 </div>
-    <ul class="year-list">
-    
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/ProjectManager/ZenTao/" >项目管理之禅道</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/CI/">iOS之CI集成</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/CocoapodGuidance/" >Cocoapod 指南</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/EnvironmentsVaraible/">iOS 项目管理之 xcconfig</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/CocoapodMaker/" >Cocoapod</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/ProjectManager/">项目管理</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/Fastlane/" >Fastlane 指南</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/Fir&PGYing/">iOS项目管理之杂项</a>
         </li>
-    
     
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> Invalid date </div>
+            <ul class="year-list">
+            
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/Charles/" >Charles</a>
+            <span class="archive-post-date">Invalid date</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/Tapd/">Tapd</a>
         </li>
     
-    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2021 </div>
+            <ul class="year-list">
+            
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/GitSpecification/" >Git 规范</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/ZenTao/">项目管理之禅道</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/LLDB/" >iOS之LLDB</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Animation/">iOS之动画</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/Monitors/" >iOS 之监控插件库</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/CoreText/">iOS之排版——Coretext</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/OmniGraffle/" >OmniGraffle</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/TextKit/">iOS排版与渲染引擎——TextKit</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/Reverse/" >iOS逆向工程</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/UI/">iOS之UI界面</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/iOSTools/" >iOS 之开发工具</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/UserExperences/">iOS之交互体验</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/Animation/" >iOS之动画</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Charles/">Charles</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/CoreText/" >iOS之排版——Coretext</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/CocoapodMaker/">Cocoapod</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/UserExperences/" >iOS之交互体验</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Fastlane/">Fastlane 指南</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI%20/Animation/" >iOS之动画</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/GitSpecification/">Git 规范</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/TextKit/" >iOS排版与渲染引擎——TextKit</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/CocoapodGuidance/">Cocoapod 指南</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/WWDC/WWDC2019/" >iOS之WWDC2019</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/LLDB/">iOS之LLDB</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Webs/Hybrids/" >iOS之移动端跨端技术及原理</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Monitors/">iOS 之监控插件库</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Webs/JSPatchPrinciple/" >iOS之JSPatch原理</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/OmniGraffle/">OmniGraffle</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Webs/Vue/" >iOS之 Vue</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Reverse/">iOS逆向工程</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Web/CSS/CSSGuidance/" >CSS 上手</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/iOSTools/">iOS 之开发工具</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/UI/" >iOS之UI界面</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/WWDC/WWDC2019/">iOS之WWDC2019</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Medias/Audio/" >iOS之音频</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Hybrids/">iOS之移动端跨端技术及原理</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Medias/Medias/" >iOS之多媒体</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/JSPatchPrinciple/">iOS之JSPatch原理</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Medias/Vedio/" >iOS之视频</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Vue/">iOS之 Vue</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Medias/Images/" >iOS之图片</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/Flutters/TechnologyFeasibility/TechnologyFeasibility/">Flutter 技术可行性调研</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Web/JavaScript/Technologies/" >JavaScript 知识点</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/Flutters/Guidance/Guidance/">Flutter</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/Web/JavaScript/JavaScript/" >JavaScript</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/Flutters/TechnologyFeasibility/Technologies/">Flutter 可行性调研技术点</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/iOS/iOS%E4%B9%8B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/RunLoop/" >iOS之RunLoop</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/NSDIctionary/">iOS编程语言之 NSDictionary底层实现原理</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Objective-C/NSDIctionary/" >iOS编程语言之 NSDictionary底层实现原理</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/OCAdvance/">iOS编程语言之OC 进阶</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Objective-C/OCAdvance/" >iOS编程语言之OC 进阶</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Objective-C/">iOS编程语言之Objective-C</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Objective-C/Objective-C/" >iOS编程语言之Objective-C</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Runtime/">iOS之运行时</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Objective-C/Runtime/" >iOS之运行时</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Types/">iOS编程语言之Objective-C 运行时基本类型</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Objective-C/Types/" >iOS编程语言之Objective-C 运行时基本类型</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/iOS%E4%B9%8BKVC/">iOS之KVC</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Objective-C/iOS%E4%B9%8BKVC/" >iOS之KVC</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/PHP/PHP/">PHP</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/PHP/PHP/" >PHP</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Python/Pyhon/">Pyhon</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Python/Pyhon/" >Pyhon</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Shell/Shell/">Shell笔记</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Shell/Shell/" >Shell笔记</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Constructor/">iOS编程语言之swift 构造器</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Swift/Constructor/" >iOS编程语言之swift 构造器</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Swift/">iOS编程语言之Swift</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Swift/Swift/" >iOS编程语言之Swift</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Value&Reference/">iOS编程语言之swift 构造器</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Swift/Value&Reference/" >iOS编程语言之swift 构造器</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/Exceptions/CrashLogManuelResolve/">iOS之手动解析 crash 日志</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Performance/KSCrash/KSCrashGuidline/" >iOS之KSCrash 简明教程</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/KSCrash/KSCrashGuidline/">iOS之KSCrash 简明教程</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Performance/KSCrash/Princeples/" >iOS之KSCrahs 原理</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/Exceptions/Excetions/">iOS之异常处理</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Performance/Exceptions/CrashLogManuelResolve/" >iOS之手动解析 crash 日志</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/KSCrash/Princeples/">iOS之KSCrahs 原理</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Performance/Exceptions/Excetions/" >iOS之异常处理</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Layouts/Layouts/">iOS之 布局</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/Appium/AppiumGuidance/" >Appium 快速上手</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Layouts/AutoLayout/">iOS 之 自动布局</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Tools/Vim/VimOperation/" >Vim 常用操作</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Render/Render/">iOS之 UI 渲染</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/Layouts/AutoLayout/" >iOS 之 自动布局</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/WebKit/WebKit/">iOS之 Webkit</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/Layouts/Layouts/" >iOS之 布局</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Vim/VimOperation/">Vim 常用操作</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/Render/Render/" >iOS之 UI 渲染</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Appium/AppiumGuidance/">Appium 快速上手</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UI/WebKit/WebKit/" >iOS之 Webkit</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Flutter/Flutter/">iOS之Flutter</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Webs/Flutter/Flutter/" >iOS之Flutter</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/NativeCommunication/">iOS之React-Native与原生端通信</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Webs/React-Native/NativeCommunication/" >iOS之React-Native与原生端通信</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/NativeComponents/">iOS之React-Native原生UI组件</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Webs/React-Native/NativeComponents/" >iOS之React-Native原生UI组件</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/NativeModule/">iOS之React-Native原生Module</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Webs/React-Native/NativeModule/" >iOS之React-Native原生Module</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/React-Native/">iOS之React-Native</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Webs/React-Native/React-Native/" >iOS之React-Native</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/iOS/iOS%E4%B9%8B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/RunLoop/">iOS之RunLoop</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/ProjectManager/CI/Jenkins/Jenkins/" >Jenkins</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/CI/Jenkins/Jenkins/">Jenkins</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Webs/Flutter/Dart/Dart/" >Dart</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Flutter/Dart/Dart/">Dart</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/iOS/iOS%E4%B9%8BUI%E7%95%8C%E9%9D%A2/UI%E5%B8%83%E5%B1%80/%E5%B8%83%E5%B1%80/" >iOS之 布局</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/iOS/iOS%E4%B9%8BUI%E7%95%8C%E9%9D%A2/UI%E5%B8%83%E5%B1%80/%E5%B8%83%E5%B1%80/">iOS之 布局</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/AppleService/" >APNS</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/AppleService/">APNS</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Architecture/" >iOS 架构设计</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Architecture/">iOS 架构设计</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Blogs&Blogger/" >博主与网站收藏</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Blogs&Blogger/">博主与网站收藏</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/CodeManager/" >iOS之代码管理</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/CodeManager/">iOS之代码管理</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/CodeRestructure/" >iOS之代码重构</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/CodeRestructure/">iOS之代码重构</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Components/" >iOS之组件化</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Components/">iOS之组件化</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Ecosystem/" >iOS之生态体系及结构</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Ecosystem/">iOS之生态体系及结构</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Events&Responder/" >iOS之事件传递与响应者链</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/FrameWorks/">iOS之框架</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/FrameWorks/" >iOS之框架</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Events&Responder/">iOS之事件传递与响应者链</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Guidelines/" >iOS之规范</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/MessageDispatch/">iOS 之消息转发</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/MessageDispatch/" >iOS 之消息转发</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/SDK/">iOS之SDK</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/MemoryManagement/" >iOS之内存管理</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UnitTest/">iOS之单元测试</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/SDK/" >iOS之SDK</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Guidelines/">iOS之规范</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/UnitTest/" >iOS之单元测试</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Xcode/">iOS之SDK</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Xcode/" >iOS之SDK</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Assemble/Assemble/">汇编语言</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/AppleScript/AppleScript/" >AppleScript</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/AppleScript/AppleScript/">AppleScript</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/CAlians/Interupt/" >系统中断信号</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/CAlians/Interupt/">系统中断信号</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/CAlians/boost-b2/" >boost 编译器 b2</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/CAlians/boost-b2/">boost 编译器 b2</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Java/Java/" >Java</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Java/Java/">Java</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/MySQL/MySQL/" >MySQL</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/MySQL/MySQL/">MySQL</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Objective-C/Block/" >Block</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Block/">Block</a>
         </li>
     
-    
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/Assemble/Assemble/" >汇编语言</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Memory/">iOS之内存管理</a>
         </li>
-    
     
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2021/04/20/iOS/Languages/CAlians/Compiler/g++/" >G++</a>
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/CAlians/Compiler/g++/">G++</a>
         </li>
     
     </div>
-  </div>
+</div>
+
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
-    
-        <span class="sidebar-tag-name" data-tags="Framwork"><span class="iconfont-archer">&#xe606;</span>Framwork</span>
-    
-        <span class="sidebar-tag-name" data-tags="DCloud"><span class="iconfont-archer">&#xe606;</span>DCloud</span>
-    
-        <span class="sidebar-tag-name" data-tags="React-Native Navigation"><span class="iconfont-archer">&#xe606;</span>React-Native Navigation</span>
-    
+        
+            <span class="sidebar-tag-name" data-tags="Framwork">
+                <span class="iconfont-archer">&#xe606;</span>
+                Framwork
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="蓝牙协议">
+                <span class="iconfont-archer">&#xe606;</span>
+                蓝牙协议
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="React-Native Navigation">
+                <span class="iconfont-archer">&#xe606;</span>
+                React-Native Navigation
+            </span>
+        
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
-    缺失模块。<br/>
-    1、请确保node版本大于6.2<br/>
-    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
-    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
-    3、在根目录_config.yml里添加配置：
-    <pre style="color: #787878; font-size: 0.6rem;">
-jsonContent:
-  meta: false
-  pages: false
-  posts:
-    title: true
-    date: true
-    path: true
-    text: false
-    raw: false
-    content: false
-    slug: false
-    updated: false
-    comments: false
-    link: false
-    permalink: false
-    excerpt: false
-    categories: true
-    tags: true</pre>
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
     </div> 
     <div class="sidebar-tags-list"></div>
 </div>
+
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
@@ -4209,36 +4483,33 @@ jsonContent:
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
     <div class="sidebar-categories-list"></div>
 </div>
+
     </div>
-</div> 
-    <script>
+</div>
+
+        <!-- site-meta -->
+        <script>
     var siteMeta = {
         root: "/",
         author: "Jerry Liu"
     }
 </script>
-    <!-- CDN failover -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <script type="text/javascript">
-        if (typeof window.$ === 'undefined')
-        {
-            console.warn('jquery load from jsdelivr failed, will load local script')
-            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
-        }
-    </script>
-    <script src="/scripts/main.js"></script>
-    <!-- algolia -->
-    
-    <!-- busuanzi  -->
-    
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    
-    <!-- CNZZ  -->
-    
-    </div>
-    <!-- async load share.js -->
-     
+
+        <!-- main func -->
+        <script src="/scripts/main.js"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
+        <!-- algolia -->
+        
+        <!-- busuanzi -->
+        
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        
+        <!-- CNZZ -->
+        
+        <!-- async load share.js -->
+        
+        <!-- mermaid -->
+        
     </body>
 </html>
-
-
