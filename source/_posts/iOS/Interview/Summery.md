@@ -17,7 +17,7 @@ tags:
 
 ### 1.1 Objective-C
 
-#### 1.1.1 内存管理
+#### 1.1.1 [内存管理](./../Languages/Objective-C/MemoryManagement.md)
 
 内存管理原则
 
