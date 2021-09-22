@@ -20,15 +20,15 @@
         <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="我们·看见·生活">
-    <meta name="description" content="DCloud iOS 原生插件开发指南[TOC] 要开发原生插件的话，首先得去 DCloud 官网下载 DCloud SDK[^DCloud-SDK]。DCloud SDK 下载下来解压后，内容如下： 1234567|--iOSSDK        |-- HBuilder-Hello                  &#x2F;&#x2F; uni-app 离线打包工程    |-- HBuilder-Examp">
+    <meta name="description" content="高瓴资本私募投资 高瓴一家专注于长期结构性价值投资的投资公司，成立于2005年，由张磊先生创立 经过多年的发展，成为亚洲资产管理规模最大的投资基金之一，也是亚洲规模最大私募之一，管理规模超650亿美元。 在创始人张磊先生的引领下，高瓴汇聚了一支专业能力强大，对消费零售、医疗健康、金融和企业服务等诸多行业认知深刻的专家团队。我们致力于寻找最具创新精神的企业家，通过高瓴的全球资源及自主研究体系，帮助他">
 <meta property="og:type" content="article">
 <meta property="og:title" content="We Seen Life">
-<meta property="og:url" content="http://www.lhp3851.top/2021/09/16/iOS/Webs/DCloud/DCloudGuideline/index.html">
+<meta property="og:url" content="http://www.lhp3851.top/2021/09/22/Invest/HIllHouse/index.html">
 <meta property="og:site_name" content="We Seen Life">
-<meta property="og:description" content="DCloud iOS 原生插件开发指南[TOC] 要开发原生插件的话，首先得去 DCloud 官网下载 DCloud SDK[^DCloud-SDK]。DCloud SDK 下载下来解压后，内容如下： 1234567|--iOSSDK        |-- HBuilder-Hello                  &#x2F;&#x2F; uni-app 离线打包工程    |-- HBuilder-Examp">
+<meta property="og:description" content="高瓴资本私募投资 高瓴一家专注于长期结构性价值投资的投资公司，成立于2005年，由张磊先生创立 经过多年的发展，成为亚洲资产管理规模最大的投资基金之一，也是亚洲规模最大私募之一，管理规模超650亿美元。 在创始人张磊先生的引领下，高瓴汇聚了一支专业能力强大，对消费零售、医疗健康、金融和企业服务等诸多行业认知深刻的专家团队。我们致力于寻找最具创新精神的企业家，通过高瓴的全球资源及自主研究体系，帮助他">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-16T07:05:29.582Z">
-<meta property="article:modified_time" content="2021-09-16T07:05:29.582Z">
+<meta property="article:published_time" content="2021-09-22T06:56:40.371Z">
+<meta property="article:modified_time" content="2021-09-22T06:57:02.978Z">
 <meta property="article:author" content="Jerry Liu">
 <meta property="article:tag" content="iOS">
 <meta property="article:tag" content="Flutter">
@@ -333,13 +333,13 @@
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">3.2k</span>Reading time: <span class="post-count reading-time">13 min</span></span>
+                        <span>Word count: <span class="post-count word-count">1.1k</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <!-- 撰写日期 -->
                     <span class="iconfont-archer post-intro-calander">&#xe676;</span>
-                    <span class="post-intro-time">2021/09/16</span>
+                    <span class="post-intro-time">2021/09/22</span>
                     <!-- busuanzi -->
                     
                         <span id="busuanzi_container_page_pv" class="busuanzi-pv">
@@ -494,106 +494,46 @@
             <div class="container container-unloaded">
                 <main class="main post-page">
     <article class="article-entry">
-        <h1 id="DCloud-iOS-原生插件开发指南"><a href="#DCloud-iOS-原生插件开发指南" class="headerlink" title="DCloud iOS 原生插件开发指南"></a>DCloud iOS 原生插件开发指南</h1><p>[TOC]</p>
-<p>要开发原生插件的话，首先得去 DCloud 官网下载 DCloud SDK[^DCloud-SDK]。DCloud SDK 下载下来解压后，内容如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">|--iOSSDK    </span><br><span class="line">    |-- HBuilder-Hello                  // uni-app 离线打包工程</span><br><span class="line">    |-- HBuilder-ExampleDemo            // Demo 工程</span><br><span class="line">    |-- HBuilder-uniPluginDemo          // uni-app 插件开发主工程 （本文档需要使用的工程）</span><br><span class="line">    |-- SDK                             // 依赖库及依赖资源文件</span><br><span class="line">    |-- Feature-iOS.xls                 // 功能模块与依赖库对应关系说明表格</span><br><span class="line">    |-- readme.txt                      // 目录说明</span><br></pre></td></tr></table></figure>
-
-<p>在聊插件开发之前，先讲一点预备知识，前面三节都是预备知识。后面插件的开发过程中，会涉及到这些知识内容。</p>
-<h2 id="1-自定义基座-自定义基座"><a href="#1-自定义基座-自定义基座" class="headerlink" title="1. 自定义基座[^自定义基座]"></a>1. 自定义基座[^自定义基座]</h2><p>自定义基座，有两种方式获取，一种是用打包工程生成，另一种是通过云打包获取。</p>
-<h3 id="1-1-用打包工程生成自定义基座"><a href="#1-1-用打包工程生成自定义基座" class="headerlink" title="1.1 用打包工程生成自定义基座"></a>1.1 <a target="_blank" rel="noopener" href="https://ask.dcloud.net.cn/article/35485">用打包工程生成自定义基座</a></h3><ol>
-<li><p>在打包原生工程[^打包工程]里找到 control.xml 文件，在 HBuilder 节点里查看是否有这2个：<code>debug=&quot;true&quot; syncDebug=&quot;true&quot;</code>配置，没有的话增加上。</p>
-</li>
-<li><p>修改打包工程的 Bundle identifier 为你 App 的 Bundle identifier</p>
-</li>
-<li><p>在原生打包工程里找到 info.plist 文件并增加一项：<code>Application supports iTunes file sharing</code>， 值设为 <code>yes</code>。</p>
-</li>
-<li><p>确保原生工程里<code>Pandora</code>文件夹下的apps文件夹里只有一个文件夹，并且文件夹的名称和里面的 <code>manifest</code> 的 <code>id</code> 值相同。</p>
-</li>
-<li><p>确保 control.xml 文件里的 appid 的值和 apps 目录下的第一个文件夹的名称一致。</p>
-</li>
-<li><p>确保 HBuilderX 里要调试的代码的 appid 和 control.xml 的appid值一致。</p>
-</li>
-<li><p>使用 Xcode 的 Product 下的 archive 打包，然后生成ipa，并把 ipa 名称命名为：<code>iOS_debug.ipa</code>。</p>
-</li>
-<li><p>在 uni-app 工程里主目录下新建一个名称为 unpackage 的文件夹，再在unpackage文件夹下新建一个名称为 debug 文件夹，并把生成的<code>iOS_debug.ipa</code>包放入 <code>debug</code> 文件夹下。</p>
-</li>
-</ol>
-<p>到这里，自定义基座就制作完成了。</p>
-<p>要调试的话，在 HBuildX 里，找到之前 app id 相同的 uni-app 工程，点击<code>运行 --&gt; 运行到手机或模拟器 --&gt; 使用自定义基座运行（iOS）</code>，等待连接成功之后，然后<code>运行 --&gt; 运行到手机或模拟器 --&gt; 选择真机或者模拟器</code>，HBuilderX 就会用自定义基座，把 App 运行到 iOS 设备上了。</p>
-<h3 id="1-2-云打包生成自定义基座"><a href="#1-2-云打包生成自定义基座" class="headerlink" title="1.2 云打包生成自定义基座"></a>1.2 云打包生成自定义基座</h3><p>HBuilderX 的菜单： <code>运行 --&gt; 运行到手机或模拟器 --&gt; 制作自定义基座</code>， 并配置好，然后点击页面右下角的<code>打包</code>，打包后有下载链接地址，下载下来的文件命名成<code>iOS_debug.ipa</code>，就是自定义基座。</p>
-<p>要调试的话，基座下载下来后，放到项目的 <code>unpackage --&gt; debug</code> 下目录下。</p>
-<p><strong>提示1：</strong> 配置云打包的自定义基座需要 iOS 证书与 Profile 文件。</p>
-<h2 id="2-运行到设备上"><a href="#2-运行到设备上" class="headerlink" title="2. 运行到设备上"></a>2. 运行到设备上</h2><h3 id="2-1-Xcode"><a href="#2-1-Xcode" class="headerlink" title="2.1 Xcode"></a>2.1 Xcode</h3><p>运行 uni-app 到设备上也有两种方式，一种是通过 HbuilderX 运行到设备上，另一种是通过 Xcode。</p>
-<p>首先用 HBuilderX 打包 <code>uni-app</code>，操作路径：<code>发行 --&gt; 原生 App 本地打包 --&gt; 生成本地 App 资源</code>，HBuilderX 处理好之后，会在控制台输出 App 包资源的路径，得到 App 包资源后，把 App 包资源放到原生 iOS 打包工程的指定目录<code>Pandora/apps/</code>下，并修改 <code>control.xml</code> 文件的 <code>appid</code> 与 打包资源的文件夹名称相同。</p>
-<p>然后，运行打包工程到设备上即可，运行打包工程之前，最好配置好 App 相应的信息，例如名称，icon，版本等。</p>
-<h3 id="2-2-HBuilderX"><a href="#2-2-HBuilderX" class="headerlink" title="2.2 HBuilderX"></a>2.2 HBuilderX</h3><p>在 HBuilderX 上运行比较简单，操作路径： <code>运行 --&gt; 运行到手机或模拟器 --&gt; 选择真机或者模拟器</code>。</p>
-<p>这里的运行环境，会有两个：<code>标准基座</code> 与 <code>自定义基座</code>，看开发需要，选择相应环境。</p>
-<h2 id="3-离线打包"><a href="#3-离线打包" class="headerlink" title="3. 离线打包"></a>3. <a target="_blank" rel="noopener" href="https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios?id=%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83">离线打包</a></h2><p>去到原生 iOS 打包工程，按照下面的步骤操作：</p>
-<ol>
-<li><p>这里主要是配置工程，诸如 App 名字，版本，icon，国际化等的一些信息。照着教程配置就好。</p>
-</li>
-<li><p>配置好之后，把从 HBuilderX 打包出来的 App 包资源放到 Pandora 的 apps 文件夹下去。</p>
-</li>
-<li><p>最后一步是打包，上面都配置好的话，就跟 iOS 原生打包一样，操作路径，在 Xcode 里：<code>Product --&gt; Archive</code>。</p>
-</li>
-</ol>
-<p><strong>提示2：</strong> 记得修改 contol.xml 文件里的内容，比如环境是 Debug 还是 Release。打 Release 包的话，syncDebug 配置记得去掉。</p>
-<h2 id="4-插件开发"><a href="#4-插件开发" class="headerlink" title="4. 插件开发"></a>4. <a target="_blank" rel="noopener" href="https://nativesupport.dcloud.net.cn/NativePlugin/course/ios">插件开发</a></h2><p>为了开发过程中条理清晰，开始开发之前，先区分几个概念。</p>
-<p>插件从类型上区分，有两种类型，这根 uni-app 的发展有关，一种是 H5+插件，不过这种插件已经成为过去式了，另一种是 uni-app 插件，这种是目前 Dcloud 的推荐的。</p>
-<p>具体的某一个插件又有两种形式，比如Dcloud SDK 里的插件工程[^插件工程]里有个<code>DCTestUniPlugin</code>插件，这个插件，提供了 <code>module</code> 和 <code>component</code> 两种形式。</p>
-<ol>
-<li>module： 是纯功能性的插件，没有具体界面的，比如获取手机电量，地理位置等功能。</li>
-<li>component：是提供iOS 或者 Android 原生界面的插件类型。</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://nativesupport.dcloud.net.cn/NativePlugin/course/ios?id=%E5%88%9B%E5%BB%BA%E6%8F%92%E4%BB%B6%E5%B7%A5%E7%A8%8B">创建工程</a>，<a target="_blank" rel="noopener" href="https://nativesupport.dcloud.net.cn/NativePlugin/course/ios?id=%E5%AF%BC%E5%85%A5%E6%8F%92%E4%BB%B6%E5%B7%A5%E7%A8%8B">导入插件工程</a>，<a target="_blank" rel="noopener" href="https://nativesupport.dcloud.net.cn/NativePlugin/course/ios?id=%E5%B7%A5%E7%A8%8B%E9%85%8D%E7%BD%AE">配置工程</a>都比较简单，建议大家直接看官网，照葫芦画瓢就是。</p>
-<p>这里直接从<a target="_blank" rel="noopener" href="https://nativesupport.dcloud.net.cn/NativePlugin/course/ios?id=%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0">代码开发</a>部分开始聊。</p>
-<h3 id="4-1-原生方法导出"><a href="#4-1-原生方法导出" class="headerlink" title="4.1 原生方法导出"></a>4.1 原生方法导出</h3><p>iOS 中有两种方法处理方式，一种是同步的，一种是异步的。原生的方法要通过某种途径导出后，uni-app 才能使用。</p>
-<h4 id="4-1-1-同步方法导出"><a href="#4-1-1-同步方法导出" class="headerlink" title="4.1.1 同步方法导出"></a>4.1.1 同步方法导出</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过宏 UNI_EXPORT_METHOD_SYNC 将同步方法暴露给 js 端</span></span><br><span class="line">UNI_EXPORT_METHOD_SYNC(<span class="keyword">@selector</span>(testSyncFunc:))</span><br><span class="line"><span class="comment">/// 同步方法（注：同步方法会在 js 线程执行）</span></span><br><span class="line"><span class="comment">/// @param options js 端调用方法时传递的参数   支持：String、Number、Boolean、JsonObject 类型</span></span><br><span class="line">- (<span class="built_in">NSString</span> *)testSyncFunc:(<span class="built_in">NSDictionary</span> *)options &#123;</span><br><span class="line">    <span class="comment">// options 为 js 端调用此方法时传递的参数</span></span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%@&quot;</span>,options);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     可以在该方法中实现原生功能，然后直接通过 return 返回参数给 js</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 同步返回参数给 js 端  支持：NSString、NSDictionary（只能包含基本数据类型）、NSNumber 类型</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">@&quot;success&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-1-2-异步方法导出"><a href="#4-1-2-异步方法导出" class="headerlink" title="4.1.2 异步方法导出"></a>4.1.2 异步方法导出</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过宏 UNI_EXPORT_METHOD 将异步方法暴露给 js 端</span></span><br><span class="line">UNI_EXPORT_METHOD(<span class="keyword">@selector</span>(testAsyncFunc:callback:))</span><br><span class="line"><span class="comment">/// 异步方法（注：异步方法会在主线程（UI线程）执行）</span></span><br><span class="line"><span class="comment">/// @param options js 端调用方法时传递的参数   支持：String、Number、Boolean、JsonObject 类型</span></span><br><span class="line"><span class="comment">/// @param callback 回调方法，回传参数给 js 端   支持： NSString、NSDictionary（只能包含基本数据类型）、NSNumber 类型</span></span><br><span class="line">- (<span class="keyword">void</span>)testAsyncFunc:(<span class="built_in">NSDictionary</span> *)options callback:(UniModuleKeepAliveCallback)callback &#123; </span><br><span class="line"></span><br><span class="line">    <span class="comment">// options 为 js 端调用此方法时传递的参数 NSLog(@&quot;%@&quot;,options); // 可以在该方法中实现原生能力，然后通过 callback 回调到 js </span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> (callback) &#123;</span><br><span class="line">       <span class="comment">// 第一个参数为回传给js端的数据，第二个参数为标识，表示该回调方法是否支持多次调用，如果原生端需要多次回调js端则第二个参数传 YES;</span></span><br><span class="line">        callback(<span class="string">@&quot;success&quot;</span>,<span class="literal">NO</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-Hook-APP事件"><a href="#4-2-Hook-APP事件" class="headerlink" title="4.2 Hook APP事件"></a>4.2 Hook APP事件</h3><p>如果需要在 App 启动时初始化或者需要获取系统的一些事件， 需要新建一个XXXXProxy类（注意命名加前缀防止冲突），继承 NSObject 遵守UniPluginProtocol协议</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">-(<span class="keyword">void</span>)onCreateUniPlugin;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *_Nullable)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *_Nullable)launchOptions;</span><br><span class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *_Nullable)application didRegisterForRemoteNotificationsWithDeviceToken:(<span class="built_in">NSData</span> *_Nullable)deviceToken;</span><br><span class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *_Nullable)application didFailToRegisterForRemoteNotificationsWithError:(<span class="built_in">NSError</span> *_Nullable)err;</span><br><span class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *_Nullable)application didReceiveRemoteNotification:(<span class="built_in">NSDictionary</span> *_Nullable)userInfo;</span><br><span class="line">- (<span class="keyword">void</span>)application:(<span class="built_in">UIApplication</span> *_Nullable)application didReceiveLocalNotification:(<span class="built_in">UILocalNotification</span> *_Nullable)notification;</span><br><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *_Nullable)application handleOpenURL:(<span class="built_in">NSURL</span> *_Nullable)url;</span><br><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *_Nullable)app openURL:(<span class="built_in">NSURL</span> *_Nonnull)url options:(<span class="built_in">NSDictionary</span>&lt;<span class="built_in">UIApplicationOpenURLOptionsKey</span>, <span class="keyword">id</span>&gt; *_Nullable)options <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">9</span>_0);</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)applicationWillResignActive:(<span class="built_in">UIApplication</span> *)application;</span><br><span class="line">- (<span class="keyword">void</span>)applicationDidBecomeActive:(<span class="built_in">UIApplication</span> *)application;</span><br><span class="line">- (<span class="keyword">void</span>)applicationDidEnterBackground:(<span class="built_in">UIApplication</span> *)application;</span><br><span class="line">- (<span class="keyword">void</span>)applicationWillEnterForeground:(<span class="built_in">UIApplication</span> *)application;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *_Nullable)application continueUserActivity:(<span class="built_in">NSUserActivity</span> *_Nullable)userActivity restorationHandler:(<span class="keyword">void</span>(^_Nullable)(<span class="built_in">NSArray</span> * __<span class="keyword">nullable</span> restorableObjects))restorationHandler API_AVAILABLE(ios(<span class="number">8.0</span>));</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-3-性能"><a href="#4-3-性能" class="headerlink" title="4.3 性能"></a>4.3 性能</h3><p>这种跨端的 App 本身性能问题有一定的瓶颈，所以 Dcloud 也提供了原生代码的运行线程和队列的控制。</p>
-<h4 id="4-3-1-线程"><a href="#4-3-1-线程" class="headerlink" title="4.3.1 线程"></a>4.3.1 线程</h4><p>想要在指定线程里运行原生代码，由于原生代码不一定能够一直运行在前台，所以线程也需要保活，可以这么实现<code>uniExecuteThread</code></p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">-(<span class="built_in">NSThread</span>*)uniExecuteThread</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> ( <span class="literal">nil</span> == _uniExecuteThread) &#123;</span><br><span class="line">        _uniExecuteThread = [[<span class="built_in">NSThread</span> alloc] initWithTarget:<span class="keyword">self</span> selector:<span class="keyword">@selector</span>(uniNewThread) object:<span class="literal">nil</span>];</span><br><span class="line">        [_uniExecuteThread setName:<span class="string">@&quot;TestUniModule&quot;</span>];</span><br><span class="line">        [_uniExecuteThread start];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _uniExecuteThread;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(<span class="keyword">void</span>)uniNewThread</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">@autoreleasepool</span> &#123;</span><br><span class="line">        <span class="built_in">NSRunLoop</span> *runLoop = [<span class="built_in">NSRunLoop</span> currentRunLoop];</span><br><span class="line">        [runLoop addPort:[<span class="built_in">NSMachPort</span> port] forMode:<span class="built_in">NSRunLoopCommonModes</span>];</span><br><span class="line">        [runLoop run];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-3-2-队列"><a href="#4-3-2-队列" class="headerlink" title="4.3.2 队列"></a>4.3.2 队列</h4><p>想要在指定线程里运行原生代码，可以实现 <code>uniExecuteQueue</code>属性，可以在这个属性里返回一个具体的队列。</p>
-<p>DCloud SDK 提供了插件相关的<a target="_blank" rel="noopener" href="https://nativesupport.dcloud.net.cn/NativePlugin/API/ios?id=dcunimodule">API信息</a>。</p>
-<h3 id="4-4-配置插件信息"><a href="#4-4-配置插件信息" class="headerlink" title="4.4 配置插件信息"></a>4.4 配置插件信息</h3><p>选中工程中的 <code>HBuilder-uniPlugin-Info.plist</code>文件<code>右键-&gt;Open As-&gt;Source Code</code>找到<code>dcloud_uniplugins</code>节点，copy下面的内容添加到<code>dcloud_uniplugins</code>节点下，按您插件的实际信息填写对应的项</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>hooksClass<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">string</span>&gt;</span>填写 hooksClass 类名 <span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">key</span>&gt;</span>plugins<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dict</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">key</span>&gt;</span>class<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>填写 module 或 component 的类名<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">key</span>&gt;</span>name<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>填写暴露给js端对应的 module 或 component 名称<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">key</span>&gt;</span>type<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">string</span>&gt;</span>填写 module 或 component<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dict</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>hooksClass：App系统方法钩子类，值是类名，是给有些插件需要在 app 启动时做初始化或者获取系统事件用的，如果没有可以不填为空</li>
-<li>class：module 或 component 对应的原生类名（示例中为 TestModule）</li>
-<li>name：module 或 component 对应的名称（注意：module 的 name 必须以插件id为前缀或和插件id相同，示例为DCTestUniPlugin-TestModule，其中 DCTestUniPlugin 为插件的id，需要保证唯一性，避免与其他插件冲突，component 的name 没有强制要求，但是也要保证唯一比如 dc-map）</li>
-<li>type：module 或 component （示例为module）</li>
-</ul>
-<h3 id="4-5-生成插件包"><a href="#4-5-生成插件包" class="headerlink" title="4.5 生成插件包"></a>4.5 生成插件包</h3><p>此步骤应该在您插件所有功能都开发完毕，并在开发工程中测试完成后进行，插件目录结构类似：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|-- 插件id                               // 插件包是一个以插件id命名的文件夹</span><br><span class="line">    |-- android                         // 存放 android 插件所需要的依赖库及资源文件</span><br><span class="line">    |-- ios                             // 存放 ios 插件所需要的依赖库及资源文件</span><br><span class="line">    |-- package.json                    // 插件配置文件</span><br></pre></td></tr></table></figure>
-
-<p><code>package.json</code> 文件是插件包的信息，<a target="_blank" rel="noopener" href="https://nativesupport.dcloud.net.cn/NativePlugin/course/package?id=packagejson">具体配置参考</a>，内容类似：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;TestUniPlugin&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;id&quot;</span>: <span class="string">&quot;DCTestUniPlugin&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;1.0.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;description&quot;</span>: <span class="string">&quot;uni示例插件&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;_dp_type&quot;</span>: <span class="string">&quot;nativeplugin&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;_dp_nativeplugin&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;ios&quot;</span>: &#123;</span><br><span class="line">            <span class="attr">&quot;plugins&quot;</span>: [&#123;</span><br><span class="line">                <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;module&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;DCTestUniPlugin-TestModule&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;class&quot;</span>: <span class="string">&quot;TestModule&quot;</span></span><br><span class="line">            &#125;, &#123;</span><br><span class="line">                <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;component&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;dc-testmap&quot;</span>,</span><br><span class="line">                <span class="attr">&quot;class&quot;</span>: <span class="string">&quot;TestComponent&quot;</span></span><br><span class="line">            &#125;],</span><br><span class="line">            <span class="attr">&quot;frameworks&quot;</span>: [<span class="string">&quot;MapKit.framework&quot;</span>],</span><br><span class="line">            <span class="attr">&quot;integrateType&quot;</span>: <span class="string">&quot;framework&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;deploymentTarget&quot;</span>: <span class="string">&quot;9.0&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后以<code>插件id</code>为名新建一个文件夹，将编辑好的 <code>package.json</code> 放进去，然后在文件夹中在新建一个 ios 文件夹，将生成的依赖库<code>DCTestUniPlugin.framework</code>copy 到 ios 目录下，这样我们的插件包就构建完成了。</p>
-<p>接下来介绍一下如何使用本地原生的 iOS 插件。</p>
-<h2 id="5-uni-app-使用-iOS-原生插件"><a href="#5-uni-app-使用-iOS-原生插件" class="headerlink" title="5. uni-app 使用 iOS 原生插件"></a>5. uni-app 使用 iOS 原生插件</h2><p>将原生插件导出来，按照要求放到 uni-app 里面去，然后在代码里，可以这么使用</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;testAsyncFunc&quot;</span>&gt;</span>testAsyncFunc<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;testSyncFunc&quot;</span>&gt;</span>testSyncFunc<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// 首先需要通过 uni.requireNativePlugin(&quot;ModuleName&quot;) 获取 module </span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> testModule = uni.requireNativePlugin(<span class="string">&quot;DCTestUniPlugin-TestModule&quot;</span>)</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">        <span class="attr">methods</span>: &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">            <span class="function"><span class="title">testAsyncFunc</span>(<span class="params"></span>)</span> &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                <span class="comment">// 调用异步方法</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">                testModule.testAsyncFunc(&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                        <span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;uni-app&#x27;</span>,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                        <span class="string">&#x27;age&#x27;</span>: <span class="number">1</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">                    &#125;,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                    <span class="function">(<span class="params">ret</span>) =&gt;</span> &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                        uni.showToast(&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                            <span class="attr">title</span>:<span class="string">&#x27;调用异步方法 &#x27;</span> + ret,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                            <span class="attr">icon</span>: <span class="string">&quot;none&quot;</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">                        &#125;)</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                    &#125;)</span></span></span><br><span class="line"><span class="javascript"><span class="xml">            &#125;,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">            <span class="function"><span class="title">testSyncFunc</span>(<span class="params"></span>)</span> &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                <span class="comment">// 调用同步方法</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">                <span class="keyword">var</span> ret = testModule.testSyncFunc(&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                    <span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;uni-app&#x27;</span>,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                    <span class="string">&#x27;age&#x27;</span>: <span class="number">1</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">                &#125;)</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">                uni.showToast(&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                    <span class="attr">title</span>:<span class="string">&#x27;调用同步方法 &#x27;</span> + ret,</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                    <span class="attr">icon</span>: <span class="string">&quot;none&quot;</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">                &#125;)</span></span></span><br><span class="line"><span class="javascript"><span class="xml">            &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">        &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>写好代码后，<a target="_blank" rel="noopener" href="https://nativesupport.dcloud.net.cn/NativePlugin/course/ios?id=%E5%AF%BC%E5%85%A5-uni-app-%E8%B5%84%E6%BA%90">生成本地 App 包资源</a>，<a target="_blank" rel="noopener" href="https://nativesupport.dcloud.net.cn/NativePlugin/course/ios?id=%E5%AF%BC%E5%85%A5-uni-app-%E8%B5%84%E6%BA%90-1">导入到插件开发工程</a>，选择 <code>HBuilder Target</code> 运行，然后测试一下功能是否正常。</p>
-<p><strong>提示 3</strong>: 前端代码修改后重新导入资源时，需要在插件开发工程中删除之前导入的资源，同时将设备上的 App 删除，避免因为缓存问题导致加载的还是旧的资源。</p>
-<h2 id="6-插件市场"><a href="#6-插件市场" class="headerlink" title="6. 插件市场"></a>6. 插件市场</h2><p>原生插件发布到插件市场，本篇文章不涉及这部分内容，具体见<a target="_blank" rel="noopener" href="https://nativesupport.dcloud.net.cn/NativePlugin/course/ios?id=%E6%8F%90%E4%BA%A4%E6%8F%92%E4%BB%B6%E5%B8%82%E5%9C%BA">提交原生插件到Dcloud插件市场</a>。</p>
-<p>[^DCloud-SDK]: <a target="_blank" rel="noopener" href="https://nativesupport.dcloud.net.cn/AppDocs/download/ios">Dcloud SDK</a><br>[^打包工程]: 打包工程是指 Dcloud SDK 目录下的 <code>HBuilder-Hello</code> iOS 原生项目。<br>[^插件工程]: 插件工程是指 Dcloud SDK 目录下的 <code>HBuilder-uniPluginDemo</code> iOS 原生项目<br>[^自定义基座]: <a target="_blank" rel="noopener" href="https://ask.dcloud.net.cn/article/35115">自定义基座</a></p>
+        <h1 id="高瓴资本"><a href="#高瓴资本" class="headerlink" title="高瓴资本"></a>高瓴资本</h1><p>私募投资</p>
+<p>高瓴一家专注于长期结构性价值投资的投资公司，成立于2005年，由张磊先生创立</p>
+<p>经过多年的发展，成为亚洲资产管理规模最大的投资基金之一，也是亚洲规模最大私募之一，管理规模超650亿美元。</p>
+<p>在创始人张磊先生的引领下，高瓴汇聚了一支专业能力强大，对消费零售、医疗健康、金融和企业服务等诸多行业认知深刻的专家团队。我们致力于寻找最具创新精神的企业家，通过高瓴的全球资源及自主研究体系，帮助他们发挥出最大的潜能从而缔造最优秀的公司。</p>
+<h2 id="1-投资理念：做时间的朋友，结构性投资，价值投资，长期投资"><a href="#1-投资理念：做时间的朋友，结构性投资，价值投资，长期投资" class="headerlink" title="1. 投资理念：做时间的朋友，结构性投资，价值投资，长期投资"></a>1. 投资理念：做时间的朋友，结构性投资，价值投资，长期投资</h2><h2 id="2-创始人"><a href="#2-创始人" class="headerlink" title="2. 创始人"></a>2. 创始人</h2><p>张磊，think big、think deep、think long。</p>
+<p>张磊先生在一次采访中谈最佩服的两个人，一个是Warren Buffett(巴菲特)，一个是David Swensen(大卫-史文森)，张磊在耶鲁的恩师。</p>
+<p>张磊的人生经历：</p>
+<p>高瓴资本创始人兼首席执行官，美国耶鲁大学校董事会董事，中国人民大学校董事会副董事长，耶鲁大学亚洲发展委员会主席，中美交流基金会董事，香港金融发展局委员以及香港金融科技督导小组成员</p>
+<p>1、河南省高考文科状元的身份考取中国人民大学国际金融专业</p>
+<p>2、1998年赴美国耶鲁大学求学，后获得耶鲁大学工商管理硕士及国际关系硕士学位</p>
+<p>3、先后在，耶鲁大学投资办公室（管理著名的耶鲁大学捐赠基金）、全球新兴市场投资基金和纽约证券交易工作，这段经历为他日后在投资界的成功奠定了坚实的基础。</p>
+<p>4、2019年12月18日，张磊入选“中国海归70年70人”榜单；2020年4月13日，入选《财富》中文版“2020年中国最具影响力的50位商界领袖”榜单。</p>
+<h2 id="3-团队"><a href="#3-团队" class="headerlink" title="3. 团队"></a>3. 团队</h2><p>高瓴资本管理有限公司有六个合伙人：</p>
+<p>1、张磊：创始人兼首席执行官。</p>
+<p>2、洪婧：合伙人，私募投资业务负责人。</p>
+<p>3、辛音：担任了高领资本集团的副总裁。</p>
+<p>4、陈劬(qú)：担任了高领资本的总监。</p>
+<p>5、冯靓：公共关系部部长。</p>
+<p>6、李良：高领资本合伙人。</p>
+<p>员工：</p>
+<p>高瓴集团团队成员具有丰富的海内外工作经验和多元化背景，目前已经发展成为一支拥有350余名投资和运营专业人士的国际化团队。</p>
+<p>作为一家具有全球视野的投资管理机构，高瓴集团聚集了来自北京、上海、苏州、香港、东京、新加坡、孟买、悉尼、伦敦、巴黎、汉诺威、纽约、芝加哥、费城、波士顿、帕洛阿尔托、普林斯顿、林肯，以及纽黑文等世界各地的顶尖人才。</p>
+<h2 id="4-投资标的"><a href="#4-投资标的" class="headerlink" title="4. 投资标的"></a>4. 投资标的</h2><h3 id="4-1-持有的A股"><a href="#4-1-持有的A股" class="headerlink" title="4.1 持有的A股"></a>4.1 持有的A股</h3><p>凯利泰、格力电器、海螺水泥、爱尔眼科、金域医学、泰格医药、赛意信息、公牛集团、良品铺子、水井坊、药明康德</p>
+<h3 id="4-2-港股"><a href="#4-2-港股" class="headerlink" title="4.2 港股"></a>4.2 港股</h3><p>腾讯、美团</p>
+<h3 id="4-3-美股"><a href="#4-3-美股" class="headerlink" title="4.3 美股"></a>4.3 美股</h3><p>Zoom、爱奇艺、京东、阿里和拼多多</p>
+<h2 id="5-服务群体"><a href="#5-服务群体" class="headerlink" title="5. 服务群体"></a>5. 服务群体</h2><p>主要来自于目光长远的全球性机构投资人，包括大学捐赠基金、养老基金、主权财富基金及家族基金等。</p>
+<h2 id="6-投资行业"><a href="#6-投资行业" class="headerlink" title="6. 投资行业"></a>6. 投资行业</h2><p>第一，我还是看好创新，创新带来的机会还是很多；</p>
+<p>第二，我看好中产阶级带来的巨大消费机会；</p>
+<p>第三，我看好金融和资产管理行业，在中国的需求远远没有被满足，尤其是资产管理；</p>
+<p>高瓴已经在消费与零售、科技创新、生命健康以及先进制造等领域，投资了一大批国内外优秀企业，其中包括了百度、美团、蓝月亮、美的、格力等。</p>
+<h2 id="7-常用词"><a href="#7-常用词" class="headerlink" title="7. 常用词"></a>7. 常用词</h2><p>企业家，创业者，创新，护城河，哲学。</p>
 
     </article>
     <!-- license -->
     
         <div class="license-wrapper">
             <p>Author：<a href="http://www.lhp3851.top">Jerry Liu</a>
-            <p>原文链接：<a href="http://www.lhp3851.top/2021/09/16/iOS/Webs/DCloud/DCloudGuideline/">http://www.lhp3851.top/2021/09/16/iOS/Webs/DCloud/DCloudGuideline/</a>
-            <p>发表日期：<a href="http://www.lhp3851.top/2021/09/16/iOS/Webs/DCloud/DCloudGuideline/">September 16th 2021, 3:05:29 pm</a>
-            <p>更新日期：<a href="http://www.lhp3851.top/2021/09/16/iOS/Webs/DCloud/DCloudGuideline/">September 16th 2021, 3:05:29 pm</a>
+            <p>原文链接：<a href="http://www.lhp3851.top/2021/09/22/Invest/HIllHouse/">http://www.lhp3851.top/2021/09/22/Invest/HIllHouse/</a>
+            <p>发表日期：<a href="http://www.lhp3851.top/2021/09/22/Invest/HIllHouse/">September 22nd 2021, 2:56:40 pm</a>
+            <p>更新日期：<a href="http://www.lhp3851.top/2021/09/22/Invest/HIllHouse/">September 22nd 2021, 2:57:02 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -601,17 +541,12 @@
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2021/09/16/iOS/Languages/Objective-C/MemoryManagement/" title="iOS之内存管理">
-                    <div class="nextTitle">iOS之内存管理</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2021/09/16/Invest/%E9%AB%98%E7%93%B4%E8%B5%84%E6%9C%AC/" title="">
-                    <div class="prevTitle">[Untitled Post]</div>
+                <a href="/2021/09/22/iOS/Webs/DCloud/DCloudGuideline/" title="DCloud iOS 原生插件开发指南">
+                    <div class="prevTitle">DCloud iOS 原生插件开发指南</div>
                 </a>
             
         </li>
@@ -749,7 +684,7 @@
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DCloud-iOS-%E5%8E%9F%E7%94%9F%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97"><span class="toc-number">1.</span> <span class="toc-text">DCloud iOS 原生插件开发指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%BA%E5%BA%A7-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%BA%E5%BA%A7"><span class="toc-number">1.1.</span> <span class="toc-text">1. 自定义基座[^自定义基座]</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E7%94%A8%E6%89%93%E5%8C%85%E5%B7%A5%E7%A8%8B%E7%94%9F%E6%88%90%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%BA%E5%BA%A7"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 用打包工程生成自定义基座</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E4%BA%91%E6%89%93%E5%8C%85%E7%94%9F%E6%88%90%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%BA%E5%BA%A7"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 云打包生成自定义基座</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%BF%90%E8%A1%8C%E5%88%B0%E8%AE%BE%E5%A4%87%E4%B8%8A"><span class="toc-number">1.2.</span> <span class="toc-text">2. 运行到设备上</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Xcode"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 Xcode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-HBuilderX"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 HBuilderX</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%A6%BB%E7%BA%BF%E6%89%93%E5%8C%85"><span class="toc-number">1.3.</span> <span class="toc-text">3. 离线打包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91"><span class="toc-number">1.4.</span> <span class="toc-text">4. 插件开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E5%8E%9F%E7%94%9F%E6%96%B9%E6%B3%95%E5%AF%BC%E5%87%BA"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 原生方法导出</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1-%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95%E5%AF%BC%E5%87%BA"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">4.1.1 同步方法导出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-%E5%BC%82%E6%AD%A5%E6%96%B9%E6%B3%95%E5%AF%BC%E5%87%BA"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">4.1.2 异步方法导出</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-Hook-APP%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 Hook APP事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E6%80%A7%E8%83%BD"><span class="toc-number">1.4.3.</span> <span class="toc-text">4.3 性能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-1-%E7%BA%BF%E7%A8%8B"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">4.3.1 线程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-2-%E9%98%9F%E5%88%97"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">4.3.2 队列</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E9%85%8D%E7%BD%AE%E6%8F%92%E4%BB%B6%E4%BF%A1%E6%81%AF"><span class="toc-number">1.4.4.</span> <span class="toc-text">4.4 配置插件信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-%E7%94%9F%E6%88%90%E6%8F%92%E4%BB%B6%E5%8C%85"><span class="toc-number">1.4.5.</span> <span class="toc-text">4.5 生成插件包</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-uni-app-%E4%BD%BF%E7%94%A8-iOS-%E5%8E%9F%E7%94%9F%E6%8F%92%E4%BB%B6"><span class="toc-number">1.5.</span> <span class="toc-text">5. uni-app 使用 iOS 原生插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%8F%92%E4%BB%B6%E5%B8%82%E5%9C%BA"><span class="toc-number">1.6.</span> <span class="toc-text">6. 插件市场</span></a></li></ol></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%AB%98%E7%93%B4%E8%B5%84%E6%9C%AC"><span class="toc-number">1.</span> <span class="toc-text">高瓴资本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%8A%95%E8%B5%84%E7%90%86%E5%BF%B5%EF%BC%9A%E5%81%9A%E6%97%B6%E9%97%B4%E7%9A%84%E6%9C%8B%E5%8F%8B%EF%BC%8C%E7%BB%93%E6%9E%84%E6%80%A7%E6%8A%95%E8%B5%84%EF%BC%8C%E4%BB%B7%E5%80%BC%E6%8A%95%E8%B5%84%EF%BC%8C%E9%95%BF%E6%9C%9F%E6%8A%95%E8%B5%84"><span class="toc-number">1.1.</span> <span class="toc-text">1. 投资理念：做时间的朋友，结构性投资，价值投资，长期投资</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%9B%E5%A7%8B%E4%BA%BA"><span class="toc-number">1.2.</span> <span class="toc-text">2. 创始人</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%9B%A2%E9%98%9F"><span class="toc-number">1.3.</span> <span class="toc-text">3. 团队</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%8A%95%E8%B5%84%E6%A0%87%E7%9A%84"><span class="toc-number">1.4.</span> <span class="toc-text">4. 投资标的</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E6%8C%81%E6%9C%89%E7%9A%84A%E8%82%A1"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 持有的A股</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E6%B8%AF%E8%82%A1"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 港股</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E7%BE%8E%E8%82%A1"><span class="toc-number">1.4.3.</span> <span class="toc-text">4.3 美股</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%9C%8D%E5%8A%A1%E7%BE%A4%E4%BD%93"><span class="toc-number">1.5.</span> <span class="toc-text">5. 服务群体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%8A%95%E8%B5%84%E8%A1%8C%E4%B8%9A"><span class="toc-number">1.6.</span> <span class="toc-text">6. 投资行业</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%B8%B8%E7%94%A8%E8%AF%8D"><span class="toc-number">1.7.</span> <span class="toc-text">7. 常用词</span></a></li></ol></li></ol>
             </div>
         
         <!-- sidebar -->
@@ -3345,6 +3280,12 @@
         
         
         
+        
+        
+        
+        
+        
+        
     
     
     
@@ -3367,6 +3308,18 @@
             
         
         <li class="archive-post-item">
+            <span class="archive-post-date">09/22</span>
+            <a class="archive-post-title" href="/2021/09/22/Invest/HIllHouse/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/22</span>
+            <a class="archive-post-title" href="/2021/09/22/iOS/Webs/DCloud/DCloudGuideline/">DCloud iOS 原生插件开发指南</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
             <span class="archive-post-date">09/19</span>
             <a class="archive-post-title" href="/2021/09/19/iOS/Network/BLuetooth/">iOS 之 蓝牙协议</a>
         </li>
@@ -3375,18 +3328,6 @@
         <li class="archive-post-item">
             <span class="archive-post-date">09/16</span>
             <a class="archive-post-title" href="/2021/09/16/iOS/Languages/Objective-C/MemoryManagement/">iOS之内存管理</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/16</span>
-            <a class="archive-post-title" href="/2021/09/16/iOS/Webs/DCloud/DCloudGuideline/">[Untitled Post]</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/16</span>
-            <a class="archive-post-title" href="/2021/09/16/Invest/%E9%AB%98%E7%93%B4%E8%B5%84%E6%9C%AC/">[Untitled Post]</a>
         </li>
     
         
@@ -3506,13 +3447,13 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">07/29</span>
-            <a class="archive-post-title" href="/2021/07/29/iOS/Interview/InterviewCollections/Tencent/">iOS 试题</a>
+            <a class="archive-post-title" href="/2021/07/29/Flutters/TechnologyFeasibility/Resources/flutter/">Flutter 技术可行性调研</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">07/29</span>
-            <a class="archive-post-title" href="/2021/07/29/Flutters/TechnologyFeasibility/Resources/flutter/">Flutter 技术可行性调研</a>
+            <a class="archive-post-title" href="/2021/07/29/iOS/Interview/InterviewCollections/Tencent/">iOS 试题</a>
         </li>
     
         
@@ -3524,13 +3465,13 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">07/29</span>
-            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/CI/Jira/Jira/">jira</a>
+            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/CI/Applestore%20Connect/App%20Store%20Connect%20API/">iOS 之App Store Connect API</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">07/29</span>
-            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/CI/Applestore%20Connect/App%20Store%20Connect%20API/">iOS 之App Store Connect API</a>
+            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/CI/Jira/Jira/">jira</a>
         </li>
     
         
@@ -3674,6 +3615,24 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/Flutters/Guidance/Guidance/">Flutter</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/Flutters/TechnologyFeasibility/Technologies/">Flutter 可行性调研技术点</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/Flutters/TechnologyFeasibility/TechnologyFeasibility/">Flutter 技术可行性调研</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/Web/JavaScript/JavaScript/">JavaScript</a>
         </li>
     
@@ -3686,7 +3645,7 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/Web/CSS/CSSGuidance/">CSS 上手</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Concurrency/Concurrency/">iOS之并发编程</a>
         </li>
     
         
@@ -3698,25 +3657,7 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Concurrency/Concurrency/">iOS之并发编程</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Concurrency/RunLoop/">iOS之RunLoop</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/DataPersistence/DataBase/">iOS之SQLite</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/DataPersistence/DataPersistence/">iOS之持久化</a>
         </li>
     
         
@@ -3740,37 +3681,19 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Libraries/OpenLibs/">iOS 之开源库</a>
+            <a class="archive-post-title" href="/2021/04/20/Web/CSS/CSSGuidance/">CSS 上手</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Libraries/WebViewJavascriptBridge/">WebViewJavascriptBridge</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/DataPersistence/DataBase/">iOS之SQLite</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Audio/">iOS之音频</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Images/">iOS之图片</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Medias/">iOS之多媒体</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Vedio/">iOS之视频</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/DataPersistence/DataPersistence/">iOS之持久化</a>
         </li>
     
         
@@ -3812,31 +3735,37 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Network/Protocols/">网络协议</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/OS/Linux/">Linux</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Network/%E6%9C%8D%E5%8A%A1%E8%AE%A4%E8%AF%81/">服务认证</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/OS/OS/">操作系统</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/Protocols/">网络协议</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/OS/Unix/">Unix</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Audio/">iOS之音频</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Medias/">iOS之多媒体</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Vedio/">iOS之视频</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Images/">iOS之图片</a>
         </li>
     
         
@@ -3848,13 +3777,13 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/OS/ShellConfigs/">Shell 配置文件</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/GCCAttribute/">iOS 之GCC attribute</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/GCCAttribute/">iOS 之GCC attribute</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/LaunchOptimize/">iOS之启动优化</a>
         </li>
     
         
@@ -3872,7 +3801,7 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/LaunchOptimize/">iOS之启动优化</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/PowerOptimize/">iOS 之功耗优化</a>
         </li>
     
         
@@ -3890,7 +3819,7 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/PowerOptimize/">iOS 之功耗优化</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/CI/">iOS之CI集成</a>
         </li>
     
         
@@ -3902,25 +3831,19 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/CI/">iOS之CI集成</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/EnvironmentsVaraible/">iOS 项目管理之 xcconfig</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/ProjectManager/">项目管理</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/Fir&PGYing/">iOS项目管理之杂项</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/Fir&PGYing/">iOS项目管理之杂项</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/ProjectManager/">项目管理</a>
         </li>
     
         
@@ -3956,6 +3879,120 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Charles/">Charles</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/CocoapodMaker/">Cocoapod</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/CocoapodGuidance/">Cocoapod 指南</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Fastlane/">Fastlane 指南</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/GitSpecification/">Git 规范</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Monitors/">iOS 之监控插件库</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/LLDB/">iOS之LLDB</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Reverse/">iOS逆向工程</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/OmniGraffle/">OmniGraffle</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/iOSTools/">iOS 之开发工具</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Hybrids/">iOS之移动端跨端技术及原理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/JSPatchPrinciple/">iOS之JSPatch原理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Vue/">iOS之 Vue</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Libraries/OpenLibs/">iOS 之开源库</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Libraries/WebViewJavascriptBridge/">WebViewJavascriptBridge</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/OS/Linux/">Linux</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/OS/ShellConfigs/">Shell 配置文件</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/OS/Unix/">Unix</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/OS/OS/">操作系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/UI/Animation/">iOS之动画</a>
         </li>
     
@@ -3980,109 +4017,13 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/UserExperences/">iOS之交互体验</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Charles/">Charles</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/CocoapodMaker/">Cocoapod</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Fastlane/">Fastlane 指南</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/GitSpecification/">Git 规范</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/CocoapodGuidance/">Cocoapod 指南</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/LLDB/">iOS之LLDB</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Monitors/">iOS 之监控插件库</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/OmniGraffle/">OmniGraffle</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Reverse/">iOS逆向工程</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/iOSTools/">iOS 之开发工具</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/WWDC/WWDC2019/">iOS之WWDC2019</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Hybrids/">iOS之移动端跨端技术及原理</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/JSPatchPrinciple/">iOS之JSPatch原理</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Vue/">iOS之 Vue</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/Flutters/TechnologyFeasibility/TechnologyFeasibility/">Flutter 技术可行性调研</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/Flutters/Guidance/Guidance/">Flutter</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/Flutters/TechnologyFeasibility/Technologies/">Flutter 可行性调研技术点</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/UserExperences/">iOS之交互体验</a>
         </li>
     
         
@@ -4142,12 +4083,6 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Constructor/">iOS编程语言之swift 构造器</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Swift/">iOS编程语言之Swift</a>
         </li>
     
@@ -4160,13 +4095,13 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/Exceptions/CrashLogManuelResolve/">iOS之手动解析 crash 日志</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Constructor/">iOS编程语言之swift 构造器</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/KSCrash/KSCrashGuidline/">iOS之KSCrash 简明教程</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/Exceptions/CrashLogManuelResolve/">iOS之手动解析 crash 日志</a>
         </li>
     
         
@@ -4178,43 +4113,25 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/KSCrash/KSCrashGuidline/">iOS之KSCrash 简明教程</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Performance/KSCrash/Princeples/">iOS之KSCrahs 原理</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Layouts/Layouts/">iOS之 布局</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Layouts/AutoLayout/">iOS 之 自动布局</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Render/Render/">iOS之 UI 渲染</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/WebKit/WebKit/">iOS之 Webkit</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Appium/AppiumGuidance/">Appium 快速上手</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Vim/VimOperation/">Vim 常用操作</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Appium/AppiumGuidance/">Appium 快速上手</a>
         </li>
     
         
@@ -4244,7 +4161,31 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Layouts/AutoLayout/">iOS 之 自动布局</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/React-Native/">iOS之React-Native</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Layouts/Layouts/">iOS之 布局</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Render/Render/">iOS之 UI 渲染</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/WebKit/WebKit/">iOS之 Webkit</a>
         </li>
     
         
@@ -4316,13 +4257,19 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Events&Responder/">iOS之事件传递与响应者链</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/FrameWorks/">iOS之框架</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Events&Responder/">iOS之事件传递与响应者链</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Guidelines/">iOS之规范</a>
         </li>
     
         
@@ -4346,25 +4293,19 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Guidelines/">iOS之规范</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Xcode/">iOS之SDK</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Assemble/Assemble/">汇编语言</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/AppleScript/AppleScript/">AppleScript</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/AppleScript/AppleScript/">AppleScript</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Assemble/Assemble/">汇编语言</a>
         </li>
     
         
