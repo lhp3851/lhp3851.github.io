@@ -1,5 +1,6 @@
 ---
 title: DCloud iOS 原生插件开发指南
+abbrlink: 56399
 date: 2021-09-22 09:55:00
 tags:
 ---
