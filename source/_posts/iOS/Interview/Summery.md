@@ -17,10 +17,7 @@ tags:
 
 ### 1.1 Objective-C
 
-<<<<<<< HEAD
 #### 1.1.1 [内存管理](./../Languages/Objective-C/MemoryManagement.md)
-=======
-#### 1.1.1 内存管理
 
 内存管理原则
 
@@ -37,7 +34,6 @@ tags:
 权限修饰符： copy，assign，strong 等
 
 对象初始化过程、对象 isa 如何获取
->>>>>>> 672ad4f23dfb83d7d00fbbf53d7ea0ef2cadf8c6
 
 #### 1.1.2 Block
 
