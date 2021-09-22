@@ -5,7 +5,7 @@ date: 2021-04-20 00:00:00
 tags:
 ---
 
-## 1. [iOS-Block底层实现原理](https://limeng99.club/learning/2020/05/25/iOS-Block%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.html)
+## 1. [iOS-Block底层实现原理](https://limeng99.club/learning/2020/05/25/iOS-Block底层实现原理.html)
 
 ## 2. Block 类型
 
@@ -170,6 +170,10 @@ static void __main_block_func_0(struct __main_block_impl_0 *__cself) {
 1. weak
 2. __block
 3. __unsafe_unretained
+
+## 5. Block 的变量捕获原理
+
+### 5.1 [你真的理解__block修饰符的原理么？](https://blog.csdn.net/abc649395594/article/details/47086751)
 
 参考[^深入理解iOS的block]
 [^深入理解iOS的block]: [深入理解iOS的block](<https://juejin.cn/post/6844903893176958983#heading-37>)
