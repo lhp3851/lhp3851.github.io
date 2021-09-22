@@ -1,5 +1,6 @@
 ---
 title: C++
+abbrlink: 15280
 date: 2021-08-24 10:37:00
 tags:
 ---

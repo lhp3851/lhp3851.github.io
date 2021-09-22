@@ -1,5 +1,6 @@
 ---
 title: Chrome Extentions 开发指南
+abbrlink: 55585
 date: 2021-08-28 10:08:02
 tags:
 ---

@@ -1,5 +1,6 @@
 ---
 title: 编译工具 CMake 入门
+abbrlink: 56914
 date: 2021-09-01 10:56:00
 tags:
 ---

@@ -1,3 +1,6 @@
+---
+abbrlink: 1
+---
 # DCloud iOS 原生插件开发指南
 
 [TOC]

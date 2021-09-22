@@ -1,5 +1,6 @@
 ---
 title: FuncPtr
+abbrlink: 6268
 date: 2021-08-28 15:38:00
 tags:
 ---
