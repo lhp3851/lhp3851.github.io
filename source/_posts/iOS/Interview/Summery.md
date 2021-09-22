@@ -7,21 +7,46 @@ tags:
 
 [TOC]
 
+能力培养
+
+> 1. **独立思考 + 系统化思维 + 前瞻性思维 [+ 人力资源管理]**
+> 2. **形成一套 基础 + 流程 + 机制 + 原理 + 方案 + 作品的路径**
+> 3. **多元化**
+
 ## 1. 语言
 
 ### 1.1 Objective-C
 
-#### 1.1.1 内存管理
+#### 1.1.1 [内存管理](./../Languages/Objective-C/MemoryManagement.md)
+
+内存管理原则
 
 内存管理方式
 
+循环引用&内存泄漏&Weak 原理
+
+野指针、悬垂指针（腾讯方案）
+
+僵尸代码
 循环引用&内存泄漏&weak 实现
 
-野指针
+[weak 实现原理](https://www.jianshu.com/p/13c4fb1cedea)
+
+权限修饰符： copy，assign，strong 等
 
 对象初始化过程、对象 isa 如何获取
 
 #### 1.1.2 Block
+
+全局
+
+堆
+
+栈
+
+内存
+
+实现原理
 
 #### 1.1.3 并发编程
 
@@ -50,6 +75,10 @@ tags:
 #### 1.1.6 Runtime
 
 实现原理&使用场景
+
+方法转发流程
+
+NSObjectProxy
 
 #### 1.1.7 Category
 
@@ -101,7 +130,13 @@ AFNetworking、Alamofire、Moya
 
 网络认证
 
+缓存
+
+cookie [WKWebview]
+
 网络安全优化
+
+NSURLProtocolProxy
 
 ### 2.3 数据结构
 
@@ -137,6 +172,8 @@ AFNetworking、Alamofire、Moya
 
 签名
 
+哈希 与 Dictionary 的实现
+
 ### 2.4 数据库
 
 ### 2.6 安全
@@ -153,17 +190,39 @@ AFNetworking、Alamofire、Moya
 
 #### 3.1.1 事件响应者链
 
-#### 3.1.2 渲染
+实现
+
+运用
+
+#### 3.1.2 约束、布局、渲染
+
+#### 3.1.2.1 约束
+
+cassowary 算法
+
+#### 3.1.2.2 布局
+
+布局引擎
+
+#### 3.1.2.3 渲染
+
+渲染引擎
 
 渲染原理
 
-### 3.2 CALayer
+离屏渲染
+
+图片渲染优化
+
+### 3.2 CALayer && UIView
 
 ### 3.3 动画
 
 [深入浅出贝塞尔曲线](https://juejin.cn/post/6995482699037147166?utm_source=gold_browser_extension)
 
 Lottie
+
+动画类型：帧动画，组动画，补间动画等
 
 ### 3.4 字体
 
@@ -182,6 +241,8 @@ CoreImage、Graphic、Material
 ### 4.3 React-Native
 
 ### 4.4 Flutter
+
+语言 + 路由管理 + 状态管理 + 导航[混合]
 
 ## 5. 软件工程
 
@@ -205,11 +266,19 @@ CoreImage、Graphic、Material
 
 ### 5.3 架构
 
+架构种类
+
 #### 5.3.1 架构模式
+
+MVC、MVP、MVVM
+
+RxSwift: MVVM、Reactor、RxFeedback(状态流转-Redux，单项数据流)
 
 #### 5.3.2 架构设计
 
-MVC、MVP、MVVM
+MVVM(函数响应式编程，事件驱动架构) + 微架构(插件架构) + 微服务(远程调用)
+
+组件化方案： URL/Protocol && Runtime/Category
 
 ### 5.4 性能优化
 
@@ -227,7 +296,7 @@ TableView、离屏渲染、卡死、图片资源/渲染优化
 
 电量优化涉及 CPU/GPU 任务，网络任务，硬件功能（定位），后台/前台唤醒切换消耗（任务尽量集中化）
 
-##### 5.4。5 包大小优化
+##### 5.4.5 包大小优化
 
 ### 5.5 函数-响应式编程
 
