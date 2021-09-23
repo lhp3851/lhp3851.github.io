@@ -23,11 +23,10 @@ tags:
 
 内存管理方式
 
-循环引用&内存泄漏&Weak 原理
-
 野指针、悬垂指针（腾讯方案）
 
 僵尸代码
+
 循环引用&内存泄漏&weak 实现
 
 [weak 实现原理](https://www.jianshu.com/p/13c4fb1cedea)
