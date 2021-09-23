@@ -1,5 +1,6 @@
 ---
 title: C++ using
+abbrlink: 9168
 date: 2021-08-28 14:18:00
 tags:
 ---

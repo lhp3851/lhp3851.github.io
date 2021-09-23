@@ -1,5 +1,6 @@
 ---
 title: a-shell
+abbrlink: 8786
 date: 2021-08-10 14:40:02
 tags:
 ---

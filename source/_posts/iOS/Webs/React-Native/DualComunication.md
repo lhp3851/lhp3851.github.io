@@ -1,5 +1,6 @@
 ---
 title: React-Native与原生端通信
+abbrlink: 13544
 date: 2021-08-24 10:17:02
 tags:
 ---

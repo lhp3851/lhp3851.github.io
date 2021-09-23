@@ -1,6 +1,14 @@
 ---
 title: 项目管理
-abbrlink: 3f66c85c
+abbrlink: 41767
 date: 2021-04-20 21:36:02
 tags:
 ---
+
+## 2. 应用管理
+
+### 2.1 [应用路径管理](https://wincent.com/wiki/%40executable_path%2C_%40load_path_and_%40rpath)
+
+### 2.2 [Dynamic linker environment variables](https://developer.apple.com/library/archive/technotes/tn2239/_index.html#//apple_ref/doc/uid/DTS40010638-CH1-SUBSECTION21)
+
+### 2.3 [调试](https://developer.apple.com/support/debugging/)

@@ -306,3 +306,5 @@ SEE ALSO
 
 Apple Inc.                       June 1, 2017                          DYLD(1)
 ```
+
+* [@executable path, @load path and @rpath](https://wincent.com/wiki/%40executable_path%2C_%40load_path_and_%40rpath)

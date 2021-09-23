@@ -1,7 +1,8 @@
 ---
 title: iOS 之 蓝牙协议
-date: 2021-09-19 17:36:02
 tags: 蓝牙协议
+abbrlink: 42604
+date: 2021-09-19 17:36:02
 ---
 
 ## 1. [Core Bluetooth Programming Guide](https://developer.apple.com/library/archive/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/AboutCoreBluetooth/Introduction.html#//apple_ref/doc/uid/TP40013257-CH1-SW1)

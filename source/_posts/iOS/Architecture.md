@@ -80,5 +80,7 @@ tags:
 ## 4. [iOS应用架构谈](https://casatwy.com/iosying-yong-jia-gou-tan-kai-pian.html)
 
 * [今日头条：iOS 架构设计杂谈](https://juejin.cn/post/6844903623252525064)
+* [awesome iOS architecture](https://github.com/onmyway133/awesome-ios-architecture#data-source)
+* [SwiftHub](https://github.com/khoren93/SwiftHub)
 
 [^1]: [MVC是框架？是设计模式？是架构？还是……](https://blog.csdn.net/CillyB/article/details/79464339?utm_source=blogxgwz7&utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&spm=1001.2101.3001.4242)
