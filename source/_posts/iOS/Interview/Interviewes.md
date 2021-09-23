@@ -74,11 +74,11 @@ tags:
 
 大量数据读写（互斥）：读并发，写等待
 
-### 1.4 苹果文档
+### 1.4 并发编程--苹果文档
 
-[Concurrency Programming Guide](https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/)
-[Threading Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Multithreading/Introduction/Introduction.html#//apple_ref/doc/uid/10000057i-CH1-SW1)
-[GCD Internals](http://newosxbook.com/articles/GCD.html)
+* [Concurrency Programming Guide](https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/)
+* [Threading Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Multithreading/Introduction/Introduction.html#//apple_ref/doc/uid/10000057i-CH1-SW1)
+* [GCD Internals](http://newosxbook.com/articles/GCD.html)
 
 ## 2. 性能优化
 
@@ -112,6 +112,20 @@ Apple Slicing
 ### 2.6 Instrument
 
 内存泄漏，僵死代码等
+
+## 3. 大前端
+
+### 3.1 WebViewJavaScriptBridge
+
+### 3.2 JSPacth
+
+### 3.3 Flutter
+
+### 3.4 ReactNative
+
+### 3.5 Dcloud
+
+### 3.6 Capacitor
 
 ## 4. 内存管理
 
@@ -236,6 +250,8 @@ plist、NSUserDefault、归档、keychain、数据库、文件
 
 UIView与Layer
 
+### 15.1 [](https://tech.meituan.com/2018/10/25/navigation-transition-solution-and-best-practice-in-meituan.html)
+
 透明度：alpha，translucent，opaque 等
 
 ## 18. 附加项
@@ -266,24 +282,26 @@ UIView与Layer
 
 ## 20 工作成就
 
-蓝牙？
+### 20.1 HyBrid
 
-SDK？
+### 20.2 蓝牙
 
-弹框？
+### 20.3 SDK
 
-自动化？
+### 20.4 自动化
 
-苹果登录?
+### 20.5 性能优化
 
-暗黑主题--
+#### 20.5.1 网络
 
-Swift 5 升级--
+### 20.6 杂项
 
-Dcloud--
+#### 20.6.1 苹果登录
 
-Capacitor--
+#### 20.6.2 暗黑主题
 
-Flutter--
+#### 20.6.3 Swift 5 升级
 
-universal link--
+#### 20.6.4 弹框
+
+#### 20.6.5 universal link
