@@ -117,15 +117,17 @@ Apple Slicing
 
 ### 3.1 WebViewJavaScriptBridge
 
-### 3.2 JSPacth
+### 3.2 JavaScriptCore
 
-### 3.3 Flutter
+### 3.3 JSPacth
 
-### 3.4 ReactNative
+### 3.4 Flutter
 
-### 3.5 Dcloud
+### 3.5 ReactNative
 
-### 3.6 Capacitor
+### 3.6 Dcloud
+
+### 3.7 Capacitor
 
 ## 4. 内存管理
 
@@ -133,14 +135,34 @@ Apple Slicing
 
 #### 4.1.1 权限修饰符
 
+__weak/__strong/__unsafe_unretain/__autorealeasing
+
 #### 4.1.2 属性修饰符
+
+|属性修饰符|所有权修饰符|
+|---|---|
+|assign|__unsafe_unretain|
+|copy|__strong|
+|retain|__strong|
+|strong|__strong|
+|unsafe_unretain|__unsafe_unretain|
+|weak|__weak|
 
 ### 4.2 Autorelease Pool
 
 ### 4.3 OC 默认规则
 
-生成持有规则
-方法命名规则
+* 自己生成的对象，自己持有
+* 非自己生成的对象，自己也能持有
+* 不再需要自己持有的对象，要释放
+* 非自己持有的对象，无法释放
+
+| 对象操作         | OC 方法                           |
+| :--------------- | :-------------------------------- |
+| 生成并持有的对象 | alloc/new/copy/mutableCopy 等方法 |
+| 持有对象         | retain                            |
+| 释放对象         | release                           |
+| 废弃对象         | dealloc                           |
 
 ### 4.4 循环引用
 
@@ -250,9 +272,9 @@ plist、NSUserDefault、归档、keychain、数据库、文件
 
 UIView与Layer
 
-### 15.1 [](https://tech.meituan.com/2018/10/25/navigation-transition-solution-and-best-practice-in-meituan.html)
+### 15.1 [iOS系统中导航栏的转场解决方案与最佳实践](https://tech.meituan.com/2018/10/25/navigation-transition-solution-and-best-practice-in-meituan.html)
 
-透明度：alpha，translucent，opaque 等
+透明度：translucent，alpha，opaque 等
 
 ## 18. 附加项
 
