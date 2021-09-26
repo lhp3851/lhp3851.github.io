@@ -138,19 +138,47 @@ ARC 自动引用计数，内存管理机制里有个引用计数表，用来统�
 ARC 里面还有个机制来管理内存 -- Autorelease Pool，那些非自己生成并持有的对象，会通过 Autorelease Pool 进行内存管理，如 `[NSArray array]`，所有在 Autorelease Pool 里的对象，在 Autorelease Pool 释放的时候，都会被释放掉。
 在局部内存资源使用比较多的时候，可以通过这种机制有效的管理内存资源。
 
+非自己生成并持有的对象，如`[NSArray array]`，内存管理方式经过了优化，不会直接注册 Autorelease Pool 中，而是直接返回
+
+`Object_autoreleaseReturenValue && Object_retainAutoreleasedReturnValue`
+
 #### 4.2.2 内存所有权修饰符
 
-__strong
+##### 1. __strong
 
-__weak
+```objc
+id obj  => id __strong obj
+```
 
-__unsafe_unretain
+##### 2. __weak
 
-__autorelease
+##### 3. __unsafe_unretain
 
-#### 4.2.3 属性权限修饰符
+##### 4. __autorelease
 
-assign
+```objc
+id *obj  => id __autorelease *obj
+```
+
+#### 4.2.3 引用与释放
+
+Core Fundation、Foundation 与 C 语言对象的内存资源管理
+
+| 框架                        | 引用            | 释放              |
+| --------------------------- | --------------- | ----------------- |
+| Foundation                  | retain          | release           |
+| Core Foundation             | CFRetain        | CFRelease         |
+| C 语言桥接 Toll-Free Bridge | __bridge_retain | __bridge_transfer |
+
+C 语言类型与 OC 类型转换
+
+| 操作符   | C 语言类型 | OC 类型 |
+| -------- | ---------- | ------- |
+| __bridge | void *     | id      |
+
+#### 4.2.4 属性权限修饰符
+
+assign： 可以修饰引用对象，不过要手动释放内存
 
 copy
 
