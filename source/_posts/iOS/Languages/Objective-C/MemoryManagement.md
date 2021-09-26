@@ -152,7 +152,33 @@ id obj  => id __strong obj
 
 ##### 2. __weak
 
+```objc
+id __weak obj1 = obj;
+NSLog("%@", obj1);
+```
+
+会被编译成
+
+```objc
+id obj1;
+objc_initWeak(&obj1, obj);
+id temp = objc_loadWeakRetaind(&obj);
+objc_autorelease(&temp);
+NSLog("%@", obj1);
+objc_destroyWeak(&obj1);
+```
+
+其中
+
+`objc_loadWeakRetaind`： 取出附有 __weak 修饰符修饰的变量的引用，并 retain；
+`objc_autorelease`： 将对象注册到 autorelease pool 中；
+
+这种情况增加了 weak 变量注册到 autorelease pool 中的操作。所以为了避免这种情况，可以在局部作用域中加上`__strong`。
+
 ##### 3. __unsafe_unretain
+
+加了这个修饰符的对象，不属于编译器的内存管理对象。需要手动赋值`nil`，释放内存资源。
+并且，在赋值给`__strong`修饰的变量时，要确保`__unsafe_unretain`修饰的对象存在；
 
 ##### 4. __autorelease
 
@@ -181,6 +207,17 @@ C 语言类型与 OC 类型转换
 assign： 可以修饰引用对象，不过要手动释放内存
 
 copy
+测试代码
+
+![ios_copy_source_code](../Resources/ios_copy_source_code.png)
+
+测试结果
+
+![ios_copy_test](../Resources/ios_copy_test_result.png)
+
+总结
+
+![ios_oc_copy](../Resources/ios_oc_copy.png)
 
 strong
 
