@@ -204,9 +204,12 @@ C 语言类型与 OC 类型转换
 
 #### 4.2.4 属性权限修饰符
 
-assign： 可以修饰引用对象，不过要手动释放内存
+##### 4.2.4.1 assign
 
-copy
+可以修饰引用对象，不过要手动释放内存
+
+##### 4.2.4.2 copy
+
 测试代码
 
 ![ios_copy_source_code](../Resources/ios_copy_source_code.png)
@@ -219,11 +222,22 @@ copy
 
 ![ios_oc_copy](../Resources/ios_oc_copy.png)
 
-strong
+##### 4.2.4.3 strong
 
-weak
+##### 4.2.4.4 weak
 
-automatic
+##### 4.2.4.5 并发属性修饰符
+
+1. atomic
+2. noatomic
+
+##### 4.2.4.6 读写属性修饰符
+
+readonly、readwrite
+
+##### 4.2.4.7 可空属性修饰符
+
+nullable
 
 ## 5. 内存问题
 
@@ -269,6 +283,69 @@ automatic
 * 悬垂指针：指针正常初始化，曾指向一个对象，该对象被销毁了，但是指针未置空，那么就成了悬空[悬垂]指针。
 
 #### 5.3.1 野指针问题定位与处理
+
+野指针的问题一般比较难以定位，不过 Xcode 也提供了一些工具，像 Address Sanitizer、Malloc Scribble、Zombie Objects、Malloc Stack Logging等，本段文章参考了这里[iOS野指针定位总结](https://juejin.cn/post/6844903747538141191#heading-7)。常见的野指针问题(照搬陈其锋的)
+
+![oc_memory_questions](../Resources/oc_memory_questions.png)
+
+##### 5.3.1.1 Address Sanitizer
+
+在内存申请与释放的时候，将malloc/free函数进行了替换，在malloc函数中额外的分配了禁止访问区域的内存。 在free函数中将所有分配的内存区域设为禁止访问，并放到了隔离区域的队列中(保证在一定的时间内不会再被malloc函数分配)。 如果访问到禁止访问的区域，就直接crash。
+对CPU影响2~5⨉, 增加内存消耗 2~3⨉。
+能够检查出来的问题:
+
+* 访问已经dealloc的内存/dealloc已经dealloc的内存
+* dealloc还没有alloc的内存(但不能检查出访问未初始化的内存)
+* 访问函数返回以后的栈内存/访问作用域之外的栈内存
+* 缓冲区上溢出或下溢出,C++容器溢出(但不能检查integer overflow)
+
+不能用于检查内存泄漏。有些文章说ASan能检查内存泄漏是不对的，Google的LSan可以，但是Xcode的Asan不行。
+
+##### 5.3.1.2 Malloc Scribble
+
+Scribble 工具能够在alloc的时候填上0xAA，dealloc的时候填上0x55，就是对象释放后在内存上填上不可访问的数据，如果再次访问对象就会必现crash。
+
+虽然已经给被释放的对象写上了0x55，但是如果是内存在被访问(触发crash)之前被其它覆盖了，则可能无法触发crash。 这种情况也不少见。 所以Bugly为了内存不被覆盖，就不再调用free来释放这个内存，保持这个内存一直在。
+
+不过这种方式，一般只能在 Xcode 中使用，为了方便测试，可以根据这个原理自己实现。可参考腾讯陈其锋的思路：[如何定位Obj-C野指针随机Crash(一)：先提高野指针Crash率](https://blog.csdn.net/tencent_bugly/article/details/46277055)。
+
+##### 5.3.1.3 Zombie Objects
+
+实现原理就是 hook 住了对象的dealloc方法，通过调用自己的__dealloc_zombie方法来把对象进行僵尸化。
+
+```objc
+id object_dispose(id obj)
+{
+    if (!obj) return nil;
+
+    objc_destructInstance(obj);    
+    free(obj);
+
+    return nil;
+}
+```
+
+正常的对象释放方法如上，但是僵尸对象调用了`objc_destructInstance`后就直接return了，不再`free(obj);`。同时生成一个`"_NSZombie_" + clsName`类名，调用`objc_setClass(self, zombieCls);`修改对象的 `isa` 指针，令其指向特殊的僵尸类。
+如果这个对象再次收到消息,`objc_msgsend`的时候，调用`abort()`崩溃并打印出调用的方法。
+
+野指针指向的内存没有被覆盖的时候，或者被覆盖成可以访问的内存的时候，不一定会出现崩溃。这个时候向对象发送消息，不一定会崩溃(可能刚好有这个方法)，或者向已经释放的对象发送消息。 但是如果野指针指向的是僵尸对象，那就一定会崩溃了，会崩溃在僵尸对象第一次被其它消息访问的时候。
+
+##### 5.3.1.4 Malloc Stack Logging
+
+之前介绍的工具都是提高崩溃概率，以拿到崩溃的对象和内存地址。拿到崩溃的对象之后也很难定位，因为崩溃地方离释放的地方已经很远了。而且有些对象在工程中初始化了很多个，不知道是对应的哪个地方出了问题。所以如果能知道对象是在哪初始化的就好了。
+Malloc Stack 能够记录下来所有对象的malloc调用时的堆栈信息。然后我们执行命令：
+
+```sh
+script import lldb.macosx.heap
+malloc_info --stack-history 0x7fbf0dd4f5c0
+```
+
+就可以在lldb中打印出来该对象初始化位置的堆栈信息。 Malloc Stack但是有两个巨大的缺点，一个是只能在模拟器上使用，第二是没有打印出dealloc的信息。如果想在真机上使用需要越狱。
+
+* lzMalloc
+
+公司内部的大神开发的的lldb插件，基于Malloc Stack开发的，通过调用私有函数拿到Malloc Stack记录的数据。能够支持真机调试，能够打印出`dealloc`的堆栈信息。
+能打印出`dealloc`的原因是hook了`-dealloc`方法，调用`__disk_stack_logging_log_stack`函数记录当前的堆栈信息。
 
 1. [iOS 野指针定位:野指针嗅探器](https://www.jianshu.com/p/9fd4dc046046?utm_source=oschina-app)
 

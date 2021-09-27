@@ -6,6 +6,8 @@ tags:
 ---
 ## iOS 技术点
 
+Objective-C[^Objective-C-Basic-Syntax]，Apple 文档[^Programming-with-Objective-C]
+
 并发编程
 
 内存管理
@@ -51,3 +53,6 @@ Swift
 Swfit 与 OC 混编相关研究
 
 蓝牙及协议
+
+[^Programming-with-Objective-C]: [Programming with Objective-C](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html)
+[^Objective-C-Basic-Syntax]: [Objective-C Basic Syntax](https://www.tutorialspoint.com/objective_c/objective_c_basic_syntax.htm)

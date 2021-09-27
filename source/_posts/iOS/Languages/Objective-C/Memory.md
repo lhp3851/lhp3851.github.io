@@ -37,7 +37,7 @@ ARC
 
     __strong
     __weak
-    __unsafe-unretain
+    __unsafe_unretained
     __autorelease
 
 规则
