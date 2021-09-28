@@ -12,3 +12,5 @@ tags:
 ## 3. [iOS 的渲染机制以及 UIView 的自动布局流程](https://www.dazhuanlan.com/2020/01/31/5e33cdfb28a2a/)
 
 ## 4. [UIView Auto Layout life cycle](https://www.vadimbulavin.com/view-auto-layout-life-cycle/)
+
+## 5. [WWDC 2018：高性能 Auto Layout](https://juejin.cn/post/6844903619360194568)

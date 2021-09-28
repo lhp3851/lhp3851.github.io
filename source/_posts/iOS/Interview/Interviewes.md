@@ -61,7 +61,7 @@ tags:
 
 #### 1.2.3 [多线程之GCD](https://zhuanlan.zhihu.com/p/68705170)
 
-#### 1.2.4 [runloop](https://blog.ibireme.com/2015/05/18/runloop/)
+#### 1.2.4 [深入理解RunLoop](https://blog.ibireme.com/2015/05/18/runloop/)
 
 ![RunLoop](../resources/Interview/RunLoop_1.png)
 
