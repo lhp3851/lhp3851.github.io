@@ -12,24 +12,36 @@ tags:
 #### 1.1.1 [进程通信](https://www.jianshu.com/p/c1015f5ffa74)
 
 1. 管道/匿名管道(pipe)
-2. 有名管道(FIFO)
+2. 命名管道(FIFO)
 3. 信号(Signal)
 4. 消息(Message)队列
 5. 共享内存(share memory)
 6. 信号量(semaphore)
 7. 套接字(socket)
 
+#### 1.1.1.1 进程同步
+
+1. 临界区
+2. 同步与互斥
+3. 信号量
+4. 管线
+
+进程同步与进程通信很容易混淆，它们的区别在于：
+
+* 进程同步：控制多个进程按一定顺序执行；
+* 进程通信：进程间传输信息。
+
+进程通信是一种手段，而进程同步是一种目的。也可以说，为了能够达到进程同步的目的，需要让进程进行通信，传输一些进程同步所需要的信息。
+
 #### 1.1.2 线程通信
 
 ##### 1.1.2.1 线程通讯方式
 
-1. 临界区
-2. 互斥量
-3. 信号量
-4. 事件
-5. 锁
-6. 信号
-7. violate全局变量-共享内存
+1. 原子操作
+2. violate全局变量 与 内存屏障(Memory Barriers)
+3. 锁
+4. 条件通知
+5. 事件
 
 ##### 1.1.2.2 [iOS 中线程同步的锁](https://juejin.cn/post/6844903716265394184)
 
@@ -139,14 +151,14 @@ __weak/__strong/__unsafe_unretain/__autorealeasing
 
 #### 4.1.2 属性修饰符
 
-|属性修饰符|所有权修饰符|
-|---|---|
-|assign|__unsafe_unretain|
-|copy|__strong|
-|retain|__strong|
-|strong|__strong|
-|unsafe_unretain|__unsafe_unretain|
-|weak|__weak|
+| 属性修饰符      | 所有权修饰符      |
+| --------------- | ----------------- |
+| assign          | __unsafe_unretain |
+| copy            | __strong          |
+| retain          | __strong          |
+| strong          | __strong          |
+| unsafe_unretain | __unsafe_unretain |
+| weak            | __weak            |
 
 ### 4.2 Autorelease Pool
 
