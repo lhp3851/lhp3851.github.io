@@ -19,7 +19,7 @@ tags:
 6. 信号量(semaphore)
 7. 套接字(socket)
 
-#### 1.1.1.1 进程同步
+#### 1.1.2 进程同步
 
 1. 临界区
 2. 同步与互斥
@@ -33,9 +33,23 @@ tags:
 
 进程通信是一种手段，而进程同步是一种目的。也可以说，为了能够达到进程同步的目的，需要让进程进行通信，传输一些进程同步所需要的信息。
 
-#### 1.1.2 线程通信
+#### 1.1.3 进程调度算法
 
-##### 1.1.2.1 线程通讯方式
+1. 批处理系统
+
+* FIFS，first-come first-serverd（FCFS）
+* 短作业优先 shortest job first（SJF）
+* 最短剩余时间优先 shortest remaining time next（SRTN）
+
+2. 交互式系统
+
+* 时间片轮转
+* 优先级
+* 多级反馈队列(时间片轮转+优先级)
+
+### 1.2 线程
+
+#### 1.2.1 线程通信
 
 1. 原子操作
 2. violate全局变量 与 内存屏障(Memory Barriers)
@@ -43,15 +57,15 @@ tags:
 4. 条件通知
 5. 事件
 
-##### 1.1.2.2 [iOS 中线程同步的锁](https://juejin.cn/post/6844903716265394184)
+#### 1.2.2 [iOS 中线程同步的锁](https://juejin.cn/post/6844903716265394184)
 
-##### 1.1.2.3 [线程、队列、任务](https://zhuanlan.zhihu.com/p/68705170)
+#### 1.2.3 [多线程之GCD](https://zhuanlan.zhihu.com/p/68705170)
 
-### 1.1.2.4 [runloop](https://blog.ibireme.com/2015/05/18/runloop/)
+#### 1.2.4 [runloop](https://blog.ibireme.com/2015/05/18/runloop/)
 
 ![RunLoop](../resources/Interview/RunLoop_1.png)
 
-### 1.2 [线程池](https://wangpengcheng.github.io/2019/05/17/cplusplus_theadpool/)
+#### 1.2.5 [线程池](https://wangpengcheng.github.io/2019/05/17/cplusplus_theadpool/)
 
 ### 1.3 协程
 
