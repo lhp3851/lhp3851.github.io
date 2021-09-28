@@ -438,20 +438,71 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2021/04/20/iOS/UI/WebKit/WebKit/">
+            <a class="abstract-title" href="/2021/04/20/iOS/Webs/React-Native/NativeCommunication/">
                 
-                <span class="abstract-title-text">iOS之 Webkit</span>
+                <span class="abstract-title-text">iOS之React-Native与原生端通信</span>
             </a>
             <div class="abstract-content">
-                [TOC]
-1. iOS与JS交互的四种方法
-拦截url（适用于UIWebView和WKWebView）
-JavaScriptCore（只适用于UIWebView，iOS7+）
-WKScriptMessageHandler（只适用于WKWebView，iOS8+）
-WebViewJavascriptBridge（适用于UIWebView和WKWebView，属于第三方框架）
+                1. 属性1.1 从原生组件传递属性到 React Native1.1.1 初始化参数: initialPropertiesiOS 端：
+12345678NSArray *imageList = @[@&quot;http://foo.com/bar1.png&quot;,                       @&quot;http://foo.com/bar2.png&quot;];NSDictionary *props = @&#123;@&quot;images&quot; : imageList&#125;;RCTRootView *rootView = [[RCTRoo...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/Webs/React-Native/NativeModule/">
+                
+                <span class="abstract-title-text">iOS之React-Native原生Module</span>
+            </a>
+            <div class="abstract-content">
+                1. 原生模块配置12345678npx @react-native-community/bob create react-native-awesome-moduleyarn bootstrap# Android appyarn example android# iOS appyarn example ios
 
-1.1 方法一（1）web调用原生：
-1234567- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)r...
+2. create-react-native-module这个工具，配置内容少一些。
+3. 原生模块
+实现了RCTBridgeModule协议;
+
+类需要包含RCT_EXPORT_MODULE()宏，导出模块；
+
+通过RCT_EXPORT_METHOD()宏导出方法；
+  RCT...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/Webs/React-Native/React-Native/">
+                
+                <span class="abstract-title-text">iOS之React-Native</span>
+            </a>
+            <div class="abstract-content">
+                1. React2. React3. React Native[^ARN]3. Bridge[^ARN]: Awesome React Native
+
             </div>
             <div class="abstract-post-meta">
                 <!-- date -->
@@ -518,69 +569,14 @@ WebViewJavascriptBridge（适用于UIWebView和WKWebView，属于第三方框架
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2021/04/20/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/iOS/iOS%E4%B9%8BUI%E7%95%8C%E9%9D%A2/UI%E5%B8%83%E5%B1%80/%E5%B8%83%E5%B1%80/">
+            <a class="abstract-title" href="/2021/04/20/iOS/Architecture/">
                 
-                <span class="abstract-title-text">iOS之 布局</span>
+                <span class="abstract-title-text">iOS 架构设计</span>
             </a>
             <div class="abstract-content">
-                1. 自动布局 Auto Layout (原理篇)2. 对齐矩形3. iOS 的渲染机制以及 UIView 的自动布局流程4. WWDC 2018：高性能 Auto Layout
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/04/20/iOS/Performance/KSCrash/Princeples/">
-                
-                <span class="abstract-title-text">iOS之KSCrahs 原理</span>
-            </a>
-            <div class="abstract-content">
-                1. KSCrash崩溃收集原理浅析
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/04/20/iOS/Languages/Objective-C/OCAdvance/">
-                
-                <span class="abstract-title-text">iOS编程语言之OC 进阶</span>
-            </a>
-            <div class="abstract-content">
-                1. iOS底层原理总结 - 探寻OC对象的本质2.iOS底层原理总结 - 探寻KVO本质3. 深入理解Objective-C：Category4. iOS开发之三大计时器:NSTimer、DispatchSourceTimer、CADisplayLink4.1 NSTimer4.1.1 循环引用处理
-合适时机释放；
-弱引用 target代理+弱引用中间对象，弱引用 target
+                1. 架构设计模式^11.1 软件架构入门1.2 分层架构123451. 表现层（presentation）：用户界面，负责视觉和用户互动2. 业务层（business）：实现业务逻辑3. 服务层 (service): 不同业务逻辑的通用接口4. 持久层（persistence）：提供数据，SQL 语句就放在这一层5. 数据库（database） ：保存数据
 
-
-iOS中解决NSTimer循环引用的三种方式
-NSTimer循环引用的几种解决方案
-ios定时器NSTimer中的循环引用
-
-5. 深入理解RunLoop6. 轻松过面：一文全解iOS通知机制(经典收藏)7...
+1.3 事件驱动架构12341. 事件队列（event queue）：接收事件的入口2. 分发器（event mediator）：将不同的事件分发到不同的业务逻辑单元3. 事件通道（event channel）：分发器与处理器之间...
             </div>
             <div class="abstract-post-meta">
                 <!-- date -->
@@ -627,14 +623,12 @@ ios定时器NSTimer中的循环引用
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2021/04/20/iOS/Architecture/">
+            <a class="abstract-title" href="/2021/04/20/iOS/CodeManager/">
                 
-                <span class="abstract-title-text">iOS 架构设计</span>
+                <span class="abstract-title-text">iOS之代码管理</span>
             </a>
             <div class="abstract-content">
-                1. 架构设计模式^11.1 软件架构入门1.2 分层架构123451. 表现层（presentation）：用户界面，负责视觉和用户互动2. 业务层（business）：实现业务逻辑3. 服务层 (service): 不同业务逻辑的通用接口4. 持久层（persistence）：提供数据，SQL 语句就放在这一层5. 数据库（database） ：保存数据
-
-1.3 事件驱动架构12341. 事件队列（event queue）：接收事件的入口2. 分发器（event mediator）：将不同的事件分发到不同的业务逻辑单元3. 事件通道（event channel）：分发器与处理器之间...
+                
             </div>
             <div class="abstract-post-meta">
                 <!-- date -->
@@ -677,12 +671,52 @@ ios定时器NSTimer中的循环引用
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2021/04/20/iOS/Components/">
+            <a class="abstract-title" href="/2021/04/20/iOS/Blogs&Blogger/">
                 
-                <span class="abstract-title-text">iOS之组件化</span>
+                <span class="abstract-title-text">博主与网站收藏</span>
             </a>
             <div class="abstract-content">
-                1. CocoaPod2. iOS里的动态库和静态库
+                网站
+objc 中国
+tutorialspoint
+
+博主
+戴铭的博客 - 星光社
+楚权的世界
+聊宅
+hotwill
+杨萧玉
+Valar Morghulis
+刘坤的技术博客
+bang’s blog
+Seebug
+HaHack
+唐巧的博客
+limboy
+程序员充电站
+
+机构
+美团
+
+期刊
+iOS-Weekly
+
+优质 GitHub 账号
+Facebook
+
+Tencent
+
+Apple
+
+airbnb
+
+Google
+
+
+第三方库杂项
+iOS 资源
+
+
             </div>
             <div class="abstract-post-meta">
                 <!-- date -->
@@ -1657,141 +1691,12 @@ ios定时器NSTimer中的循环引用
         
         
         
+        
+        
+        
+        
+        
     
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         
@@ -3422,7 +3327,7 @@ ios定时器NSTimer中的循环引用
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 171
+        Total : 172
         </div>
         <!-- search  -->
         
@@ -3438,32 +3343,20 @@ ios定时器NSTimer中的循环引用
             
         
         <li class="archive-post-item">
-            <span class="archive-post-date">09/22</span>
-            <a class="archive-post-title" href="/2021/09/22/iOS/Webs/DCloud/DCloudGuideline/">DCloud iOS 原生插件开发指南</a>
+            <span class="archive-post-date">09/28</span>
+            <a class="archive-post-title" href="/2021/09/28/iOS/Concurrency/NSOperation/">iOS并发编程--NSOperation</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/24</span>
+            <a class="archive-post-title" href="/2021/09/24/iOS/Performance/BackgroundTask/">Background Task</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">09/19</span>
             <a class="archive-post-title" href="/2021/09/19/iOS/Network/BLuetooth/">iOS 之 蓝牙协议</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/16</span>
-            <a class="archive-post-title" href="/2021/09/16/iOS/Languages/Objective-C/MemoryManagement/">iOS之内存管理</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/13</span>
-            <a class="archive-post-title" href="/2021/09/13/iOS/ProjectManager/Cocoapod/UmbrellaFramework/">iOS 项目管理之 Umbrella Framework</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span>
-            <a class="archive-post-title" href="/2021/09/09/iOS/ProjectManager/Cocoapod/Cocoapod/">iOS 项目管理之 Cocoapods</a>
         </li>
     
         
@@ -3480,92 +3373,8 @@ ios定时器NSTimer中的循环引用
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span>
-            <a class="archive-post-title" href="/2021/09/01/iOS/Languages/CAlians/CMake/">编译工具 CMake 入门</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/28</span>
-            <a class="archive-post-title" href="/2021/08/28/iOS/Languages/CAlians/C++/Guidelines/FuncPtr/">FuncPtr</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/28</span>
-            <a class="archive-post-title" href="/2021/08/28/iOS/Languages/CAlians/C++/Guidelines/using/">C++ using</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
             <span class="archive-post-date">08/28</span>
             <a class="archive-post-title" href="/2021/08/28/Web/ChromeExtentions/Guidlines/">Chrome Extentions 开发指南</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/25</span>
-            <a class="archive-post-title" href="/2021/08/25/iOS/Languages/CAlians/ToolChain/">编译工具链</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/24</span>
-            <a class="archive-post-title" href="/2021/08/24/iOS/Webs/React-Native/DualComunication/">React-Native与原生端通信</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/24</span>
-            <a class="archive-post-title" href="/2021/08/24/iOS/Languages/CAlians/C++/Guidelines/Guidelines/">C++</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/10</span>
-            <a class="archive-post-title" href="/2021/08/10/iOS/Tools/a-shell/">a-shell</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/09</span>
-            <a class="archive-post-title" href="/2021/08/09/iOS/Webs/React-Native/Navigation/">React-Native 导航</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/04</span>
-            <a class="archive-post-title" href="/2021/08/04/Web/JavaScript/TypeScript/GuideLine/">GuideLine</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/31</span>
-            <a class="archive-post-title" href="/2021/07/31/iOS/Interview/InterviewCollections/InterviewCollections/">面试题集</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/31</span>
-            <a class="archive-post-title" href="/2021/07/31/iOS/UI/WebKit/WKWebView/">WKWebView</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span>
-            <a class="archive-post-title" href="/2021/07/29/iOS/Interview/Summery2/">iOS 经验总结</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span>
-            <a class="archive-post-title" href="/2021/07/29/iOS/Interview/Uncommon/">iOS 生僻题</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span>
-            <a class="archive-post-title" href="/2021/07/29/iOS/Performance/Performance/">iOS 之性能优化</a>
         </li>
     
         
@@ -3577,31 +3386,19 @@ ios定时器NSTimer中的循环引用
         
         <li class="archive-post-item">
             <span class="archive-post-date">07/29</span>
-            <a class="archive-post-title" href="/2021/07/29/Flutters/TechnologyFeasibility/Resources/flutter/">Flutter 技术可行性调研</a>
+            <a class="archive-post-title" href="/2021/07/29/iOS/Interview/Uncommon/">iOS 生僻题</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">07/29</span>
-            <a class="archive-post-title" href="/2021/07/29/iOS/Interview/InterviewCollections/Tencent/">iOS 试题</a>
+            <a class="archive-post-title" href="/2021/07/29/iOS/Interview/Summery2/">iOS 经验总结</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">07/29</span>
-            <a class="archive-post-title" href="/2021/07/29/iOS/Languages/CAlians/C++/C++/">C++</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span>
-            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/CI/Applestore%20Connect/App%20Store%20Connect%20API/">iOS 之App Store Connect API</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span>
-            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/CI/Jira/Jira/">jira</a>
+            <a class="archive-post-title" href="/2021/07/29/iOS/Performance/Performance/">iOS 之性能优化</a>
         </li>
     
         
@@ -3618,74 +3415,14 @@ ios定时器NSTimer中的循环引用
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span>
-            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/ShellScripts/Simulator/">iOS 之自动化</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/27</span>
-            <a class="archive-post-title" href="/2021/07/27/iOS/Interview/InterviewCollections/Baidu/">面试题</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
             <span class="archive-post-date">07/26</span>
             <a class="archive-post-title" href="/2021/07/26/iOS/Frameworks/FramworkProgramme/">iOS 之Framwork 编程</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">07/23</span>
-            <a class="archive-post-title" href="/2021/07/23/iOS/Languages/Swift/Generic/">iOS编程语言之 swift 泛型</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/23</span>
-            <a class="archive-post-title" href="/2021/07/23/iOS/Languages/Swift/Class/">iOS编程语言之 swift Class</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/23</span>
-            <a class="archive-post-title" href="/2021/07/23/iOS/Languages/Swift/Codable/">iOS编程语言之 swift Codable</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/11</span>
-            <a class="archive-post-title" href="/2021/06/11/iOS/Webs/JavaScriptCore/">iOS之JavaScriptCore</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/11</span>
-            <a class="archive-post-title" href="/2021/06/11/iOS/UI/Render/OffScreenRender/">iOS之 离屏渲染</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/07</span>
-            <a class="archive-post-title" href="/2021/06/07/iOS/Performance/Exceptions/WiredPointer/">iOS之野指针</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/05</span>
-            <a class="archive-post-title" href="/2021/06/05/iOS/Performance/Exceptions/%20ZombieObject/">iOS之僵尸对象</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
             <span class="archive-post-date">06/04</span>
             <a class="archive-post-title" href="/2021/06/04/iOS/DesignPattern/">iOS之设计模式</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/28</span>
-            <a class="archive-post-title" href="/2021/05/28/iOS/UI/CoreImageFilter/">iOS之Core Image Filter</a>
         </li>
     
         
@@ -3697,61 +3434,19 @@ ios定时器NSTimer中的循环引用
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/25</span>
-            <a class="archive-post-title" href="/2021/05/25/iOS/Interview/Interviewes/">iOS之面试</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/25</span>
             <a class="archive-post-title" href="/2021/05/25/iOS/Interview/Summery/">走向资深 iOS 之路</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span>
-            <a class="archive-post-title" href="/2021/05/22/iOS/Languages/Objective-C/Category/">iOS之Category</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span>
-            <a class="archive-post-title" href="/2021/05/22/iOS/Languages/Objective-C/KVC/">iOS之KVC</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span>
-            <a class="archive-post-title" href="/2021/05/22/iOS/Languages/Objective-C/KVO/">iOS之KVO</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span>
-            <a class="archive-post-title" href="/2021/05/22/iOS/Languages/Objective-C/NSTimer/">iOS之NSTimer</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/05</span>
-            <a class="archive-post-title" href="/2021/05/05/iOS/Tools/Xcode/">iOS 之Xcode Debugging</a>
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2021/05/25/iOS/Interview/Interviewes/">iOS之面试</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/04</span>
-            <a class="archive-post-title" href="/2021/05/04/iOS/Performance/iOS%20%E4%B9%8B%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93/">iOS 之离屏渲染</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/Web/CSS/CSSGuidance/">CSS 上手</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/Flutters/TechnologyFeasibility/TechnologyFeasibility/">Flutter 技术可行性调研</a>
+            <a class="archive-post-title" href="/2021/05/04/iOS/Performance/OffScreenRender/">iOS 之离屏渲染</a>
         </li>
     
         
@@ -3763,7 +3458,7 @@ ios定时器NSTimer中的循环引用
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/Web/JavaScript/JavaScript/">JavaScript</a>
+            <a class="archive-post-title" href="/2021/04/20/Flutters/TechnologyFeasibility/TechnologyFeasibility/">Flutter 技术可行性调研</a>
         </li>
     
         
@@ -3775,7 +3470,19 @@ ios定时器NSTimer中的循环引用
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/Web/CSS/CSSGuidance/">CSS 上手</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/Web/JavaScript/Technologies/">JavaScript 知识点</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/Web/JavaScript/JavaScript/">JavaScript</a>
         </li>
     
         
@@ -3787,7 +3494,7 @@ ios定时器NSTimer中的循环引用
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Concurrency/MultiThread/">iOS之多线程编程</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Concurrency/GCD/">iOS之GCD</a>
         </li>
     
         
@@ -3799,13 +3506,7 @@ ios定时器NSTimer中的循环引用
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Documents/Jazzy/">iOS之文档 jazzy</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/DataPersistence/DataPersistence/">iOS之持久化</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Concurrency/NSThreads/">iOS之多线程编程</a>
         </li>
     
         
@@ -3817,25 +3518,25 @@ ios定时器NSTimer中的循环引用
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Libraries/OpenLibs/">iOS 之开源库</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/DataPersistence/DataPersistence/">iOS之持久化</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Audio/">iOS之音频</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Documents/Jazzy/">iOS之文档 jazzy</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Images/">iOS之图片</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Games/Engine/">iOS游戏之引擎</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Medias/">iOS之多媒体</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Games/Lua/">iOS游戏之Lua</a>
         </li>
     
         
@@ -3847,7 +3548,31 @@ ios定时器NSTimer中的循环引用
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Libraries/OpenLibs/">iOS 之开源库</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Images/">iOS之图片</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Audio/">iOS之音频</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Vedio/">iOS之视频</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Medias/">iOS之多媒体</a>
         </li>
     
         
@@ -3889,67 +3614,19 @@ ios定时器NSTimer中的循环引用
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Network/%E6%9C%8D%E5%8A%A1%E8%AE%A4%E8%AF%81/">服务认证</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Network/Protocols/">网络协议</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/GCCAttribute/">iOS 之GCC attribute</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/AppThin/">iOS之App瘦身</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/LaunchOptimize2/">iOS之启动优化（二）</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/LaunchOptimize/">iOS之启动优化</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/MacOFiles/">iOS之Mac-O 文件揭秘</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/PowerOptimize/">iOS 之功耗优化</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/dyldVariables/">iOS之dyld环境变量介绍</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/dyld/">DYLD</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/OS/Linux/">Linux</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/%E6%9C%8D%E5%8A%A1%E8%AE%A4%E8%AF%81/">服务认证</a>
         </li>
     
         
@@ -3973,6 +3650,54 @@ ios定时器NSTimer中的循环引用
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/AppThin/">iOS之App瘦身</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/GCCAttribute/">iOS 之GCC attribute</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/LaunchOptimize2/">iOS之启动优化（二）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/LaunchOptimize/">iOS之启动优化</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/MacOFiles/">iOS之Mac-O 文件揭秘</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/dyld/">DYLD</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/PowerOptimize/">iOS 之功耗优化</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/dyldVariables/">iOS之dyld环境变量介绍</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/AutoRelease/">iOS之 Xcode Build 自动化</a>
         </li>
     
@@ -3985,45 +3710,15 @@ ios定时器NSTimer中的循环引用
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/EnvironmentsVaraible/">iOS 项目管理之 xcconfig</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/Fir&PGYing/">iOS项目管理之杂项</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/ProjectManager/">项目管理</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/EnvironmentsVaraible/">iOS 项目管理之 xcconfig</a>
         </li>
     
-        
-            
-            
-                
-                </ul>
-            
-            <div class="archive-year"> Invalid date </div>
-            <ul class="year-list">
-            
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span>
-            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/Tapd/">Tapd</a>
-        </li>
-    
-        
-            
-            
-                
-                </ul>
-            
-            <div class="archive-year"> 2021 </div>
-            <ul class="year-list">
-            
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
@@ -4033,319 +3728,7 @@ ios定时器NSTimer中的循环引用
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Charles/">Charles</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/CocoapodMaker/">Cocoapod</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/CocoapodGuidance/">Cocoapod 指南</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Fastlane/">Fastlane 指南</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/GitSpecification/">Git 规范</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/LLDB/">iOS之LLDB</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Monitors/">iOS 之监控插件库</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/OmniGraffle/">OmniGraffle</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Reverse/">iOS逆向工程</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/iOSTools/">iOS 之开发工具</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Hybrids/">iOS之移动端跨端技术及原理</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/JSPatchPrinciple/">iOS之JSPatch原理</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Vue/">iOS之 Vue</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Games/Engine/">iOS游戏之引擎</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/WWDC/WWDC2019/">iOS之WWDC2019</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Games/Lua/">iOS游戏之Lua</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Animation/">iOS之动画</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/CoreText/">iOS之排版——Coretext</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/TextKit/">iOS排版与渲染引擎——TextKit</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/UI/">iOS之UI界面</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/UserExperences/">iOS之交互体验</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/NSDIctionary/">iOS编程语言之 NSDictionary底层实现原理</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Objective-C/">iOS编程语言之Objective-C</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Runtime/">iOS之运行时</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Types/">iOS编程语言之Objective-C 运行时基本类型</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/iOS%E4%B9%8BKVC/">iOS之KVC</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/PHP/PHP/">PHP</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Python/Pyhon/">Pyhon</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Shell/Shell/">Shell笔记</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Constructor/">iOS编程语言之swift 构造器</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Swift/">iOS编程语言之Swift</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Value&Reference/">iOS编程语言之swift 构造器</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/Exceptions/Excetions/">iOS之异常处理</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/Exceptions/CrashLogManuelResolve/">iOS之手动解析 crash 日志</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/KSCrash/KSCrashGuidline/">iOS之KSCrash 简明教程</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Appium/AppiumGuidance/">Appium 快速上手</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Vim/VimOperation/">Vim 常用操作</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/NativeCommunication/">iOS之React-Native与原生端通信</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/NativeComponents/">iOS之React-Native原生UI组件</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/NativeModule/">iOS之React-Native原生Module</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/React-Native/">iOS之React-Native</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/iOS/iOS%E4%B9%8B%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/RunLoop/">iOS之RunLoop</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Flutter/Flutter/">iOS之Flutter</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Layouts/Layouts/">iOS之 布局</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Layouts/AutoLayout/">iOS 之 自动布局</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Render/Render/">iOS之 UI 渲染</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/WebKit/WebKit/">iOS之 Webkit</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/CI/Jenkins/Jenkins/">Jenkins</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Flutter/Dart/Dart/">Dart</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/iOS/iOS%E4%B9%8BUI%E7%95%8C%E9%9D%A2/UI%E5%B8%83%E5%B1%80/%E5%B8%83%E5%B1%80/">iOS之 布局</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/KSCrash/Princeples/">iOS之KSCrahs 原理</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/OCAdvance/">iOS编程语言之OC 进阶</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/AppleService/">APNS</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/ProjectManager/">项目管理</a>
         </li>
     
         
@@ -4357,7 +3740,25 @@ ios定时器NSTimer中的循环引用
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/AppleService/">APNS</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/CodeManager/">iOS之代码管理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/CodeRestructure/">iOS之代码重构</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Blogs&Blogger/">博主与网站收藏</a>
         </li>
     
         
@@ -4415,15 +3816,531 @@ ios定时器NSTimer中的循环引用
         </li>
     
         
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> Invalid date </div>
+            <ul class="year-list">
+            
+        
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/CodeManager/">iOS之代码管理</a>
+            <span class="archive-post-date">Invalid date</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/Tapd/">Tapd</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2021 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/22</span>
+            <a class="archive-post-title" href="/2021/09/22/iOS/Webs/DCloud/DCloudGuideline/">DCloud iOS 原生插件开发指南</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/16</span>
+            <a class="archive-post-title" href="/2021/09/16/iOS/Languages/Objective-C/MemoryManagement/">iOS之内存管理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/13</span>
+            <a class="archive-post-title" href="/2021/09/13/iOS/ProjectManager/Cocoapod/UmbrellaFramework/">iOS 项目管理之 Umbrella Framework</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span>
+            <a class="archive-post-title" href="/2021/09/09/iOS/ProjectManager/Cocoapod/Cocoapod/">iOS 项目管理之 Cocoapods</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span>
+            <a class="archive-post-title" href="/2021/09/01/iOS/Languages/CAlians/CMake/">编译工具 CMake 入门</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/28</span>
+            <a class="archive-post-title" href="/2021/08/28/iOS/Languages/CAlians/C++/Guidelines/FuncPtr/">FuncPtr</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/28</span>
+            <a class="archive-post-title" href="/2021/08/28/iOS/Languages/CAlians/C++/Guidelines/using/">C++ using</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/25</span>
+            <a class="archive-post-title" href="/2021/08/25/iOS/Languages/CAlians/ToolChain/">编译工具链</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2021/08/24/iOS/Webs/React-Native/DualComunication/">React-Native与原生端通信</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2021/08/24/iOS/Languages/CAlians/C++/Guidelines/Guidelines/">C++</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/10</span>
+            <a class="archive-post-title" href="/2021/08/10/iOS/Tools/a-shell/">a-shell</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/09</span>
+            <a class="archive-post-title" href="/2021/08/09/iOS/Webs/React-Native/Navigation/">React-Native 导航</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/04</span>
+            <a class="archive-post-title" href="/2021/08/04/Web/JavaScript/TypeScript/GuideLine/">GuideLine</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/31</span>
+            <a class="archive-post-title" href="/2021/07/31/iOS/Interview/InterviewCollections/InterviewCollections/">面试题集</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/31</span>
+            <a class="archive-post-title" href="/2021/07/31/iOS/UI/WebKit/WKWebView/">WKWebView</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/Flutters/TechnologyFeasibility/Resources/flutter/">Flutter 技术可行性调研</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/Interview/InterviewCollections/Tencent/">iOS 试题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/Languages/CAlians/C++/C++/">C++</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/CI/Applestore%20Connect/App%20Store%20Connect%20API/">iOS 之App Store Connect API</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/CI/Jira/Jira/">jira</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/ShellScripts/Simulator/">iOS 之自动化</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/27</span>
+            <a class="archive-post-title" href="/2021/07/27/iOS/Interview/InterviewCollections/Baidu/">面试题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/23</span>
+            <a class="archive-post-title" href="/2021/07/23/iOS/Languages/Swift/Generic/">iOS编程语言之 swift 泛型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/23</span>
+            <a class="archive-post-title" href="/2021/07/23/iOS/Languages/Swift/Class/">iOS编程语言之 swift Class</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/23</span>
+            <a class="archive-post-title" href="/2021/07/23/iOS/Languages/Swift/Codable/">iOS编程语言之 swift Codable</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/11</span>
+            <a class="archive-post-title" href="/2021/06/11/iOS/Webs/JavaScriptCore/">iOS之JavaScriptCore</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/11</span>
+            <a class="archive-post-title" href="/2021/06/11/iOS/UI/Render/OffScreenRender/">iOS之 离屏渲染</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/07</span>
+            <a class="archive-post-title" href="/2021/06/07/iOS/Performance/Exceptions/WiredPointer/">iOS之野指针</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/05</span>
+            <a class="archive-post-title" href="/2021/06/05/iOS/Performance/Exceptions/%20ZombieObject/">iOS之僵尸对象</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span>
+            <a class="archive-post-title" href="/2021/05/28/iOS/UI/CoreImageFilter/">iOS之Core Image Filter</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2021/05/22/iOS/Languages/Objective-C/Category/">iOS之Category</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2021/05/22/iOS/Languages/Objective-C/KVO/">iOS之KVO</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2021/05/22/iOS/Languages/Objective-C/KVC/">iOS之KVC</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2021/05/22/iOS/Languages/Objective-C/NSTimer/">iOS之NSTimer</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/05</span>
+            <a class="archive-post-title" href="/2021/05/05/iOS/Tools/Xcode/">iOS 之Xcode Debugging</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/AppleScript/AppleScript/">AppleScript</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Charles/">Charles</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/CocoapodMaker/">Cocoapod</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/CocoapodGuidance/">Cocoapod 指南</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Fastlane/">Fastlane 指南</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Monitors/">iOS 之监控插件库</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/GitSpecification/">Git 规范</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/LLDB/">iOS之LLDB</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/OmniGraffle/">OmniGraffle</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Reverse/">iOS逆向工程</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/iOSTools/">iOS 之开发工具</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Animation/">iOS之动画</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/CoreText/">iOS之排版——Coretext</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/TextKit/">iOS排版与渲染引擎——TextKit</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/UI/">iOS之UI界面</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/UserExperences/">iOS之交互体验</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/WWDC/WWDC2019/">iOS之WWDC2019</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Hybrids/">iOS之移动端跨端技术及原理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Vue/">iOS之 Vue</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/JSPatchPrinciple/">iOS之JSPatch原理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/NSDIctionary/">iOS编程语言之 NSDictionary底层实现原理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/OCAdvance/">iOS编程语言之OC 进阶</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Runtime/">iOS之运行时</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Objective-C/">iOS编程语言之Objective-C</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/iOS%E4%B9%8BKVC/">iOS之KVC</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Types/">iOS编程语言之Objective-C 运行时基本类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/PHP/PHP/">PHP</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Python/Pyhon/">Pyhon</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Constructor/">iOS编程语言之swift 构造器</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Swift/">iOS编程语言之Swift</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Value&Reference/">iOS编程语言之swift 构造器</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Shell/Shell/">Shell笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/Exceptions/CrashLogManuelResolve/">iOS之手动解析 crash 日志</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/Exceptions/Excetions/">iOS之异常处理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/KSCrash/Princeples/">iOS之KSCrahs 原理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/KSCrash/KSCrashGuidline/">iOS之KSCrash 简明教程</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Appium/AppiumGuidance/">Appium 快速上手</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Vim/VimOperation/">Vim 常用操作</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Layouts/AutoLayout/">iOS 之 自动布局</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Layouts/Layouts/">iOS之 布局</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Render/Render/">iOS之 UI 渲染</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/WebKit/WebKit/">iOS之 Webkit</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Flutter/Flutter/">iOS之Flutter</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/NativeComponents/">iOS之React-Native原生UI组件</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/NativeCommunication/">iOS之React-Native与原生端通信</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/NativeModule/">iOS之React-Native原生Module</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/React-Native/">iOS之React-Native</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/CI/Jenkins/Jenkins/">Jenkins</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Flutter/Dart/Dart/">Dart</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Assemble/Assemble/">汇编语言</a>
         </li>
     
         
@@ -4447,13 +4364,7 @@ ios定时器NSTimer中的循环引用
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Assemble/Assemble/">汇编语言</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Block/">Block</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/MySQL/MySQL/">MySQL</a>
         </li>
     
         
@@ -4465,19 +4376,19 @@ ios定时器NSTimer中的循环引用
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Blogs&Blogger/">博主与网站收藏</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/MySQL/MySQL/">MySQL</a>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/AppleScript/AppleScript/">AppleScript</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Languages/CAlians/Compiler/g++/">G++</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Block/">Block</a>
         </li>
     
     </div>
