@@ -27,7 +27,6 @@ tags:
 12. [limboy](https://limboy.me/)
 13. [程序员充电站](https://itcharge.cn/tech/algorithm/algo-book-03-leetcode-guide/)
 14. [yang](https://xilankong.github.io/category/iOS开发基础)
-<<<<<<< HEAD:source/_posts/Blogs&Blogger.md
 15. [Kothing](https://kothing.github.io/index.html)
 16. [权冠洲的博客](https://www.quanguanzhou.top/)
 17. [星陨](https://glumes.com/)
@@ -36,8 +35,6 @@ tags:
 20. [Garan no dou](https://blog.ibireme.com/)
 21. [chyingp](https://www.cnblogs.com/chyingp/p/mp4-file-format.html)
 22. [iOS技术总结](http://roadmap.isylar.com/iOS/ReadME.html)
-=======
->>>>>>> 671c9b2 ([feature][Framework]: 1. Xcode 编译; 2. cocoapods 原理;):source/_posts/iOS/Blogs&Blogger.md
 
 ### 2.2 Android
 
