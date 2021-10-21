@@ -9,6 +9,7 @@ tags:
 
 1. [objc 中国](https://objccn.io/issues/)
 2. [tutorialspoint](https://www.tutorialspoint.com/index.htm)
+3. [ios development guidelines](https://alexcode2.gitbook.io/ios-development-guidelines/)
 
 ## 2. 博主
 
