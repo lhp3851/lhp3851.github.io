@@ -244,12 +244,6 @@ TableView 本身使用了复用机制，确保内存占用较小，但是如果 
 
 最后，分析出问题的原因后，就要处理问题，自动的还是手动的；
 
-### 5.4 TableView 优化
-
-TableView 本身使用了复用机制，确保内存占用较小，但是如果 TableView 过于复杂，则会影响页面的流畅度。这个要结合手机的渲染原理来说明。
-
-其中， GPU离屏渲染、TableView Cell 高度计算，图片数据解码等都是影响比较大的因素。
-
 流畅性优化参考：
 
 * [facebookarchive/AsyncDisplayKit](https://github.com/facebookarchive/AsyncDisplayKit)
