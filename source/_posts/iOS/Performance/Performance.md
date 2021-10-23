@@ -165,8 +165,8 @@ webView 加载优化：
 
 参考：
 
-[iOS-Performance-Optimization](https://github.com/skyming/iOS-Performance-Optimization)
+[^iOS-Performance-Optimization](https://github.com/skyming/iOS-Performance-Optimization)
 
 [iOS性能优化](http://www.mengyueping.com/2018/08/19/iOS_optimization_all/)
 
-[WeRead团队博客](https://wereadteam.github.io/archives/)
+[^WeRead团队博客](https://wereadteam.github.io/archives/)
