@@ -308,3 +308,7 @@ extension Interim: Decodable {
    }
 }
 ```
+
+[^Encoding-and-Decoding-in-Swift]: [Encoding and Decoding in Swift](https://www.raywenderlich.com/3418439-encoding-and-decoding-in-swift)
+
+[^NSCoding-Tutorial-for-iOS]: [NSCoding Tutorial for iOS: How to Permanently Save App Data](https://www.raywenderlich.com/3418439-encoding-and-decoding-in-swift)
