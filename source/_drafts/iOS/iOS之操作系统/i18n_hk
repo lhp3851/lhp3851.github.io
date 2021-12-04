@@ -1,0 +1,890 @@
+
+    //main tab
+    "tab_record"="記錄";
+    "tab_homepage"="首頁";
+    "tab_doctor"="醫生";
+    "tab_me"="我的";
+    "tab_group"="群組";
+
+    //user info
+    "none_nickname"="匿名";
+    "user_info_center"="個人信息";
+
+    //user account
+    "send_captcha"="發送驗證碼";
+
+    //network error
+    "improve_user_profile_one_part_one"="你好，很高興認識你。";
+    "improve_user_profile_one_part_two"="請問怎麽稱呼?";
+    "jump"="跳過";
+    "improve_user_profile_one"="完善信息1/2";
+    "next_step"="下一步";
+    "nickname"="昵稱";
+    "input_nickname"="請輸入昵稱";
+    "improve_user_profile_two"="完善信息2/2";
+    "improve_user_profile_two_part_one"="你的真實姓名是?";
+    "improve_user_profile_two_part_two"="醫生可以通過真實姓名匹配你的線下就診記錄，能更好的解答你的問題哦。";
+    "real_name"="真實姓名";
+    "input_real_name"="請輸入真實姓名";
+    "warn_real_name"="真實姓名只有醫生才能看到";
+    "complete"="完成";
+
+    "scan_qr_code"="掃描二維碼";
+    "scan_qr_code_warn"="掃描二維碼，需要授予相機權限，是否授予?";
+    "scan_qr_code_denied"="掃描二維碼，授予相機權限失敗，請檢查該權限是否正確授予，並授予";
+    "setting"="設置";
+    "martian"="火星人";
+    "current_app_version"="應用版本";
+    "about_us"="關於我們";
+    "logout"="退出登錄";
+    "zero_money"="0.00";
+    "re_scan"="重新搜索";
+    "pay"="支付";
+    "pay_money"="支付金額";
+    "yuan"="元";
+    "one"="1";
+    "wechat_pay"="微信支付";
+    "alipay"="支付寶支付";
+    "avatar"="頭像";
+    "register_mobile"="註冊手機";
+    "take_photo"="拍照";
+    "sd_select_photo_from_gallery"="從手機相冊選擇";
+    "cancel"="取消";
+
+    "pay_success"="支付成功";
+    "pay_failed"="支付失敗";
+    "pay_cancel"="支付取消";
+    "pay_unknown"="未知錯誤，支付失敗";
+    "pay_invalid"="支付異常，未找到支付app";
+    "create_order_success"="支付中，請稍後";
+    "join_group"="進入群組";
+    "re_pay"="重新支付";
+    "back"="返回";
+    "repay"="重新支付";
+
+    "str_request_camera_message"="請求獲取相機權限";
+    "modify_nickname"="修改昵稱";
+    "error_nickname"="昵稱太簡單了，不容易讓人記住哦";
+    "name_error"="真實姓名太長或太短，不容易讓人記住哦";
+    "wechat_login"="微信登錄";
+
+    //error  view
+    "scan_2_bind_doctor"="掃碼綁定醫生";
+    "scan_2_doctor_desc"="將醫生二維碼放入框內，可自動掃描";
+    "opening_wechat"="正在打開微信中…";
+    "no_have_wechat"="手機上未安裝微信客戶端";
+    "confirm"="確定";
+    //doctor module
+
+    //common
+    "bind"="綁定";
+    "unbind"="解綁";
+    "not_bind_yet"="未綁定";
+
+    //weekday
+    "sun"="日";
+    "mon"="一";
+    "tue"="二";
+    "wed"="三";
+    "thu"="四";
+    "fri"="五";
+    "sat"="六";
+    "return_to_today"="回到今天";
+    "return_to_this_week"="回到本周";
+    "sleep_record"="睡眠記錄";
+    "sleep_diary"="睡眠日記";
+    "refill"="重填";
+    "record_sleep_duration"="睡眠時長";
+    "fall_asleep_duration"="入睡時長";
+    "doctor_advise"="醫生建議";
+    "error"="Error";
+    "empty_response"="Empty_response";
+    "taken_pills"="服用藥物";
+    "no_sleep_record_hint"="保持良好的記錄睡眠日記的習慣，有助於睡眠醫生分析您的睡眠情況！";
+    "go_record"="去記錄";
+    "no_record_yet"="暫無記錄";
+    "percent_mart"="%";
+    "sleep_efficient"="睡眠效率";
+    "do_not_eat_pills"="未服藥";
+    "scale_fill_date"="填寫日期：yyyy.MM.dd";
+    "no_doctor_evaluation_hint"="醫生建議尚未更新，請耐心等待，更新後，我們會在消息中心通知您查看";
+    "extra_user_info"="以上個人信息僅供醫生參考，不予公開。";
+    "logout_failed_please_check_network"="退出登錄失敗，請檢查網絡";
+    "operation_warning"="操作警告";
+    "operation_success"="操作成功";
+    "operation_fail"="操作失敗";
+    "system_maintain"="系統維護";
+    "system_maintain_desc"="系統正在維護中，請稍後重試";
+    "today_no_record"="今日暫無記錄";
+    "today_no_record_hint"="您今天還沒有填寫睡眠日記";
+    "finished"="已完成";
+    "cbti_ing"="CBTI認知行為治療進行中";
+    "cbti_ing_describe"="建議在開課當天完成本周課程學習，自完成之日起7天後開放下階段課程。";
+    "cbti_ing_all_finished_desc"="恭喜你完成CBTI課程！希望你能繼續保持良好的睡眠衛生習慣，早日告別失眠。";
+    "current_progress_colon"="當前進度：";
+    "enter_and_learn"="進入學習";
+    "my_sleep_prescription"="我的睡眠處方";
+    "my_sleep_prescription_desc"="解讀睡眠日記，定制睡眠處方";
+    "scale_evaluation"="量表評估";
+    "sleep_health"="睡眠衛生";
+    "homepage_sleep_slogan"="好的睡眠離不開您一點一滴的努力";
+    "my_target"="我的目標";
+    "sleep_time"="就寢時間";
+    "getUpTime"="起床時間";
+    "on_bed_duration"="臥床時長";
+    "sleep_duration"="睡眠時長";
+    "night_wake_up_duration"="夜醒時長";
+
+    "empty_msg_center_msg"="沒有消息提醒";
+    "empty_msg_center_desc"="您收到醫生回復、建議或報告更新，都會在這裏收到消息提醒";
+
+    "empty_report_msg"="暫無電子報告";
+
+    "empty_evaluation_msg"="暫無測評記錄";
+    "empty_evaluation_desc"="了解您的睡眠健康及心理狀況";
+
+    "empty_404_msg"="很抱歉！";
+    "empty_404_desc"="您要訪問的頁面不存在";
+
+    "empty_network_error_msg"="網絡連接異常";
+    "empty_network_error_desc"="請查看網絡設置或稍後重試";
+
+    "emtpy_advisory_msg"="暫無相關記錄";
+    "emtpy_advisory_desc"="綁定醫生後，可向主治醫生咨詢";
+
+    "empty_coupon_msg"="暫無兌換記錄";
+    "empty_coupon_desc"="使用兌換碼後，可在此查看兌換記錄";
+
+    <!--doctor  service-->
+    "bind_doctor"="綁定醫生";
+    "bind_other_doctor_state"=""您已綁定了其他醫生，如需換綁請聯系客服"";
+    "doctor_service"="醫生服務";
+    "doctor_details_label"="詳細信息";
+
+    "ask_questions"="去提問";
+    "buy_count"="購買數量";
+
+    //advisory
+    "unused"="未使用";
+    "used"="已使用";
+    "my_advisory"="我的咨詢";
+
+    "waiting_for_reply"="待回復";
+    "closed"="已關閉";
+    "first_question"="第一次提問";
+    "second_question"="第二次提問";
+    "third_question"="第三次提問";
+    "view_the_record"="查看電子報告";
+    "sleep_doctor"="睡眠醫生";
+    "submit"="提交";
+    "input_question_hint"="請描述您的年齡、性別、且詳細描述您的癥狀及就診經歷，便於醫生準確分析，我們會保證您的隱私安全。";
+    "select_report"="選擇報告";
+    "take_picture"="您上傳的附件僅對您的醫生可見，最多可上傳9張";
+    "more_than_ten_size"="最少要10個字";
+    "continue_ask_question"="繼續咨詢";
+    "gender"="性別";
+    "none_edit"="未填寫";
+    "birthday"="出生日期";
+    "height"="身高";
+    "weight"="體重";
+    "edu_level"="教育程度";
+    "career"="職業";
+    "is_using_sleep_pills"="當前是否服用促進睡眠類藥物？";
+    "input_career_hint"="請填寫您所從事的職業";
+    "male"="男";
+    "female"="女";
+    "sure"="確定";
+    "lesson_progress_title"="課程進度";
+    "course"="課程";
+    "practice"="練習";
+    "review"="復習";
+    "message_board"="留言";
+    "learn"="學習";
+    "lesson_practice"="課程練習";
+    "lesson_list"="課程表";
+    "the_week_lesson_summary"="本周總結";
+    "lesson_summary"="課程總結";
+    "lesson_review_last_week"="上周回顧";
+    "see_lesson_2_unlock"="觀看課程後解鎖";
+    "finished_pre_lesson_2_unlock"="完成上節課程後解鎖";
+
+    //version
+    "none_market"=""您的手機沒有安裝應用市場!"";
+    "soft_upgrade"="應用版本";
+    "version_upgrade"="版本更新";
+    "current_version"="當前版本號:";
+    "new_version"="最新版本號:";
+    "go_to_experience"="立即體驗";
+    "version_upgrade_title"="新版本更新啦～";
+    "this_is_last_version"="當前已是最新版本";
+    "have_a_new_version"="有新版本，請立即體驗吧";
+    "force_upgrade_version"="當前版本太低，請到應用市場升級後再使用";
+    "practice_dialog_title"="下節課程待開放";
+    "good"="好的";
+
+    //record
+    "open_notification"="開啟通知";
+    "open_notification_and_receive_doctor_response"="開啟通知，及時獲取醫生回復";
+    "record_weekly_report"="周報告";
+
+    //me
+    "my_evaluation"="量表評估";
+    "electric_report"="電子報告";
+    "wechat_bind"="微信綁定";
+    "unbind_success"="解綁成功";
+    "bind_wechat_title"="是否綁定微信？";
+    "unbind_wechat_title"="確定解綁微信？";
+    "bind_wechat_message"="綁定後，可使用微信賬號登錄睡眠醫生";
+    "unbind_wechat_message"="解綁後，你將無法使用微信賬號登錄";
+    "me_my_sleep_file"="睡眠檔案";
+
+    //online report
+    "online_report_list_empty_title"="暫無測評記錄";
+    "online_report_list_empty_desc"="了解您的睡眠健康及心理狀況";
+    "you_can_select_9_reports_at_most_hint"="最多只能選擇9份報告";
+
+    //notification
+    "notification_center"="消息中心";
+    "all_read"="全部已讀";
+    "go_open"="去開啟";
+    "open_notification_push"="開啟消息推送通知";
+    "open_notification_push_hint"="第一時間接收消息更新通知";
+    "notification_list_empty_title"="沒有消息提醒";
+    "notification_list_empty_desc"="您收到醫生回復、建議或報告更新，\n都會在這裏收到消息提醒";
+
+    //scale
+    "scale_scale_not_finish_yet_hint"="您還未進行該評測，點擊開始測評";
+    "no_data_hint"="這裏空空如也~";
+    "refund_success_notification"="退款成功通知";
+    "loading_dot"="Loading&#8230;";
+
+    //order
+    "refund_hint"="請以原賬戶接受退款成功消息為準，如有疑問，請致電：<u>400-618-1318</u>向客服咨詢";
+    "refund_amount"="退款金額";
+    "refund_way"="退款方式：%s";
+    "refund_time"="退款原因：%s";
+    "refund_reason"="退款時間：%s";
+    "refund_detail"="退款詳情";
+    "yuan_"="￥%s";
+    "score"="分";
+    "already_finish"="已完成";
+    "bind_canceled"="綁定取消";
+
+
+    //device
+    "monitor"="監測儀";
+    "speed_sleeper"="速眠儀";
+    "none_connected_state_hint"="未連接";
+    "connected_state_hint"="已連接";
+
+    "request_permission_hint"="當前 App 未獲取藍牙權限，是否獲取?";
+    "cancel_hint"="取消";
+
+    //account
+    "input_captcha_hint"="請輸入驗證碼";
+    "bind"="綁定";
+
+    "user_none_default_hint"="未設置";
+
+    "gender_male_hint"="男";
+    "gender_female_hint"="女";
+    "gender_secrecy_hint"="保密";
+
+    //error
+    "error_network_hint"="網絡不給力,請檢查網絡設置";
+    "error_request_failed_hint"="網絡請求失敗,請重試";
+    "error_token_past_hint"="token已失效,請重新登錄";
+    "ok_captcha_hint"="驗證碼已發送成功,請註意查收";
+    "error_captcha_failed_hint"="驗證碼獲取失敗,請60s後重新獲取";
+
+    //me
+    "avatar_hint"="頭像";
+    "user_info_center"="個人信息";
+    "firmware_update_notice_hint"="版本更新";
+
+    //sleep
+    "week_sleep_average_duration"="日均睡眠時長";
+    "week_sleep_deep_average_duration"="日均深睡時長";
+    "week_sleep_light_average_duration"="日均淺睡時長";
+    "week_sleep_sober_average_duration"="日均清醒時長";
+
+    "sleep_deep_hint"="深睡";
+    "sleep_light_hint"="淺睡";
+    "sleep_sober_hint"="清醒";
+
+    "deep_sleep_duration_hint"="深睡時長";
+    "light_sleep_duration_hint"="淺睡時長";
+    "compare_week_hint"="同比上周";
+    "sleep_advice_hint"="影響因素及建議";
+    "sleep_data_less_hint"="睡眠數據不全";
+    "sleep_note_advice_hint"="【建議】";
+    "sleep_advice_explain"="【解釋】";
+    "sleep_advice_element"="【因素】";
+
+    //reminder
+    "doctor_info"="醫生簡介";
+
+    //setting
+    "set_pwd"="設置密碼";
+    "setting_set_old_pwd_hint"="請輸入舊密碼";
+
+    "change_bind"="更換綁定";
+    "logout_hint"="退出後不會刪除任何歷史數據，下次登錄依然可以使用此賬號";
+
+    "setting_send_msg_hint"="在線客服";
+    "nickname_hint"="昵稱";
+    "new_nickname_hint"="請輸入您的新昵稱";
+    "new_nickname_error_hint"="您的新昵稱不合法,請重新輸入";
+    "new_nickname_less_error"="您新昵稱少於1個字符";
+    "new_nickname_too_much_more_error"="昵稱不能超過16個字符";
+    "modify_user_info_success"="您的用戶信息已修改成功";
+
+    //firmware
+    "firmware_note_hint"="版本已是最新版本";
+    "firmware_downloading_hint"="固件正在拼命下載中";
+    "firmware_upgrade_ing_hint"="當前設備固件正在升級中,請勿操作手機和設備";
+    "firmware_upgrade_success_hint"="監測儀固件升級成功,設備正在重啟中,請切換到設備中心重新連接即可";
+    "sleeper_firmware_upgrade_success_hint"="速眠儀固件升級成功,請重新啟動速眠儀";
+    "firmware_upgrade_failed_hint"="固件升級失敗,請重試";
+    "current_version_hint"="當前版本: %s";
+    "latest_version"="最新版本: %s";
+    "firmware_download_hint"="下載";
+    "firmware_upgrade_hint"="升級";
+    "firmware_download_success_hint"="最新固件已下載完成";
+    "app_download_success_hint"="APP安裝包已經下載完成";
+    "firmware_download_failed_hint"="固件更新包下載失敗,請重新下載";
+    "firmware_download_title_hint"="固件下載中";
+    "app_download_title_hint"="APP下載中";
+    "firmware_upgrade_title_hint"="固件升級中";
+    "firmware_md5_invalid_hint"="固件更新包已損壞,請重新下載";
+
+    //media preview
+    "gallery_save_file_not_have_external_storage_permission"="沒有外部存儲權限!";
+    "gallery_save_file_not_have_external_storage"="沒有外部存儲!";
+    "gallery_save_file_success"="保存成功!";
+    "gallery_save_file_failed"="存儲失敗!";
+    "image_select_opt_done"="完成";
+    "image_select_opt_preview"="預覽";
+    "tick_photo_hint"="拍照";
+    "pic_photo_hint"="從相冊選擇";
+    "str_request_camera_message"="請求獲取相機權限";
+    "str_request_record_message"="請求獲取錄音權限";
+    "permissions_camera_error"="相機無法完成初始化,請正確授權.";
+    "permissions_record_error"="麥克風無法完成初始化,請正確授權.";
+    "change_binding"="更換綁定";
+
+
+    //sleep note and doctor advice
+    "version_name_hint"="%s版本: %s";
+    "app_upgrade"="APP升級";
+    "monitor_upgrade"="監測儀升級";
+    "sleepy_upgrade"="速眠儀升級";
+    "good"="還可以";
+    "submit"="提交";
+
+    "sleepy_not_connected_monitor"="監測儀未連接速眠儀,請讓監測儀連接上速眠儀";
+    "not_wear_monitor"="監測儀未佩戴,請佩戴監測儀";
+    "head_not_at_pillow"="頭部未在枕頭上";
+    "monitor_is_charging"="速眠儀不能開啟工作模式，原因是設備正在充電";
+    "not_turn_on_pa_mode"="設備獨立模式已開啟,不能開啟,請先關閉獨立模式";
+    "not_turn_on_pa_mode_in_sleep_time"="正在睡眠中,請勿再次開啟";
+    "turn_on_sleepy_pa_mode_error"="未知錯誤,請重啟設備或聯系客服";
+
+    "wechat_login"="微信登錄";
+
+
+    "none_market"=""您的手機沒有安裝應用市場!"";
+    "register_rule_one"="註冊即代表同意";
+    "register_rule_two"="速眠用戶協議";
+    "register_rule_three"="及";
+    "register_rule_four"="速眠隱私政策";
+    "register_rule_user_agreement_title"="用戶協議";
+    "register_rule_privacy_policy_title"="隱私政策";
+    "none_week_have_sleep_data"="本周無睡眠記錄";
+    "unbind"="解綁";
+    "opening_wechat"="正在打開微信中…";
+    "no_have_wechat"="手機上未安裝微信客戶端";
+
+    "take_photo"="拍照";
+    "network_error"="網絡異常,請檢查你的網絡設置";
+
+    "sync"="同步";
+    "syncing"="同步中";
+    "all_today_duration"="全天睡眠時長";
+    "light_sleep_duration"="淺睡時長";
+    "no_have_sleep_data"="暫無睡眠報告";
+    "no_have_sleep_data_low_label"="使用設備後，打開手機藍牙，自動上傳睡眠數據";
+    "career_hint"="職業";
+    "nickname_warn_label"="昵稱需保證在1–16個字符內，且不能與他人重復.";
+    "career_warn_label"="請填寫你所從事的職業類型";
+    "input_career_hint"="請輸入您的職業";
+    "new_areer_too_much_more_error"="職業信息太長了,超過了12個字符";
+    "tab_data"="數據";
+    "complete"="已完成評估";
+    "go_today"="回到今天";
+    "is_read"="全部已讀";
+    "feedback"="意見反饋";
+    "please_turn_on_bluetooth_adapter"="請打開手機藍牙，與監測儀進行連接。";
+    "bind_device"="綁定設備";
+    "please_keep_nearly"="請將手機與設備的範圍保持在5m內。";
+    "scanning_device"="設備搜索中…";
+    "scan_label_h2"="點擊需要連接的監測儀屏幕按鍵，搜索設備。";
+    "re_scan"="重新搜索";
+    "re_scan_u"="重新搜索";
+    "scan_error_one"="①  按下監測儀按鍵查看是否已開機，如未開機，請連接電源，充電開啟監測儀；";
+    "scan_error_two"="②  檢查監測儀是否已與其它手機連接。如有，請解綁後重新嘗試連接；";
+    "scan_error_three"="③  確保監測儀與手機距離保持在5米內，去除墻壁、厚物遮擋等信號幹擾因素；";
+    "scan_error_four"="④  關閉手機藍牙重試。";
+    "select_bind_device_label"="請選擇要綁定的設備";
+    "is_sure_device_2_bind"="已為您選擇此監測儀，是否綁定？";
+    "open_location_service_dialog_title"="提示";
+    "open_location_service_for_blue_scan_hint"="掃描藍牙需要開啟位置服務，是否現在開啟？";
+    "confirm"="確認";
+    "cancel"="取消";
+    "syncing_error_result"="獲取異常，請聯系在線客服咨詢反饋";
+    "version_upgrade"="版本更新";
+    "hw_version"="固件版本";
+    "my_service"="我的服務";
+    "media_service"="圖文咨詢";
+    "tel_service"="電話預約";
+    "my_record"="我的檔案";
+    "ask_question"="咨詢問題";
+    "ask_question_hint"="一句話描述你想要咨詢的問題（20字以內）";
+    "ask_more"="補充說明";
+    "ask_more_hint"="請詳細描述您希望解決的問題：1.描述您的睡前行為；2.描述癥狀；3.藥物相關問題等（400字以內）";
+    "tel_submit"="確認";
+    "tel_ask_detail"="預約詳情";
+    "ask_time"="預約時間";
+    "un_finished"="未完成";
+    "is_finished"="已完成";
+    "hello_comment"="您好，";
+    "welcome_use_this_app_please_login"="歡迎使用速眠醫生，請登錄";
+    "input_phone_hint"="請輸入手機號碼";
+    "input_password_hint"="請輸入密碼";
+    "login_with_space_inside"="登 錄";
+    "app_user_agreement"="速眠醫生用戶協議";
+    "captcha_login"="驗證碼登錄";
+    "password_login"="密碼登錄";
+    "captcha_already_sent"="%ds";
+    "please_set_password"="請設置密碼";
+    "repeat_password"="再次輸入密碼";
+    "please_set_new_password"="請設置新密碼";
+    "repeat_new_password"="再次輸入新密碼";
+    "complete_with_space_inside"="完 成";
+    "forget_password_question"="忘記密碼？";
+    "validate_phone_number"="驗證手機";
+    "captcha_send_success"="驗證碼發送成功";
+    "login_cancel"="登錄取消";
+    "phone_number_invalid_toast"="手機格式有誤，請重新輸入";
+    "captcha_invalid_toast"="驗證碼錯誤，請重新輸入";
+    "password_invalid_toast"="請輸入%d～%d位密碼";
+    "password_not_the_same"="兩次密碼不一致";
+    "phone_number_validation_regex" tools:ignore="TypographyDashes"="1([0-9]{10})";
+    "captcha_validation_regex"="\\d{6}";
+    "password_validation_regex"=".{6,16}";
+    "feedback_hint"="請詳細描述您的意見或建議，我們將及時處理並給予反饋，速眠醫生致力於為您提供專業貼心的服務。";
+    "feedback_text_count"="0/500";
+    "remind_setting"="提醒設置";
+    "none_feedback_hint"="您未填寫反饋意見及建議";
+    "feedback_success"="反饋成功";
+    "sd_sleep_diary_remind"="睡眠日記填寫提醒";
+    "sd_relaxation_training"="放松訓練提醒";
+    "not_set_yet"="未設置";
+    "sleep_diary_remind"="睡眠日記填寫提醒";
+    "open_sleep_diary_remind_hint"="開啟睡眠日記填寫提醒，速眠醫生將會每日定時通知您填寫日記。請確保APP通知權限開啟。";
+    "open_relaxation_training_hint"="開啟放松訓練時間提醒，速眠醫生將會每日定時提醒您進行放松訓練。請確保APP通知權限開啟。";
+    "remind_time"="提醒時間";
+    "set_remind_time"="設置提醒時間";
+    "pattern_hh_mm"="%02d:%02d";
+    "service_is_canceled"="服務已取消";
+    "any_question_ask_kefu"="如有疑問，請咨詢客服";
+    "relate_service_is_canceled"="相關服務已取消";
+    "diary_evaluation"="日記評估";
+    "no_data_yet"="暫無相關記錄";
+    "after_bind_doctor_you_can_consult_the_doctor"="綁定醫生後，可向主治醫生咨詢";
+    "sleep_prescription_introduction_title"="睡眠處方介紹";
+    "sleep_prescription_introduction_content"="睡眠效率差的人，躺在床上太久，反而會胡思亂想，限制其臥床時間，可能會提高睡眠效率。執行睡眠處方的步驟是：\n（1）填寫7天的睡眠日記，計算出每晚平均睡眠時長和睡眠效率；\n（2）以平均每晚睡眠時長作為本周每晚可躺在床上的時間，但要固定起床時間，且臥床時長不能低於5小時；\n（3）上周的睡眠效率決定本周的睡眠時長以及上床時間是否需要調整；\n（4）請認真遵守睡眠處方，你的睡眠效率會慢慢提高，當你的睡眠效率提高後，我們會逐步延長你的睡眠時長，陪你一起改善睡眠！\n\n速眠醫生建議在過去7天內填寫至少3篇以上的睡眠日記，有助於提供更精準的上床時間。\n更多睡眠處方的內容可通過學習CBTI課程進行了解。";
+    "none_sleep_status_data"="無數據狀態";
+    "user_privacy_policy"="用戶隱私政策";
+    "you_have_not_set_sleep_prescription"="您還未設置睡眠處方";
+    "new_prescription"="新處方";
+    "already_paused"="已暫停";
+    "cbti_treatment"="CBTI認知行為治療";
+    "cbti_treatment_hint"="非藥物治療失眠的最佳療法";
+    "join_learn"="加入學習";
+    "relax_exercise"="放松訓練";
+    "monitor_data"="監測數據";
+    "weekly_data"="周數據";
+    "bluetooth_not_open"="手機藍牙未開啟";
+    "please_open_bluetooth_and_connect_monitor"="請打開手機藍牙，與監測儀進行連接";
+    "syncing" tools:ignore="TypographyEllipsis"="同步中...";
+    "monitor_is_connect_please_check_sleepers_connectivity"="監測儀已連接，請檢查速眠儀是否開啟";
+    "already_connected"="已連接";
+    "not_connected"="未連接";
+    "speed_sleeper_already"="速眠儀已就緒";
+    "start_work"="開啟工作";
+    "starting_work" tools:ignore="TypographyEllipsis"="開啟中...";
+    "sync_progress_0"="第 %d 段";
+    "sync_progress_1"="(%d%%)";
+    "sync_progress_1_v2"="%d%%";
+    "sleeper_is_working_please_sleep"="速眠儀正常工作中，請安心入睡";
+    "turn_on_pa_mode_failed_title"="開啟工作模式失敗";
+    "turn_on_pa_mode_failed_desc"="速眠儀開啟工作模式失敗，原因是：%s";
+    "haode"="好的";
+    "hao_de"="好 的";
+    "sleeper_is_working"="速眠儀工作中";
+    "sync_fail"="同步失敗";
+    "already_latest_data"="已是最新數據";
+    "bluetooth_not_enable"="手機藍牙未開啟";
+    "is_not_this_device"="不是這臺設備？";
+    "search_more_u"="搜索更多";
+    "confirm_bind"="確認綁定";
+    "add_device"="添加設備";
+    "do_not_see_your_device"="沒看到您的設備？";
+    "monitor_not_connect"="監測儀未連接";
+    "click_card_try_to_connect_monitor"="點擊卡片，嘗試連接監測儀";
+    "you_do_not_bind_device_click_add"="您尚未綁定速眠儀設備，點擊添加設備";
+    "working"="工作中";
+    "device_manage"="設備管理";
+    "coupon_center"="兌換中心";
+    "add_new_device"="添加新設備";
+    "click_btn_add_device"="點擊按鈕，添加設備";
+    "connecting"="連接中";
+    "connected"="已連接";
+    "monitor_not_connect_click_upper_to_connect"="監測儀未連接，點擊上方嘗試連接";
+    "monitor_is_connecting"="監測儀連接中…";
+    "please_keep_monito_in_5m"="請保持監測儀與手機距離在5米內";
+    "monitor_is_connected_please_check_sleeper"="監測儀已連接\n請檢查速眠儀是否開啟";
+    "sleeper_is_idle"="速眠儀已連接，待機中";
+    "sync_progress_package_progress"="正在同步睡眠數據\n第 %d 段 (%d%%)";
+    "sync_progress_package_progress_v2"="正在同步睡眠數據 %d%%";
+    "sure_to_unbind"="確定解除綁定嗎？";
+    "after_unbind_monitor_will_disconnect_from_phone"="解綁後將斷開監測儀與手機的連接";
+    "ji"="及";
+    "device_is_syncing_data_report_will_be_refresh_later"="設備同步中，稍侯自動獲取睡眠報告";
+    "area"="地區";
+    "clear_cache"="清除緩存";
+    "phone_bettery_low_title"="手機電量不足";
+    "monitor_bettery_low_title"="監測儀電量不足";
+    "sleeper_bettery_low_title"="速眠儀量不足";
+    "phone_bettery_low_message"="手機電量不足50%，無法進行 dfu 升級";
+    "monitor_bettery_low_message"="監測儀電量不足50%，無法進行 dfu 升級";
+    "sleeper_bettery_low_message"="速眠儀量不足50%，無法進行 dfu 升級";
+    "clear_cache_hint"="確定清除本地緩存？";
+    "clear_success"="清除成功";
+    "rescan"="重新掃描";
+    "open_bluetooth"="開啟藍牙";
+    "connect_time_out"="連接超時";
+    "connect_time_out_message"="可關閉藍牙5s後再次嘗試連接";
+    "please_connect_monitor_before_change_bind"="請先連接監測儀，再使用換綁功能";
+    "sleep_version_title"="速眠儀固件升級";
+    "monitor_version_title"="監測儀固件升級";
+    "set_password"="設置密碼";
+    "set_success"="設置成功";
+    "are_sure_2_bind"="確定更換綁定？";
+    "sleep_version_message"="速眠儀固件新版本發布，為了保證給您的最佳體驗，請及時升級";
+    "monitor_version_message"="監測儀固件新版本發布，為了保證給您的最佳體驗，請及時升級";
+    "coupon_code"="兌換碼";
+    "coupon_history"="兌換記錄";
+    "input_coupon"="請輸入您的兌換碼";
+    "coupon"="兌換";
+    "know_your_sleep_health_situation"="了解您的睡眠健康及心理狀況";
+    "not_evaluated"="待測評";
+    "evaluated"="已測評";
+    "only_last_3_days_can_fill_sleep_diary"="只能填寫3天內的睡眠日記";
+    "only_last_3_days_can_refill_sleep_diary"="只能修改3天內的睡眠日記";
+    "coupon_success"="兌換成功";
+    "fine"="好的";
+    "doctor_service_introduction"="服務介紹";
+    "anxious_and_belief"="憂慮與信念";
+    "add_anxious"="添加憂慮";
+    "what_s_the_meaning_of_recording_your_anxious_and_belief"="記錄自己的憂慮、信念有什麽用";
+    "anxious_record"="憂慮記錄";
+    "device_connect_timeout"="設備連接超時";
+    "add_belief"="添加信念";
+    "anxiety_and_belief"="憂慮與信念";
+    "anxiety_and_belief_explain"="憂慮:\n記錄憂慮事件是為了把我們憂慮的事情在睡前較早的一個時段內處理和安排好，這有助於減少我們在睡前因此而引起煩惱。設定一個憂慮時間，每天在同一個時間段把所需要處理的事情想好辦法，如果目前不能解決，可以安排另一個時間段來思考，堅持這麽做，你會發現，我們在睡前會受到更少憂慮的困擾。\n\n信念:\n信念平時並不太容易被發現，因為他經常是自動化的。記錄它一是可以讓我們識別出我們有哪些信念，二來是有助於我們判斷哪些是不合理信念並用認知重構的方法來重建他們，經過反復練習讓理性的信念變成自動化。";
+    "anxiety"="憂慮";
+    "anxiety_input_hint"="今天，有什麽事情讓你感到憂慮、煩惱？（點擊這裏開始輸入）";
+    "anxiety_solution_input_hint"="你是怎麽解決你的憂慮的？（點擊這裏開始輸入）";
+    "solution"="解決辦法";
+    "add_anxiety_bottom_hint"="速眠醫生建議：把憂慮的事情都集中在日間一個時間處理哦。";
+    "save"="保存";
+    "edit"="編輯";
+    "delete"="刪除";
+    "anxiety_record"="憂慮記錄";
+    "delete_record"="刪除記錄";
+    "delete_record_confirm_hint"="確定要刪除此條記錄嗎？";
+    "cbti_introduction_more"="查看介紹 >";
+    "cbti_title_bar"="失眠認知行為治療(CBTI)";
+    "go_to_evaluation"="去評估";
+    "cbti_chapter_no_lock"="本周課程還未解鎖";
+    "go_to_evaluation_title"="CBTI評估";
+    "go_to_evaluation_message"="為更好地追蹤治療效果，我們需要您定期配合進行評估，請您耐心完成評估";
+    "click_top_button_add_record"="- 點擊上方按鈕，添加記錄 -";
+    "event"="事件";
+    "thought"="想法";
+    "emotion"="情緒";
+    "belief_title_0" tools:ignore="TypographyFractions"="1/3. 事件";
+    "belief_title_1" tools:ignore="TypographyFractions"="2/3. 想法";
+    "belief_title_2" tools:ignore="TypographyFractions"="3/3. 情緒";
+    "input_event_hint"="是發生了什麽事情？引起了你的想法與情緒？如：在旅途中，你有一瓶水，喝了一半。（點擊這裏開始輸入）";
+    "when_you_thought_what_is_the_emotion"="當你對這件事產生了想法時，你的情緒如何？";
+    "emotion_0"="難過";
+    "emotion_1"="焦慮";
+    "emotion_2"="憤怒";
+    "emotion_3"="平靜";
+    "emotion_4"="輕松";
+    "emotion_5"="愉快";
+    "please_finish_question_first"="請先完成題目內容";
+    "faith_record"="信念記錄";
+    "anxiety_time_reminder"="憂慮時間提醒";
+    "anxiety_time_reminder_hint"="開啟憂慮時間提醒，速眠醫生將會每日定時提醒您添加憂慮。請確保APP通知權限開啟。";
+
+    //share
+    "wechat_friend"="微信好友";
+    "wechat_circle"="朋友圈";
+    "share_to_wechat"="分享到";
+    "sleep_prescription_desc"="遵守睡眠處方規定的作息時間，逐步穩固睡眠，進而提升睡眠效率。";
+    "data"="數據";
+    "know_device"="了解設備";
+    "set_diary_reminder_hint"="養成堅持填寫好習慣？去";
+    "set_diary_reminder_hint_2"="設置填寫提醒";
+    "dialog_finish_practice_msg"="完成本節課程學習後自動解鎖下節內容";
+    "error_unknown"="未知錯誤";
+    "sleep_remark"="睡眠備註";
+    "wake_up_emotion"="睡醒情緒";
+    "night_wakeup"="夜醒";
+    "little_sleep"="小睡";
+    "pills_history"="服藥記錄";
+    "please_check_items_below"="請檢查以下情況：";
+    "write_message"="寫留言";
+    "anonymous_nickname"="匿名用戶";
+    "ssd_replay"="速眠醫生回復：";
+    "message_board_empty_hint"="- 期待您寫下這裏的第一條留言 -";
+    "msg_board_empty_hint"="- 暫無留言記錄 -";
+    "msg_board_hint"="寫下你想說的話";
+    "send"="發送";
+    "anonymous_submit"="匿名提交";
+    "medicine_history"="服用促進睡眠類藥物";
+    "is_using_medicine"="有服用";
+    "not_using_medicine"="沒有";
+    "pay_coupon_code"="優惠碼";
+    "pay_coupon_code_hint"="請填寫優惠碼";
+    "none_pay_coupon_code"="暫未使用優惠";
+    "none_join_count"="--人參與";
+    "join"="人參與";
+    "submit_success"="提交成功";
+    "service_submit_success_msg"="您的情況已提交給醫生，如有新消息，我們將會通過消息中心通知您，請耐心等待";
+    "show_detail"="查看詳情";
+    "go_back_home"="返回主頁";
+    "moment_peace"="片刻小憩";
+    "let_tense_life_relax"="美好的午後，盡享放松";
+    "relaxation_list_bottom_hint"="- 速眠醫生建議放松訓練結合CBTI課程使用 -";
+    "topping_text"="置頂";
+    "lesson_finished"="本節課程結束";
+    "lesson_practice_hint"="完成隨堂練習，鞏固所學知識";
+    "go_to_watch"="繼續觀看";
+    "finished_practice"="完成練習";
+    "list"="列表";
+    "n_days_later_update_prescription"="%d天後更新處方";
+    "write_message_keyboard"="寫留言";
+    "msg_keyboard_hint"="歡迎留下您對課程的疑問和想法，留言將在篩選後展示。";
+    "my_msg"="我的留言";
+    "del"="刪除";
+    "del_msg_keyboard_title"="確定刪除該留言？";
+    "del_msg_keyboard_msg"="刪除後將不再保留該留言記錄";
+    "my_message_board"="我的留言";
+    "sumian_doctor_msg_replay"="速眠醫生回復";
+    "msg_board_is_deleted"="留言已刪除";
+    "msg_board_is_deleted_message"="如有疑問，請咨詢客服";
+    "msg_board_replay_notice"="留言回復通知";
+    "system_notification"="系統通知";
+    "msg_board_del_success"="留言刪除成功";
+    "msg_board_send_success"="留言發送成功";
+    "notice"="提示";
+    "sumian_doctor_want_to_open_wechat"="“速眠醫生”想打開“微信”";
+    "open"="打開";
+    "input_is_too_long"="字數超過限定值";
+    "question_mark_x3"="\???";
+    "please_complete_the_question"="請完成以上填寫";
+    "sleep"="睡覺";
+    "fall_asleep"="睡著";
+    "wake_up"="醒來";
+    "get_up"="起床";
+    "what's_time_to_bed"="昨晚幾點準備睡覺?"
+    "fall_asleep_at_about_time"="昨晚大概幾點睡著?"
+    "waht's_time_to_awake"="今早幾點醒來?"
+    "waht's_time_to_get_up"="今早幾點起床?"
+    "did_you_awake_last_night"="昨晚有醒來過嗎?"
+    "did_you_take_a_nap"="昨天白天有小睡一會嗎?"
+    "did_you_take_sleeping_pill"="昨天有服用過安眠類藥物嗎?"
+    "how_do_you_feel_this_morning"="你早上起來感覺如何?"
+    "what_else_to_record"="還有什麽想記錄的?"
+
+    "no_night_wake"="沒醒過";
+    "have_night_wake"="有醒過";
+    "no_day_sleep"="沒小睡";
+    "have_day_sleep"="有小睡";
+    "night_wake_times_and_duration"="夜醒次數及總時長";
+    "day_sleep_times_and_duration"="白天小睡次數及總時長";
+    "night_wake_time_cant_bigger_than_sleep_time"="夜醒時長不能比睡眠時長大哦";
+    "morning_feelings_0"="十分差";
+    "morning_feelings_1"="較差";
+    "morning_feelings_2"="正常";
+    "morning_feelings_3"="較好";
+    "morning_feelings_4"="超級棒";
+    "add_pill_record"="添加服藥記錄";
+    "continue_add"="繼續添加";
+    "add_pills_hint"="若未服用藥物，可直接跳過此題";
+    "take_pills_record"="服藥記錄";
+    "add_pills_too_many_hint"="最多可添加10次記錄";
+    "fill_diary_remark_et_hint"="可在此描述您的詳細情況， 不限於：1.描述您希望能解決的問題；2.描述您的睡前行為、起床後行為；3.描述癥狀；4.藥物相關問題等（200字以內）";
+    "max_input_error"="字數超過限定值";
+
+    "medicine_item_1"="唑吡坦(思諾思)";
+    "medicine_item_2"="紮來普隆";
+    "medicine_item_3"="佐匹克隆";
+    "medicine_item_4"="三唑侖";
+    "medicine_item_5"="咪達唑侖";
+    "medicine_item_6"="氟西泮";
+    "medicine_item_7"="硝西泮";
+    "medicine_item_8"="艾司唑侖";
+    "medicine_item_9"="阿普唑侖（佳樂定）";
+    "medicine_item_10"="勞拉西泮";
+    "medicine_item_11"="度洛西汀（欣百達）";
+    "medicine_item_12"="帕羅西汀（塞樂特）";
+    "medicine_item_13"="奧氮平";
+    "medicine_item_14"="美利曲辛（黛利新）";
+    "medicine_item_15"="右佐匹克隆";
+    "medicine_item_16"="米氮平";
+    "medicine_item_17"="其他";
+
+
+    "medicine_number_1"="1/4片";
+    "medicine_number_2"="1/3片";
+    "medicine_number_3"="1/2片";
+    "medicine_number_4"="2/3片";
+    "medicine_number_5"="3/4片";
+    "medicine_number_6"="1片";
+    "medicine_number_7"="1.25片";
+    "medicine_number_8"="1.5片";
+    "medicine_number_9"="1.75片";
+    "medicine_number_10"="2片";
+    "medicine_number_11"="2.25片";
+    "medicine_number_12"="2.5片";
+    "medicine_number_13"="2.75片";
+    "medicine_number_14"="3片";
+    "medicine_number_15"="3.5片";
+    "medicine_number_16"="4片";
+    "medicine_number_17"="4.5片";
+    "medicine_number_18"="5片";
+    "medicine_number_19"="5.5片";
+    "medicine_number_20"="6片";
+
+    "before_breakfast_or_later"="早飯前/後"
+    "before_luanch_or_later"="午飯前/後"
+    "before_diner_or_later"="晚飯前/後"
+    "before_sleep"="睡前"
+
+    "drink"="飲酒"
+    "drinks"="喝茶/咖啡"
+    "bad_healthy"="身體不適"
+    "too_full"="吃太飽"
+    "worrys_about"="有心事"
+    "excersized"="睡前運動過量"
+    "new_bed"="陌生床"
+    "tired"="今天太累"
+    "cold"="天氣太冷"
+    "hot"="天氣太熱"
+
+    "app_upgrade_dialog_title"="APP版本更新啦～";
+    "app_upgrade_dialog_hint"="您當前的APP版本過低，會影響設備的使用，為了不影響您的體驗，非常建議您更新APP哦～";
+    "device_upgrade_dialog_title"="設備固件版本更新啦～";
+    "device_upgrade_dialog_hint"="當前設備的版本過低，為了不影響您的體驗，非常建議您更新固件版本哦～";
+    "monitor_firmware_upgrade"="監測儀固件升級";
+    "monitor_firmware_upgrade_hint"="監測儀固件發布了新版本，為了保證給您最佳的體驗，請及時升級";
+    "sleeper_firmware_upgrade"="速眠儀固件升級";
+    "sleeper_firmware_upgrade_hint"="速眠儀固件發布了新版本，為了保證給您最佳的體驗，請及時升級";
+    "device_market"="設備商城";
+    "yesterday_night"="昨夜";
+    "today"="今天";
+    "cbti_final_report"="CBTI 終期報告";
+    "cbti_final_report_dialog_message"="為了能夠更好地了解您當前的情況，為您提供後續建議，需要您配合完成終期評估。";
+    "cbti_medal_title"="CBTI小成就";
+    "more_medal_bottom_tips"="- 更多勛章，敬請期待 -";
+    "my_metal"="我的勛章";
+    "start_evaluate"="開始測評";
+    "get_sleep_guide_in_30_sec"="- 30秒獲取最適合你的睡眠指南 -";
+    "yes"="是";
+    "no"="否";
+    "get_good_sleep_solution"="獲取好眠方案";
+    "just_so_so_share"="- 隨手傳遞健康睡眠 -";
+    "acquisition"="獲得";
+    "share_healthy_sleep"="- 隨手傳遞健康睡眠 -";
+    "today_is_xx_day_fill_sleep_diary"="今天是我第 %d 天關註自己的睡眠健康。愛自己，就要從察覺身體的需要開始。堅持就是勝利！";
+    "cancel_share"="分享已取消";
+    "share_success"="分享成功";
+    "share_failed"="分享失敗";
+    "save_images_success"="勛章保存成功啦,請在相冊中查看";
+    "none_get_achievement_toast"="堅持學習CBTI可點亮勛章";
+    "share_bottom_tips"="- 呵護自己的睡眠健康 -";
+    "finished_lesson_to_be_unlock"="完成上節課程後解鎖";
+    "save_permission_tips"="保存圖片需要授予存儲權限，該權限已被禁止，請在設置中授予app相關權限";
+    "request_save_permissions_tips"="存儲圖片，需要授予手機存儲權限權限";
+    "device_not_connected"="設備未連接";
+    "there_have_history_pills"="檢測到您上次有填寫過服藥記錄。";
+    "doctor_say_hello"="您好，我是您的睡眠管家，很高興為您服務！";
+    "sleep_restriction_hint"="睡眠限制：了解它與睡眠日記的關系";
+    "sleep_restriction_treatment"="睡眠限制法";
+    "doctor_message"="醫生消息";
+    "system_message"="系統消息";
+    "no_system_notification_yet"="- 暫無系統消息 -";
+    "sleeper_talk"="眠友說";
+    "more_article"="更多文章";
+    "like"="點贊";
+    "renew"="續費";
+    "service_package_type"="服務包類型";
+    "introduction_arrow"="介紹 >";
+    "discount_is_too_much"="優惠金額超出上限";
+    "pill_repeat_warn"="不能添加重復的服藥記錄";
+    "you_have_not_bound_doctor_yet_scan_to_bind"="您還未綁定醫生或咨詢師，點擊下方掃碼鈕，掃描二維碼進行綁定。";
+    "service"="服務";
+    "personal_intro"="個人簡介";
+    "you_have_add_this_pill"="您已添加了以下服藥記錄";
+    "cover"="覆蓋";
+    "app_need_upgrade"="APP版本過低，請及時更新！";
+    "device_need_upgrade"="設備版本過低，請前往[我的-設置]升級固件版本";
+    "device_is_not_ok_app_need_upgrade"="設備不可用，需要更新APP";
+    "sleep_master_is_not_ok_app_need_upgrade"="速眠儀不可用，需要更新APP";
+    "device_is_not_ok_device_need_upgrade"="設備不可用，需更新固件";
+    "sleep_master_is_not_ok_device_need_upgrade"="速眠儀不可用，需更新固件";
+    "device_version_too_low"="設備版本過低，";
+    "sleep_master_version_too_low"="速眠儀版本過低，";
+    "app_version_too_low"="APP版本過低，";
+    "go_to_upgrade_device"="去升級";
+    "go_to_upgrade_app"="請更新";
+
+    "one_year"="1年"
+    "two_year"="2年"
+    "three_year"="3年"
+    "four_year"="4年"
+    "five_year_and_more"="5年及以上"
+    "counselor_desc"="%s、%s從業經驗、累積個案時長%d小時";
+    "upgrade_now"="立即更新";
+    "no_sleep_all_night"="整晚沒睡";
+
+    //strings_2
+    "app_name"="SumianMonitor";
+
+    "sleepy_not_connected_monitor"="監測儀未連接速眠儀,請讓監測儀連接上速眠儀";
+    "not_wear_monitor"="監測儀未佩戴,請佩戴監測儀";
+    "head_not_at_pillow"="頭部未在枕頭上";
+    "monitor_is_charging"="速眠儀不能開啟工作模式，原因是設備正在充電";
+    "not_turn_on_pa_mode"="設備獨立模式已開啟,不能開啟,請先關閉獨立模式";
+    "not_turn_on_pa_mode_in_sleep_time"="正在睡眠中,請勿再次開啟";
+    "turn_on_sleepy_pa_mode_error_unknown"="未知錯誤,請重啟設備或聯系客服";
+
+    "error_unknown"="未知錯誤";
+    "monitor_is_syncing_please_try_it_later"="數據同步中，請稍後重試";
+    "monitor_energy_is_low_please_try_it_later"="設備電量不足50%，請確保電量充足再升級";
