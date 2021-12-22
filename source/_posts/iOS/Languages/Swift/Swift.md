@@ -18,3 +18,5 @@ tags:
 ## 3 Swift 性能优化
 
 ### 3.1 [深入剖析Swift性能优化](https://mp.weixin.qq.com/s/U95QmOOjeXkk-yC23cuZCQ)
+
+## 4. [AweSome Swift](https://github.com/matteocrippa/awesome-swift?utm_source=gold_browser_extension)
