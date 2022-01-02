@@ -57,3 +57,5 @@ tags:
 ## 7. 杂项
 
 ### 7.1 [iOS 资源](https://github.com/mrhyh/iOS-LibraryCollections/blob/master/README.md#mac)
+
+### 7.2 [*程序员的自我修养*](https://www.kancloud.cn/kancloud/a-programmer-prepares/78177)
