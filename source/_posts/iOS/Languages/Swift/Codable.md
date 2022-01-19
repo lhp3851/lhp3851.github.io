@@ -312,3 +312,5 @@ extension Interim: Decodable {
 [^Encoding-and-Decoding-in-Swift]: [Encoding and Decoding in Swift](https://www.raywenderlich.com/3418439-encoding-and-decoding-in-swift)
 
 [^NSCoding-Tutorial-for-iOS]: [NSCoding Tutorial for iOS: How to Permanently Save App Data](https://www.raywenderlich.com/6733-nscoding-tutorial-for-ios-how-to-permanently-save-app-data)
+
+[^Archives and Serializations Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Archiving/Archiving.html#//apple_ref/doc/uid/10000047-SW1)
