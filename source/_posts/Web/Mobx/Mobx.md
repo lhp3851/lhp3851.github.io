@@ -17,3 +17,5 @@ tags: Mobx
 ## 3. MobX 实践
 
 ### 3.1 [mobx、mobx-react和mobx-react-lite新手入门](https://juejin.cn/post/6945720333026459656#heading-11)
+
+### 3.2 [「✍ Mobx」搭配 React + Typescript食用](https://juejin.cn/post/6959866447157788708#heading-6)
