@@ -7,6 +7,8 @@ tags:
 
 ## 1 [SwiftGG](https://swiftgg.gitbook.io/swift/)
 
+### 1.1 [Swift 编程语言中文教程](https://swift.bootcss.com/)
+
 ## 2 Swift SIL
 
 ### 2.1 [Swift Intermediate Language 初探](https://zhuanlan.zhihu.com/p/101898915)
