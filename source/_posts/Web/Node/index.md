@@ -14,6 +14,10 @@ tags: Node
 
 ## 项目开发
 
+[node 指南](http://nodejs.cn/learn/introduction-to-nodejs)
+
+[node 官网](https://nodejs.org/zh-cn/docs/)
+
 ## 性能调优
 
 [node要精通](https://www.taopoppy.cn/node/)
