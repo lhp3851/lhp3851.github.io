@@ -176,4 +176,4 @@ static void __main_block_func_0(struct __main_block_impl_0 *__cself) {
 ### 5.1 [你真的理解__block修饰符的原理么？](https://blog.csdn.net/abc649395594/article/details/47086751)
 
 参考[^深入理解iOS的block]
-[^深入理解iOS的block]: [深入理解iOS的block](<https://juejin.cn/post/6844903893176958983#heading-37>)
+[^深入理解iOS的block]: [深入理解iOS的block](https://juejin.cn/post/6844903893176958983#heading-37)

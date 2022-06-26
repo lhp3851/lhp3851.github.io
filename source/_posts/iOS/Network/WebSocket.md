@@ -49,3 +49,5 @@ tags:
 ## 4. [WebSockets in iOS Using Swift](https://betterprogramming.pub/websockets-in-ios-using-swift-a176791e139f)
 
 ### 4.1 [Starscream(Swift)](https://github.com/daltoniam/Starscream)
+
+## 5. [WebSocket协议：5分钟从入门到精通](https://www.cnblogs.com/chyingp/p/websocket-deep-in.html)
