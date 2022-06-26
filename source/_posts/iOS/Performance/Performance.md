@@ -287,3 +287,5 @@ webView 加载优化：
 [iOS性能优化](http://www.mengyueping.com/2018/08/19/iOS_optimization_all/)
 
 [^WeRead团队博客](https://wereadteam.github.io/archives/)
+
+[Energy Efficiency Guide for iOS Apps](https://developer.apple.com/library/archive/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html#//apple_ref/doc/uid/TP40015243-CH3-SW1)

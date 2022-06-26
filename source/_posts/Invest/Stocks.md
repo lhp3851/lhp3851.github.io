@@ -14,6 +14,8 @@ tags: 股票
 
 ## 2. 投资信号
 
+[股票量化交易](https://blog.51cto.com/liyuanjinglyj/2978139)
+
 ### 2.1 买入信号
 
 1. 机构评级--研报

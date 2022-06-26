@@ -11,4 +11,4 @@ tags:
 * atos
 * otool
 
-## 2. [如何手动解析CrashLog](http://www.cocoachina.com/articles/12806)
+## 2. [如何手动解析CrashLog](https://juejin.cn/post/6844903670656696334)
