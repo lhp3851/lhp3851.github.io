@@ -20,3 +20,5 @@ tags:
 XCTest 框架、自动化测试、CI(Continuous Integration)、CD(Continuous Delivery)、[TD(Test-Driven Development)](https://qualitycoding.org/tdd-sample-archives/)
 
 ## 1.2 [Appium](http://appium.io/docs/en/about-appium/getting-started/?lang=zh)
+
+## 1.3 [Stub vs Mock](https://medium.com/capital-one-tech/using-stub-vs-mock-in-ios-unit-testing-634ec4cc6a10)
