@@ -48,9 +48,85 @@ Appium Server 的 GUI程序、其中还包含了一个你可以查看应用程�
 
 ## 2. Appium 环境配置
 
+### 2.1 开发环境
+
+Homebrew
+
+Node
+
+Python3(pip3)/Selenium/setuptools(disutils)/python-client
+
+### 2.2 真机工具
+
+ideviceinstaller & libimobiledevice
+Carthage/ios-deploy
+ios_webkit_debug_proxy
+authroize-ios
+
+### 2.3 Appium
+
+Appium：npm 安装 Appium Server
+Appium-Doctor：检查环境
+Appium-Desktop: 包含了 Appium Server
+Appium-inspector：UI 操作可视化工具
+
+### 2.4 可选工具
+
+FFMpeg
+
 ## 3. 实战示例
 
 ### 3.1 iOS
+
+#### 3.1.1 定位元素的方式
+
+##### 1.  ios_predicate
+
+iOS 的 UI 自动化中，使用原生支持的Predicate定位方式是最好，可支持元素的单个属性和多个属性定位，强烈推荐使用
+
+```py
+driver.find_element_by_ios_predicate(“value == ‘ClearEmail’”)
+
+driver.find_element_by_ios_predicate(“type == ‘’ AND value == ‘’)
+```
+
+##### 2. accessibility_id
+
+替代以前的name定位方式，在 iOS 上，主要使用元素的label或name（两个属性的值都一样）属性进行定位，如该属性为空，也是不能使用该属性。
+
+```py
+
+
+driver.find_element_by_accessibility_id(‘ClearEmail’)
+```
+
+##### 3. xpath
+
+由于 iOS 10开始使用的 XCUITest 框架原生不支持，定位速度很慢，所以官方现在不推荐大家使用，也有其他替代的定位方式可使用。
+
+```py
+#使用绝对路径定位
+
+driver.find_element_by_xpath(’/XCUIElementTypeApplication/XCUIElementTypeButton’)
+#使用相对路径定位：
+driver.find_element_by_xpath(’//XCUIElementTypeButton’)
+通过元素的索引定位
+driver.find_element_by_xpath(’//XCUIElementTypeButton[index]’)
+
+#通过元素的属性定位
+driver.find_element_by_xpath(”//className[@value=‘ClearEmail’]")
+```
+
+##### 4. iOSNsPredicateString
+
+仅支持 iOS 10或以上，可支持元素的单个属性和多个属性定位，推荐使用。
+
+```py
+#一种属性：
+MobileBy.iOSNsPredicateString(“type == ‘XCUIElementTypeButton’”)
+#两种属性：
+MobileBy.iOSNsPredicateString(“type == ‘XCUIElementTypeButton’ AND label== ‘更多信息’”)
+```
 
 ### 3.2 Web
 
