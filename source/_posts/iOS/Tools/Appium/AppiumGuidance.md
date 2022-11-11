@@ -12,10 +12,27 @@ Appium 是一个开源的 UI 自动化测试工具，用于自动化测试 iOS�
 
 Appium 旨在满足移动端自动化需求的理念，概述为以下四个原则：
 
-1. 你不应该为了自动化而重新编译你的应用或以任何方式修改它。
-2. 你不应该被限制在特定的语言或框架上来编写运行测试。
-3. 移动端自动化框架不应该在自动化接口方面重造轮子。
-4. 移动端自动化框架应该开源，在精神、实践以及名义上都该如此。
+#### 1.1.1 你不应该为了自动化而重新编译你的应用或以任何方式修改它
+
+因此 Appium 使用了系统自带的自动化框架。
+
+#### 1.1.2 你不应该被限制在特定的语言或框架上来编写运行测试
+
+* iOS 9.3 及以上: 苹果的 XCUITest
+* iOS 9.3 及以下: 苹果的 UIAutomation
+* Android 4.3+: 谷歌的 UiAutomator / UiAutomator2
+* Android 2.3+: 谷歌的 Instrumentation. (通过绑定独立的项目—— Selendroid 提供对 Instrumentation 的支持)
+* Windows: 微软的 WinAppDriver
+
+Appium 把这些系统本身提供的框架包装进一套 API —— WebDriver API 中，WebDriver（也叫```Selenium WebDriver```）规定了一个客户端-服务器协议（称为 [JSON Wire Protocol](https://w3c.github.io/webdriver/)），按照这种客户端-服务器架构，可以使用任何语言编写的客户端向服务器发送适当的 HTTP 请求。
+
+#### 1.1.3 移动端自动化框架不应该在自动化接口方面重造轮子
+
+WebDriver 已经成为 Web 浏览器自动化事实上的标准，并且是一个 [W3C 工作草案](https://w3c.github.io/webdriver/)。Appium 通过附加额外的 API 方法 [扩展协议](https://github.com/SeleniumHQ/mobile-spec/blob/master/spec-draft.md)，来在移动端做完全不同的尝试。
+
+#### 1.1.4 移动端自动化框架应该开源，在精神、实践以及名义上都该如此
+
+所以 [Appium](https://github.com/appium/appium) 是开源的。
 
 ### 1.2 概念
 
@@ -27,7 +44,12 @@ Appium 客户端是指支持 Appium 对 WebDriver 协议扩展一些程序库。
 
 Appium 提供了多个语言版本的[客户端程序库](https://appium.io/docs/en/about-appium/appium-clients/index.html)：Python、Ruby、Java、JavaScript、C#等。可以从[这里](https://appium.io/downloads)下载。
 
-Driver 也支持通过插件机制 [Plugin](https://github.com/appium/appium#plugins) 对 Driver 进行功能拓展。
+Driver 也支持通过插件机制 [Plugin](https://github.com/appium/appium#plugins) 对 Driver 进行功能拓展。比如[image](https://github.com/appium/appium/tree/master/packages/images-plugin)插件是用来做基于图片的一些功能的测试，比如压缩，可视化测试等。
+
+```sh
+appium plugin install images
+appium --use-plugins=images
+```
 
 #### 1.2.2 服务器
 
@@ -45,6 +67,10 @@ Appium 是一个用 Node.js 写的服务器。
 
 Appium Server 的 GUI程序、其中还包含了一个你可以查看应用程序的层级结构的 [inspector](https://github.com/appium/appium-inspector)。
 可以从这里下载 [Appium Desktop](https://appium.io/downloads)。初级阶段接触这个比较多。
+
+#### 1.2.6 工作原理
+
+![appium_work_principle](appium_work_principle.png)
 
 ## 2. Appium 环境配置
 
@@ -70,9 +96,19 @@ Appium-Doctor：检查环境
 Appium-Desktop: 包含了 Appium Server
 Appium-inspector：UI 操作可视化工具
 
+WebDriverAgent 配置 WebDriverAgentRunner，可以通过 ```http://localhost:10100/status```检查
+
+![appium_agent_status](appium_agent_status.png)
+
 ### 2.4 可选工具
 
 FFMpeg
+
+### 2.5 Appium Desktop 的使用
+
+![appium_and_server](appium_and_server.png)
+
+[Appium Desired Capabilities](https://appium.io/docs/en/writing-running-appium/caps/)
 
 ## 3. 实战示例
 
@@ -141,3 +177,7 @@ MobileBy.iOSNsPredicateString(“type == ‘XCUIElementTypeButton’ AND label==
 4. [Webdriver.IO](https://webdriver.io/docs/what-is-webdriverio)
 5. [WebDriver](?)
 6. [WebDriver](https://www.w3.org/TR/webdriver/)
+7. [iOS Unit Testing and UI Testing Tutorial](https://www.kodeco.com/21020457-ios-unit-testing-and-ui-testing-tutorial#toc-anchor-015)
+8. [Setting up iOS Real Devices Tests with XCUITest](https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md)
+9. [Webdriver.IO](https://webdriver.io/docs/what-is-webdriverio)
+10. [ios-uicatalog](https://github.com/appium/ios-uicatalog)
