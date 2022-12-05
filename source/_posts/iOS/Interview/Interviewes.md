@@ -12,34 +12,60 @@ tags:
 #### 1.1.1 [进程通信](https://www.jianshu.com/p/c1015f5ffa74)
 
 1. 管道/匿名管道(pipe)
-2. 有名管道(FIFO)
+2. 命名管道(FIFO)
 3. 信号(Signal)
 4. 消息(Message)队列
 5. 共享内存(share memory)
 6. 信号量(semaphore)
 7. 套接字(socket)
 
-#### 1.1.2 线程通信
-
-##### 1.1.2.1 线程通讯方式
+#### 1.1.2 进程同步
 
 1. 临界区
-2. 互斥量
+2. 同步与互斥
 3. 信号量
-4. 事件
-5. 锁
-6. 信号
-7. violate全局变量-共享内存
+4. 管线
 
-##### 1.1.2.2 [iOS 中线程同步的锁](https://juejin.cn/post/6844903716265394184)
+进程同步与进程通信很容易混淆，它们的区别在于：
 
-##### 1.1.2.3 [线程、队列、任务](https://zhuanlan.zhihu.com/p/68705170)
+* 进程同步：控制多个进程按一定顺序执行；
+* 进程通信：进程间传输信息。
 
-### 1.1.2.4 [runloop](https://blog.ibireme.com/2015/05/18/runloop/)
+进程通信是一种手段，而进程同步是一种目的。也可以说，为了能够达到进程同步的目的，需要让进程进行通信，传输一些进程同步所需要的信息。
+
+#### 1.1.3 进程调度算法
+
+1. 批处理系统
+
+* FIFS，first-come first-serverd（FCFS）
+* 短作业优先 shortest job first（SJF）
+* 最短剩余时间优先 shortest remaining time next（SRTN）
+
+2. 交互式系统
+
+* 时间片轮转
+* 优先级
+* 多级反馈队列(时间片轮转+优先级)
+
+### 1.2 线程
+
+#### 1.2.1 线程通信
+
+1. 原子操作
+2. violate全局变量 与 内存屏障(Memory Barriers)
+3. 锁
+4. 条件通知
+5. 事件
+
+#### 1.2.2 [iOS 中线程同步的锁](https://juejin.cn/post/6844903716265394184)
+
+#### 1.2.3 [多线程之GCD](https://zhuanlan.zhihu.com/p/68705170)
+
+#### 1.2.4 [深入理解RunLoop](https://blog.ibireme.com/2015/05/18/runloop/)
 
 ![RunLoop](../resources/Interview/RunLoop_1.png)
 
-### 1.2 [线程池](https://wangpengcheng.github.io/2019/05/17/cplusplus_theadpool/)
+#### 1.2.5 [线程池](https://wangpengcheng.github.io/2019/05/17/cplusplus_theadpool/)
 
 ### 1.3 协程
 
@@ -74,11 +100,11 @@ tags:
 
 大量数据读写（互斥）：读并发，写等待
 
-### 1.4 苹果文档
+### 1.4 并发编程--苹果文档
 
-[Concurrency Programming Guide](https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/)
-[Threading Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Multithreading/Introduction/Introduction.html#//apple_ref/doc/uid/10000057i-CH1-SW1)
-[GCD Internals](http://newosxbook.com/articles/GCD.html)
+* [Concurrency Programming Guide](https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/)
+* [Threading Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Multithreading/Introduction/Introduction.html#//apple_ref/doc/uid/10000057i-CH1-SW1)
+* [GCD Internals](http://newosxbook.com/articles/GCD.html)
 
 ## 2. 性能优化
 
@@ -109,39 +135,25 @@ Apple Slicing
 * [iOS微信安装包瘦身](https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=207986417&idx=1&sn=77ea7d8e4f8ab7b59111e78c86ccfe66&scene=24&srcid=0921TTAXHGHWKqckEHTvGzoA#rd)
 * [今日头条 iOS 安装包大小优化—— 新阶段、新实践](https://www.infoq.cn/article/iowjwhbirqeobzf5m2o8)
 
-### 2.3 电量
-
-电量优化涉及 CPU/GPU 任务，网络任务，硬件功能（定位），后台/前台唤醒切换消耗（任务尽量集中化）
-
-### 2.4 网络
-
-弱网优化
-
-网络安全优化
-
-网络认证
-
-### 2.5 UI
-
-卡顿优化，tableview优化，图片资源/渲染优化（渲染原理）
-
 ### 2.6 Instrument
 
 内存泄漏，僵死代码等
 
-## 3. 网络
+## 3. 大前端
 
-TCP、UDP
+### 3.1 WebViewJavaScriptBridge
 
-IP
+### 3.2 JavaScriptCore
 
-HTTP[S]
+### 3.3 JSPacth
 
-WebSocket
+### 3.4 Flutter
 
-Socket
+### 3.5 ReactNative
 
-* 请求拦截、认证、链接建立
+### 3.6 Dcloud
+
+### 3.7 Capacitor
 
 ## 4. 内存管理
 
@@ -149,14 +161,34 @@ Socket
 
 #### 4.1.1 权限修饰符
 
+__weak/__strong/__unsafe_unretain/__autorealeasing
+
 #### 4.1.2 属性修饰符
+
+| 属性修饰符      | 所有权修饰符      |
+| --------------- | ----------------- |
+| assign          | __unsafe_unretain |
+| copy            | __strong          |
+| retain          | __strong          |
+| strong          | __strong          |
+| unsafe_unretain | __unsafe_unretain |
+| weak            | __weak            |
 
 ### 4.2 Autorelease Pool
 
 ### 4.3 OC 默认规则
 
-生成持有规则
-方法命名规则
+* 自己生成的对象，自己持有
+* 非自己生成的对象，自己也能持有
+* 不再需要自己持有的对象，要释放
+* 非自己持有的对象，无法释放
+
+| 对象操作         | OC 方法                           |
+| :--------------- | :-------------------------------- |
+| 生成并持有的对象 | alloc/new/copy/mutableCopy 等方法 |
+| 持有对象         | retain                            |
+| 释放对象         | release                           |
+| 废弃对象         | dealloc                           |
 
 ### 4.4 循环引用
 
@@ -245,38 +277,6 @@ Behive
 * 功能
 * 业务
 
-## 12. 数据结构
-
-链表
-
-树
-
-堆
-
-栈
-
-图
-
-拓扑
-
-队列
-
-## 13. 算法
-
-查找
-
-排序
-
-复杂度
-
-匹配（字符串）
-
-安全（对称、非对称）
-
-摘要
-
-签名
-
 ## 14. OS
 
 文件（Mac-O、可执行、多媒体、plist 等）
@@ -298,21 +298,11 @@ plist、NSUserDefault、归档、keychain、数据库、文件
 
 UIView与Layer
 
-透明度：alpha，translucent，opaque 等
+### 15.1 [iOS系统中导航栏的转场解决方案与最佳实践](https://tech.meituan.com/2018/10/25/navigation-transition-solution-and-best-practice-in-meituan.html)
 
-## 16. 设计模式
-
-## 17. 架构
+透明度：translucent，alpha，opaque 等
 
 ## 18. 附加项
-
-### 18.1 大前端
-
-原理
-
-WebKit、React-Native、Flutter、Dcloud、Capacitor
-
-### 18.2 蓝牙
 
 ### 18.3 IM
 
@@ -340,24 +330,26 @@ WebKit、React-Native、Flutter、Dcloud、Capacitor
 
 ## 20 工作成就
 
-蓝牙？
+### 20.1 HyBrid
 
-SDK？
+### 20.2 蓝牙
 
-弹框？
+### 20.3 SDK
 
-自动化？
+### 20.4 自动化
 
-苹果登录?
+### 20.5 性能优化
 
-暗黑主题--
+#### 20.5.1 网络
 
-Swift 5 升级--
+### 20.6 杂项
 
-Dcloud--
+#### 20.6.1 苹果登录
 
-Capacitor--
+#### 20.6.2 暗黑主题
 
-Flutter--
+#### 20.6.3 Swift 5 升级
 
-universal link--
+#### 20.6.4 弹框
+
+#### 20.6.5 universal link
