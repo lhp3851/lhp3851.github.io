@@ -207,6 +207,8 @@ end
 
 文档里也包含了如何使用、创建自定义 plugin。
 
+* [Action和Plugin机制](http://ddrv.cn/a/239235)
+
 ### 7.3 使用 App Store Connect API
 
 由于历史原因，fastlane 一开始使用 AppleID 基于 cookie 的账号密码认证方式，并且会一直支持这种方式。但是还是推荐大家使用 App Store Connect API 的验证方式。因为 App Store Connect API的验证方式有多种好处

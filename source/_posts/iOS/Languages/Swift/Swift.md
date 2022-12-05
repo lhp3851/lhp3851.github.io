@@ -7,6 +7,8 @@ tags:
 
 ## 1 [SwiftGG](https://swiftgg.gitbook.io/swift/)
 
+### 1.1 [Swift 编程语言中文教程](https://swift.bootcss.com/)
+
 ## 2 Swift SIL
 
 ### 2.1 [Swift Intermediate Language 初探](https://zhuanlan.zhihu.com/p/101898915)
@@ -18,3 +20,5 @@ tags:
 ## 3 Swift 性能优化
 
 ### 3.1 [深入剖析Swift性能优化](https://mp.weixin.qq.com/s/U95QmOOjeXkk-yC23cuZCQ)
+
+## 4. [AweSome Swift](https://github.com/matteocrippa/awesome-swift?utm_source=gold_browser_extension)
