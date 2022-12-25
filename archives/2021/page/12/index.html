@@ -438,9 +438,33 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2021/04/20/iOS/OS/Linux/">
+            <a class="abstract-title" href="/2021/04/20/iOS/UI/UI/">
                 
-                <span class="abstract-title-text">Linux</span>
+                <span class="abstract-title-text">iOS之UI界面</span>
+            </a>
+            <div class="abstract-content">
+                1. TextKit2. CoreText3. WebKit4. 文字渲染4.1 PDF5. CoreGraphic6. QuartZ7. 布局8. 动画9. Texture
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/Tools/Charles/">
+                
+                <span class="abstract-title-text">Charles</span>
             </a>
             <div class="abstract-content">
                 
@@ -462,218 +486,224 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2021/04/20/iOS/OS/OS/">
+            <a class="abstract-title" href="/2021/04/20/iOS/Tools/CocoapodGuidance/">
                 
-                <span class="abstract-title-text">操作系统</span>
+                <span class="abstract-title-text">Cocoapod 指南</span>
             </a>
             <div class="abstract-content">
-                1. 页面置换算法2. 虚拟内存与物理内存的联系与区别3. 死锁，死锁的四个必要条件以及处理策略
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/04/20/iOS/OS/ShellConfigs/">
-                
-                <span class="abstract-title-text">Shell 配置文件</span>
-            </a>
-            <div class="abstract-content">
-                Linux中profile、bashrc、bash_profile之间的区别和联系
-1、/etc/profile:此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行.并从/etc/profile.d目录的配置文件中搜集shell的设置.  所以如果你有对/etc/profile有修改的话必须得重启你的修改才会生效，此修改对每个用户都生效。
-2、/etc/bashrc:为每一个运行bash shell的用户执行此文件.当bash shell被打开时,该文件被读取.  如果你想对所有的使用bash的用户修改某个配置并在以后打开的bash都生效的话可以修改这个文件，修改这个文...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/04/20/iOS/OS/Unix/">
-                
-                <span class="abstract-title-text">Unix</span>
-            </a>
-            <div class="abstract-content">
-                1. App ProcessInfo1234567891011121314151617181920212223242526272829303132333435363738394041&#123;  &quot;operatingSystemVersion&quot;: &quot;NSOperatingSystemVersion(majorVersion: 13, minorVersion: 6, patchVersion: 1)&quot;,  &quot;operatingSystemVersionString&quot;: &quot;Version 13.6.1 (Build 1...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/04/20/iOS/Webs/Hybrids/">
-                
-                <span class="abstract-title-text">iOS之移动端跨端技术及原理</span>
-            </a>
-            <div class="abstract-content">
-                1. JS-Native 通信技术1.1 postMessage （iOS WKWebview）这种方式是在 iOS 中处理消息非常方便，但是在 Android 中并不支持。
-web 端发送消息:
-1window.webkit.messageHandlers.SYJSBridge.postMessage(msg);
+                一、pod 公开库1. 索引库1.1 添加索引库1pod repo add WTSpecs https://coding.net/wtlucky/WTSpecs.git
 
-iOS 端接受消息：
-12345- (void)userContentController:(WKUserContentController *)ucdidReceiveScriptMessage:(WKScriptMessage *)message&#123;    //...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/04/20/iOS/Webs/JSPatchPrinciple/">
-                
-                <span class="abstract-title-text">iOS之JSPatch原理</span>
-            </a>
-            <div class="abstract-content">
-                1. JSPatch2. JSPatch 基础用法3. JSPatch 文档4. JSPatch 实现原理详解
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/04/20/iOS/Webs/Vue/">
-                
-                <span class="abstract-title-text">iOS之 Vue</span>
-            </a>
-            <div class="abstract-content">
-                
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/04/20/Web/CSS/CSSGuidance/">
-                
-                <span class="abstract-title-text">CSS 上手</span>
-            </a>
-            <div class="abstract-content">
-                1 display2 布局方式2.1 正常布局流概念：块元素、行内（内联）元素、外边距叠加
-默认的，一个块级元素的内容宽度是其父元素的100%，其高度与其内容高度一致。行内元素的height width与内容一致。你无法设置行内元素的height width — 它们就那样置于块级元素的内容里。 如果你想控制行内元素的尺寸，你需要为元素设置display: block; （或者，display: inline-block; inline-block 混合了inline 和 block的特性。)
-默认的，块级元素按照基于其父元素的书写顺序(默认值: horizontal-tb)的块流动方向...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/04/20/Web/JavaScript/JavaScript/">
-                
-                <span class="abstract-title-text">JavaScript</span>
-            </a>
-            <div class="abstract-content">
-                正则表达式
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/04/20/Web/JavaScript/Technologies/">
-                
-                <span class="abstract-title-text">JavaScript 知识点</span>
-            </a>
-            <div class="abstract-content">
-                1、Promise使用介绍1.1 约定
-在本轮 事件循环 运行完成之前，回调函数是不会被调用的。
-即使异步操作已经完成（成功或失败），在这之后通过 then() 添加的回调函数也会被调用。
-通过多次调用 then() 可以添加多个回调函数，它们会按照插入顺序执行。
+1.2 删除索引库1pod repo remove WTSpecs
 
-1.2 链式调用的本质——函数式编程Promise 是对象，有：promise、reason拒绝事件（全局）：    rejectionhandled        当 Promise 被拒绝、并且在 reject 函数处理该 rejection 之后会派发此事件。    unhandledrejection        ...
+2. pod库2.1 创建pod库1pod lib create podTestLibrary
+
+2.2 添加到远程1234git add .git commit -s -m &quot;Initial Commit of Library&quot;git remote add origin git@coding.net:wtlucky/podTes...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/Tools/Fastlane/">
+                
+                <span class="abstract-title-text">Fastlane 指南</span>
+            </a>
+            <div class="abstract-content">
+                [TOC]
+1. Fastlanefastlane 是一个移动端用来做自动化部署的工具。他可以用来做一些反复枯燥无味的工作，比如截图，代码签名，APP 发版。
+2. 环境配置2.1 Bundler在 fastlane 中推荐使用 Bundler 和 Gemfile 管理依赖。
+
+安装 Bundler
+
+1gem install bundler
+
+
+在项目根目录创建 Gemfile 文件，这个文件是管理 fastlane 的依赖，并把文件加入 git 管理，文件内容如下
+
+123source &quot;https://rubygems.org&quot;gem &quot;fastlan...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/Tools/CocoapodMaker/">
+                
+                <span class="abstract-title-text">Cocoapod</span>
+            </a>
+            <div class="abstract-content">
+                1. cocoapod 官网2. cocoapod 之私有化仓库
+iOS 私有化 pod
+
+Swift创建CocoaPod【转】
+
+Swift创建CocoaPod
+
+Swift 如何建立自己的 CocoaPod 库
+
+模块化之路（cocoapod VS framework）
+
+
+3. cocoapod 开源仓库
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/Tools/GitSpecification/">
+                
+                <span class="abstract-title-text">Git 规范</span>
+            </a>
+            <div class="abstract-content">
+                commit代码规范
+基本样式：[type] [module] : –bug=1000627 Message
+//空一行
+detail
+//空一行
+说明：
+其中：type, module 和 message 是必选。detail 为可选。
+type 用于说明 commit 的类别，使用下面标识：  bug-fix：修复bug
+  feature：新功能实现
+  optimize：重构，优化，工程配置等
+  merge: 用于替换自动生成合并分支log
+module 用于说明commit内容所属的业务模块（如果不属于任何模块，使用“通用”）
+message 修改的内容
+detail 用于在...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/Tools/LLDB/">
+                
+                <span class="abstract-title-text">iOS之LLDB</span>
+            </a>
+            <div class="abstract-content">
+                Debugger commands:  apropos           – List debugger commands related to a word or subject.  breakpoint        – Commands for operating on breakpoints (see ‘help b’ for shorthand.)  bugreport         – Commands for creating domain-specific bug reports.  command           – Commands for managing ...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/Tools/Monitors/">
+                
+                <span class="abstract-title-text">iOS 之监控插件库</span>
+            </a>
+            <div class="abstract-content">
+                1. 功能1.1 CPU、GPU、GPS、网络、电池、内存（RAM）、存储（ROM）【归档：UserDefault、文件、keychain、数据库······】、异常【崩溃、卡顿、阻塞······】、缓存、cookie、蓝牙、【睡眠数据】1.2、结构：core 层【必要功能】，base层【插件管理等】，应用层【APP】1.3、日志记录和显示模块 日志级别【debug、info、warn、error】：（富文本呈现） 模块日志【蓝牙、Moya、APP】 启动/函数调用耗时等 日志截获并传递给显示组件
+1.4、APP信息环境，版本等。
+1.5、以浮动窗口的形式展示（类似微信文章阅读浮动窗口）...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/Tools/OmniGraffle/">
+                
+                <span class="abstract-title-text">OmniGraffle</span>
+            </a>
+            <div class="abstract-content">
+                
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/20/iOS/Tools/Reverse/">
+                
+                <span class="abstract-title-text">iOS逆向工程</span>
+            </a>
+            <div class="abstract-content">
+                1. IPA 包1.1 [获取IPA包](~Library/Group\ Containers/K36BKF7T3D.group.com.apple.configurator/Library/Caches/Assets/TemporaryItems/MobileApps/)1.2 Mac-o1.3 MachOView1.4  iOS注入动态库1.5 Mac install IPA1.5.1 解决方案1234567brew uninstall --ignore-dependencies libimobiledevicebrew uninstall --ignore-dependencies...
             </div>
             <div class="abstract-post-meta">
                 <!-- date -->
@@ -689,7 +719,7 @@ iOS 端接受消息：
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/2021/page/11/">&lt; PREV</a><a class="page-number" href="/archives/2021/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/page/10/">10</a><a class="page-number" href="/archives/2021/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/archives/2021/page/13/">13</a><a class="page-number" href="/archives/2021/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/page/18/">18</a><a class="extend next" rel="next" href="/archives/2021/page/13/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/2021/page/11/">&lt; PREV</a><a class="page-number" href="/archives/2021/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/page/10/">10</a><a class="page-number" href="/archives/2021/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/archives/2021/page/13/">13</a><a class="page-number" href="/archives/2021/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/page/19/">19</a><a class="extend next" rel="next" href="/archives/2021/page/13/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1653,7 +1683,1090 @@ iOS 端接受消息：
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -3416,7 +4529,7 @@ iOS 端接受消息：
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 172
+        Total : 245
         </div>
         <!-- search  -->
         
@@ -3427,9 +4540,717 @@ iOS 端接受消息：
         
             
             
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span>
+            <a class="archive-post-title" href="/2022/10/28/Flutters/packages/">packages</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/22</span>
+            <a class="archive-post-title" href="/2022/09/22/Flutters/FVM/">FVM</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span>
+            <a class="archive-post-title" href="/2022/07/25/Flutters/Widgets/CircleWidget/">CircleWidget</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span>
+            <a class="archive-post-title" href="/2022/05/31/Java/%E5%B7%A5%E5%85%B7/Proxy/">Proxy</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span>
+            <a class="archive-post-title" href="/2022/05/31/Java/%E5%B7%A5%E5%85%B7/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%BA%93/">常用工具库</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span>
+            <a class="archive-post-title" href="/2022/05/31/Java/%E5%BC%82%E6%AD%A5/Asnycronous/">Asnycronous</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/31</span>
+            <a class="archive-post-title" href="/2022/05/31/Java/%E5%BC%82%E6%AD%A5/Schedule/">Schedule</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/27</span>
+            <a class="archive-post-title" href="/2022/03/26/Web/Bloggers/">Bloggers</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span>
+            <a class="archive-post-title" href="/2022/03/21/Operations/ADs/">ADs</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span>
+            <a class="archive-post-title" href="/2022/03/18/Web/index/">index</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span>
+            <a class="archive-post-title" href="/2022/03/14/Web/WebRestructure/">重构技术方案</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/22</span>
+            <a class="archive-post-title" href="/2022/01/21/Web/TechnologyStack/">Technology Stack</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/06</span>
+            <a class="archive-post-title" href="/2022/01/05/Android/Android%20%E6%96%87%E4%BB%B6%E4%BD%9C%E7%94%A8/">Android 文件作用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/06</span>
+            <a class="archive-post-title" href="/2022/01/05/Android/%E4%B8%89%E5%AD%97%E7%BB%8F/">Android 三字经</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2021 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/20</span>
+            <a class="archive-post-title" href="/2021/10/20/Flutters/Dart/HotReload/">Dart 热重载原理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/20</span>
+            <a class="archive-post-title" href="/2021/10/20/Flutters/Guideline/Guidline/">Flutter 指南</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/15</span>
+            <a class="archive-post-title" href="/2021/10/15/Invest/Blog/">投资入门</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/15</span>
+            <a class="archive-post-title" href="/2021/10/15/Invest/Founds/">投资入门--基金</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/15</span>
+            <a class="archive-post-title" href="/2021/10/15/Invest/Stocks/">投资入门--股票</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/22</span>
+            <a class="archive-post-title" href="/2021/09/22/iOS/Webs/DCloud/DCloudGuideline/">DCloud iOS 原生插件开发指南</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/14</span>
+            <a class="archive-post-title" href="/2021/09/13/iOS/ProjectManager/Cocoapod/UmbrellaFramework/">iOS 项目管理之 Umbrella Framework</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span>
+            <a class="archive-post-title" href="/2021/09/09/iOS/ProjectManager/Cocoapod/Cocoapod/">iOS 项目管理之 Cocoapods</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span>
+            <a class="archive-post-title" href="/2021/09/02/Java/JDK%E7%BB%9F%E8%AE%A1/">投资入门 -- 高瓴资本</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/28</span>
+            <a class="archive-post-title" href="/2021/08/28/iOS/Languages/CAlians/C++/Guidelines/FuncPtr/">FuncPtr</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/28</span>
+            <a class="archive-post-title" href="/2021/08/28/iOS/Languages/CAlians/C++/Guidelines/using/">C++ using</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2021/08/24/iOS/Webs/React-Native/DualComunication/">React-Native与原生端通信</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2021/08/24/iOS/Languages/CAlians/C++/Guidelines/Guidelines/">C++</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/09</span>
+            <a class="archive-post-title" href="/2021/08/09/iOS/Webs/React-Native/Navigation/">React-Native 导航</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/Languages/CAlians/C++/C++/">C++</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/CI/Applestore%20Connect/App%20Store%20Connect%20API/">iOS 之App Store Connect API</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/CI/Jira/Jira/">jira</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/29</span>
+            <a class="archive-post-title" href="/2021/07/28/iOS/ProjectManager/ShellScripts/Simulator/">iOS 之自动化</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/24</span>
+            <a class="archive-post-title" href="/2021/07/23/iOS/Languages/Swift/Generic/">iOS编程语言之 swift 泛型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/24</span>
+            <a class="archive-post-title" href="/2021/07/23/iOS/Languages/Swift/Class/">iOS编程语言之 swift Class</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/11</span>
+            <a class="archive-post-title" href="/2021/06/10/iOS/UI/Render/OffScreenRender/">iOS之 离屏渲染</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/08</span>
+            <a class="archive-post-title" href="/2021/06/07/iOS/Performance/Exceptions/WiredPointer/">iOS之野指针</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span>
+            <a class="archive-post-title" href="/2021/06/05/iOS/Performance/Exceptions/%20ZombieObject/">iOS之僵尸对象</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Swift/">iOS编程语言之Swift</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Value&Reference/">iOS编程语言之swift 构造器</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Constructor/">iOS编程语言之swift 构造器</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/Exceptions/CrashLogManuelResolve/">iOS之手动解析 crash 日志</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/Exceptions/Excetions/">iOS之异常处理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/KSCrash/KSCrashGuidline/">iOS之KSCrash 简明教程</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/KSCrash/Princeples/">iOS之KSCrahs 原理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Layouts/AutoLayout/">iOS 之 自动布局</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Layouts/Layouts/">iOS之 布局</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Render/Render/">iOS之 UI 渲染</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Appium/AppiumGuidance/">Appium 快速上手</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Vim/VimOperation/">Vim 常用操作</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Flutter/Flutter/">iOS之Flutter</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/NativeCommunication/">iOS之React-Native与原生端通信</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/NativeComponents/">iOS之React-Native原生UI组件</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/NativeModule/">iOS之React-Native原生Module</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/React-Native/">iOS之React-Native</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/PHP/PHP/">PHP</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/CI/Jenkins/Jenkins/">Jenkins</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Flutter/Dart/Dart/">Dart</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/19/iOS/Languages/AppleScript/AppleScript/">AppleScript</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/19/iOS/Languages/CAlians/Compiler/g++/">G++</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2021/04/19/Blogs&Blogger/">博主与网站收藏</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> Invalid date </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span>
+            <a class="archive-post-title" href="/2022/12/25/Java/Nginx/">[Untitled Post]</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span>
+            <a class="archive-post-title" href="/2022/12/25/iOS/Tools/Xcode/XCode/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/02</span>
+            <a class="archive-post-title" href="/2022/11/02/iOS/Languages/Swift/Unmanaged/">Unmanaged</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span>
+            <a class="archive-post-title" href="/2022/10/29/iOS/Languages/Swift/KeyPath/">KeyPath</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/19</span>
+            <a class="archive-post-title" href="/2022/10/18/iOS/Libraries/RxSwift/RxSwift/">RxSwift</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2022/08/23/iOS/Languages/Objective-C/Predicates/">Predicates</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/01</span>
+            <a class="archive-post-title" href="/2022/07/01/iOS/UI/SwiftUI/PropertyWrapper/">Property Wrapper</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/13</span>
+            <a class="archive-post-title" href="/2022/06/12/iOS/Network/TCP/HTTP/">HTTP</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2022/06/12/iOS/Network/TCP/TCP/">TCP</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/10</span>
+            <a class="archive-post-title" href="/2022/06/10/iOS/UI/UICollectionView/CollectionView/">CollectionView</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/10</span>
+            <a class="archive-post-title" href="/2022/05/10/iOS/Languages/Swift/Mixed/">Mixed with Swift/Objective-C/C/C++</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/09</span>
+            <a class="archive-post-title" href="/2022/04/09/Web/CSS/Float/">Float</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/28</span>
+            <a class="archive-post-title" href="/2022/03/27/Web/Node/GuideLine/">Node 入门指南</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/23</span>
+            <a class="archive-post-title" href="/2022/03/23/Web/TypeScript/AdvanceType/">AdvanceType</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/22</span>
+            <a class="archive-post-title" href="/2022/03/21/Web/Node/NPM/npm/">npm</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/21</span>
+            <a class="archive-post-title" href="/2022/03/20/Web/Node/index/">Node 开发实战</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/21</span>
+            <a class="archive-post-title" href="/2022/03/20/Web/Node/node/">node</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span>
+            <a class="archive-post-title" href="/2022/03/18/Web/Javascript/Jest/">Jest</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span>
+            <a class="archive-post-title" href="/2022/03/18/Web/Redux/ReduxObservable/">Redux Observable</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span>
+            <a class="archive-post-title" href="/2022/03/18/Web/Redux/ReduxToolKit/">Redux Tool Kit</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span>
+            <a class="archive-post-title" href="/2022/03/18/Web/TypeScript/TypeScript/">TypeScript</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span>
+            <a class="archive-post-title" href="/2022/03/18/iOS/Webs/React-Native/Expo/">Expo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span>
+            <a class="archive-post-title" href="/2022/03/17/Web/Javascript/Throttle/">Throttle</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/12</span>
+            <a class="archive-post-title" href="/2022/03/12/Web/TypeScript/Decorator/">Decorator</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span>
+            <a class="archive-post-title" href="/2022/02/21/Web/Browser/BrowserPrinciple/">Browser Principle</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span>
+            <a class="archive-post-title" href="/2022/02/21/Web/Javascript/Standard/">Standard</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span>
+            <a class="archive-post-title" href="/2022/02/21/Web/CSS/PostCSS/PostCss/">PostCss</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2022/02/20/Web/Javascript/Enumerable/">Enumerable</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/18</span>
+            <a class="archive-post-title" href="/2022/02/18/Web/HTML/Canvas/">Canvas</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/17</span>
+            <a class="archive-post-title" href="/2022/02/17/iOS/Services/AppleServices/">Apple Services</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/17</span>
+            <a class="archive-post-title" href="/2022/02/17/iOS/Services/SignInWithApple/">SignIn With Apple</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/16</span>
+            <a class="archive-post-title" href="/2022/02/16/Web/CSS/Media/MediaQuery/">MediaQuery</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span>
+            <a class="archive-post-title" href="/2022/02/15/Web/CSS/Animation/Animation/">Animation</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span>
+            <a class="archive-post-title" href="/2022/02/14/Web/CSS/SASS/SASS/">SASS</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/11</span>
+            <a class="archive-post-title" href="/2022/02/11/Web/Vue/GuideLine/">Vue 入门</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/11</span>
+            <a class="archive-post-title" href="/2022/02/10/Web/Vue/Vue/">Vue</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/20</span>
+            <a class="archive-post-title" href="/2022/01/19/Web/TypeScript/TypeScriptReact/">TypeScript React</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span>
+            <a class="archive-post-title" href="/2022/01/13/Web/Mobx/Mobx/">Mobx</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span>
+            <a class="archive-post-title" href="/2022/01/10/Web/ESLint/ESLint/">ESLint</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span>
+            <a class="archive-post-title" href="/2022/01/01/Web/React/ReactNativeLayout/">React Native Layout</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span>
+            <a class="archive-post-title" href="/2022/01/01/Web/React/React/">React</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span>
+            <a class="archive-post-title" href="/2022/01/01/Web/React/ReactFamliy/">React Famliy</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span>
+            <a class="archive-post-title" href="/2022/01/01/Web/React/ReactPerfermance/">ReactPerfermance</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span>
+            <a class="archive-post-title" href="/2022/01/01/Web/Redux/ReactRedux/">React Redux</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span>
+            <a class="archive-post-title" href="/2022/01/01/Web/Redux/Redux/">Redux</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span>
+            <a class="archive-post-title" href="/2021/12/31/Web/Javascript/ProtoType/">Prototype</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/01</span>
+            <a class="archive-post-title" href="/2021/12/31/Web/TypeScript/Fetch/">Typescripy + Fetch</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2021 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/31</span>
+            <a class="archive-post-title" href="/2021/12/31/Web/Tools/npm/npm/">npm 包管理工具</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/10</span>
+            <a class="archive-post-title" href="/2021/11/09/iOS/Webs/MobileWebs/">iOS之 Web 技术</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/18</span>
+            <a class="archive-post-title" href="/2021/10/17/iOS/Libraries/CommenLibraries/">iOS 之常用开源库</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/12</span>
+            <a class="archive-post-title" href="/2021/10/12/iOS/Concurrency/Locks/">iOS并发程编程--Locks</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/08</span>
+            <a class="archive-post-title" href="/2021/10/08/iOS/Frameworks/BuildProcess/">iOS 之编译</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">09/28</span>
@@ -3444,32 +5265,14 @@ iOS 端接受消息：
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">09/22</span>
-            <a class="archive-post-title" href="/2021/09/22/iOS/Webs/DCloud/DCloudGuideline/">DCloud iOS 原生插件开发指南</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/19</span>
+            <span class="archive-post-date">09/20</span>
             <a class="archive-post-title" href="/2021/09/19/iOS/Network/BLuetooth/">iOS 之 蓝牙协议</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">09/16</span>
+            <span class="archive-post-date">09/17</span>
             <a class="archive-post-title" href="/2021/09/16/iOS/Languages/Objective-C/MemoryManagement/">iOS之内存管理</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/13</span>
-            <a class="archive-post-title" href="/2021/09/13/iOS/ProjectManager/Cocoapod/UmbrellaFramework/">iOS 项目管理之 Umbrella Framework</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/09</span>
-            <a class="archive-post-title" href="/2021/09/09/iOS/ProjectManager/Cocoapod/Cocoapod/">iOS 项目管理之 Cocoapods</a>
         </li>
     
         
@@ -3493,18 +5296,6 @@ iOS 端接受消息：
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/28</span>
-            <a class="archive-post-title" href="/2021/08/28/iOS/Languages/CAlians/C++/Guidelines/FuncPtr/">FuncPtr</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/28</span>
-            <a class="archive-post-title" href="/2021/08/28/iOS/Languages/CAlians/C++/Guidelines/using/">C++ using</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/28</span>
             <a class="archive-post-title" href="/2021/08/28/Web/ChromeExtentions/Guidlines/">Chrome Extentions 开发指南</a>
         </li>
     
@@ -3516,32 +5307,14 @@ iOS 端接受消息：
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">08/24</span>
-            <a class="archive-post-title" href="/2021/08/24/iOS/Webs/React-Native/DualComunication/">React-Native与原生端通信</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/24</span>
-            <a class="archive-post-title" href="/2021/08/24/iOS/Languages/CAlians/C++/Guidelines/Guidelines/">C++</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
             <span class="archive-post-date">08/10</span>
             <a class="archive-post-title" href="/2021/08/10/iOS/Tools/a-shell/">a-shell</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">08/09</span>
-            <a class="archive-post-title" href="/2021/08/09/iOS/Webs/React-Native/Navigation/">React-Native 导航</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/04</span>
-            <a class="archive-post-title" href="/2021/08/04/Web/JavaScript/TypeScript/GuideLine/">GuideLine</a>
+            <span class="archive-post-date">08/05</span>
+            <a class="archive-post-title" href="/2021/08/04/Web/TypeScript/GuideLine/">GuideLine</a>
         </li>
     
         
@@ -3553,7 +5326,7 @@ iOS 端接受消息：
         
         <li class="archive-post-item">
             <span class="archive-post-date">07/31</span>
-            <a class="archive-post-title" href="/2021/07/31/iOS/UI/WebKit/WKWebView/">WKWebView</a>
+            <a class="archive-post-title" href="/2021/07/31/iOS/Webs/WebKit/WKWebView/">WKWebView</a>
         </li>
     
         
@@ -3595,24 +5368,6 @@ iOS 端接受消息：
         
         <li class="archive-post-item">
             <span class="archive-post-date">07/29</span>
-            <a class="archive-post-title" href="/2021/07/29/iOS/Languages/CAlians/C++/C++/">C++</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span>
-            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/CI/Applestore%20Connect/App%20Store%20Connect%20API/">iOS 之App Store Connect API</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span>
-            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/CI/Jira/Jira/">jira</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span>
             <a class="archive-post-title" href="/2021/07/29/iOS/Concepts/">iOS 之概念</a>
         </li>
     
@@ -3624,14 +5379,8 @@ iOS 端接受消息：
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">07/29</span>
-            <a class="archive-post-title" href="/2021/07/29/iOS/ProjectManager/ShellScripts/Simulator/">iOS 之自动化</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
             <span class="archive-post-date">07/27</span>
-            <a class="archive-post-title" href="/2021/07/27/iOS/Interview/InterviewCollections/Baidu/">面试题</a>
+            <a class="archive-post-title" href="/2021/07/26/iOS/Interview/InterviewCollections/Baidu/">面试题</a>
         </li>
     
         
@@ -3642,349 +5391,97 @@ iOS 端接受消息：
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">07/23</span>
-            <a class="archive-post-title" href="/2021/07/23/iOS/Languages/Swift/Generic/">iOS编程语言之 swift 泛型</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/23</span>
+            <span class="archive-post-date">07/24</span>
             <a class="archive-post-title" href="/2021/07/23/iOS/Languages/Swift/Codable/">iOS编程语言之 swift Codable</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">07/23</span>
-            <a class="archive-post-title" href="/2021/07/23/iOS/Languages/Swift/Class/">iOS编程语言之 swift Class</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
             <span class="archive-post-date">06/11</span>
-            <a class="archive-post-title" href="/2021/06/11/iOS/Webs/JavaScriptCore/">iOS之JavaScriptCore</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/11</span>
-            <a class="archive-post-title" href="/2021/06/11/iOS/UI/Render/OffScreenRender/">iOS之 离屏渲染</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/07</span>
-            <a class="archive-post-title" href="/2021/06/07/iOS/Performance/Exceptions/WiredPointer/">iOS之野指针</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/05</span>
-            <a class="archive-post-title" href="/2021/06/05/iOS/Performance/Exceptions/%20ZombieObject/">iOS之僵尸对象</a>
+            <a class="archive-post-title" href="/2021/06/10/iOS/Webs/JavaScriptCore/">iOS之JavaScriptCore</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">06/04</span>
-            <a class="archive-post-title" href="/2021/06/04/iOS/DesignPattern/">iOS之设计模式</a>
+            <a class="archive-post-title" href="/2021/06/03/iOS/DesignPattern/">iOS之设计模式</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">05/28</span>
+            <span class="archive-post-date">05/29</span>
             <a class="archive-post-title" href="/2021/05/28/iOS/UI/CoreImageFilter/">iOS之Core Image Filter</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/25</span>
-            <a class="archive-post-title" href="/2021/05/25/iOS/Interview/InterviewQuestions/">iOS之面试</a>
+            <a class="archive-post-title" href="/2021/05/24/iOS/Interview/InterviewQuestions/">iOS之面试</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/25</span>
-            <a class="archive-post-title" href="/2021/05/25/iOS/Interview/Interviewes/">iOS之面试</a>
+            <a class="archive-post-title" href="/2021/05/24/iOS/Interview/Interviewes/">iOS之面试</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/25</span>
-            <a class="archive-post-title" href="/2021/05/25/iOS/Interview/Summery/">走向资深 iOS 之路</a>
+            <a class="archive-post-title" href="/2021/05/24/iOS/Interview/Summery/">走向资深 iOS 之路</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/22</span>
-            <a class="archive-post-title" href="/2021/05/22/iOS/Languages/Objective-C/Category/">iOS之Category</a>
+            <a class="archive-post-title" href="/2021/05/21/iOS/Languages/Objective-C/Category/">iOS之Category</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/22</span>
-            <a class="archive-post-title" href="/2021/05/22/iOS/Languages/Objective-C/KVO/">iOS之KVO</a>
+            <a class="archive-post-title" href="/2021/05/21/iOS/Languages/Objective-C/KVO/">iOS之KVO</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/22</span>
-            <a class="archive-post-title" href="/2021/05/22/iOS/Languages/Objective-C/KVC/">iOS之KVC</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span>
-            <a class="archive-post-title" href="/2021/05/22/iOS/Languages/Objective-C/NSTimer/">iOS之NSTimer</a>
+            <a class="archive-post-title" href="/2021/05/21/iOS/Languages/Objective-C/KVC/">iOS之KVC</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/05</span>
-            <a class="archive-post-title" href="/2021/05/05/iOS/Tools/Xcode/">iOS 之Xcode Debugging</a>
+            <a class="archive-post-title" href="/2021/05/04/iOS/Tools/Xcode/">iOS 之Xcode Debugging</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">05/04</span>
-            <a class="archive-post-title" href="/2021/05/04/iOS/Performance/OffScreenRender/">iOS 之离屏渲染</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/Flutters/TechnologyFeasibility/Technologies/">Flutter 可行性调研技术点</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/Flutters/TechnologyFeasibility/TechnologyFeasibility/">Flutter 技术可行性调研</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Concurrency/Concurrency/">iOS之并发编程</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/Flutters/Guidance/Guidance/">Flutter</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Concurrency/GCD/">iOS之GCD</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Concurrency/NSThreads/">iOS之多线程编程</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Concurrency/RunLoop/">iOS之RunLoop</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/DataPersistence/DataBase/">iOS之SQLite</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/DataPersistence/DataPersistence/">iOS之持久化</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Documents/Jazzy/">iOS之文档 jazzy</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Games/Engine/">iOS游戏之引擎</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Games/Lua/">iOS游戏之Lua</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Libraries/OpenLibs/">iOS 之开源库</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Libraries/WebViewJavascriptBridge/">WebViewJavascriptBridge</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Audio/">iOS之音频</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Images/">iOS之图片</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Medias/">iOS之多媒体</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Vedio/">iOS之视频</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Network/AppSign/">iOS之网络</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Network/HTTP/">iOS网络之 HTTP</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Network/Logs/">iOS之日志系统</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Network/NetSecure/">iOS之安全</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Network/Network/">iOS之网络</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Network/NetworkOptimize/">iOS之移动端网络优化</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Network/%E6%9C%8D%E5%8A%A1%E8%AE%A4%E8%AF%81/">服务认证</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/AppThin/">iOS之App瘦身</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Network/Protocols/">网络协议</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/GCCAttribute/">iOS 之GCC attribute</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/LaunchOptimize/">iOS之启动优化</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/LaunchOptimize2/">iOS之启动优化（二）</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/dyldVariables/">iOS之dyld环境变量介绍</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/PowerOptimize/">iOS 之功耗优化</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/MacOFiles/">iOS之Mac-O 文件揭秘</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/CI/">iOS之CI集成</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/EnvironmentsVaraible/">iOS 项目管理之 xcconfig</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Performance/dyld/">DYLD</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/Fir&PGYing/">iOS项目管理之杂项</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/AutoRelease/">iOS之 Xcode Build 自动化</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/ProjectManager/">项目管理</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/ZenTao/">项目管理之禅道</a>
         </li>
     
@@ -4014,470 +5511,560 @@ iOS 端接受消息：
             
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2021/05/21/iOS/Languages/Objective-C/NSTimer/">iOS之NSTimer</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/05</span>
+            <a class="archive-post-title" href="/2021/05/04/iOS/Performance/OffScreenRender/">iOS 之离屏渲染</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/Flutters/TechnologyFeasibility/Technologies/">Flutter 可行性调研技术点</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/Flutters/TechnologyFeasibility/TechnologyFeasibility/">Flutter 技术可行性调研</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Concurrency/Concurrency/">iOS之并发编程</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/Flutters/Guidance/Guidance/">Flutter</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Concurrency/GCD/">iOS之GCD</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Concurrency/NSThreads/">iOS之多线程编程</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Concurrency/RunLoop/">iOS之RunLoop</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/DataPersistence/DataBase/">iOS之SQLite</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/DataPersistence/DataPersistence/">iOS之持久化</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Documents/Jazzy/">iOS之文档 jazzy</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Games/Engine/">iOS游戏之引擎</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Games/Lua/">iOS游戏之Lua</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Libraries/OpenLibs/">iOS 之开源库</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Libraries/WebViewJavascriptBridge/">WebViewJavascriptBridge</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Audio/">iOS之音频</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Images/">iOS之图片</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Medias/">iOS之多媒体</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Medias/Vedio/">iOS之视频</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/AppSign/">iOS之网络</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/HTTP/">iOS网络之 HTTP</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/Logs/">iOS之日志系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/NetSecure/">iOS之安全</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/Network/">iOS之网络</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/NetworkOptimize/">iOS之移动端网络优化</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/%E6%9C%8D%E5%8A%A1%E8%AE%A4%E8%AF%81/">服务认证</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/AppThin/">iOS之App瘦身</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/Protocols/">网络协议</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/GCCAttribute/">iOS 之GCC attribute</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/LaunchOptimize/">iOS之启动优化</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/LaunchOptimize2/">iOS之启动优化（二）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/dyldVariables/">iOS之dyld环境变量介绍</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/PowerOptimize/">iOS 之功耗优化</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/MacOFiles/">iOS之Mac-O 文件揭秘</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/CI/">iOS之CI集成</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/UI/Animation/">iOS之动画</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/UI/CoreText/">iOS之排版——Coretext</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/UI/TextKit/">iOS排版与渲染引擎——TextKit</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/UI/UserExperences/">iOS之交互体验</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/UI/UI/">iOS之UI界面</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Charles/">Charles</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Tools/CocoapodGuidance/">Cocoapod 指南</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Fastlane/">Fastlane 指南</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Tools/CocoapodMaker/">Cocoapod</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Tools/GitSpecification/">Git 规范</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Tools/LLDB/">iOS之LLDB</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Monitors/">iOS 之监控插件库</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Tools/OmniGraffle/">OmniGraffle</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Reverse/">iOS逆向工程</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Tools/iOSTools/">iOS 之开发工具</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/WWDC/WWDC2019/">iOS之WWDC2019</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/OS/Linux/">Linux</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/OS/OS/">操作系统</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/OS/ShellConfigs/">Shell 配置文件</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/OS/Unix/">Unix</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Hybrids/">iOS之移动端跨端技术及原理</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Webs/JSPatchPrinciple/">iOS之JSPatch原理</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Vue/">iOS之 Vue</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/Web/CSS/CSSGuidance/">CSS 上手</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/Web/JavaScript/JavaScript/">JavaScript</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/Web/JavaScript/Technologies/">JavaScript 知识点</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/NSDIctionary/">iOS编程语言之 NSDictionary底层实现原理</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/OCAdvance/">iOS编程语言之OC 进阶</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Objective-C/">iOS编程语言之Objective-C</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Runtime/">iOS之运行时</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/iOS%E4%B9%8BKVC/">iOS之KVC</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Types/">iOS编程语言之Objective-C 运行时基本类型</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Python/Pyhon/">Pyhon</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Shell/Shell/">Shell笔记</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Swift/">iOS编程语言之Swift</a>
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/Web/Javascript/JavaScript/">JavaScript</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/Web/Javascript/Technologies/">JavaScript 知识点</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Network/WebSocket/">网络协议之 WebSocket</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/XCConfig/">iOS 项目管理之 xcconfig</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/WebKit/WebKit/">iOS之 Webkit</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Value&Reference/">iOS编程语言之swift 构造器</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/AppleService/">APNS</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Swift/Constructor/">iOS编程语言之swift 构造器</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/Architecture/">iOS 架构设计</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/Exceptions/CrashLogManuelResolve/">iOS之手动解析 crash 日志</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/CodeManager/">iOS之代码管理</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/Exceptions/Excetions/">iOS之异常处理</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/Components/">iOS之组件化</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/KSCrash/KSCrashGuidline/">iOS之KSCrash 简明教程</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/CodeRestructure/">iOS之代码重构</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Performance/KSCrash/Princeples/">iOS之KSCrahs 原理</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/Ecosystem/">iOS之生态体系及结构</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Layouts/AutoLayout/">iOS 之 自动布局</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/Events&Responder/">iOS之事件传递与响应者链</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Layouts/Layouts/">iOS之 布局</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/Guidelines/">iOS之规范</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/Render/Render/">iOS之 UI 渲染</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/MessageDispatch/">iOS 之消息转发</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UI/WebKit/WebKit/">iOS之 Webkit</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/Xcode/">iOS之SDK</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Appium/AppiumGuidance/">Appium 快速上手</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/SDK/">iOS之SDK</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Tools/Vim/VimOperation/">Vim 常用操作</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/Languages/Assemble/Assemble/">汇编语言</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Flutter/Flutter/">iOS之Flutter</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/Languages/MySQL/MySQL/">MySQL</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/NativeCommunication/">iOS之React-Native与原生端通信</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/Languages/Java/Java/">Java</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/NativeComponents/">iOS之React-Native原生UI组件</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/Languages/CAlians/Interupt/">系统中断信号</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/NativeModule/">iOS之React-Native原生Module</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/Languages/CAlians/boost-b2/">boost 编译器 b2</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/React-Native/React-Native/">iOS之React-Native</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/Languages/Objective-C/Block/">Block</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/PHP/PHP/">PHP</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/Languages/Objective-C/Memory/">iOS之内存管理</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/ProjectManager/CI/Jenkins/Jenkins/">Jenkins</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/iOS/">iOS之框架</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Webs/Flutter/Dart/Dart/">Dart</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/AppleService/">APNS</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Blogs&Blogger/">博主与网站收藏</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Architecture/">iOS 架构设计</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/CodeManager/">iOS之代码管理</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Components/">iOS之组件化</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/CodeRestructure/">iOS之代码重构</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Ecosystem/">iOS之生态体系及结构</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/FrameWorks/">iOS之框架</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Events&Responder/">iOS之事件传递与响应者链</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Guidelines/">iOS之规范</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/MessageDispatch/">iOS 之消息转发</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/UnitTest/">iOS之单元测试</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Xcode/">iOS之SDK</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/SDK/">iOS之SDK</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Assemble/Assemble/">汇编语言</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/MySQL/MySQL/">MySQL</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Java/Java/">Java</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/CAlians/Interupt/">系统中断信号</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/CAlians/boost-b2/">boost 编译器 b2</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Block/">Block</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/Objective-C/Memory/">iOS之内存管理</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/AppleScript/AppleScript/">AppleScript</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2021/04/20/iOS/Languages/CAlians/Compiler/g++/">G++</a>
+            <a class="archive-post-title" href="/2021/04/19/iOS/Test/UnitTest/">iOS之单元测试</a>
         </li>
     
     </div>
@@ -4499,6 +6086,346 @@ iOS 端接受消息：
             <span class="sidebar-tag-name" data-tags="React-Native Navigation">
                 <span class="iconfont-archer">&#xe606;</span>
                 React-Native Navigation
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Android 文件作用">
+                <span class="iconfont-archer">&#xe606;</span>
+                Android 文件作用
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Android 三字经">
+                <span class="iconfont-archer">&#xe606;</span>
+                Android 三字经
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="FVM">
+                <span class="iconfont-archer">&#xe606;</span>
+                FVM
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="packages">
+                <span class="iconfont-archer">&#xe606;</span>
+                packages
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="投资参考">
+                <span class="iconfont-archer">&#xe606;</span>
+                投资参考
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="基金">
+                <span class="iconfont-archer">&#xe606;</span>
+                基金
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="股票">
+                <span class="iconfont-archer">&#xe606;</span>
+                股票
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ADs">
+                <span class="iconfont-archer">&#xe606;</span>
+                ADs
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Bloggers">
+                <span class="iconfont-archer">&#xe606;</span>
+                Bloggers
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Technology Stack">
+                <span class="iconfont-archer">&#xe606;</span>
+                Technology Stack
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="重构技术方案">
+                <span class="iconfont-archer">&#xe606;</span>
+                重构技术方案
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="index">
+                <span class="iconfont-archer">&#xe606;</span>
+                index
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Dart HotReload">
+                <span class="iconfont-archer">&#xe606;</span>
+                Dart HotReload
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Flutter 指南">
+                <span class="iconfont-archer">&#xe606;</span>
+                Flutter 指南
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="CircleWidget">
+                <span class="iconfont-archer">&#xe606;</span>
+                CircleWidget
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Proxy">
+                <span class="iconfont-archer">&#xe606;</span>
+                Proxy
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="常用工具库">
+                <span class="iconfont-archer">&#xe606;</span>
+                常用工具库
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Asnycronous">
+                <span class="iconfont-archer">&#xe606;</span>
+                Asnycronous
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Schedule">
+                <span class="iconfont-archer">&#xe606;</span>
+                Schedule
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Browser Principle">
+                <span class="iconfont-archer">&#xe606;</span>
+                Browser Principle
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Float">
+                <span class="iconfont-archer">&#xe606;</span>
+                Float
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ESLint">
+                <span class="iconfont-archer">&#xe606;</span>
+                ESLint
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Canvas">
+                <span class="iconfont-archer">&#xe606;</span>
+                Canvas
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Enumerable">
+                <span class="iconfont-archer">&#xe606;</span>
+                Enumerable
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Jest">
+                <span class="iconfont-archer">&#xe606;</span>
+                Jest
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Prototype">
+                <span class="iconfont-archer">&#xe606;</span>
+                Prototype
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Standard">
+                <span class="iconfont-archer">&#xe606;</span>
+                Standard
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Throttle">
+                <span class="iconfont-archer">&#xe606;</span>
+                Throttle
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Mobx">
+                <span class="iconfont-archer">&#xe606;</span>
+                Mobx
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="GuideLine">
+                <span class="iconfont-archer">&#xe606;</span>
+                GuideLine
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Node">
+                <span class="iconfont-archer">&#xe606;</span>
+                Node
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="node">
+                <span class="iconfont-archer">&#xe606;</span>
+                node
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="React">
+                <span class="iconfont-archer">&#xe606;</span>
+                React
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ReactFamliy">
+                <span class="iconfont-archer">&#xe606;</span>
+                ReactFamliy
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="React Native Layout">
+                <span class="iconfont-archer">&#xe606;</span>
+                React Native Layout
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ReactPerfermance">
+                <span class="iconfont-archer">&#xe606;</span>
+                ReactPerfermance
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="React Redux">
+                <span class="iconfont-archer">&#xe606;</span>
+                React Redux
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Redux">
+                <span class="iconfont-archer">&#xe606;</span>
+                Redux
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Redux Observable">
+                <span class="iconfont-archer">&#xe606;</span>
+                Redux Observable
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Redux Tool Kit">
+                <span class="iconfont-archer">&#xe606;</span>
+                Redux Tool Kit
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="AdvanceType">
+                <span class="iconfont-archer">&#xe606;</span>
+                AdvanceType
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Decorator">
+                <span class="iconfont-archer">&#xe606;</span>
+                Decorator
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Typescripy, Fetch">
+                <span class="iconfont-archer">&#xe606;</span>
+                Typescripy, Fetch
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="TypeScript">
+                <span class="iconfont-archer">&#xe606;</span>
+                TypeScript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="TypeScript React">
+                <span class="iconfont-archer">&#xe606;</span>
+                TypeScript React
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Vue 入门">
+                <span class="iconfont-archer">&#xe606;</span>
+                Vue 入门
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Vue">
+                <span class="iconfont-archer">&#xe606;</span>
+                Vue
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="发程编程, Locks">
+                <span class="iconfont-archer">&#xe606;</span>
+                发程编程, Locks
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Pod Framwork、Xcode 编译">
+                <span class="iconfont-archer">&#xe606;</span>
+                Pod Framwork、Xcode 编译
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="常用开源库">
+                <span class="iconfont-archer">&#xe606;</span>
+                常用开源库
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Apple Services">
+                <span class="iconfont-archer">&#xe606;</span>
+                Apple Services
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="SignIn With Apple">
+                <span class="iconfont-archer">&#xe606;</span>
+                SignIn With Apple
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Web, Mobile Web">
+                <span class="iconfont-archer">&#xe606;</span>
+                Web, Mobile Web
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Animation">
+                <span class="iconfont-archer">&#xe606;</span>
+                Animation
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="MediaQuery">
+                <span class="iconfont-archer">&#xe606;</span>
+                MediaQuery
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="PostCss">
+                <span class="iconfont-archer">&#xe606;</span>
+                PostCss
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="SASS">
+                <span class="iconfont-archer">&#xe606;</span>
+                SASS
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="npm">
+                <span class="iconfont-archer">&#xe606;</span>
+                npm
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Predicates">
+                <span class="iconfont-archer">&#xe606;</span>
+                Predicates
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="KeyPath">
+                <span class="iconfont-archer">&#xe606;</span>
+                KeyPath
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Mixed">
+                <span class="iconfont-archer">&#xe606;</span>
+                Mixed
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Unmanaged">
+                <span class="iconfont-archer">&#xe606;</span>
+                Unmanaged
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="RxSwift">
+                <span class="iconfont-archer">&#xe606;</span>
+                RxSwift
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="HTTP">
+                <span class="iconfont-archer">&#xe606;</span>
+                HTTP
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="TCP">
+                <span class="iconfont-archer">&#xe606;</span>
+                TCP
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Property Wrapper">
+                <span class="iconfont-archer">&#xe606;</span>
+                Property Wrapper
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="CollectionView">
+                <span class="iconfont-archer">&#xe606;</span>
+                CollectionView
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="Expo">
+                <span class="iconfont-archer">&#xe606;</span>
+                Expo
             </span>
         
     </div>
