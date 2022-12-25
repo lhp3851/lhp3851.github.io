@@ -13,6 +13,6 @@ tags: Prototype
 
 ## 4. [Typescript之原型对象prototype深入了解](https://blog.csdn.net/Suarez1987/article/details/112531456)
 
-## [一张图搞定JS原型&原型链](https://segmentfault.com/a/1190000021232132)
+## 4. [一张图搞定JS原型&原型链](https://segmentfault.com/a/1190000021232132)
 
 并不对，但有一定的参考性
