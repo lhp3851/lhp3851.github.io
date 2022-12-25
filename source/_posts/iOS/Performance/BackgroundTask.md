@@ -13,9 +13,9 @@ tags:
 
 ```objc
 [self.timer invalidate];
-    self.timer = nil;
-    [[UIApplication sharedApplication] endBackgroundTask:self.taskId];
-    self.taskId = UIBackgroundTaskInvalid;
+self.timer = nil;
+[[UIApplication sharedApplication] endBackgroundTask:self.taskId];
+self.taskId = UIBackgroundTaskInvalid;
 }];
 ```
 

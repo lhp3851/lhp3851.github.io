@@ -364,3 +364,9 @@ ${file%%.*}：删掉第一个  .   及其右边的字符串：/dir1/dir2/dir3/my
 {file/dir/path}：将第一个dir 替换为path：/path1/dir2/dir3/my.file.txt
 {file//dir/path}：将全部dir 替换为 path：/path1/path2/path3/my.file.txt
 ```
+
+## 参考
+
+阮一峰 Bash 脚本教程[^Bash脚本教程]
+
+[^Bash脚本教程]: [Bash 脚本教程](https://wangdoc.com/bash/variable.html)

@@ -19,3 +19,5 @@ tags:
 ## 5. [iOS 保持界面流畅的技巧](https://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/)
 
 ## 6. [图形学 光栅化详解（Rasterization）](https://www.jianshu.com/p/54fe91a946e2)
+
+## 7. [iOS 事件处理机制与图像渲染过程](https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=400417748&idx=1&sn=0c5f6747dd192c5a0eea32bb4650c160&scene=0#wechat_redirect)
