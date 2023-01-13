@@ -128,3 +128,5 @@ tags:
 ### 5.4 Elm(TEA) The Elm Architecture
 
 Reducer(State/Property)
+
+#### 5.4.1 [CombineFeedback](https://github.com/sergdort/CombineFeedback)
