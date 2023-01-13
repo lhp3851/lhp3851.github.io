@@ -79,8 +79,52 @@ tags:
 
 ## 4. [iOS应用架构谈](https://casatwy.com/iosying-yong-jia-gou-tan-kai-pian.html)
 
-* [今日头条：iOS 架构设计杂谈](https://juejin.cn/post/6844903623252525064)
-* [awesome iOS architecture](https://github.com/onmyway133/awesome-ios-architecture#data-source)
-* [SwiftHub](https://github.com/khoren93/SwiftHub)
+### 4.1 [框架、架构、设计模式](https://blog.csdn.net/CillyB/article/details/79464339?utm_source=blogxgwz7&utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&spm=1001.2101.3001.4242)
 
-[^1]: [MVC是框架？是设计模式？是架构？还是……](https://blog.csdn.net/CillyB/article/details/79464339?utm_source=blogxgwz7&utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&spm=1001.2101.3001.4242)
+设计模式（Design pattern：是一套被反复使用、多数人知道的、经过分类编目的、代码设计经验的总结。从定义上看，它涉及到了代码级别，侧重于解决实际的现实的问题。比如我们应该如何为不同的商品设计折扣的方式，采用策略模式呗。
+
+框架（Framework）：是整个或部分系统的可重用设计，表现为一组抽象构件及构件实例间交互的方法;另一种定义认为，框架是可被应用开发者定制的应用骨架。前者是从应用方面而后者是从目的方面给出的定义。从定义看，它涉及到了一堆构件，以及这些构件之间的依赖关系、责任分配和流程控制等，说白了就是一堆类而已。这些类以及之间的关系构成了框架。比如想要让用户通过Servlet来访问页面，怎么办？用Struts呗。
+
+架构模式（架构风格）：一个架构模式描述软件系统里的基本的结构组织或纲要。架构模式提供一些呈先定义好的子系统，指定它们的责任，并给出把它们组织在一起的法则和指南。从定义上来看，它是在指导我们如何组织代码，是一种具有指导意义的思想，比如要解决系统的数据与显示分离的问题，那就使用MVC模式呗。
+
+软件架构（software architecture）：是一系列相关的抽象模式，用于指导大型软件系统各个方面的设计。 软件架构是一个系统的草图。软件架构描述的对象是直接构成系统的抽象组件。各个组件之间的连接则明确和相对细致地描述组件之间的通讯。在实现阶段，这些抽象组件被细化为实际的组件，比如具体某个类或者对象。比如，我们要开发一个在线测评系统，使用什么架构呢？轻量级的SSH还是重量级的EJB？自己决定吧。
+
+```txt
+软件架构：架构图
+
+架构模式：MVC、MVP、MVVM...
+
+项目框架：系统的重用设计
+
+设计模式：solid 原则、23种设计模式
+```
+
+### 4.2 [SwiftHub](https://github.com/khoren93/SwiftHub)
+
+### 4.3 [今日头条：iOS 架构设计杂谈](https://juejin.cn/post/6844903623252525064)
+
+### 4.4 TCA
+
+#### 4.4.1. [TCA - SwiftUI 的救星？(一)](https://juejin.cn/post/7046951315565445157)
+
+#### 4.4.2. [TCA - SwiftUI 的救星？(二)](https://onevcat.com/2021/12/tca-2/)
+
+#### 4.4.3. [TCA - SwiftUI 的救星？(三)](https://onevcat.com/2022/03/tca-3/)
+
+### 4.4 [swift-composable-architecture](https://github.com/pointfreeco/swift-composable-architecture?utm_source=gold_browser_extension)
+
+### 4.5 [awesome iOS architecture](https://github.com/onmyway133/awesome-ios-architecture#data-source)
+
+## 5. [iOS APP 架构设计](https://juejin.cn/post/6981699887549120548#heading-3)
+
+### 5.1 MVC/MVP/MVVM(-C)
+
+### 5.2 MVC-VS(View State)
+
+### 5.3 MAVB(ModelAdapter-ViewBuilder)
+
+专注于声明式 UI 架构
+
+### 5.4 Elm(TEA) The Elm Architecture
+
+Reducer(State/Property)
