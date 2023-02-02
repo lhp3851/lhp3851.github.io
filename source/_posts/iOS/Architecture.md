@@ -55,11 +55,11 @@ tags:
 
 ### 2.1 MVC
 
-[苹果的 MVC](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html)
+#### 2.1.1 [苹果的 MVC](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html)
 
 ![ios 的 MVC](./resources/../Resources/model_view_controller_2x.png)
 
-斯坦福白胡子老头的 MVC
+#### 2.1.2 斯坦福白胡子老头的 MVC
 
 ![斯坦福白胡子老头的 MVC](./Resources/MVC_Stanford.webp)
 
@@ -71,7 +71,13 @@ tags:
 * 图中绿色的箭头表示直接引用，直接引用直观来说，就是说需要包含引用类的申明头文件和类的实例变量。可以看到，只有 Controller 中，有对 Model 和 View 的直接引用。其中对 View 的直接引用体现为 IBOutlet。
 * Model 在图上有一个信号塔类似的图形，旁边写着 Notification & KVO。这表明 Model 主要是通过 Notification 和 KVO 来和 Controller 通讯的。
 
-### 2.2 MV-VM
+#### 2.1.3 [Model-View-Controller (MVC) in iOS – A Modern Approach](https://www.kodeco.com/1000705-model-view-controller-mvc-in-ios-a-modern-approach)
+
+### 2.2 MVP
+
+[对iOS MVP架构的一点理解](https://juejin.cn/post/6844903857022058509)
+
+### 2.3 MVVM
 
 ## 3. RxSwift 常用架构
 
