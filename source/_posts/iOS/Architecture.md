@@ -51,6 +51,8 @@ tags:
 
 ## 2. [浅谈 MVC、MVP 和 MVVM 架构模式](https://draveness.me/mvx/)
 
+[iOS架构师的必经之路](https://juejin.cn/post/6844903573189312525)
+
 ### 2.1 MVC
 
 #### 2.1.1 [苹果的 MVC](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html)
