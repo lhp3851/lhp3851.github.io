@@ -125,6 +125,12 @@ tags:
 
 ### 5.1 MVC/MVP/MVVM(-C)
 
+#### 5.1 MVC
+
+#### 5.2 MVP
+
+[对iOS MVP架构的一点理解](https://juejin.cn/post/6844903857022058509)
+
 ### 5.2 MVC-VS(View State)
 
 ### 5.3 MAVB(ModelAdapter-ViewBuilder)
