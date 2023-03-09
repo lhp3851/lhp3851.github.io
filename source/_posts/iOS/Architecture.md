@@ -77,6 +77,8 @@ tags:
 
 [对iOS MVP架构的一点理解](https://juejin.cn/post/6844903857022058509)
 
+[iOS Swift : MVP Architecture](https://saad-eloulladi.medium.com/ios-swift-mvp-architecture-pattern-a2b0c2d310a3)
+
 ### 2.3 MVVM
 
 ## 3. RxSwift 常用架构

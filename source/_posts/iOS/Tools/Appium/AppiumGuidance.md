@@ -150,7 +150,7 @@ driver.find_element_by_xpath(’//XCUIElementTypeButton’)
 driver.find_element_by_xpath(’//XCUIElementTypeButton[index]’)
 
 #通过元素的属性定位
-driver.find_element_by_xpath(”//className[@value=‘ClearEmail’]")
+driver.find_element_by_xpath("//className[@value=‘ClearEmail’]")
 ```
 
 ##### 4. iOSNsPredicateString
